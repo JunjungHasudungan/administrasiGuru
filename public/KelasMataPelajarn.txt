@@ -1,0 +1,92 @@
+KELAS - MATA PELAJARAN
+
+X AK
+ * AGAMA - Kelas Umum
+ * PPKN - Kelas Umum
+ * B. INGGRIS - Kelas Umum
+ * MTK - Kelas Umum
+ * SEJARAH - Kelas Umum
+ * B. INDONESIA - Kelas Umum
+ * SBK - Kelas Umum
+ * PENJAS - Kelas Umum
+ * SIMDIG - Kelas Umum
+ * EKO BISNIS - Kelas jurusan
+ * ADM UMUM - Kelas jurusan
+ * IPA - Kelas Umum
+ * ETIKA PROFESI - Kelas Umum
+ * SPREEDSHEET - Kelas jurusan
+ * AK DASAR Kelas - jurusan
+ * PERBANKAN DASAR - Kelas - jurusan
+jumlah = 16
+
+ XI AK
+ * AGAMA - Kelas Umum
+ * PPKN - Kelas Umum
+ * B. INDONESIA - Kelas Umum
+ * MTK - Kelas Umum
+ * B. INGGRIS - Kelas Umum
+ * PENJAS - Kelas Umum
+ * PAP - Kelas jurusan
+ * AK Keuangan - Kelas jurusan
+ * KOM Akutansi - Kelas jurusan
+ * ADM Pajak - Kelas jurusan
+ * PKK Kelas Umum - Kelas jurusan
+jumlah = 11
+
+XII AK
+ * AGAMA - Kelas Umum
+ * PPKN - Kelas Umum
+ * MTK - Kelas Umum
+ * B. INGGRIS - Kelas Umum
+ * PAP - Kelas jurusan
+ * AK Keuangan - Kelas jurusan
+ * KOM Akutansi - Kelas jurusan
+ * ADM Pajak - Kelas jurusan
+ * PKK Kelas Umum - Kelas jurusan
+ jumlah = 9
+
+
+X RPL
+ * AGAMA - Kelas Umum
+ * PPKN - Kelas Umum
+ * B. INDONESIA - Kelas Umum
+ * MTK - Kelas Umum
+ * SEJARAH - Kelas Umum
+ * B. INGGRIS - Kelas Umum
+ * SBK - Kelas Umum
+ * PENJAS - Kelas Umum
+ * SIMDIG - Kelas Umum
+ * FISIKA
+ * KIMIA
+ * SISKOM
+ * KOMJAR
+ * PEMOGRAMAN DASAR
+ * DDG
+ jumlah = 15
+
+ XI RPL
+ * AGAMA - Kelas Umum
+ * PPKN - Kelas Umum
+ * B. INGGRIS - Kelas Umum
+ * B. INDONESIA - Kelas Umum
+ * PENJAS - Kelas Umum
+ * PEMODELAN
+ * BASIS DATA - Kelas jurusan
+ * MTK - Kelas Umum
+ * PEMOGRAMAN OBJEK - Kelas jurusan
+ * PEMOGRAMAN WEB - Kelas jurusan
+ * PKK Kelas Umum - Kelas jurusan
+ jumlah = 11
+
+ XII RPL
+ * AGAMA - Kelas Umum
+ * PPKN - Kelas Umum
+ * B. INDONESIA - Kelas Umum
+ * MTK - Kelas Umum
+ * B. INGGRIS - Kelas Umum
+ * BASIS DATA - Kelas jurusan
+ * PEMOGRAMAN OBJEK - Kelas jurusan
+ * PEMOGRAMAN WEB - Kelas jurusan
+ * PKK Kelas Umum - Kelas jurusan
+ jumlah = 9
+
