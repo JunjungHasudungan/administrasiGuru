@@ -8,6 +8,12 @@
     <div>
         <div class="py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
             Accessible only for teachers.
+
+            @foreach ($teacherSubjects as $item)
+                <ul>
+                    <li>{{$item->name}}</li>
+                </ul>
+            @endforeach
         </div>
     </div>
 </x-teacher-layout>

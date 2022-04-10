@@ -13,9 +13,9 @@ class Subject extends Model
 
     protected $fillable = ['subject_code', 'name', 'category_id'];
 
-    public function teacherLessons()
+    public function teacherSubjects()
     {
-        return $this->belongsToMany(User::class, 'user_lesson', 'user_id', 'lesson_id');
+        return $this->belongsToMany(User::class, 'subject_user', 'user_id', 'subject_id');
     }
 
     public function categories()

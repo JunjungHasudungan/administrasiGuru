@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\Admin\ClassroomController;
 // use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\SubjectController;
+use App\Http\Controllers\Teachers\SubjectController as TeacherSubject;
 use App\Http\Controllers\Student\LessonController;
 // use App\Http\Controllers\Admin\RoleController;
 // use App\Http\Controllers\Admin\UserController;
@@ -56,7 +57,7 @@ Route::group(['middleware' => 'auth'], function() {
     });
 
    Route::group(['middleware' => 'role:teacher', 'prefix' => 'teacher', 'as' => 'teacher.'], function() {
-       Route::resource('subjects', SubjectController::class);
+       Route::resource('subjects', TeacherSubject::class);
    });
 
    Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function() {

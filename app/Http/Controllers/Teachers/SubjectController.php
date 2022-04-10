@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Teachers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Subject;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
@@ -21,7 +22,12 @@ class SubjectController extends Controller
             abort(403);
         }
 
-        return view('teacher.subjects.index');
+        // $teacherSubjects = Subject::findOrFail(1)->teacherSubjects()->orderBy('name')->get();
+
+        $teacherSubjects = User::findOrFail(1)->teacherSubjects()->orderBy('name')->get();
+       
+        // dd($teacherSubjects);
+        return view('teacher.subjects.index', compact('teacherSubjects'));
     }
 
     /**
