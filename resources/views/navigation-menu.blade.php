@@ -24,21 +24,35 @@
 
                     @if (auth()->user()->role_id == 1)
                         <x-jet-nav-link href="{{ route('admin.subjects.index') }}" :active="request()->routeIs('admin.subjects.index')">
-                            {{ __('Subjects') }}
+                            {{ __('Mata Pelajaran') }}
+                        </x-jet-nav-link>
+
+                        <x-jet-nav-link href="{{ route('admin.schedules.index') }}" :active="request()->routeIs('admin.schedules.index')">
+                            {{ __('Jadwal Mata Pelajaran') }}
                         </x-jet-nav-link>
                     @endif
 
                     @if (auth()->user()->role_id == 2)
                         <x-jet-nav-link href="{{ route('student.subjects.index') }}" :active="request()->routeIs('student.subjects.index')">
-                            {{ __('Subjects') }}
+                            {{ __('Mata Pelajaran') }}
                         </x-jet-nav-link>
                     @endif
 
-                    @can('manage-courses')
+                    @if (auth()->user()->role_id == 3)
                         <x-jet-nav-link href="{{ route('teacher.subjects.index') }}" :active="request()->routeIs('teacher.subjects.index')">
-                            {{ __('Subjects') }}
+                            {{ __('Mata Pelajaran') }}
+                        </x-jet-nav-link>
+
+                        <x-jet-nav-link href="{{ route('teacher.schedules.index') }}" :active="request()->routeIs('teacher.schedules.index')">
+                            {{ __('Jadwal Mata Pelajaran') }}
                         </x-jet-nav-link>
                     @endif
+
+                    {{-- @can('manage-courses')
+                        <x-jet-nav-link href="{{ route('teacher.subjects.index') }}" :active="request()->routeIs('teacher.subjects.index')">
+                            {{ __('Mata Pelajaran') }}
+                        </x-jet-nav-link>
+                    @endif --}}
                 </div>
             </div>
 

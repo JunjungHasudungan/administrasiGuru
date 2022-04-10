@@ -23,7 +23,7 @@ class SubjectController extends Controller
             abort(403);
         }
 
-        return view('teacher.subjects.index', compact('teacherSubjects'));
+        return view('teacher.subjects.index');
     }
 
     /**

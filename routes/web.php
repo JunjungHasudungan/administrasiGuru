@@ -6,7 +6,9 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\Admin\ClassroomController;
 // use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\SubjectController as AdminSubject;
+use App\Http\Controllers\Admin\LessonTimetableController as SchedulesSubject;
 use App\Http\Controllers\Teachers\SubjectController as TeacherSubject;
+use App\Http\Controllers\Teachers\SchedulesController as TeacherShedule;
 use App\Http\Controllers\Student\LessonController as StudentSubject;
 use App\Http\Livewire\Teacher\Subject;
 // use App\Http\Controllers\Admin\RoleController;
@@ -58,11 +60,19 @@ Route::group(['middleware' => 'auth'], function() {
     });
 
    Route::group(['middleware' => 'role:teacher', 'prefix' => 'teacher', 'as' => 'teacher.'], function() {
-       Route::resource('subjects', TeacherSubject::class);
+       Route::resources([
+           'subjects'       => TeacherSubject::class,
+           'schedules'      => TeacherShedule::class,
+        ]);
    });
 
    Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
-    Route::resource('subjects', AdminSubject::class);
+    Route::resources([
+        'subjects'      => AdminSubject::class,
+        'schedules'     => SchedulesSubject::class,
+    ]);
+
+        // 'schedules'     => SchedulesSubject::class,
     // Route::get('/register', function () {
     //     return view('register');
     // })->name('register');
