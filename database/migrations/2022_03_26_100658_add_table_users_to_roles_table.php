@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('student_address')->nullable();
             $table->string('student_licence_number')->nullable();
             $table->string('teacher_qualifications')->nullable();
-            $table->index(['role_id', 'subject_id', 'classroom_id']);
+            // $table->index(['role_id', 'subject_id', 'classroom_id']);
         });
     }
 

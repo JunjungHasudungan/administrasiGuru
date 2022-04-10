@@ -16,10 +16,16 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
 
-                    @can('manage-users')
+                    {{-- @can('manage-users')
                     <x-jet-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.index')">
                         {{ __('Users') }}
                     </x-jet-nav-link>
+                    @endif --}}
+
+                    @if (auth()->user()->role_id == 1)
+                        <x-jet-nav-link href="{{ route('student.lessons.index') }}" :active="request()->routeIs('student.lessons.index')">
+                            {{ __('Lessons') }}
+                        </x-jet-nav-link>
                     @endif
 
                     @if (auth()->user()->role_id == 2)
