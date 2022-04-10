@@ -23,14 +23,14 @@
                     @endif --}}
 
                     @if (auth()->user()->role_id == 1)
-                        <x-jet-nav-link href="{{ route('student.lessons.index') }}" :active="request()->routeIs('student.lessons.index')">
-                            {{ __('Lessons') }}
+                        <x-jet-nav-link href="{{ route('admin.subjects.index') }}" :active="request()->routeIs('admin.subjects.index')">
+                            {{ __('Subjects') }}
                         </x-jet-nav-link>
                     @endif
 
                     @if (auth()->user()->role_id == 2)
-                        <x-jet-nav-link href="{{ route('student.lessons.index') }}" :active="request()->routeIs('student.lessons.index')">
-                            {{ __('Lessons') }}
+                        <x-jet-nav-link href="{{ route('student.subjects.index') }}" :active="request()->routeIs('student.subjects.index')">
+                            {{ __('Subjects') }}
                         </x-jet-nav-link>
                     @endif
 

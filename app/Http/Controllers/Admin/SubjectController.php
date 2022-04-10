@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Gate;
 
 class SubjectController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $subjects = Subject::all();
@@ -22,15 +17,10 @@ class SubjectController extends Controller
             abort(403);
         }
 
-        return view('teacher.subjects.index');
+        return view('admin.subjects.index');
         // dd($subjects);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //

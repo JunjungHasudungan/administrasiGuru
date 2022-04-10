@@ -23,10 +23,7 @@ class SubjectController extends Controller
             abort(403);
         }
 
-        $countsubjectUser = DB::table('subject_user')->groupBy('subject_id')->get('subject_id')->count();
-       
-        dd($countsubjectUser);
-        // return view('teacher.subjects.index');
+        return view('teacher.subjects.index', compact('teacherSubjects'));
     }
 
     /**
