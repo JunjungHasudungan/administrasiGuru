@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Ervina Galih', // guru mata pelajarn // GURU KELAS UMUM
                 'email'         => 'ervina@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
-                'role_id'       => 1,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -45,7 +45,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Sumitro Simamora',  // Wali kelas XII RPL // GURU KELAS UMUM
                 'email'         => 'SumitroSimamora@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
-                'role_id'       => 4,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -53,7 +53,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Dani Harianja', // Wali kelas XII Ak // guru kejurusan
                 'email'         => 'DaniHarianja@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
-                'role_id'       => 4,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -61,7 +61,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Feri Situmorang', // wali kelas XI-2-AK // GURU KELAS UMUM
                 'email'         => 'FeriSitumorang@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
-                'role_id'       => 4,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -69,7 +69,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Nasib Situmorang', // guru kejurusan
                 'email'         => 'NasibSitumorang@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
-                'role_id'       => 4,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -77,7 +77,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Ernes Simanjuntak', // GURU KELAS UMUM
                 'email'         => 'ErnesSimanjuntak@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
-                'role_id'       => 4,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -85,7 +85,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Fitri', // guru kejurusan
                 'email'         => 'Fitri@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
-                'role_id'       => 4,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -93,7 +93,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Angelina', // wali kelas XI RPL // GURU KELAS UMUM
                 'email'         => 'AnjelinaG@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
-                'role_id'       => 4,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -101,7 +101,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Yesaya Sihotang',  // wali kelas XI-A // GURU KELAS UMUM
                 'email'         => 'YesayaSihotang@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
-                'role_id'       => 4,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -109,7 +109,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Iskandar', // guru kejurusan
                 'email'         => 'Iskandar@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
-                'role_id'       => 4,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -117,7 +117,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Tabita Sihaan', // wali kelas X RPL // guru kejurusan
                 'email'         => 'TabitaSihaan@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
-                'role_id'       => 4,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -125,7 +125,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Sehati Laia', // GURU KELAS UMUM
                 'email'         => 'SehatiLaia@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
-                'role_id'       => 4,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -133,7 +133,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Hasudungan Sitorus', // guru kejurusan
                 'email'         => 'HasudunganSitorus@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
-                'role_id'       => 4,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -141,7 +141,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Berman Naibaho', // guru kejurusan
                 'email'         => 'BermanNaibaho@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
-                'role_id'       => 4,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -149,7 +149,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Argo', // guru kejurusan
                 'email'         => 'Argo@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
-                'role_id'       => 4,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -157,7 +157,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Adventist Simamora', // SISWA XII RPL
                 'email'         => 'advent@gmail.com',
                 'password'      => bcrypt('siswa_smk_02'),
-                'role_id'       => 5,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -165,7 +165,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Alvina', // SISWA XII RPL
                 'email'         => 'alvina@gmail.com',
                 'password'      => bcrypt('siswa_smk_03'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -173,7 +173,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Angelina', // SISWA XII RPL
                 'email'         => 'angelinjollia@gmail.com',
                 'password'      => bcrypt('siswa_smk_03'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -181,7 +181,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Tasya',
                 'email'         => 'tasya@gmail.com',  // SISWA XII RPL
                 'password'      => bcrypt('siswa_smk_03'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -189,7 +189,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Ricardo Lim', // SISWA XII RPL
                 'email'         => 'ricardoLim@gmail.com',
                 'password'      => bcrypt('siswa_smk_04'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -197,7 +197,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Steven', // SISWA XII RPL
                 'email'         => 'stevent@gmail.com',
                 'password'      => bcrypt('siswa_smk_05'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -205,7 +205,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Stenly', // SISWA XII RPL
                 'email'         => 'stenly@gmail.com',
                 'password'      => bcrypt('siswa_smk_06'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -213,7 +213,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Sukarta', // SISWA XII RPL
                 'email'         => 'sukarta@gmail.com',
                 'password'      => bcrypt('siswa_smk_07'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -221,7 +221,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Suryanto', // SISWA XII RPL
                 'email'         => 'suryanto@gmail.com',
                 'password'      => bcrypt('siswa_smk_08'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -229,7 +229,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Ferdiansya', // SISWA XII RPL
                 'email'         => 'ferdiansyah@gmail.com',
                 'password'      => bcrypt('siswa_smk_09'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -237,7 +237,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Kelmi', // SISWA XII RPL
                 'email'         => 'kelmi@gmail.com',
                 'password'      => bcrypt('siswa_smk_10'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -245,7 +245,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Ricy Ricardo', // SISWA X RPL
                 'email'         => 'riccy@gmail.com',
                 'password'      => bcrypt('siswa_smk_11'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -253,7 +253,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Michael Widjaya', // SISWA X RPL
                 'email'         => 'michael@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -261,7 +261,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Yosua Miko', // SISWA XI RPL
                 'email'         => 'yosuaM@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -269,7 +269,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Vivien', // SISWA X Ak
                 'email'         => 'vivien@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -277,7 +277,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Nicholas Valentino Tjhia', // SISWA X  RPL
                 'email'         => 'nicholas@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -285,7 +285,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Jeje', // XI-1 Ak
                 'email'         => 'jeje@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -293,7 +293,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Jojo', // XI-2 Ak
                 'email'         => 'jojo@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -301,7 +301,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Anjelina', // XII Ak
                 'email'         => 'anjelinaL@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -309,7 +309,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Renaldi', // XII Ak
                 'email'         => 'renaldi@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -317,7 +317,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Hizki Addrianto', // SISWA XI RPL
                 'email'         => 'hizki@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -325,7 +325,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Yesika Sitinja', // GURU KELAS UMUM
                 'email'         => 'yesika@gmail.com',
                 'password'      => bcrypt('guru_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -333,7 +333,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Jekhin', // GURU KELAS UMUM
                 'email'         => 'jekhin@gmail.com',
                 'password'      => bcrypt('guru_smk'),
-                'role_id'       => 5,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -341,7 +341,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Susi Simatupang', // GURU KELAS UMUM
                 'email'         => 'SusiSimatupang@gmail.com',
                 'password'      => bcrypt('guru_smk'),
-                'role_id'       => 5,
+                'role_id'       => 3,
                 'classroom_id'  => 1
             ],
             [
@@ -349,7 +349,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Agus Angry Liem', // SISWA X RPL
                 'email'         => 'agusanggry@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -357,7 +357,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Anggaresta', // SISWA X RPL
                 'email'         => 'anggaresta@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -365,7 +365,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Charles Ronal Tan', // SISWA X RPL
                 'email'         => 'charlesR@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -373,7 +373,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Andrew Asido Norman Pakpahan', // SISWA Xl RPL
                 'email'         => 'AndrewA@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -381,7 +381,7 @@ class UserSeeder extends Seeder
                 'name'          => 'David Chandra', // SISWA Xi RPL
                 'email'         => 'DavidC@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -389,7 +389,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Dedi Sun', // SISWA Xi RPL
                 'email'         => 'DediS@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -397,7 +397,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Denis', // SISWA Xi RPL
                 'email'         => 'Denis@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -405,7 +405,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Agustin Aurelia Indira', // SISWA X Ak
                 'email'         => 'AgustinA@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -413,7 +413,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Angellina Jolin', // SISWA X Ak
                 'email'         => 'AngellinaJo@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -421,7 +421,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Candra', // SISWA X Ak
                 'email'         => 'Candra@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -429,7 +429,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Chelsea Agatha Lamvincy', // SISWA XI Ak
                 'email'         => 'ChelsiaA@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -437,7 +437,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Chong Siew Wei', // SISWA XI Ak
                 'email'         => 'ChongSiew@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -445,7 +445,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Christin Helnina', // SISWA XI Ak
                 'email'         => 'ChristinH@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -453,7 +453,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Angeli', // SISWA XII Ak
                 'email'         => 'Angeli@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
             [
@@ -461,7 +461,7 @@ class UserSeeder extends Seeder
                 'name'          => 'Catalina Lim', // SISWA XII Ak
                 'email'         => 'CatalinaL@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
-                'role_id'       => 5,
+                'role_id'       => 2,
                 'classroom_id'  => 1
             ],
 
