@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Subject;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 
 class SubjectController extends Controller
@@ -22,12 +23,10 @@ class SubjectController extends Controller
             abort(403);
         }
 
-        // $teacherSubjects = Subject::findOrFail(1)->teacherSubjects()->orderBy('name')->get();
-
-        $teacherSubjects = User::findOrFail(1)->teacherSubjects()->orderBy('name')->get();
+        $countsubjectUser = DB::table('subject_user')->groupBy('subject_id')->get('subject_id')->count();
        
-        // dd($teacherSubjects);
-        return view('teacher.subjects.index', compact('teacherSubjects'));
+        dd($countsubjectUser);
+        // return view('teacher.subjects.index');
     }
 
     /**

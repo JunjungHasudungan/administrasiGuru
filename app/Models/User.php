@@ -71,8 +71,8 @@ class User extends Authenticatable
         return $this->belongsToMany(Classroom::class, 'classroom_user', 'classroom_id', 'user_id');
     }
 
-    public function teacherSubjects()
+    public function subjects()
     {
-        return $this->belongsToMany(Subject::class, 'subject_user', 'subject_id', 'user_id');
+        return $this->belongsToMany(User::class, 'subject_user', 'user_id', 'subject_id');
     }
 }
