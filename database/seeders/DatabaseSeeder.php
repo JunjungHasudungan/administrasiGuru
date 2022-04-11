@@ -25,19 +25,9 @@ class DatabaseSeeder extends Seeder
             MajorSeeder::class,
             WeekSeeder::class,
             ClassroomSeeder::class,
-            CategorySeeder::class,
             LessonSeeder::class,
             EventSeeder::class,
             SubjectUserSeeder::class,
-            // RoleUserSeeder::class,
-            // PermissionSeeder::class,
-            // ClassroomSubjectSeeder::class,
-            // ClassStudentSeeder::class,  masih dalam perbaikan
-            // ClassroomUserSeeder::class,
-            // BiodatasSeeder::class,
-            // TeacherLessonSeeder::class, masih dalam perbaikan
-            // PermissionRoleSeeder::class,
-            // ManageClasses::class,
 
         ]);
     }

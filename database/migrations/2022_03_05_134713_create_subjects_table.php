@@ -17,10 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('subject_code')->unique();
             $table->string('name');
-            $table->unsignedBigInteger('category_id')->index();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            // $table->unsignedBigInteger('user_id')->index();
-            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

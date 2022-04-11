@@ -31,22 +31,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-// Route::group([
-//     'prefix'        => 'admin',
-//     'as'            => 'admin',
-//     // 'namespace'     => 'Admin'
-// ], function(){
-//     Route::get('/majors', Majors::class)->name('majors');
-//     // Route::resources([
-//     //     // '/'             => HomeController::class,
-//     //     'classrooms'    => ClassroomController::class,
-//     //     'users'         => UserController::class,
-//     //     'subjects'      => SubjectController::class,
-//     //     'roles'         => RoleController::class,
-//     // ]);
-// });
-
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
@@ -66,19 +50,11 @@ Route::group(['middleware' => 'auth'], function() {
         ]);
    });
 
-   Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
-    Route::resources([
-        'subjects'      => AdminSubject::class,
-        'schedules'     => SchedulesSubject::class,
-    ]);
+    Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
+        Route::resources([
+            'subjects'      => AdminSubject::class,
+            'schedules'     => SchedulesSubject::class,
+        ]);
+    });
 
-        // 'schedules'     => SchedulesSubject::class,
-    // Route::get('/register', function () {
-    //     return view('register');
-    // })->name('register');
-});
-
-    // Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
-    //     Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
-    // });
 });
