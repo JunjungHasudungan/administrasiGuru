@@ -13,7 +13,7 @@ class Classroom extends Model
 
     protected $table = 'classrooms';
 
-    protected $fillable = ['code_classroom', 'name', 'major_id', 'user_id'];
+    protected $fillable = ['code_classroom', 'name', 'major_id', 'teacher_id'];
 
     public function majors()
     {
@@ -22,7 +22,7 @@ class Classroom extends Model
 
     public function users() // Wali
     {
-        return $this->belongsToMany(User::class, 'classroom_user', 'classroom_id', 'user_id');
+        return $this->belongsToMany(User::class, 'classroom_user', 'classroom_id', 'teacher_id');
     }
 
     public function students() // Wali

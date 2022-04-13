@@ -11,11 +11,6 @@ class Major extends Model
 
     protected $table = 'majors';
 
-    protected $fillable = ['major_code', 'name'];
-
-    public function classes()
-    {
-        return $this->hasMany(Classes::class);
-    }
+    protected $fillable = ['major_code', 'title'];
 
 }

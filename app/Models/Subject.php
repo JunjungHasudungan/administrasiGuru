@@ -9,9 +9,9 @@ class Subject extends Model
 {
     use HasFactory;
 
-    protected $table = 'subjects';
+    protected $table = 'Subjects';
 
-    protected $fillable = ['subject_code', 'name', 'classroom_id', 'teacher_id','category_id'];
+    protected $fillable = ['subject_code', 'name', 'classroom_id', 'teacher_id', 'major_id'];
 
 
     const WEEK_DAY = [
@@ -33,21 +33,19 @@ class Subject extends Model
         return $this->belongsTo(Category::class, 'category_id');
     }
 
-    public function class()
-    {
-        return $this->belongsTo(Classroom::class, 'classroom_id');
-    }
-
     public function teacher()
     {
-        return $this->belongsTo(User::class, 'role_id', function($user){
-            $user->role_id = 3;
-        });
+        return $this->belongsTo(User::class, 'teacher_id');
     }
 
     public function classrooms()
     {
         return $this->belongsTo(Classroom::class,'classroom_id');
+    }
+
+    public function major()
+    {
+        return $this->belongsTo(Major::class, 'major_id');
     }
 
 }

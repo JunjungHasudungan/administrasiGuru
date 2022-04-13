@@ -20,13 +20,13 @@ class MajorSeeder extends Seeder
             [
                 'id'            => 1,
                 'major_code'    => 'RPL01',
-                'name'          => 'Rekayasa Perangkat Lunak',
+                'title'          => 'Rekayasa Perangkat Lunak',
                 'created_at'     =>  Carbon::now()
             ],
             [
                 'id'            => 2,
                 'major_code'    => 'Ak02',
-                'name'          => 'Akutansi',
+                'title'          => 'Akutansi',
                 'created_at'     =>  Carbon::now()
             ],
         ];

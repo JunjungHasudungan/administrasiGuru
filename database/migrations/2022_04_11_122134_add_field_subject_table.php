@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Classroom;
+use App\Models\Major;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -16,9 +17,10 @@ return new class extends Migration
     public function up()
     {
         Schema::table('Subjects', function (Blueprint $table) {
-            $table->unsignedBigInteger('teacher_id')->nullable();
+            $table->unsignedBigInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('users');
             $table->foreignIdFor(Classroom::class);
+            $table->foreignIdFor(Major::class);
             $table->integer('weekday');
             $table->time('start_time');
             $table->time('end_time');
