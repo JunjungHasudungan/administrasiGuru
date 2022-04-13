@@ -36,11 +36,11 @@
                       <th class="px-7 py-2 text-left">
                         <span class="text-white">Kelas</span>
                     </th>
+                    <th class="px-16 py-2 text-left">
+                        <span class="text-white">Guru Mata Pelajaran</span>
+                    </th>
                     <th class="px-7 py-2 text-left">
                       <span class="text-white">Jurusan</span>
-                  </th>
-                    <th class="px-16 py-2 text-left">
-                      <span class="text-white">Guru Mata Pelajaran</span>
                   </th>
                       <th class="px-7 py-2">
                           <span class="text-white">AKSI</span>
@@ -54,9 +54,30 @@
                       <td class="px-7 py-2">{{$loop->iteration}}</td>
                       <td class="px-7 py-2">{{$subject->subject_code}}</td>
                       <td class="px-7 py-2">{{$subject->name}}</td>
-                      <td class="px-7 py-2">{{$subject->classrooms->name}}</td>
-                      <td class="px-7 py-2">{{$subject->major->title}}</td>
-                      <td class="px-7 py-2">{{$subject->teacher->name}}</td>
+                      <td class="px-7 py-2">{{$subject->classrooms->name ?? ''}}</td>
+                      <td class="px-7 py-2">{{$subject->teacher->name ?? ''}}</td>
+                      <td class="px-7 py-2">{{$subject->major->title ??  ''}}</td>
+                      <td>
+                        {{-- @can('lesson_show') --}}
+                            <a class="btn btn-xs btn-primary" href="{{ route('admin.subjects.show', $subject->id) }}">
+                                {{ __('VIEW') }}
+                            </a>
+                        {{-- @endcan --}}
+
+                        {{-- @can('lesson_edit') --}}
+                            <a class="bg-orange-500 p-2 text-white rounded shadow-sm focus:outline-none hover:bg-indigo-700" value="{{ trans('global.delete') }}" href="{{ route('admin.subjects.edit', $subject->id) }}">
+                                {{ __('EDIT') }}
+                            </a>
+                        {{-- @endcan --}}
+
+                        {{-- @can('lesson_delete') --}}
+                            <form action="{{ route('admin.subjects.destroy', $subject->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit" class="bg-orange-500 p-2 text-white rounded shadow-sm focus:outline-none hover:bg-indigo-700" value="{{ trans('global.delete') }}">
+                            </form>
+                        {{-- @endcan --}}
+                    </td>
                   </tr>
                 @empty
                   <div class="bg-red-500 text-white p-3 rounded shadow-sm mb-3">

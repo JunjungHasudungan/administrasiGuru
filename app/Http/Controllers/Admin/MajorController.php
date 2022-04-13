@@ -13,12 +13,11 @@ class MajorController extends Controller
 {
     public function index()
     {
-
         $majors = Major::all();
 
         return view('admin.majors.index', compact('majors'));
 
-        // dd($majors);
+        // dd($subjects);
     }
 
     public function create()

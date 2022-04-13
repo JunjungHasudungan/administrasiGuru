@@ -13,4 +13,8 @@ class Major extends Model
 
     protected $fillable = ['major_code', 'title'];
 
+    public function subjects()
+    {
+        return $this->hasMany(Subject::class);
+    }
 }

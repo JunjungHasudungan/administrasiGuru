@@ -10,10 +10,10 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        $teachers = Subject::with('class')->count();
+        $subjectTeachers = Subject::all();
 
-        dd($teachers);
-        // return view('admin.teacherSubject.index', compact('teachers'));
+        // dd($subjectTeachers);
+        return view('admin.teacherSubject.index', compact('subjectTeachers'));
     }
 
     public function create()

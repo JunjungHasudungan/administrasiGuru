@@ -44,7 +44,7 @@
 
                       <td class="px-7 py-2">{{$loop->iteration}}</td>
                       <td class="px-7 py-2">{{$major->major_code}}</td>
-                      <td class="px-7 py-2">{{$major->name}}</td>
+                      <td class="px-7 py-2">{{$major->title ?? ''}}</td>
                       <td class="px-10 py-2 text-center">
                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('admin.majors.destroy', $major->id) }}" method="POST">
                             <button class="bg-blue-500 text-white px-4 py-2 rounded hover:border-indigo-700 text-xs focus:outline-none mr-2"><a href="{{ route('admin.majors.edit', $major->id) }}">EDIT</a></button>
