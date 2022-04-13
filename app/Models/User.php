@@ -71,9 +71,14 @@ class User extends Authenticatable
         return $this->belongsToMany(Classroom::class, 'classroom_user', 'classroom_id', 'user_id');
     }
 
+
     public function subjects()
     {
-        return $this->belongsToMany(Subject::class)
-                                    ->withPivot('status')->withTimestamps();
+        return $this->hasMany(Subject::class, 'teacher_id');
     }
+    // public function subjects()
+    // {
+    //     return $this->belongsToMany(Subject::,class)
+    //                                 ->withDefault(['status'])->withTimestamps();
+    // }
 }

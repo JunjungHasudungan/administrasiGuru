@@ -38,13 +38,20 @@ class Subject extends Model
         return $this->belongsTo(Classroom::class, 'classroom_id');
     }
 
+    // public function roles()
+    // {
+
+    // }
+
     public function teacher()
     {
-        return $this->belongsTo(User::class, 'teacher_id');
+        return $this->belongsTo(User::class, 'role_id', function($user){
+            $user->role_id = 3;
+        });
     }
 
     public function classrooms()
     {
-        return $this->belongsToMany(Classroom::class,'classroom_subject','class_id', 'lesson_id');
+        return $this->belongsTo(Classroom::class,'classroom_id');
     }
 }

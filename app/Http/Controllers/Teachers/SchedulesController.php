@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Teachers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Week;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class SchedulesController extends Controller
@@ -15,7 +15,10 @@ class SchedulesController extends Controller
      */
     public function index()
     {
-        return view('teacher.schedules.index');
+        $weekDay = Subject::WEEK_DAY;
+
+        // dd($weekDay);
+        return view('teacher.schedules.index', compact('weekDay'));
     }
 
     /**
@@ -45,7 +48,7 @@ class SchedulesController extends Controller
      * @param  \App\Models\Week  $week
      * @return \Illuminate\Http\Response
      */
-    public function show(Week $week)
+    public function show($id)
     {
         //
     }
@@ -56,7 +59,7 @@ class SchedulesController extends Controller
      * @param  \App\Models\Week  $week
      * @return \Illuminate\Http\Response
      */
-    public function edit(Week $week)
+    public function edit()
     {
         //
     }
@@ -68,7 +71,7 @@ class SchedulesController extends Controller
      * @param  \App\Models\Week  $week
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Week $week)
+    public function update(Request $request)
     {
         //
     }
@@ -79,7 +82,7 @@ class SchedulesController extends Controller
      * @param  \App\Models\Week  $week
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Week $week)
+    public function destroy()
     {
         //
     }

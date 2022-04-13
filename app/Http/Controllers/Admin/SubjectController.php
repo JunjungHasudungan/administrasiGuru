@@ -13,12 +13,10 @@ class SubjectController extends Controller
     {
         $subjects = Subject::all();
 
-        // if (Gate::denies('manage-courses')) {
-        //     abort(403);
-        // }
-
-        return view('admin.subjects.index');
-        // dd($subjects);
+        $subjectClassrooms = Subject::with(['classrooms', 'teacher' ])->orderBy('name')->get();
+        
+        // dd($subjectClassrooms);
+        return view('admin.subjects.index', compact('subjectClassrooms'));
     }
 
     public function create()

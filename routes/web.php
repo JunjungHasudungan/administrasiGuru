@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\SubjectController as AdminSubject;
 use App\Http\Controllers\Admin\LessonTimetableController as SchedulesSubject;
+use App\Http\Controllers\Admin\MajorController;
 use App\Http\Controllers\Teachers\SubjectController as TeacherSubject;
 use App\Http\Controllers\Teachers\SchedulesController as TeacherShedule;
 use App\Http\Controllers\Student\LessonController as StudentSubject;
@@ -54,6 +55,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resources([
             'subjects'      => AdminSubject::class,
             'schedules'     => SchedulesSubject::class,
+            'majors'        => MajorController::class,
         ]);
     });
 

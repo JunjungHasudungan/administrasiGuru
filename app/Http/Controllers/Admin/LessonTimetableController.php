@@ -3,13 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class LessonTimetableController extends Controller
 {
     public function index()
     {
-        return view('admin.schedules.index');
+        $weekday = Subject::WEEK_DAY;
+
+        dd($weekday);
+        // return view('admin.schedules.index');
     }
 
     /**

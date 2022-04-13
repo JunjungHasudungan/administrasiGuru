@@ -30,6 +30,10 @@
                         <x-jet-nav-link href="{{ route('admin.schedules.index') }}" :active="request()->routeIs('admin.schedules.index')">
                             {{ __('Jadwal Mata Pelajaran') }}
                         </x-jet-nav-link>
+
+                        <x-jet-nav-link href="{{ route('admin.majors.index') }}" :active="request()->routeIs('admin.majors.index')">
+                            {{ __('Jurusan') }}
+                        </x-jet-nav-link>
                     @endif
 
                     @if (auth()->user()->role_id == 2)
@@ -43,7 +47,7 @@
                             {{ __('Mata Pelajaran') }}
                         </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{ route('teacher.schedules.show') }}" :active="request()->routeIs('teacher.schedules.show')">
+                        <x-jet-nav-link href="{{ route('teacher.schedules.index') }}" :active="request()->routeIs('teacher.schedules.index')">
                             {{ __('Jadwal Mata Pelajaran') }}
                         </x-jet-nav-link>
                     @endif
