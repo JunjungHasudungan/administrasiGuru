@@ -25,7 +25,7 @@ class Subject extends Model
     ];
     public function teacherSubjects()
     {
-        return $this->belongsToMany(User::class, 'subject_user', 'subject_id', 'user_id');
+        return $this->belongsToMany(User::class, 'subject_user', 'subject_id', 'teacher_id');
     }
 
     public function categories()
@@ -38,11 +38,6 @@ class Subject extends Model
         return $this->belongsTo(Classroom::class, 'classroom_id');
     }
 
-    // public function roles()
-    // {
-
-    // }
-
     public function teacher()
     {
         return $this->belongsTo(User::class, 'role_id', function($user){
@@ -54,4 +49,5 @@ class Subject extends Model
     {
         return $this->belongsTo(Classroom::class,'classroom_id');
     }
+
 }

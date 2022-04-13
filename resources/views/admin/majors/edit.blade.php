@@ -11,8 +11,6 @@
                 @csrf
                 @method('PUT')
     
-               
-    
                 <div class="mt-5">
                     <label>KODE JURUSAN</label>
                     <input type="text" name="major_code" value="{{ old('major_code', $major->major_code) }}"

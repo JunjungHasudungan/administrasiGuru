@@ -47,8 +47,7 @@ class MajorController extends Controller
     {
         $major->update($request->all());
 
-        dd($major);
-        // return redirect()->route('admin.majors.index');
+        return redirect()->route('admin.majors.index');
     }
 
     public function destroy(Major $major)

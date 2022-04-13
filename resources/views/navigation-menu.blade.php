@@ -34,6 +34,10 @@
                         <x-jet-nav-link href="{{ route('admin.majors.index') }}" :active="request()->routeIs('admin.majors.index')">
                             {{ __('Jurusan') }}
                         </x-jet-nav-link>
+
+                        <x-jet-nav-link href="{{ route('admin.teacherSubjects.index') }}" :active="request()->routeIs('admin.teacherSubjects.index')">
+                            {{ __('Guru') }}
+                        </x-jet-nav-link>
                     @endif
 
                     @if (auth()->user()->role_id == 2)

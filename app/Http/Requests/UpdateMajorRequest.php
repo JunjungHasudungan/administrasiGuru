@@ -28,7 +28,7 @@ class UpdateMajorRequest extends FormRequest
                 'required'
             ],
             'name'  => [
-                'required:String'
+                'required'
             ]
         ];
     }

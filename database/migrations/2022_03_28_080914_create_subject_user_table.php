@@ -18,7 +18,8 @@ return new class extends Migration
         Schema::create('subject_user', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Subject::class)->nullable();
-            $table->foreignIdFor(User::class)->nullable();
+            $table->unsignedBigInteger('teacher_id');
+            $table->foreign('teacher_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
