@@ -6,14 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+
 class TeacherController extends Controller
 {
     public function index()
     {
-        $subjectTeachers = Subject::all();
-
-        // dd($subjectTeachers);
-        return view('admin.teacherSubject.index', compact('subjectTeachers'));
+        $teacherSubjects = Subject::all();
+        // dd($teachers);
+        return view('admin.teacherSubject.index', compact('teacherSubjects'));
     }
 
     public function create()

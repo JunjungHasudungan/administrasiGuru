@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Livewire\Admin\Classsroom;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -51,10 +52,19 @@ class User extends Authenticatable
         return $this->belongsToMany(Classroom::class, 'classroom_user', 'classroom_id', 'user_id');
     }
 
+    public function homeworkTeacher()
+    {
+        return $this->hasOne(Classsroom::class);
+    }
 
     public function subjects()
     {
         return $this->hasMany(Subject::class, 'teacher_id');
+    }
+
+    public function students()
+    {
+        return $this->belongsTo(User::class, 'role_id');
     }
     public function teacherSubjects()
     {

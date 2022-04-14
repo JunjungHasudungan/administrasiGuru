@@ -23,10 +23,10 @@ class Subject extends Model
         6   => "JUMAT",
         7   => "SABTU"
     ];
-    public function teacherSubjects()
-    {
-        return $this->belongsToMany(User::class, 'subject_user', 'subject_id', 'teacher_id');
-    }
+    // public function teacherSubjects()
+    // {
+    //     return $this->belongsTo(User::class, 'teacher_id');
+    // }
 
     public function categories()
     {

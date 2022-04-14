@@ -9,8 +9,6 @@ class Classroom extends Model
 {
     use HasFactory;
 
-    // const WEEK = ['SENIN', 'SELASA', 'RABU', 'KAMIS', 'JUMAT'];
-
     protected $table = 'classrooms';
 
     protected $fillable = ['code_classroom', 'name', 'major_id', 'teacher_id'];
@@ -20,23 +18,18 @@ class Classroom extends Model
         return $this->belongsTo(Major::class, 'major_id');
     }
 
-    public function users() // Wali
+    public function homeworkTeachers() // wali kelas
     {
-        return $this->belongsToMany(User::class, 'classroom_user', 'classroom_id', 'teacher_id');
-    }
-
-    public function students() // Wali
-    {
-        return $this->belongsToMany(User::class, 'classroom_user', 'classroom_id', 'user_id');
-    }
-
-    public function homeworkTeacherUsers()
-    {
-        return $this->belongsToMany(User::class, 'homework_teacher', 'user_id', 'class_id');
+        return $this->belongsTo(User::class, 'teacher_id');
     }
 
     public function subjects()
     {
         return $this->belongsToMany(Subject::class, 'classroom_subject', 'classroom_id', 'subject_id');
+    }
+
+    public function classroomStudents()
+    {
+        return $this->belongsToMany(Classroom::class, 'classroom_student','classroom_id','student_id');
     }
 }

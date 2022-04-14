@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Classroom;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ClassroomController extends Controller
@@ -15,11 +16,9 @@ class ClassroomController extends Controller
      */
     public function index()
     {
-        $classrooms = Classroom::with('users')->get();
-        // $classes = Classroom::with('students')->get();
-        // $classes = Classroom::find(1)->with(['majors', 'students', 'lessons'])->orderBy('name', 'desc')->get();
-        dd($classrooms);
-        // return view('admin.classes.index', compact('classes'));
+        $classrooms= Classroom::all();
+
+        return view('admin.classrooms.index', compact('classrooms'));
     }
 
     /**
@@ -51,7 +50,8 @@ class ClassroomController extends Controller
      */
     public function show(Classroom $classroom)
     {
-        //
+        dd($classroom);
+        // return view('admin.classrooms.show', compact('classroom'));
     }
 
     /**
