@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
                 'email'         => 'ervina@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
                 'email'         => 'VernaManoppo@gmail.com',
                 'password'      => bcrypt('guru_smk_03'),
                 'role_id'       => 1,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => null,
             ],
             [
@@ -40,7 +40,7 @@ class UserSeeder extends Seeder
                 'email'         => 'MegaSinambela@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 1,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => null,
             ],
             [
@@ -49,7 +49,7 @@ class UserSeeder extends Seeder
                 'email'         => 'SumitroSimamora@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -58,7 +58,7 @@ class UserSeeder extends Seeder
                 'email'         => 'DaniHarianja@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -67,7 +67,7 @@ class UserSeeder extends Seeder
                 'email'         => 'FeriSitumorang@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -76,7 +76,7 @@ class UserSeeder extends Seeder
                 'email'         => 'NasibSitumorang@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -85,7 +85,7 @@ class UserSeeder extends Seeder
                 'email'         => 'ErnesSimanjuntak@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -94,7 +94,7 @@ class UserSeeder extends Seeder
                 'email'         => 'Fitri@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -103,7 +103,7 @@ class UserSeeder extends Seeder
                 'email'         => 'AnjelinaG@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -112,7 +112,7 @@ class UserSeeder extends Seeder
                 'email'         => 'YesayaSihotang@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -121,7 +121,7 @@ class UserSeeder extends Seeder
                 'email'         => 'Iskandar@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -130,7 +130,7 @@ class UserSeeder extends Seeder
                 'email'         => 'TabitaSihaan@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -139,7 +139,7 @@ class UserSeeder extends Seeder
                 'email'         => 'SehatiLaia@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -148,7 +148,7 @@ class UserSeeder extends Seeder
                 'email'         => 'HasudunganSitorus@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -157,7 +157,7 @@ class UserSeeder extends Seeder
                 'email'         => 'BermanNaibaho@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -166,7 +166,7 @@ class UserSeeder extends Seeder
                 'email'         => 'Argo@gmail.com',
                 'password'      => bcrypt('guru_smk_01'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -175,7 +175,7 @@ class UserSeeder extends Seeder
                 'email'         => 'advent@gmail.com',
                 'password'      => bcrypt('siswa_smk_02'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -184,7 +184,7 @@ class UserSeeder extends Seeder
                 'email'         => 'alvina@gmail.com',
                 'password'      => bcrypt('siswa_smk_03'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -193,7 +193,7 @@ class UserSeeder extends Seeder
                 'email'         => 'angelinjollia@gmail.com',
                 'password'      => bcrypt('siswa_smk_03'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -202,7 +202,7 @@ class UserSeeder extends Seeder
                 'email'         => 'tasya@gmail.com',  // SISWA XII RPL
                 'password'      => bcrypt('siswa_smk_03'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -211,7 +211,7 @@ class UserSeeder extends Seeder
                 'email'         => 'ricardoLim@gmail.com',
                 'password'      => bcrypt('siswa_smk_04'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -220,7 +220,7 @@ class UserSeeder extends Seeder
                 'email'         => 'stevent@gmail.com',
                 'password'      => bcrypt('siswa_smk_05'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -229,7 +229,7 @@ class UserSeeder extends Seeder
                 'email'         => 'stenly@gmail.com',
                 'password'      => bcrypt('siswa_smk_06'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -238,7 +238,7 @@ class UserSeeder extends Seeder
                 'email'         => 'sukarta@gmail.com',
                 'password'      => bcrypt('siswa_smk_07'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -247,7 +247,7 @@ class UserSeeder extends Seeder
                 'email'         => 'suryanto@gmail.com',
                 'password'      => bcrypt('siswa_smk_08'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -256,7 +256,7 @@ class UserSeeder extends Seeder
                 'email'         => 'ferdiansyah@gmail.com',
                 'password'      => bcrypt('siswa_smk_09'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -265,7 +265,7 @@ class UserSeeder extends Seeder
                 'email'         => 'kelmi@gmail.com',
                 'password'      => bcrypt('siswa_smk_10'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -274,7 +274,7 @@ class UserSeeder extends Seeder
                 'email'         => 'riccy@gmail.com',
                 'password'      => bcrypt('siswa_smk_11'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -283,7 +283,7 @@ class UserSeeder extends Seeder
                 'email'         => 'michael@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -292,7 +292,7 @@ class UserSeeder extends Seeder
                 'email'         => 'yosuaM@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -301,7 +301,7 @@ class UserSeeder extends Seeder
                 'email'         => 'vivien@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -310,7 +310,7 @@ class UserSeeder extends Seeder
                 'email'         => 'nicholas@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -319,7 +319,7 @@ class UserSeeder extends Seeder
                 'email'         => 'jeje@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -328,7 +328,7 @@ class UserSeeder extends Seeder
                 'email'         => 'jojo@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -337,7 +337,7 @@ class UserSeeder extends Seeder
                 'email'         => 'anjelinaL@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -346,7 +346,7 @@ class UserSeeder extends Seeder
                 'email'         => 'renaldi@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -355,7 +355,7 @@ class UserSeeder extends Seeder
                 'email'         => 'hizki@gmail.com',
                 'password'      => bcrypt('siswa_smk_12'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -364,7 +364,7 @@ class UserSeeder extends Seeder
                 'email'         => 'yesika@gmail.com',
                 'password'      => bcrypt('guru_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -373,7 +373,7 @@ class UserSeeder extends Seeder
                 'email'         => 'jekhin@gmail.com',
                 'password'      => bcrypt('guru_smk'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -382,7 +382,7 @@ class UserSeeder extends Seeder
                 'email'         => 'SusiSimatupang@gmail.com',
                 'password'      => bcrypt('guru_smk'),
                 'role_id'       => 3,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -391,7 +391,7 @@ class UserSeeder extends Seeder
                 'email'         => 'agusanggry@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -400,7 +400,7 @@ class UserSeeder extends Seeder
                 'email'         => 'anggaresta@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -409,7 +409,7 @@ class UserSeeder extends Seeder
                 'email'         => 'charlesR@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -418,7 +418,7 @@ class UserSeeder extends Seeder
                 'email'         => 'AndrewA@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -427,7 +427,7 @@ class UserSeeder extends Seeder
                 'email'         => 'DavidC@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -436,7 +436,7 @@ class UserSeeder extends Seeder
                 'email'         => 'DediS@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -445,7 +445,7 @@ class UserSeeder extends Seeder
                 'email'         => 'Denis@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -454,7 +454,7 @@ class UserSeeder extends Seeder
                 'email'         => 'AgustinA@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -463,7 +463,7 @@ class UserSeeder extends Seeder
                 'email'         => 'AngellinaJo@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -472,7 +472,7 @@ class UserSeeder extends Seeder
                 'email'         => 'Candra@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -481,7 +481,7 @@ class UserSeeder extends Seeder
                 'email'         => 'ChelsiaA@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -490,7 +490,7 @@ class UserSeeder extends Seeder
                 'email'         => 'ChongSiew@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -499,7 +499,7 @@ class UserSeeder extends Seeder
                 'email'         => 'ChristinH@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -508,7 +508,7 @@ class UserSeeder extends Seeder
                 'email'         => 'Angeli@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
             [
@@ -517,7 +517,7 @@ class UserSeeder extends Seeder
                 'email'         => 'CatalinaL@gmail.com',
                 'password'      => bcrypt('siswa_smk'),
                 'role_id'       => 2,
-                'teacher_id'    => null,
+                // 'teacher_id'    => null,
                 'classroom_id'  => 1,
             ],
 
