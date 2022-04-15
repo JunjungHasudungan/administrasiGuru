@@ -52,7 +52,12 @@ class User extends Authenticatable
         return $this->belongsToMany(Classroom::class, 'classroom_user', 'classroom_id', 'user_id');
     }
 
-    public function homeworkTeacher()
+    public function teachers() // guru mata pelajaran
+    {
+        return $this->hasMany(Subject::class, 'teacher_id', 'id');
+    }
+
+    public function homeworkTeacher() // wali kelas
     {
         return $this->hasOne(Classsroom::class);
     }
@@ -66,7 +71,7 @@ class User extends Authenticatable
     {
         return $this->belongsTo(User::class, 'role_id');
     }
-    public function teacherSubjects()
+    public function teacherSubjects() // guru mata pelajaran
     {
         return $this->belongsToMany(User::class, 'subject_user', 'subject_id', 'teacher_id');
     }

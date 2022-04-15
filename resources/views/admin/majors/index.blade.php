@@ -46,11 +46,14 @@
                       <td class="px-7 py-2">{{$major->major_code}}</td>
                       <td class="px-7 py-2">{{$major->title ?? ''}}</td>
                       <td class="px-10 py-2 text-center">
+                        <a class="bg-sky-400 p-2 text-white rounded m-2 shadow-sm focus:outline-none hover:bg-indigo-700" href="{{ route('admin.majors.show', $major->id) }}">
+                            {{ __('VIEW') }}
+                        </a>
                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('admin.majors.destroy', $major->id) }}" method="POST">
-                            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:border-indigo-700 text-xs focus:outline-none mr-2"><a href="{{ route('admin.majors.edit', $major->id) }}">EDIT</a></button>
+                            <button class="bg-slate-400 p-2 text-white rounded m-2 shadow-sm focus:outline-none hover:bg-indigo-700"><a href="{{ route('admin.majors.edit', $major->id) }}">EDIT</a></button>
                                 @csrf
                                 @method('DELETE')
-                            <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded hover:border-red-700 text-xs focus:outline-none"> HAPUS</button>
+                            <button type="submit" class="bg-orange-400 p-2 text-white rounded m-2 shadow-sm focus:outline-none hover:bg-indigo-700"> HAPUS</button>
                         </form>
                     </td>
                   </tr>

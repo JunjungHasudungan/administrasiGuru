@@ -15,7 +15,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('subject_user', function (Blueprint $table) {
+        Schema::create('teacher_subject', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Subject::class)->nullable();
             $table->unsignedBigInteger('teacher_id');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subject_user');
+        Schema::dropIfExists('teacher_subject');
     }
 };

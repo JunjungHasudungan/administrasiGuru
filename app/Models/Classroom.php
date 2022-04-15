@@ -11,7 +11,7 @@ class Classroom extends Model
 
     protected $table = 'classrooms';
 
-    protected $fillable = ['code_classroom', 'name', 'major_id', 'teacher_id'];
+    protected $fillable = ['code_classroom', 'name', 'major_id', 'teacher_id', 'event_id'];
 
     public function majors()
     {
@@ -31,5 +31,9 @@ class Classroom extends Model
     public function classroomStudents()
     {
         return $this->belongsToMany(Classroom::class, 'classroom_student','classroom_id','student_id');
+    }
+    public function events()
+    {
+        return $this->belongsTo(Event::class, 'event_id');
     }
 }
