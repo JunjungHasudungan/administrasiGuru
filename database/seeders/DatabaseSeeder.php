@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             MajorSeeder::class,
             WeekSeeder::class,
             ClassroomSeeder::class,
-            LessonSeeder::class,
+            SubjectSeeder::class,
             EventSeeder::class,
             ClassroomStudentSeeder::class,
             TeacherSubjectSeeder::class,

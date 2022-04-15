@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Subject;
 use Carbon\Carbon;
 
-class LessonSeeder extends Seeder
+class SubjectSeeder extends Seeder
 {
     /**
      * Run the database seeds.

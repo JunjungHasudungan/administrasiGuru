@@ -23,10 +23,6 @@ class Subject extends Model
         6   => "JUMAT",
         7   => "SABTU"
     ];
-    // public function teacherSubjects()
-    // {
-    //     return $this->belongsTo(User::class, 'teacher_id');
-    // }
 
     public function categories()
     {
@@ -48,9 +44,9 @@ class Subject extends Model
         return $this->belongsTo(Major::class, 'major_id');
     }
 
-    public function teacherSubjects()
+    public function teacherSubject() // guru mata pelajaran
     {
-        return $this->belongsToMany(User::class, 'teacher_subject', 'subject_id', 'teacher_id');
+        return $this->belongsToMany(User::class, 'teacher_subject', 'teacher_id', 'subject_id');
     }
 
 }

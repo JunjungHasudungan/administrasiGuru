@@ -12,10 +12,14 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        $teacherSubjectCount = DB::table('teacher_subject')->groupBy('teacher_id')->count();
-       
-        dd($teacherSubjectCount);
-        // return view('admin.teacherSubject.index', compact('teacherSubjects'));
+        
+        $teacherSubjects = User::whereHas('teacherSubject', function($query){
+            $query->groupBy('role_id')->orderBy('name');
+        })->get(); // 14
+
+        // dd($teacherSubjects);
+
+        return view('admin.teacherSubject.index', compact('teacherSubjects'));
     }
 
     public function create()

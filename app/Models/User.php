@@ -71,8 +71,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo(User::class, 'role_id');
     }
-    public function teacherSubjects() // guru mata pelajaran
+    public function teacherSubject() // guru mata pelajaran
     {
-        return $this->belongsToMany(User::class, 'teacher_subject', 'subject_id', 'teacher_id');
+        return $this->belongsToMany(Subject::class , 'teacher_subject', 'teacher_id', 'subject_id');
     }
 }
