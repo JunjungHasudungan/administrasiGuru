@@ -28,9 +28,9 @@ class Classroom extends Model
         return $this->belongsToMany(Subject::class, 'classroom_subject', 'classroom_id', 'subject_id');
     }
 
-    public function classroomStudents()
+    public function students()
     {
-        return $this->belongsToMany(Classroom::class, 'classroom_student','classroom_id','student_id');
+        return $this->hasMany(User::class, 'classroom_id');
     }
     public function events()
     {
