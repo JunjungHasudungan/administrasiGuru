@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\Self_;
 
 class Classroom extends Model
 {
@@ -18,7 +19,7 @@ class Classroom extends Model
         return $this->belongsTo(Major::class, 'major_id');
     }
 
-    public function homeworkTeachers() // wali kelas
+    public function homeworkTeacher() // wali kelas
     {
         return $this->belongsTo(User::class, 'teacher_id');
     }

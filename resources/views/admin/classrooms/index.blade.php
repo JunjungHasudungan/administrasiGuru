@@ -17,7 +17,7 @@
                   <form action="#" method="GET">
                       <input type="text" name="search"
                       class="w-full bg-gray-200 p-2 rounded shadow-sm border border-gray-200 focus:outline-none focus:bg-white"
-                      placeholder="Cari Mata Pelajaran">
+                      placeholder="Cari Kelas">
                   </form>
               </div>
           </div>
@@ -45,13 +45,13 @@
                   </tr>
               </thead>
               <tbody class="bg-gray-200">
-                @forelse ($students as $student)
+                @forelse ($classrooms as $student)
                   <tr class="bg-white border-2 border-gray-200">
                       <td class="px-7 py-2">{{$loop->iteration}}</td>
                       <td class="px-7 py-2">{{$student->code_classroom}}</td>
                       <td class="px-7 py-2">{{$student->name}}</td>
                       <td class="px-7 py-2">{{$student->majors->title}}</td>
-                      <td class="px-7 py-2">{{$student->homeworkTeachers->name ?? ''}}</td>
+                      <td class="px-7 py-2">{{$student->homeworkTeacher->name ?? ''}}</td>
                       <td>
                         {{-- @can('lesson_show') --}}
                             <a class="bg-sky-400 p-2 text-white rounded m-2 shadow-sm focus:outline-none hover:bg-indigo-700" href="{{ route('admin.classrooms.show', $student->id) }}">

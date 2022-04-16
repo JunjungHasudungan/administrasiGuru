@@ -22,7 +22,9 @@ return new class extends Migration
             $table->string('student_address')->nullable();
             $table->string('student_licence_number')->nullable();
             $table->string('teacher_qualifications')->nullable();
-            $table->integer('status')->default(0);
+            // $table->unsignedBigInteger('techer_id');
+            // $table->foreign('techer_id')->references('id')->on('classrooms');
+            $table->integer('status')->default();
         });
     }
 

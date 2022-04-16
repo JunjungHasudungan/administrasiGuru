@@ -30,6 +30,7 @@ class User extends Authenticatable
         'student_address',
         'student_licence_number',
         'teacher_qualifications',
+        'teacher_id',
     ];
 
     protected $hidden = [
@@ -59,7 +60,7 @@ class User extends Authenticatable
 
     public function homeworkTeacher() // wali kelas
     {
-        return $this->hasOne(Classsroom::class, 'teacher_id');
+        return $this->hasOne(Classsroom::class);
     }
 
     public function subjects()

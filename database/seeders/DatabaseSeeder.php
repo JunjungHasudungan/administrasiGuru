@@ -23,12 +23,11 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             UserSeeder::class,
             MajorSeeder::class,
-            WeekSeeder::class,
             ClassroomSeeder::class,
             SubjectSeeder::class,
             EventSeeder::class,
             // ClassroomStudentSeeder::class,
-            TeacherSubjectSeeder::class,
+            // TeacherSubjectSeeder::class,
 
         ]);
     }

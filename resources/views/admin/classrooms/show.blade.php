@@ -1,16 +1,13 @@
 <ul>
     <li>{{$classroom->name}}</li>
 </ul>
-<br>
+
 <ul>
-    @foreach ($classroom->homeworkTeachers as $homeworkTeacher)
-        <li>{{$homeworkTeacher->name}}</li>
-    @endforeach
+    <li><span>wali kelas : </span>{{$classroom->homeworkTeacher->name}}</li>
 </ul>
-<br>
 <ul>
     @foreach ($classroom->students as $student)
-        <li>{{$student->name}}</li>
+    <li><span>siswa: {{$student->name}}</span></li>
+        
     @endforeach
-
 </ul>
