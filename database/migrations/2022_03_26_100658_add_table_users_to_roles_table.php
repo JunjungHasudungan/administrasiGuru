@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Classroom;
+use App\Models\Major;
 use App\Models\Role;
 use App\Models\Subject;
 use Illuminate\Database\Migrations\Migration;
@@ -19,12 +20,15 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->foreignIdFor(Role::class);
             $table->foreignIdFor(Classroom::class)->nullable();
+            // $table->foreignIdFor(Major::class)->nullable();
             $table->string('student_address')->nullable();
             $table->string('student_licence_number')->nullable();
             $table->string('teacher_qualifications')->nullable();
-            // $table->unsignedBigInteger('techer_id');
-            // $table->foreign('techer_id')->references('id')->on('classrooms');
-            $table->integer('status')->default();
+            $table->integer('status')->default(0);
+            $table->unsignedBigInteger('head_Of_Departement')->nullable();
+            $table->unsignedBigInteger('student_major')->nullable();
+            $table->unsignedBigInteger('teacher_major')->nullable();
+            // $table->foreign('head_Of_Departement')->references('id')->on('majors');
         });
     }
 

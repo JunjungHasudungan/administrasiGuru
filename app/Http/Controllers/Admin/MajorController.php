@@ -7,17 +7,16 @@ use App\Http\Requests\StoreMajorRequest;
 use App\Http\Requests\UpdateMajorRequest;
 use App\Models\Classes;
 use App\Models\Major;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MajorController extends Controller
 {
     public function index()
     {
-        $majors = Major::all();
+        $majors = Major::with(['headOfDepartement', 'teacherMajors', 'studentMajors'])->get();
 
         return view('admin.majors.index', compact('majors'));
-
-        // dd($subjects);
     }
 
     public function create()
@@ -34,7 +33,9 @@ class MajorController extends Controller
 
     public function show(Major $major)
     {
-        // return view('admin.major.show', compact('major'));
+        $major->load(['headOfDepartement', 'teacherMajors', 'studentMajors']);
+
+        return view('admin.majors.show', compact('major'));
     }
 
     public function edit(Major $major)

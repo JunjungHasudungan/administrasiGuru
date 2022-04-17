@@ -30,7 +30,9 @@ class User extends Authenticatable
         'student_address',
         'student_licence_number',
         'teacher_qualifications',
-        'teacher_id',
+        'teacher_major',
+        'student_major',
+        'head_Of_Departement',
     ];
 
     protected $hidden = [
@@ -68,12 +70,22 @@ class User extends Authenticatable
         return $this->hasMany(Subject::class, 'teacher_id');
     }
 
-    public function students()
+    public function students() 
     {
         return $this->belongsTo(User::class, 'role_id');
     }
     public function teacherSubject() // guru mata pelajaran
     {
         return $this->belongsToMany(Subject::class , 'teacher_subject', 'teacher_id', 'subject_id');
+    }
+
+    public function teacherMajor() // guru jurusan
+    {
+        return $this->belongsTo(Major::class);
+    }
+
+    public function headOfDepartement() // kepala jurusan
+    {
+        return $this->belongsTo(Major::class);
     }
 }
