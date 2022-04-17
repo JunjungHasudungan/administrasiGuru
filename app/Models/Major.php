@@ -35,7 +35,7 @@ class Major extends Model
 
     public function headOfDepartement() // kepala jurusan
     {
-        return $this->hasOne(User::class, 'head_Of_Departement');
+        return $this->hasOne(User::class, 'major_id');
     }
 
 }

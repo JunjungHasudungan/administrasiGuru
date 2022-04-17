@@ -24,7 +24,15 @@
               <tbody class="bg-gray-200">
                   <tr class="bg-white border-2 border-gray-200">
                         <td class="px-7 py-2">{{$major->title}}</td>
-                        <td class="px-7 py-2">{{$$major->headOfDepartement->name ?? ''}}</td>
+                        <td class="px-7 py-2">{{$major->headOfDepartement->name ?? ''}}</td>
+                        <td class="px-7 py-2">
+                            @foreach ($major->teacherMajors as $teacher)
+                                <span class=" bg-slate-400 border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">{{$teacher['name']}}</span>
+                            @endforeach
+                        </td>
+                        {{-- @foreach ($major->headOfDepartement as $headDepartement)/ --}}
+                        {{-- @endforeach --}}
+                        {{-- <td class="px-7 py-2">{{$major->teacherMajors->name ?? ''}}</td> --}}
                   </tr>
               </tbody>
           </table>

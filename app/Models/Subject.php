@@ -11,7 +11,7 @@ class Subject extends Model
 
     protected $table = 'Subjects';
 
-    protected $fillable = ['subject_code', 'name', 'classroom_id', 'teacher_id', 'major_id'];
+    protected $fillable = ['subject_code', 'name', 'teacher_id', 'major_id'];
 
 
     const WEEK_DAY = [
@@ -34,10 +34,10 @@ class Subject extends Model
         return $this->belongsTo(User::class, 'teacher_id');
     }
 
-    public function classroom()
-    {
-        return $this->belongsTo(Classroom::class,'classroom_id');
-    }
+    // public function classroom()
+    // {
+    //     return $this->belongsTo(Classroom::class,'classroom_id');
+    // }
 
     public function major()
     {
@@ -47,5 +47,10 @@ class Subject extends Model
     public function teacherSubject() // guru mata pelajaran
     {
         return $this->belongsToMany(User::class, 'teacher_subject', 'teacher_id', 'subject_id');
+    }
+
+    public function classroomSubject()
+    {
+        return $this->belongsToMany(Classroom::class, 'classroom_subject', 'classroom_id', 'subject_id');
     }
 }

@@ -20,15 +20,13 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->foreignIdFor(Role::class);
             $table->foreignIdFor(Classroom::class)->nullable();
-            // $table->foreignIdFor(Major::class)->nullable();
             $table->string('student_address')->nullable();
             $table->string('student_licence_number')->nullable();
             $table->string('teacher_qualifications')->nullable();
             $table->integer('status')->default(0);
-            $table->unsignedBigInteger('head_Of_Departement')->nullable();
+            $table->foreignIdFor(Major::class)->nullable();
             $table->unsignedBigInteger('student_major')->nullable();
             $table->unsignedBigInteger('teacher_major')->nullable();
-            // $table->foreign('head_Of_Departement')->references('id')->on('majors');
         });
     }
 
