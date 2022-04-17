@@ -33,9 +33,10 @@ class MajorController extends Controller
 
     public function show(Major $major)
     {
-        $major->load(['headOfDepartement', 'teacherMajors', 'studentMajors']);
+       $major->load('headOfDepartement', 'teacherMajors', 'studentMajors', 'classrooms');
 
         return view('admin.majors.show', compact('major'));
+
     }
 
     public function edit(Major $major)

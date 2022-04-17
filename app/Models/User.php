@@ -76,7 +76,7 @@ class User extends Authenticatable
     }
     public function teacherSubject() // guru mata pelajaran
     {
-        return $this->belongsToMany(Subject::class , 'teacher_subject', 'teacher_id', 'subject_id');
+        return $this->hasMany(Subject::class, 'teacher_id');
     }
 
     public function teacherMajor() // guru jurusan

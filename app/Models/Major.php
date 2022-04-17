@@ -18,6 +18,11 @@ class Major extends Model
         return $this->hasMany(Subject::class);
     }
 
+    public function classrooms()
+    {
+        return $this->hasMany(Classroom::class, 'major_id');
+    }
+
     public function teacherMajors() // guru mata pelajaran jurusan
     {
         return $this->hasMany(User::class, 'teacher_major');
