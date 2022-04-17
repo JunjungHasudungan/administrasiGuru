@@ -19,13 +19,13 @@ class MajorSeeder extends Seeder
         $majors = [
             [
                 'id'            => 1,
-                'major_code'    => 'RPL01',
+                'major_code'    => 'RPL',
                 'title'          => 'Rekayasa Perangkat Lunak',
                 'created_at'     =>  Carbon::now()
             ],
             [
                 'id'            => 2,
-                'major_code'    => 'Ak02',
+                'major_code'    => 'Akuntasi',
                 'title'          => 'Akutansi',
                 'created_at'     =>  Carbon::now()
             ],

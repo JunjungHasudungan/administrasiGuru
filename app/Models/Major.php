@@ -38,4 +38,9 @@ class Major extends Model
         return $this->hasOne(User::class, 'major_id');
     }
 
+    public function majorSubject() // 
+    {
+        return $this->belongsToMany(Major::class, 'major_subject', 'major_id', 'subject_id');
+    }
+
 }

@@ -33,12 +33,12 @@
                     <th class="px-16 py-2 text-left">
                         <span class="text-white">Mata Pelajaran</span>
                     </th>
-                      <th class="px-7 py-2 text-left">
-                        <span class="text-white">Jurusan</span>
+                    <th class="px-7 py-2 text-left">
+                        <span class="text-white">Kelas</span>
                     </th>
                     <th class="px-7 py-2 text-left">
-                      <span class="text-white">Kelas</span>
-                    </th>
+                      <span class="text-white">Jurusan</span>
+                  </th>
                       <th class="px-7 py-2">
                           <span class="text-white">AKSI</span>
                       </th>
@@ -51,8 +51,22 @@
                       <td class="px-7 py-2">{{$loop->iteration}}</td>
                       <td class="px-7 py-2">{{$subject->subject_code}}</td>
                       <td class="px-7 py-2">{{$subject->name}}</td>
-                      <td class="px-7 py-2">{{$subject->major->title ?? ''}}</td>
-                      <td class="px-7 py-2">{{$subject->classroom->name ?? ''}}</td>
+                      <td class="px-7 py-2">
+                          @foreach ($subject->classroomSubject as $classroom)
+                          <ul class=" bg-slate-400 border-0 font-serif italic text-xs max-w-max space-x-0.5 mb-px w-20 text-white p-3 rounded mt">
+                            {{$classroom['name']}}
+                          </ul>
+                          {{-- <span class=" bg-slate-400 border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">{{$classroom['name']}}</span> --}}
+                          @endforeach
+                        </td>
+                        <td class="px-7 py-2">
+                            @foreach ($subject->majorSubject as $major)
+                            <ul class=" bg-slate-400 border-0 font-serif italic text-xs max-w-max space-x-0.5 mb-px w-20 text-white p-3 rounded mt">
+                              {{$major->major_code ?? ''}}
+                            </ul>
+                            {{-- <span class=" bg-slate-400 border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">{{$classroom['name']}}</span> --}}
+                            @endforeach   
+                        </td>
                       <td>
                         {{-- @can('lesson_show') --}}
                             <a class="btn btn-xs btn-primary" href="{{ route('admin.subjects.show', $subject->id) }}">

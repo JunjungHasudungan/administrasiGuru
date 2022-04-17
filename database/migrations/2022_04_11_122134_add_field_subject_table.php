@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('users');
             // $table->foreignIdFor(Classroom::class);
-            $table->foreignIdFor(Major::class);
+            // $table->foreignIdFor(Major::class);
             $table->integer('weekday');
             $table->time('start_time');
             $table->time('end_time');

@@ -49,8 +49,13 @@ class Subject extends Model
         return $this->belongsToMany(User::class, 'teacher_subject', 'teacher_id', 'subject_id');
     }
 
-    public function classroomSubject()
+    public function classroomSubject() // kelas mata pelajaran
     {
         return $this->belongsToMany(Classroom::class, 'classroom_subject', 'classroom_id', 'subject_id');
+    }
+
+    public function majorSubject()
+    {
+        return $this->belongsToMany(Major::class, 'major_subject', 'major_id', 'subject_id');
     }
 }
