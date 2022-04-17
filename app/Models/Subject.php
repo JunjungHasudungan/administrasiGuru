@@ -34,14 +34,14 @@ class Subject extends Model
         return $this->belongsTo(User::class, 'teacher_id');
     }
 
-    public function classrooms()
+    public function classroom()
     {
         return $this->belongsTo(Classroom::class,'classroom_id');
     }
 
     public function major()
     {
-        return $this->belongsTo(Major::class, 'major_id');
+        return $this->belongsTo(Major::class);
     }
 
     public function teacherSubject() // guru mata pelajaran

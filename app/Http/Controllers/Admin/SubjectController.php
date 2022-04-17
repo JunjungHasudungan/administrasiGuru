@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Major;
 use App\Models\Subject;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
@@ -14,8 +15,16 @@ class SubjectController extends Controller
 {
     public function index()
     {
+
         $subjects = Subject::all();
-   
+        // $subjects = Subject::whereHas('major', function($query){
+        //     $query->where('major_id', '>' , 0);
+        // })->orderBy('major_id', 'desc')->count();
+        // $subjects = Subject::whereHas('major', function($query){
+        //     $query->where('major_id', '>' , 0);
+        // })->orderBy('name')->get();
+
+        // dd($subjects);
         return view('admin.subjects.index', compact('subjects'));
     }
 

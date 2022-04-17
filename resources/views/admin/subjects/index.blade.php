@@ -28,20 +28,17 @@
                           <span class="text-white">No</span>
                       </th>
                       <th class="px-7 py-2 text-left">
-                          <span class="text-white">Kode Mata Pelajaran</span>
-                      </th>
-                      <th class="px-7 py-2 text-left">
-                          <span class="text-white">Nama Mata Pelajaran</span>
-                      </th>
-                      <th class="px-7 py-2 text-left">
-                        <span class="text-white">Kelas</span>
+                        <span class="text-white">Kode Mata Pelajaran</span>
                     </th>
                     <th class="px-16 py-2 text-left">
-                        <span class="text-white">Guru Mata Pelajaran</span>
+                        <span class="text-white">Mata Pelajaran</span>
+                    </th>
+                      <th class="px-7 py-2 text-left">
+                        <span class="text-white">Jurusan</span>
                     </th>
                     <th class="px-7 py-2 text-left">
-                      <span class="text-white">Jurusan</span>
-                  </th>
+                      <span class="text-white">Kelas</span>
+                    </th>
                       <th class="px-7 py-2">
                           <span class="text-white">AKSI</span>
                       </th>
@@ -54,9 +51,8 @@
                       <td class="px-7 py-2">{{$loop->iteration}}</td>
                       <td class="px-7 py-2">{{$subject->subject_code}}</td>
                       <td class="px-7 py-2">{{$subject->name}}</td>
-                      <td class="px-7 py-2">{{$subject->classrooms->name ?? ''}}</td>
-                      <td class="px-7 py-2">{{$subject->teacher->name ?? ''}}</td>
-                      <td class="px-7 py-2">{{$subject->major->title ??  ''}}</td>
+                      <td class="px-7 py-2">{{$subject->major->title ?? ''}}</td>
+                      <td class="px-7 py-2">{{$subject->classroom->name ?? ''}}</td>
                       <td>
                         {{-- @can('lesson_show') --}}
                             <a class="btn btn-xs btn-primary" href="{{ route('admin.subjects.show', $subject->id) }}">

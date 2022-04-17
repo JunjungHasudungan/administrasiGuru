@@ -29,6 +29,12 @@ class MajorSeeder extends Seeder
                 'title'          => 'Akutansi',
                 'created_at'     =>  Carbon::now()
             ],
+            [
+                'id'            => 3,
+                'major_code'    => 'No',
+                'title'          => '-',
+                'created_at'     =>  Carbon::now()
+            ],
         ];
 
         Major::insert($majors);
