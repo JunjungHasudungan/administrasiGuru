@@ -62,7 +62,7 @@
                         <td class="px-7 py-2">
                             @foreach ($subject->majorSubject as $major)
                             <ul class=" bg-slate-400 border-0 font-serif italic text-xs max-w-max space-x-0.5 mb-px w-20 text-white p-3 rounded mt">
-                              {{$major->major_code ?? ''}}
+                              {{$major->title ?? ''}}
                             </ul>
                             {{-- <span class=" bg-slate-400 border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">{{$classroom['name']}}</span> --}}
                             @endforeach   
