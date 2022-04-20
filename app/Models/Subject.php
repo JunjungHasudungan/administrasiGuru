@@ -46,7 +46,12 @@ class Subject extends Model
 
     public function teacherSubject() // guru mata pelajaran
     {
-        return $this->belongsToMany(User::class, 'teacher_subject', 'teacher_id', 'subject_id');
+        return $this->belongsTo(User::class);
+    }
+
+    public function classrooms()
+    {
+        return $this->belongsTo(Classroom::class);
     }
 
     public function classroomSubject() // kelas mata pelajaran

@@ -74,6 +74,7 @@ class User extends Authenticatable
     {
         return $this->belongsTo(User::class, 'role_id');
     }
+    
     public function teacherSubject() // guru mata pelajaran
     {
         return $this->hasMany(Subject::class, 'teacher_id');

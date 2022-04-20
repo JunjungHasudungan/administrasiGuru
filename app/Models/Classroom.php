@@ -12,22 +12,27 @@ class Classroom extends Model
 
     protected $table = 'classrooms';
 
-    protected $fillable = ['code_classroom', 'name', 'major_id', 'teacher_id', 'event_id'];
+    protected $fillable = ['code_classroom', 'name', 'major_id', 'teacher_id', 'event_id', 'part'];
 
     public function majors()
     {
         return $this->belongsTo(Major::class, 'major_id');
     }
 
-    public function homeworkTeacher() // wali kelas
-    {
-        return $this->belongsTo(User::class, 'teacher_id');
-    }
+    // public function homeworkTeacher() // wali kelas
+    // {
+    //     return $this->belongsTo(User::class, 'teacher_id');
+    // }
 
-    public function subjects()
-    {
-        return $this->belongsToMany(Subject::class, 'classroom_subject', 'classroom_id', 'subject_id');
-    }
+    // public function subjects()
+    // {
+    //     return $this->belongsToMany(Subject::class, 'classroom_subject', 'classroom_id', 'subject_id');
+    // }
+
+    // public function subjects()
+    // {
+
+    // }
 
     public function students()
     {

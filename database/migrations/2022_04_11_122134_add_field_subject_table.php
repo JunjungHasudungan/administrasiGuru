@@ -19,7 +19,7 @@ return new class extends Migration
         Schema::table('Subjects', function (Blueprint $table) {
             $table->unsignedBigInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('users');
-            // $table->foreignIdFor(Classroom::class);
+            $table->foreignIdFor(Classroom::class)->nullable();
             // $table->foreignIdFor(Major::class);
             $table->integer('weekday');
             $table->time('start_time');
