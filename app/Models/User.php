@@ -33,6 +33,7 @@ class User extends Authenticatable
         'teacher_major',
         'student_major',
         'head_Of_Departement',
+        'homework_teacher'
     ];
 
     protected $hidden = [

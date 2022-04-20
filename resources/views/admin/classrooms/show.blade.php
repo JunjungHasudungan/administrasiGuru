@@ -26,10 +26,10 @@
               </thead>
               <tbody class="bg-gray-200">
                   <tr class="bg-white border-2 border-gray-200">
-                      <td class="px-7 py-2">{{$classroom->name}}</td>
-                      <td class="px-7 py-2">{{$classroom->majors->title}}</td>
-                      <td class="px-7 py-2">{{$classroom->homeworkTeacher->name ?? ''}}</td>
-                      <td class="px-7 py-2">
+                      <td class="px-7 py-2 text-center">{{$classroom->name}}</td>
+                      <td class="px-7 py-2 text-center">{{$classroom->majors->title}}</td>
+                      <td class="px-7 py-2 text-center">{{$classroom->homeworkTeacher->name ?? ''}}</td>
+                      <td class="px-7 py-2 text-left">
                           @foreach ($classroom->students as $student)
                           <span class=" bg-slate-400 border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">{{$student['name']}}</span>
                           @endforeach

@@ -28,6 +28,11 @@ class Classroom extends Model
         return $this->belongsTo(Event::class, 'event_id');
     }
 
+    public function homeworkTeacher()
+    {
+        return $this->hasOne(User::class, 'homework_teacher');
+    }
+
     public function classroomSubject()
     {
         return $this->belongsToMany(Classroom::class, 'classroom_subject', 'classroom_id', 'subject_id');

@@ -17,7 +17,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('Subjects', function (Blueprint $table) {
-            $table->unsignedBigInteger('teacher_id');
+            $table->unsignedBigInteger('teacher_id'); // guru mata pelajaran
             $table->foreign('teacher_id')->references('id')->on('users');
             $table->integer('weekday');
             $table->time('start_time');
