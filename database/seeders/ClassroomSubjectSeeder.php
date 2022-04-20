@@ -17,42 +17,42 @@ class ClassroomSubjectSeeder extends Seeder
     {
         // kelas X RPL
         Classroom::findOrFail(1)->classroomSubject()->sync([
-            1, 4, 7, 10, 13, 16, 18, 20, 21, 22, 23, 39,40, 41, 49
+            1, 4, 7, 13, 16, 10, 17, 18, 20, 23, 22, 38,39, 40, 41
         ]);  
 
         // // kelas XI RPL
-        // Classroom::findOrFail(2)->classroomSubject()->sync([
-        //     2, 5, 8, 11, 14, 19, 42, 43, 45, 47, 50
-        // ]);  
+        Classroom::findOrFail(2)->classroomSubject()->sync([
+            2, 5, 8, 11, 14, 19, 42, 43, 45, 47, 50
+        ]);  
 
         // // kelas XII RPL
-        // Classroom::findOrFail(3)->classroomSubject()->sync([
-        //     3, 6, 9, 12, 15, 44, 46, 48, 
-        // ]);  
+        Classroom::findOrFail(3)->classroomSubject()->sync([
+            3, 6, 9, 12, 44, 46, 47, 48, 50, 49 
+        ]);  
 
         // // kelas X Akutansi
-        // Classroom::findOrFail(4)->classroomSubject()->sync([
-        //     1, 4, 7, 10, 13, 17, 18, 20, 21, 22, 23
-        // ]);  
+        Classroom::findOrFail(4)->classroomSubject()->sync([
+            1, 4, 7, 13, 16, 10, 17, 18, 20, 51, 52, 21, 24, 25, 26, 27,
+        ]);  
 
         // // kelas XI 1 Akutansi
-        // Classroom::findOrFail(5)->classroomSubject()->sync([
-        //     2, 5, 8, 11, 14, 19, 24,
-        //  ]);  
+        Classroom::findOrFail(5)->classroomSubject()->sync([
+            2, 5, 8, 14, 11, 19, 28, 30, 32, 34, 36, 50
+         ]);  
 
-        // // kelas XI 1 Akutansi
-        // Classroom::findOrFail(6)->classroomSubject()->sync([
-        //     2, 5, 8, 11, 14
-        // ]);
+        // // kelas XI 2 Akutansi
+        Classroom::findOrFail(6)->classroomSubject()->sync([
+            2, 5, 8, 14, 11, 19, 28, 30, 32, 34, 36, 50
+        ]);
         
-        // // kelas XI 2 Akutansi
-        // Classroom::findOrFail(7)->classroomSubject()->sync([
-        //     3, 6, 9, 12, 15
-        // ]);  
+        // // kelas XII 1 Akutansi
+        Classroom::findOrFail(7)->classroomSubject()->sync([
+            3, 6, 9, 15, 12, 29, 31, 33, 35, 37, 49
+        ]);  
 
-        // // kelas XI 2 Akutansi
-        // Classroom::findOrFail(8)->classroomSubject()->sync([
-        //     3, 6, 9, 12, 15
-        // ]);  
+        // // kelas XII 2 Akutansi
+        Classroom::findOrFail(8)->classroomSubject()->sync([
+            3, 6, 9, 15, 12, 29, 31, 33, 35, 37, 49
+        ]);  
     }
 }

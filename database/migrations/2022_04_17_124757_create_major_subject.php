@@ -17,8 +17,8 @@ return new class extends Migration
     {
         Schema::create('major_subject', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Major::class);
             $table->foreignIdFor(Subject::class);
+            $table->foreignIdFor(Major::class);
             $table->timestamps();
         });
     }

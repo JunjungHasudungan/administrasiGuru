@@ -34,11 +34,6 @@ class Subject extends Model
         return $this->belongsTo(User::class, 'teacher_id');
     }
 
-    // public function classroom()
-    // {
-    //     return $this->belongsTo(Classroom::class,'classroom_id');
-    // }
-
     public function major()
     {
         return $this->belongsTo(Major::class);
@@ -51,11 +46,11 @@ class Subject extends Model
 
     public function classroomSubject() // kelas mata pelajaran
     {
-        return $this->belongsToMany(Classroom::class, 'classroom_subject', 'classroom_id', 'subject_id');
+        return $this->belongsToMany(Classroom::class,'classroom_subject', 'subject_id', 'classroom_id');
     }
 
     public function majorSubject()
     {
-        return $this->belongsToMany(Major::class, 'major_subject', 'major_id', 'subject_id');
+        return $this->belongsToMany(Major::class, 'major_subject', 'subject_id', 'major_id');
     }
 }
