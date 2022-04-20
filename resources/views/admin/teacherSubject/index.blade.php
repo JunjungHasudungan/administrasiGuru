@@ -9,7 +9,7 @@
       <div class="bg-white p-5 rounded shadow-sm">
           <div class="grid grid-cols-8 gap-4 mb-4">
               <div class="col-span-1 mt-2">
-                <a href="#"
+                <a href="{{route('admin.teachers.create')}}"
                 class="w-full bg-indigo-500 text-white p-3 rounded shadow-sm focus:outline-none hover:bg-indigo-700">
                 + Guru Mapel</a>
               </div>

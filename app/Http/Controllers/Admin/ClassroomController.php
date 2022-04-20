@@ -22,7 +22,7 @@ class ClassroomController extends Controller
 
     public function create()
     {
-        //
+        return view('admin.classrooms.create');
     }
 
     public function store(Request $request)
@@ -39,7 +39,7 @@ class ClassroomController extends Controller
 
     public function edit(Classroom $classroom)
     {
-        //
+        return view('admin.classrooms.edit', compact('classroom'));
     }
 
     public function update(Request $request, Classroom $classroom)

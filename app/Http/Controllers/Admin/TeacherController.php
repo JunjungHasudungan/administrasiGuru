@@ -24,7 +24,7 @@ class TeacherController extends Controller
 
     public function create()
     {
-        //
+        return view('admin.teacherSubject.create');
     }
 
     public function store(Request $request)
