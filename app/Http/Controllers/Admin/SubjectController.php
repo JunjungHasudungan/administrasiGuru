@@ -16,16 +16,17 @@ class SubjectController extends Controller
 {
     public function index()
     {
-
         $subjects = Subject::all();
-        // $subjects = Subject::with('teacherSubject')->count(); //50 
-
-        // $subjects = DB::table('classroom_subject')->groupBy('subject_id')->get('subject_id')->count(); // 36
-        // $subjects = Subject::whereHas('classroomSubject', function($query){
-        //     $query->where('subject_id', '>', 0);
+        // $classroomSubjectCount = Classroom::whereHas('classroomSubject', function($query){
+        //     $query->where('classroom_id', 1);
         // })->get();
+        // $classroomSubjectCount = DB::table('classroom_subject')->groupBy('subject_id')->get('subject_id')->count();
+
+        // $subjects = Subject::all();
+        // $subjectClassrooms = Subject::find(1)->with('classroomSubject')->get();
 
         return view('admin.subjects.index', compact('subjects'));
+        // dd($classroomSubjectCount);
     }
 
     public function create()
