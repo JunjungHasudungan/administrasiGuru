@@ -17,7 +17,7 @@ class ClassroomSubjectSeeder extends Seeder
     {
         // kelas X RPL
         Classroom::findOrFail(1)->classroomSubject()->sync([
-            1, 4, 7, 13, 16, 10, 17, 18, 20, 23, 22, 38,39, 40, 41
+            1, 4, 7, 13, 16, 10, 17, 18, 20, 23, 22, 38,39, 40, 41, 49
         ]);  
 
         // // kelas XI RPL
@@ -27,12 +27,12 @@ class ClassroomSubjectSeeder extends Seeder
 
         // // kelas XII RPL
         Classroom::findOrFail(3)->classroomSubject()->sync([
-            3, 6, 9, 12, 44, 46, 47, 48, 50, 49 
+            3, 6, 9, 12, 44, 46, 48
         ]);  
 
         // // kelas X Akutansi
         Classroom::findOrFail(4)->classroomSubject()->sync([
-            1, 4, 7, 13, 16, 10, 17, 18, 20, 51, 52, 21, 24, 25, 26, 27,
+            1, 4, 7, 13, 16, 10, 17, 18, 20, 51, 52, 21, 24, 25, 26, 27, 49
         ]);  
 
         // // kelas XI 1 Akutansi
@@ -47,12 +47,12 @@ class ClassroomSubjectSeeder extends Seeder
         
         // // kelas XII 1 Akutansi
         Classroom::findOrFail(7)->classroomSubject()->sync([
-            3, 6, 9, 15, 12, 29, 31, 33, 35, 37, 49
+            3, 6, 9, 15, 12, 29, 31, 33, 35, 37
         ]);  
 
         // // kelas XII 2 Akutansi
         Classroom::findOrFail(8)->classroomSubject()->sync([
-            3, 6, 9, 15, 12, 29, 31, 33, 35, 37, 49
+            3, 6, 9, 15, 12, 29, 31, 33, 35, 37
         ]);  
     }
 }
