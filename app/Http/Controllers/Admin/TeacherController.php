@@ -34,7 +34,7 @@ class TeacherController extends Controller
 
     public function show($id)
     {
-        //
+        return view('admin.teacherSubject.show');
     }
 
     public function edit($id)

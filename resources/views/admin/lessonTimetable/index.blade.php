@@ -24,18 +24,16 @@
 
     <div class="container mx-auto mt-10 mb-10">
       <div class="bg-white p-5 rounded shadow-sm">
-          <table class="min-w-full table-auto">
-              <thead class="justify-between">
-                  {{-- <tr class="bg-indigo-500 w-full"> --}}
+          <table class="hover:table-fixed bg-slate-600  rounded min-w-full ">
+              <thead class="justify-between  m-1 ">
                       <th class="px-7 py-2">
                           <span class="text-black">WAKTU</span>
                       </th>
                           @foreach ($weekday as $day)
-                          <th class="px-7 py-2">
-                              <span class="text-black">{{$day}}</span>
+                          <th class="px-7 py-2 bg-green-400  rounded space-x-40 m-3">
+                              <span class=" text-black">{{$day}}</span>
                           </th>
                           @endforeach
-                  {{-- </tr> --}}
               </thead>
           </table>
       </div>

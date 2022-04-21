@@ -16,55 +16,29 @@ class SubjectController extends Controller
 {
     public function index()
     {
-        $subjects = Subject::all();
-        // $classroomSubjectCount = Classroom::whereHas('classroomSubject', function($query){
-        //     $query->where('classroom_id', 1);
-        // })->get();
-        // $classroomSubjectCount = DB::table('classroom_subject')->groupBy('subject_id')->get('subject_id')->count();
-
-        // $subjects = Subject::all();
-        // $subjectClassrooms = Subject::find(1)->with('classroomSubject')->get();
+        $subjects = Subject::paginate(5);
 
         return view('admin.subjects.index', compact('subjects'));
-        // dd($classroomSubjectCount);
     }
 
     public function create()
     {
-        //
+        return view('admin.subjects.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Subject  $subject
-     * @return \Illuminate\Http\Response
-     */
     public function show(Subject $subject)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Subject  $subject
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Subject $subject)
     {
-        //
+        return view('admin.subjects.edit', compact('subject'));
     }
 
     /**

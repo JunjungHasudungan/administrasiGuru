@@ -24,7 +24,7 @@ class MajorController extends Controller
         return view('admin.majors.create');
     }
 
-    public function store( StoreMajorRequest $request)
+    public function store(StoreMajorRequest $request)
     {
         $major = Major::create($request->all());
 

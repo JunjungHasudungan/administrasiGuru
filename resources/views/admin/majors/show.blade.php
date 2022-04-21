@@ -30,13 +30,14 @@
                                 <span class=" bg-slate-400 border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">{{$teacher['name']}}</span>
                             @endforeach
                         </td>
-                        {{-- @foreach ($major->headOfDepartement as $headDepartement)/ --}}
-                        {{-- @endforeach --}}
-                        {{-- <td class="px-7 py-2">{{$major->teacherMajors->name ?? ''}}</td> --}}
                   </tr>
               </tbody>
           </table>
-          <div class="mt-2">
+          <div class="p-4 text-center">
+            <a href="{{ route('admin.majors.index') }}"
+              class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold tracking-wider text-white uppercase transition bg-green-500 border border-transparent rounded shadow select-none focus:border-green-600 hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-500 focus:ring-opacity-30 disabled:opacity-50">
+              <span>Kembali</span>
+            </a>
           </div>
       </div>
   </div>

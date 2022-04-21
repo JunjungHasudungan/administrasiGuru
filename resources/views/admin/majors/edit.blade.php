@@ -24,7 +24,7 @@
     
                 <div class="mt-5">
                     <label>Nama Jurusan</label>
-                    <input type="text" name="name" value="{{ old('name', $major->name) }}"
+                    <input type="text" name="name" value="{{ old('name', $major->title) }}"
                     class="w-full bg-gray-200 p-2 rounded shadow-sm border border-gray-200 focus:outline-none focus:bg-white mt-2">
                     @error('name')
                         <div class="bg-red-400 p-2 shadow-sm rounded mt-2">
@@ -32,10 +32,11 @@
                         </div>
                     @enderror
                 </div>
+                
     
                 <div class="mt-5">
                     <button type="submit"
-                        class="bg-indigo-500 text-white p-2 rounded shadow-sm focus:outline-none hover:bg-indigo-700">UPDATE JURUSAN</button>
+                        class="bg-indigo-500 text-white p-2 rounded shadow-sm focus:outline-none hover:bg-indigo-700">UPDATE</button>
                 </div>
     
             </form>

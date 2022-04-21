@@ -5,15 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Subject;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LessonTimetableController extends Controller
 {
     public function index()
     {
         $weekday = Subject::WEEK_DAY;
-
-        // dd($weekday);
-
+        
         return view('admin.lessonTimetable.index', compact('weekday'));
     }
 
