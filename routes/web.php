@@ -14,6 +14,8 @@ use App\Http\Controllers\Teachers\SubjectController as TeacherSubject;
 use App\Http\Controllers\Teachers\SchedulesController as TeacherShedule;
 use App\Http\Controllers\Student\LessonController as StudentSubject;
 use App\Http\Livewire\Teacher\Subject;
+use App\Models\LessonTimetable;
+
 // use App\Http\Controllers\Admin\RoleController;
 // use App\Http\Controllers\Admin\UserController;
 
@@ -55,11 +57,12 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
         Route::resources([
-            'subjects'      => AdminSubject::class,
-            'schedules'     => SchedulesSubject::class,
-            'majors'        => MajorController::class,
-            'teachers'      => TeacherController::class,
-            'classrooms'    => ClassroomController::class,
+            'subjects'          => AdminSubject::class,
+            'schedules'         => SchedulesSubject::class,
+            'majors'            => MajorController::class,
+            'teachers'          => TeacherController::class,
+            'classrooms'        => ClassroomController::class,
+            // 'lessonTimetable'   => LessonTimetable::class,
         ]);
     });
 

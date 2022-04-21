@@ -13,7 +13,8 @@ class LessonTimetableController extends Controller
         $weekday = Subject::WEEK_DAY;
 
         // dd($weekday);
-        return view('admin.schedules.index');
+
+        return view('admin.lessonTimetable.index', compact('weekday'));
     }
 
     /**
