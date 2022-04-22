@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
                 'name'                  => 'Verna Manoppo', // Kepala sekolah
                 'email'                 => 'VernaManoppo@gmail.com',
                 'password'              => bcrypt('guru_smk_03'),
-                'role_id'               => 1,
+                'role_id'               => 4,
                 'major_id'              => 0,
                 'teacher_major'         => null,
                 'student_major'         => null,

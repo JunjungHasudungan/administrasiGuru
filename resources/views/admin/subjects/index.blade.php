@@ -30,7 +30,7 @@
                     <th class="px-16 py-2 text-center ">
                         <span class="text-white">Mata Pelajaran</span>
                     </th>
-                    <th class="px-7 py-2 text-center ">
+                    <th class="px-7 py-2 text-right ">
                         <span class="text-white">Kelas</span>
                     </th>
                     <th class="px-7 py-2 text-center ">
@@ -55,14 +55,14 @@
                           {{-- <span class=" bg-slate-400 border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">{{$classroom['name']}}</span> --}}
                           @endforeach
                         </td>
-                        <td class="px-7 py-2 text-right">
+                        <td class="px-7 py-2 text-left">
                             @foreach ($subject->majorSubject as $major)
                             <ul class=" bg-slate-400 border-0 font-serif italic text-xs max-w-max space-x-0.5 mb-px w-20 text-white p-3 rounded mt">
                                {{$major->title ?? ''}}
                             </ul>
                           @endforeach
                         </td>
-                        <td class="px-6 text-right select-none whitespace-nowrap">
+                        <td class="px-6 text-center select-none whitespace-nowrap">
                             <a href="{{ route('admin.subjects.show', $subject->id) }}"
                               class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide text-white transition border border-transparent rounded-full shadow select-none bg-lightBlue-500 focus:border-lightBlue-600 hover:bg-lightBlue-600 focus:outline-none focus:ring focus:ring-lightBlue-500 focus:ring-opacity-30 disabled:opacity-50">
                               <svg class="w-4 h-4 -mx-2"

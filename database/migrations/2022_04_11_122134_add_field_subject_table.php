@@ -20,8 +20,8 @@ return new class extends Migration
             $table->unsignedBigInteger('teacher_id'); // guru mata pelajaran
             $table->foreign('teacher_id')->references('id')->on('users');
             $table->integer('weekday');
-            $table->time('start_time');
-            $table->time('end_time');
+            // $table->time('start_time');
+            // $table->time('end_time');
         });
     }
 

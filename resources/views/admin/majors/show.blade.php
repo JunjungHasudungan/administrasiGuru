@@ -10,22 +10,22 @@
           <table class="min-w-full table-auto">
               <thead class="justify-between">
                   <tr class="bg-indigo-500 w-full">
-                      <th class="px-7 py-2 text-left">
+                      <th class="px-7 py-2 text-center">
                           <span class="text-white">Nama Jurusan</span>
                       </th>
-                      <th class="px-7 py-2 text-left">
+                      <th class="px-7 py-2 text-center">
                         <span class="text-white">Kepala Jurusan</span>
                     </th>
-                    <th class="px-7 py-2 text-left">
+                    <th class="px-7 py-2 text-center">
                         <span class="text-white">Guru Jurusan</span>
                     </th>
                   </tr>
               </thead>
               <tbody class="bg-gray-200">
                   <tr class="bg-white border-2 border-gray-200">
-                        <td class="px-7 py-2">{{$major->title}}</td>
-                        <td class="px-7 py-2">{{$major->headOfDepartement->name ?? ''}}</td>
-                        <td class="px-7 py-2">
+                        <td class="px-7 py-2 text-center">{{$major->title}}</td>
+                        <td class="px-7 py-2 text-center">{{$major->headOfDepartement->name ?? ''}}</td>
+                        <td class="px-7 py-2 text-center">
                             @foreach ($major->teacherMajors as $teacher)
                                 <span class=" bg-slate-400 border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">{{$teacher['name']}}</span>
                             @endforeach
