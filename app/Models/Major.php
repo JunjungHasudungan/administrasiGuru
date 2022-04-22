@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Major extends Model
 {
@@ -11,7 +12,7 @@ class Major extends Model
 
     protected $table = 'majors';
 
-    protected $fillable = ['major_code', 'title'];
+    protected $fillable = ['major_code', 'title', 'slug'];
 
     public function subjects()
     {
@@ -43,4 +44,12 @@ class Major extends Model
         return $this->belongsToMany(Major::class, 'major_subject', 'major_id', 'subject_id');
     }
 
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
 }

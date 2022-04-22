@@ -9,18 +9,9 @@ class Subject extends Model
 {
     use HasFactory;
 
-    protected $table = 'Subjects';
+    protected $table = 'subjects';
 
-    protected $fillable = ['subject_code', 'name', 'teacher_id', 'major_id', 'status', 'classroom_id'];
-
-
-    const WEEK_DAY = [
-        1   => "SENIN",
-        2   => "SELASA",
-        3   => "RABU",
-        4   => "KAMIS",
-        5   => "JUMAT",
-    ];
+    protected $fillable = ['subject_code', 'name','weekday' ,'teacher_id', 'classroom_id'];
 
     public function categories()
     {

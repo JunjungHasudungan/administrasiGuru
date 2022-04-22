@@ -26,8 +26,9 @@ class DatabaseSeeder extends Seeder
             ClassroomSeeder::class,
             SubjectSeeder::class,
             EventSeeder::class,
-            ClassroomSubjectSeeder::class,
+            // ClassroomSubjectSeeder::class,
             MajorSubjectSeeder::class,
+            TimeTableSeeder::class,
 
         ]);
     }

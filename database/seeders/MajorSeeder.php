@@ -20,7 +20,7 @@ class MajorSeeder extends Seeder
             [
                 'id'            => 1,
                 'major_code'    => 'RPL',
-                'title'          => 'RPL',
+                'title'          => 'Rekayasa Perangkat Lunak',
                 'created_at'     =>  Carbon::now()
             ],
             [

@@ -16,12 +16,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('Subjects', function (Blueprint $table) {
+        Schema::table('subjects', function (Blueprint $table) {
             $table->unsignedBigInteger('teacher_id'); // guru mata pelajaran
             $table->foreign('teacher_id')->references('id')->on('users');
             $table->integer('weekday');
-            // $table->time('start_time');
-            // $table->time('end_time');
+            $table->foreignIdFor(Classroom::class);
+            $table->time('start_time');
+            $table->time('end_time');
         });
     }
 
@@ -32,7 +33,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('Subjects', function (Blueprint $table) {
+        Schema::table('subjects', function (Blueprint $table) {
             //
         });
     }
