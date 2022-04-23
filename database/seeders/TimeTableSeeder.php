@@ -13,12 +13,23 @@ class TimeTableSeeder extends Seeder
         $timetables = [
             [
                 'id'            => 1, 
-                'event_id'      => null,
-                'classroom_id'  => 4, 
-                'subject_id'    => 1, 
-                'start_time'    => '10:20',
-                'end_time'      => '12:00',
-                'weekday'       => 3
+                'name'          => 'SELASA',
+            ],
+            [
+                'id'            => 2, 
+                'name'          => 'SELASA',
+            ],
+            [
+                'id'            => 3, 
+                'name'          => 'RABU',
+            ],
+            [
+                'id'            => 4, 
+                'name'          => 'KAMIS',
+            ],
+            [
+                'id'            => 5, 
+                'name'          => 'JUMAT',
             ],
         ];
 

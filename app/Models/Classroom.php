@@ -37,4 +37,9 @@ class Classroom extends Model
     {
         return $this->belongsToMany(Classroom::class, 'classroom_subject', 'classroom_id', 'subject_id');
     }
+
+    public function classroomsTimeTable()
+    {
+        return $this->belongsToMany(Timetable::class, 'classroom_timetable', 'timetable_id', 'classroom_id' );
+    }
 }

@@ -18,10 +18,10 @@ class Subject extends Model
         return $this->belongsTo(Category::class, 'category_id');
     }
 
-    public function teacher()
-    {
-        return $this->belongsTo(User::class, 'teacher_id');
-    }
+    // public function teacher()
+    // {
+    //     return $this->belongsTo(User::class, 'teacher_id');
+    // }
 
     public function major()
     {

@@ -56,9 +56,19 @@ class User extends Authenticatable
         return $this->hasOne(Classroom::class);
     }
 
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
     public function getIsTeacherAttribute() // guru mata pelajaran
     {
         return $this->hasMany(Subject::class, 'teacher_id', 'id');
+    }
+
+    public function getIsKurikulumAttribute()
+    {
+        return $this->roles()->where('id', 3)->exists();
     }
 
     public function homeworkTeacher() // wali kelas

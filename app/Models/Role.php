@@ -20,11 +20,10 @@ class Role extends Model
         return $this->belongsToMany(User::class,'role_user', 'role_id', 'user_id');
     }
 
-        /**
-     * Get the user's first name.
-     *
-     * @return \Illuminate\Database\Eloquent\Casts\Attribute
-     */
+    public function roleUsers()
+    {
+        return $this->belongsToMany(User::class);
+    }
 
     public function teachers(): Attribute
     {

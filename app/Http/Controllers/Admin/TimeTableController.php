@@ -14,10 +14,8 @@ class TimeTableController extends Controller
     {
         // $weekDay = TimeTable::WEEK_DAY;
 
-        $timeTables = TimeTable::all();
+        $collectionTime = TimeTable::all();
 
-        // $timeTables = TimeTable::with('classroomSubject')->get();
-        
         return view('admin.lessonTimetable.index', compact('timeTables'));
     }
 
