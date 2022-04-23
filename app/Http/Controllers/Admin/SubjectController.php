@@ -33,7 +33,7 @@ class SubjectController extends Controller
 
     public function show(Subject $subject)
     {
-        //
+        return view('admin.subjects.show', compact('subject'));
     }
 
     public function edit(Subject $subject)
@@ -41,24 +41,11 @@ class SubjectController extends Controller
         return view('admin.subjects.edit', compact('subject'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Subject  $subject
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Subject $subject)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Subject  $subject
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Subject $subject)
     {
         //
