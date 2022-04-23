@@ -14,8 +14,8 @@ class ClassroomController extends Controller
     public function index()
     {
 
-        $classrooms = Classroom::with(['students', 'homeworkTeacher', 'majors'])->get();
-        // dd($students);
+        $classrooms = Classroom::with(['students', 'homeworkTeacher','classroomSubject', 'majors'])->get();
+
 
         return view('admin.classrooms.index', compact('classrooms'));
     }
@@ -32,8 +32,6 @@ class ClassroomController extends Controller
 
     public function show(Classroom $classroom)
     {
-        $classroom->load('students', 'homeworkTeacher');
-
         return view('admin.classrooms.show', compact('classroom'));
     }
 

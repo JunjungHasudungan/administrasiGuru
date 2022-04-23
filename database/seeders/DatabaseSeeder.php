@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             MajorSubjectSeeder::class,
             TimeTableSeeder::class,
             ClassroomTimetableSeeder::class,
+            ClassroomSubjectSeeder::class,
 
         ]);
     }
