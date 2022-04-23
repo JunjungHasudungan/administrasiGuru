@@ -41,11 +41,11 @@
   </div>
 
   {{-- content --}}
-  <div class="overflow-hidden text-center text-sm border rounded-lg shadow-md border-secondary-300 bg-secondary-200">
+  <div class="overflow-hidden text-left text-sm border rounded-lg shadow-md w-max border-secondary-300 bg-secondary-200">
 
     <div class="gap-4 px-4 py-4 leading-5 bg-white sm:grid sm:grid-cols-6 sm:px-6 odd:bg-secondary-50">
       <div class="mb-1 font-medium sm:col-span-2 lg:col-span-1 sm:mb-0">NAMA KELAS</div>
-      <div class=" bg-green-300 rounded text-white  ">{{ $classroom->name }}</div>
+      <div class=" bg-green-300 rounded text-white w-full ">{{ $classroom->name }}</div>
     </div>
 
     <div class="gap-4 px-4 py-4 leading-5 bg-white sm:grid sm:grid-cols-6 sm:px-6 odd:bg-secondary-50">
@@ -55,7 +55,11 @@
 
     <div class="gap-4 px-4 py-4 leading-5 bg-white sm:grid sm:grid-cols-6 sm:px-6 odd:bg-secondary-50">
         <div class="mb-1 font-medium sm:col-span-2 lg:col-span-1 sm:mb-0">SISWA KELAS</div>
-        <div class="bg-green-300 rounded text-white"></div>
+        <div class="bg-green-300 rounded text-white text-left border-double border-4  capitalize font-light w-96 ">
+          @foreach ($classroom->students as $student)
+              {{$student->name}},
+          @endforeach
+        </div>
       </div>
 
 

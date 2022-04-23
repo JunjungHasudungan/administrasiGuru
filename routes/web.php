@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\Admin\ClassroomController;
 // use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\SubjectController as AdminSubject;
-use App\Http\Controllers\Admin\TimeTableController as TimeTableSubject;
+use App\Http\Controllers\Admin\CalenderController as TimeTableSubject;
 use App\Http\Controllers\Admin\MajorController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\ClassroomController;
@@ -16,8 +16,6 @@ use App\Http\Controllers\Student\LessonController as StudentSubject;
 use App\Http\Livewire\Teacher\Subject;
 use App\Models\LessonTimetable;
 
-// use App\Http\Controllers\Admin\RoleController;
-// use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------

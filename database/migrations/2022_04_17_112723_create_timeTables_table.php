@@ -18,7 +18,8 @@ return new class extends Migration
     {
         Schema::create('timetables', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->integer('weekday');
+            // $table->foreignIdFor(Subject::class);
             $table->timestamps();
         });
     }

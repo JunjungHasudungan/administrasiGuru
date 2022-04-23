@@ -14,6 +14,13 @@ class Timetable extends Model
 
     protected $fillable =['name' ];
 
+    const WEEK_DAY = [
+        '1' => 'SENIN',
+        '2' => 'SELASA',
+        '3' => 'RABU',
+        '4' => 'KAMIS',
+        '5' => 'JUMAT',
+    ];
 
     public function classroomsTimeTable()
     {

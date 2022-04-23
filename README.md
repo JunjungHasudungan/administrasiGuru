@@ -8,6 +8,7 @@ fitur yang akan dibangun
 - Pembuatan Jurusan
 - Pembuatan Kelas
 - Pembuatan Mata Pelajaran
+- Pembuatan Guru mata pelajaran
 - Pembuatan Jadwal Pelajaran
 
 ### Profile Penulis

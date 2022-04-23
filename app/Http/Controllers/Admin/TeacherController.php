@@ -17,7 +17,6 @@ class TeacherController extends Controller
             $query->groupBy('role_id')->orderBy('name');
         })->get(); // 14
 
-        // dd($teacherSubjects);
 
         return view('admin.teacherSubject.index', compact('teacherSubjects'));
     }
@@ -39,7 +38,7 @@ class TeacherController extends Controller
 
     public function edit($id)
     {
-        //
+        return view('admin.teacherSubject.edit');
     }
 
     public function update(Request $request, $id)

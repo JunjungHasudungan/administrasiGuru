@@ -24,31 +24,21 @@
 
     <div class="container mx-auto mt-10 mb-10">
       <div class="bg-white p-5 rounded shadow-sm">
-          <table class="hover:table-fixed bg-slate-600  rounded min-w-full ">
-              <thead class="justify-between  m-1 ">
-                      <th class="px-7 py-2">
-                          <span class="text-black">WAKTU</span>
-                      </th>
-                          @foreach (\App\Models\TimeTable::WEEK_DAY as $day)
-                          <th class="px-7 py-2 bg-green-400  rounded space-x-40 m-3">
-                              <span class=" text-black">{{$day}}</span>
-                          </th>
-                          @endforeach
-              </thead>
-              <tbody class="bg-gray-200">
-                @forelse ($timeTables as $timeTable)
-                  <tr class="bg-white border-2 border-gray-200">
-                      <td class="px-7 py-2">{{$timeTable->start_time}}</td>
-                      <td class="px-7 py-2"> {{$timeTable->classrooms->name ?? ''}}</td>
-                    {{-- @foreach ($timeTable->classroomSubject as $item)
-                    @endforeach --}}
-                  </tr>
-                @empty
-                  <div class="bg-red-500 text-white p-3 rounded shadow-sm mb-3">
-                    Data Belum Tersedia!
-                  </div>
-                @endforelse
-              </tbody>
+        <table class="min-w-full table-auto">
+            <thead class="justify-between">
+              <tr class="bg-indigo-500 w-full ">
+                <th class="px-7 py-2  border-8 bg-white" >WAKTU</th>
+                @foreach ($weekdays as $day)
+                <th class="text-white  px-7 py-2 border-8" >{{$day}}</th>
+                @endforeach
+              </tr> 
+              <tr class="bg-indigo-500 w-full rounded-full">
+                <th class="px-7 py-px border-8 bg-white" >KELAS</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
           </table>
       </div>
   </div>

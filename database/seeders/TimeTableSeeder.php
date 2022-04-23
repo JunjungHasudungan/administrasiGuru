@@ -13,23 +13,23 @@ class TimeTableSeeder extends Seeder
         $timetables = [
             [
                 'id'            => 1, 
-                'name'          => 'SELASA',
+                'weekday'          => 1,
             ],
             [
                 'id'            => 2, 
-                'name'          => 'SELASA',
+                'weekday'          => 2,
             ],
             [
                 'id'            => 3, 
-                'name'          => 'RABU',
+                'weekday'          => 3,
             ],
             [
                 'id'            => 4, 
-                'name'          => 'KAMIS',
+                'weekday'          => 4,
             ],
             [
                 'id'            => 5, 
-                'name'          => 'JUMAT',
+                'weekday'          => 5,
             ],
         ];
 

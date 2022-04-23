@@ -13,6 +13,7 @@ class Subject extends Model
 
     protected $fillable = ['subject_code', 'name','weekday' ,'teacher_id', 'classroom_id'];
 
+
     public function categories()
     {
         return $this->belongsTo(Category::class, 'category_id');

@@ -1,1 +1,1 @@
-halaman show
+halaman teacher show
