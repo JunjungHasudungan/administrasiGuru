@@ -47,10 +47,14 @@
                       <td class="px-7 py-2 text-left"> {{ $teacher->name }} </td>
                       <td class="px-7 py-2 text-left"> 
                           <ul>
-                                @foreach ($teacher->teacherSubject as $subject)
-                                    <span class=" bg-slate-400 border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">{{$subject['name']}}</span>
-                                @endforeach
-                                </ul>    
+                            @foreach ($teacher->teacherSubject as $subject)
+                              <span class=" bg-slate-400 border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">
+                                <a href="# " class="no-underline hover:underline ">
+                                  {{$subject['name']}}
+                                </a>
+                              </span>
+                            @endforeach
+                          </ul>    
                         </td>
                         <td class="px-5 text-center select-none whitespace-nowrap">
                             <a href="{{ route('admin.teachers.show', $teacher->id) }}"

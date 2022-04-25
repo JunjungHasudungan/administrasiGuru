@@ -63,9 +63,11 @@
                       @endforeach
                     </td>
                     <td class="px-7 py-2 text-center">
-                    @foreach ($classroom->classroomSubject as $subject)
-                        {{$subject->id}}
-                    @endforeach
+                      @foreach($classroom->classroomSubject as $subject)
+                      <span class=" bg-slate-400 border-0 font-serif  mx-px my-1 italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">
+                        <a href="#"  class="no-underline hover:underline "> {{$subject->name}} </a>
+                      </span>
+                      @endforeach
                     </td>
                 </tr>
             </tbody>

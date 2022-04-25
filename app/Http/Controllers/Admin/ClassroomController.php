@@ -37,6 +37,8 @@ class ClassroomController extends Controller
 
     public function edit(Classroom $classroom)
     {
+        $classroom->load('students', 'classroomSubject');
+        
         return view('admin.classrooms.edit', compact('classroom'));
     }
 
