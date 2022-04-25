@@ -12,7 +12,7 @@
                 @method('PUT')
     
                 <div class="mt-5">
-                    <label>KODE JURUSAN</label>
+                    <label class="capitalize font-normal text-indigo-400 hover:font-bold ">kode jurusan</label>
                     <input type="text" name="major_code" value="{{ old('major_code', $major->major_code) }}"
                     class="w-full bg-gray-200 p-2 rounded shadow-sm border border-gray-200 focus:outline-none focus:bg-white mt-2">
                     @error('major_code')
@@ -23,7 +23,7 @@
                 </div>
     
                 <div class="mt-5">
-                    <label>Nama Jurusan</label>
+                    <label class="capitalize font-normal  hover:decoration-blue-400 text-indigo-400 hover:font-bold">nama jurusan</label>
                     <input type="text" name="name" value="{{ old('name', $major->title) }}"
                     class="w-full bg-gray-200 p-2 rounded shadow-sm border border-gray-200 focus:outline-none focus:bg-white mt-2">
                     @error('name')

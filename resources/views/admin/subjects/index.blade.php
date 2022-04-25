@@ -36,6 +36,9 @@
                       <th class="px-7 py-2 text-center">
                           <span class="text-white">No</span>
                       </th>
+                      <th class="px-7 py-2 text-center">
+                        <span class="text-white">Kode Mata Pelajaran</span>
+                    </th>
                     <th class="px-16 py-2 text-center ">
                         <span class="text-white">Mata Pelajaran</span>
                     </th>
@@ -52,6 +55,7 @@
                   <tr class="bg-white border-2 border-gray-200">
 
                       <td class="px-7 py-2 text-center">{{$loop->iteration}}</td>
+                      <td class="px-7 py-2 text-center">{{$subject->subject_code}}</td>
                       <td class="px-7 py-2 text-center">{{$subject->name}}</td>
                       <td class="px-7 py-2 text-left">
                       </td>

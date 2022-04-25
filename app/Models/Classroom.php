@@ -21,7 +21,7 @@ class Classroom extends Model
 
     public function students()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(User::class, 'classroom_id');
     }
     public function events()
     {
@@ -35,7 +35,7 @@ class Classroom extends Model
 
     public function classroomSubject()
     {
-        return $this->belongsToMany(Classroom::class, 'classroom_subject', 'subject_id', 'classroom_id' );
+        return $this->belongsToMany(Subject::class, 'classroom_subject', 'classroom_id', 'subject_id');
     }
 
     public function classroomsTimeTable()

@@ -1,7 +1,7 @@
 <x-student-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-          <span class=" text-sky-500 "> {{  $classroom->name }} - {{$classroom->majors->title}} </span>
+          <span class=" text-sky-500 "> {{  $classroom->name }} {{$classroom->majors->title}} - {{$classroom->homeworkTeacher->name ?? ''}}</span>
         </h2>
     </x-slot>
  {{-- header content --}}
@@ -37,35 +37,31 @@
   </div>
 
   {{-- content --}}
-  <div class="container mx-auto mt-10 mb-10">
-        <table class="min-w-full table-auto">
+  <div class="container mx-auto w-full max-h-px mt-10 mb-10">
+        <table class="min-w-full  table-fixed">
             <thead class="justify-between">
                 <tr class="bg-indigo-500 w-full rounded-full">
-                    <th class="px-7 py-2 text-center">
-                        <span class="text-white">GURU WALIK KELAS</span>
+                    <th class="px-7 py-2 text-center ">
+                        <span class="text-white text-">Siswa</span>
                     </th>
                     <th class="px-7 py-2 text-center">
-                        <span class="text-white">SISWA</span>
-                    </th>
-                    <th class="px-7 py-2 text-left">
                         <span class="text-white">MATA PELAJARAN</span>
                     </th>
                 </tr>
             </thead>
-            <tbody class="bg-gray-200 bg-auto ">
+            <tbody class="bg-gray-200 bg-auto w-max">
                 <tr class="bg-white border-2 border-gray-200">
-                    <td class="px-7 py-2 text-center">{{$classroom->homeworkTeacher->name ?? ''}}</td>
-                    <td class="px-7 py-2 text-left bg-auto "> 
+                    <td class=" bg-auto  text-left  bg-slate-400 rounded w-2/5 "> 
                       @foreach ($classroom->students as $student)
-                        <span class=" bg-slate-400 border-0 font-serif  mx-px my-1 italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">
+                        <span class=" border-0 py-2 font-serif text-gray-800  tracking-widest mx-px my-1 italic text-xs min-w-0  mb-px w-2 p-3 rounded mt">
                         <a href="#"  class="no-underline hover:underline "> {{$student->name}} </a>
                         </span> 
                       @endforeach
                     </td>
-                    <td class="px-7 py-2 text-center">
+                    <td class="px-7 py-2 text-left bg-slate-400  ">
                       @foreach($classroom->classroomSubject as $subject)
-                      <span class=" bg-slate-400 border-0 font-serif  mx-px my-1 italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">
-                        <a href="#"  class="no-underline hover:underline "> {{$subject->name}} </a>
+                      <span class=" capitalize border-0 text-gray-800 font-serif tracking-widest mx-px my-1 italic text-xs min-w-0 space-x-0.5 mb-px w-2  hover:font-bold p-3 rounded mt">
+                        <a href="#"  class="no-underline hover:underline "> {{$subject->name}}, </a>
                       </span>
                       @endforeach
                     </td>
@@ -78,45 +74,4 @@
     </div>
 </div>
 
-  <table class="min-w-full table-auto rounded">
-    <thead class="justify-between">
-        <tr class="bg-indigo-500 w-full">
-          <th class="px-16 py-2 text-center">
-              <span class="text-white">Guru Wali Kelas</span>
-          </th>
-            <th class="px-7 py-2">
-                <span class="text-white">Siswa</span>
-            </th>
-            <th class="px-7 py-2">
-              <span class="text-white">Mata Pelajaran</span>
-          </th>
-        </tr>
-    </thead>
-    <tbody class="bg-gray-200">
-        <tr class="bg-white border-2 border-gray-200">
-            <td class="px-7 py-2 text-center">{{$classroom->homeworkTeacher->name ?? ''}}</td>
-        </tr>
-    </tbody>
-</table>
-
-  <div class="overflow-hidden text-left text-sm border rounded-lg shadow-md w-max border-secondary-300 bg-secondary-200">
-
-    <div class="gap-4 px-4 py-4 leading-5 bg-white sm:grid sm:grid-cols-6 sm:px-6 odd:bg-secondary-50">
-      <div class="mb-1 font-medium sm:col-span-2 lg:col-span-1 sm:mb-0">NAMA KELAS</div>
-      <div class=" bg-green-300 rounded text-white w-full ">{{ $classroom->name }}</div>
-    </div>
-
-    <div class="gap-4 px-4 py-4 leading-5 bg-white sm:grid sm:grid-cols-6 sm:px-6 odd:bg-secondary-50">
-      <div class="mb-1 font-medium sm:col-span-2 lg:col-span-1 sm:mb-0">WALI KELAS</div>
-      <div class="bg-green-300 rounded text-white">{{ $classroom->homeworkTeacher->name }}</div>
-    </div>
-
-    <div class="gap-4 px-4 py-4 leading-5 bg-white sm:grid sm:grid-cols-6 sm:px-6 odd:bg-secondary-50">
-    <div class="p-4 text-right">
-      <a href="#"
-        class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold tracking-wider text-white uppercase transition bg-green-500 border border-transparent rounded shadow select-none focus:border-green-600 hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-500 focus:ring-opacity-30 disabled:opacity-50">
-        <span>Back</span>
-      </a>
-    </div>
-  </div>
 </x-student-layout>

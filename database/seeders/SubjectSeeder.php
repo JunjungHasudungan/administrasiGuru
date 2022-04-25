@@ -283,7 +283,7 @@ class SubjectSeeder extends Seeder
                 'id'                => 52,
                 'subject_code'      => 'AdmuM',
                 'name'              => 'ADMIN UMUM',
-                'teacher_id'        => 15,
+                'teacher_id'        => 7,
                 'classroom_id'      => 3,            
                 'weekday'           => 1,
                 'start_time'        => '10:20',

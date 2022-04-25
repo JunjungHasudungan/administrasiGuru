@@ -44,7 +44,7 @@
                 @forelse ($majors as $major)
                   <tr class="bg-white border-2 border-gray-200">
 
-                      <td class="px-7 py-2">{{$loop->iteration}}</td>
+                      <td class="px-7 py-2 text-center">{{$loop->iteration}}</td>
                       <td class="px-7 py-2">{{$major->major_code}}</td>
                       <td class="px-7 py-2">{{$major->title ?? ''}}</td>
                       <td class="px-6 text-right select-none whitespace-nowrap">
