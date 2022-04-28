@@ -1,7 +1,11 @@
 <x-student-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-          <span class=" text-sky-500 "> {{  $classroom->name }} {{$classroom->majors->title}} - {{$classroom->homeworkTeacher->name ?? ''}}</span>
+          <span class=" text-sky-500 "> {{  $classroom->name }} {{$classroom->majors->title}} - 
+            <a href="" class="no-underline hover:underline hover:font">
+              {{$classroom->homeworkTeacher->name ?? ''}} 
+            </a>
+          </span>
         </h2>
     </x-slot>
  {{-- header content --}}
@@ -42,7 +46,7 @@
             <thead class="justify-between">
                 <tr class="bg-indigo-500 w-full rounded-full">
                     <th class="px-7 py-2 text-center ">
-                        <span class="text-white text-">Siswa</span>
+                        <span class="text-white text-">SISWA</span>
                     </th>
                     <th class="px-7 py-2 text-center">
                         <span class="text-white">MATA PELAJARAN</span>
@@ -60,8 +64,8 @@
                     </td>
                     <td class="px-7 py-2 text-left bg-slate-400  ">
                       @foreach($classroom->classroomSubject as $subject)
-                      <span class=" capitalize border-0 text-gray-800 font-serif tracking-widest mx-px my-1 italic text-xs min-w-0 space-x-0.5 mb-px w-2  hover:font-bold p-3 rounded mt">
-                        <a href="#"  class="no-underline hover:underline "> {{$subject->name}}, </a>
+                      <span class=" capitalize border-0 text-gray-800 font-serif mx-px my-1 italic text-xs min-w-0 space-x-0.5 mb-px w-2  hover:font-bold p-3 rounded mt">
+                        <a href="#"  class="no-underline"> {{$subject->name}}, </a>
                       </span>
                       @endforeach
                     </td>

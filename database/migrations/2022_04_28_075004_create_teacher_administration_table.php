@@ -1,8 +1,7 @@
 <?php
 
 use App\Models\Classroom;
-use App\Models\Major;
-use App\Models\User;
+use App\Models\Subject;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,14 +15,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('subjects', function (Blueprint $table) {
-            $table->unsignedBigInteger('teacher_id'); // guru mata pelajaran
+        Schema::create('teacher_administration', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('users');
+            $table->integer('learning_method')->default(0);
+            $table->string('subject_title');
+            $table->foreignIdFor(Subject::class);
             $table->integer('weekday');
-            $table->foreignIdFor(Classroom::class);
-            $table->foreignIdFor(Major::class)->nullable();
             $table->time('start_time');
             $table->time('end_time');
+            $table->foreignIdFor(Classroom::class);
+            $table->timestamps();
         });
     }
 
@@ -34,8 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('subjects', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('teacher_administration');
     }
 };

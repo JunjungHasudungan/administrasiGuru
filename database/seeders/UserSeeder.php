@@ -700,6 +700,18 @@ class UserSeeder extends Seeder
                 'classroom_id'          => 3,
                 'homework_teacher'      => null,          
             ],
+            [
+                'id'                    => 58,
+                'name'                  => 'New Teacher', // NEW TEACHER
+                'email'                 => 'newTeacher@gmail.com',
+                'password'              => bcrypt('guru_smk_01'),
+                'role_id'               => 3,
+                'major_id'              => 0,
+                'teacher_major'         => 2,
+                'student_major'         => 0,
+                'classroom_id'          => 0,
+                'homework_teacher'      => null,          
+            ],
 
         ];
         User::insert($users);

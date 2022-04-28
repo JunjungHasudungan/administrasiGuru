@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Classroom;
+use App\Models\Subject;
 use App\Models\Timetable;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -17,8 +18,9 @@ return new class extends Migration
     {
         Schema::create('classroom_timetable', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Timetable::class);
             $table->foreignIdFor(Classroom::class);
+            $table->foreignIdFor(Timetable::class);
+            $table->foreignIdFor(Subject::class)->nullable();
             $table->timestamps();
         });
     }

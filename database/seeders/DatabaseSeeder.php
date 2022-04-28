@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             TimeTableSeeder::class,
             ClassroomTimetableSeeder::class,
             ClassroomSubjectSeeder::class,
+            TeacherAdministrationSeeder::class,
 
         ]);
     }

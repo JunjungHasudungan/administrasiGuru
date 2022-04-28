@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\CalenderController as TimeTableSubject;
 use App\Http\Controllers\Admin\MajorController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\ClassroomController;
+use App\Http\Controllers\Admin\TeacherAdministrationController;
 use App\Http\Controllers\Teachers\SubjectController as TeacherSubject;
 use App\Http\Controllers\Teachers\SchedulesController as TeacherShedule;
 use App\Http\Controllers\Student\LessonController as StudentSubject;
@@ -55,11 +56,12 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
         Route::resources([
-            'subjects'          => AdminSubject::class,
-            'schedules'         => TimeTableSubject::class,
-            'majors'            => MajorController::class,
-            'teachers'          => TeacherController::class,
-            'classrooms'        => ClassroomController::class,
+            'subjects'                  => AdminSubject::class,
+            'schedules'                 => TimeTableSubject::class,
+            'majors'                    => MajorController::class,
+            'teachers'                  => TeacherController::class,
+            'classrooms'                => ClassroomController::class,
+            'teacherAdministration'     => TeacherAdministrationController::class,
             // 'lessonTimetable'   => LessonTimetable::class,
         ]);
     });
