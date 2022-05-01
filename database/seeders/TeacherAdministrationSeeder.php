@@ -16,16 +16,29 @@ class TeacherAdministrationSeeder extends Seeder
     public function run()
     {
         $teacherAdministration = [
+            // [
+            //     'id'                => 1,
+            //     'teacher_id'        => 5, 
+            //     'learning_method'   => 1,
+            //     'subject_title'     => 'Penjumlahan Bilangan Biner',
+            //     'subject_id'        => 25,
+            //     'weekday'           => 1,
+            //     'start_time'        => '14:00',
+            //     'end_time'          => '15:00',
+            //     'classroom_id'      => 1,
+            //     'major_id'          => 1,
+            // ],
             [
                 'id'                => 1,
-                'teacher_id'        => 15, 
+                'teacher_id'        => 13, 
                 'learning_method'   => 1,
-                'subject_title'      => 'Penjumlahan Bilangan Biner',
-                'subject_id'        => 38,
+                'subject_title'     => 'HAK CIPTA',
+                'subject_id'        => 5,
                 'weekday'           => 1,
                 'start_time'        => '14:00',
                 'end_time'          => '15:00',
-                'classroom_id'      => 1
+                'classroom_id'      => 1,
+                'major_id'          => 1,
             ],
         ];
 

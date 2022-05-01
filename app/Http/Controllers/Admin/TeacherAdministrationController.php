@@ -11,7 +11,10 @@ class TeacherAdministrationController extends Controller
 
     public function index()
     {
-        //
+        $teacherAdministrations = TeacherAdministration::with('teachers')->get();
+
+        // dd($teacherAdministrations);
+        return view('admin.teacherAdministration.index', compact('teacherAdministrations'));
     }
 
     public function create()
@@ -26,7 +29,9 @@ class TeacherAdministrationController extends Controller
 
     public function show(TeacherAdministration $teacherAdministration)
     {
-        //
+        $teacherAdministration->load(['teachers','major']);
+
+        return view('admin.teacherAdministration.show', compact('teacherAdministration'));
     }
 
     public function edit(TeacherAdministration $teacherAdministration)
