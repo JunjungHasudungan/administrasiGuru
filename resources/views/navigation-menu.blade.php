@@ -23,6 +23,18 @@
                     @endif --}}
 
                     @if (auth()->user()->role_id == 1)
+                        <x-jet-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.index')">
+                            {{ __('Users') }}
+                        </x-jet-nav-link>
+
+                        <x-jet-nav-link href="{{ route('admin.teachers.index') }}" :active="request()->routeIs('admin.teachers.index')">
+                            {{ __('Guru') }}
+                        </x-jet-nav-link>
+
+                        <x-jet-nav-link href="{{ route('admin.teacherAdministration.index') }}" :active="request()->routeIs('admin.teacherAdministration.index')">
+                            {{ __('Administrasi Guru') }}
+                        </x-jet-nav-link>
+                        
                         <x-jet-nav-link href="{{ route('admin.subjects.index') }}" :active="request()->routeIs('admin.subjects.index')">
                             {{ __('Mata Pelajaran') }}
                         </x-jet-nav-link>
@@ -39,17 +51,7 @@
                             {{ __('Kelas') }}
                         </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{ route('admin.teachers.index') }}" :active="request()->routeIs('admin.teachers.index')">
-                            {{ __('Guru') }}
-                        </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{ route('admin.teacherAdministration.index') }}" :active="request()->routeIs('admin.teacherAdministration.index')">
-                            {{ __('Administrasi Guru') }}
-                        </x-jet-nav-link>
-
-                        <x-jet-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.index')">
-                            {{ __('Users') }}
-                        </x-jet-nav-link>
                     @endif
 
                     @if (auth()->user()->role_id == 2)

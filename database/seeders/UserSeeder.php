@@ -714,8 +714,8 @@ class UserSeeder extends Seeder
             ],
             [
                 'id'                    => 59,
-                'name'                  => 'William Chrismas', // NEW TEACHER
-                'email'                 => 'williamChrismas@gmail.com',
+                'name'                  => 'William Chrisman', // NEW TEACHER
+                'email'                 => 'williamChrisman@gmail.com',
                 'password'              => bcrypt('guru_smk_01'),
                 'role_id'               => 1,
                 'major_id'              => 0,

@@ -27,6 +27,18 @@ class RoleSeeder extends Seeder
                 'id'    => 4,
                 'name'  => 'murid'
             ],
+            [
+                'id'    => 5,
+                'name'  => 'wali kelas'
+            ],
+            [
+                'id'    => 6,
+                'name'  => 'kepala jurusan'
+            ],
+            [
+                'id'    => 7,
+                'name'  => 'Admin Operator'
+            ],
         ];
 
         Role::insert($roles);

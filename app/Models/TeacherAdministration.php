@@ -21,7 +21,8 @@ class TeacherAdministration extends Model
         'start_time', 
         'end_time', 
         'classroom_id',
-        'major_id'
+        'major_id',
+        'status'
     ];
 
     const WeekDay = [

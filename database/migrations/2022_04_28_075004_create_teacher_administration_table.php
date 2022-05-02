@@ -28,15 +28,11 @@ return new class extends Migration
             $table->time('end_time');
             $table->foreignIdFor(Classroom::class);
             $table->foreignIdFor(Major::class);
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('teacher_administration');

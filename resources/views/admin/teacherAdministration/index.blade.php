@@ -19,7 +19,7 @@
                       <th class="px-7 py-2 text-center">
                         <span class="text-white">JURUSAN</span>
                     </th>
-                    <th class="px-7 py-2 text-center">
+                    <th class="px-7 py-2 text-right">
                       <span class="text-white">STATUS</span>
                   </th>
                       <th class="px-7 py-2">
@@ -32,21 +32,10 @@
                   <tr class="bg-white border-2 border-gray-200">
                       <td class="px-7 py-2 text-center">{{$loop->iteration}}</td>
                       <td class="px-7 py-2 text-center">{{$teacherAdministration->teachers->name}}</td>
-                      {{-- <td class="px-7 py-2 text-center">{{$teacherAdministration->name}}</td> --}}
                       <td class="px-7 py-2 text-center">{{$teacherAdministration->major->title}}</td>
-                      {{-- <td class="px-7 py-2 text-center">{{$teacherAdministration->homeworkTeacher->name ?? ''}}</td> --}}
-                      <td class="px-6 text-right select-none whitespace-nowrap">
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-right">
                         <a href="{{ route('admin.teacherAdministration.show', $teacherAdministration->id) }}"
-                          class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium bg-stone-700 tracking-wide text-white transition border border-transparent rounded-full shadow select-none bg-lightBlue-500 focus:border-lightBlue-600 hover:bg-lightBlue-600 focus:outline-none focus:ring focus:ring-lightBlue-500 focus:ring-opacity-30 disabled:opacity-50">
-                          <svg class="w-4 h-4 -mx-2"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                              clip-rule="evenodd" />
-                          </svg>
-                        </a>
+                          class="text-blue-600 hover:text-blue-900 mb-2 mr-2"> View</a>
                       </td>
                   </tr>
                 @empty

@@ -97,7 +97,7 @@
                             <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">-</span>
                         </td>
                         <td class="px-7 py-2 text-center">
-                            <span class="bg-green-900 border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">VERIFIKASI</span>
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">{{ $teacherAdministration->status }}</span>
                         </td>
                   </tr>
               </tbody>

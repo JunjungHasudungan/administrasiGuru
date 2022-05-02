@@ -39,6 +39,7 @@ class TeacherAdministrationSeeder extends Seeder
                 'end_time'          => '15:00',
                 'classroom_id'      => 1,
                 'major_id'          => 1,
+                'status'            => 1,
             ],
         ];
 
