@@ -15,7 +15,9 @@ class UserController extends Controller
     {
         $users = User::with('classrooms')->get();
         $teachers = Role::find(4)->users()->get();
-        dd([$teachers, $users]);
+        // dd([$teachers, $users]);
+
+        return view('admin.users.index', compact(['users', 'teachers']));
     }
 
 
@@ -46,6 +48,9 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
-        //
+        
+        $user->delete();
+
+        return redirect()->route('admin.users.index');
     }
 }

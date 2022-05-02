@@ -51,9 +51,9 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function classroom()
+    public function classrooms()
     {
-        return $this->hasOne(Classroom::class);
+        return $this->belongsTo(Classroom::class);
     }
 
     public function roles()

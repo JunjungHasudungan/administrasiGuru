@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\MajorController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\ClassroomController;
 use App\Http\Controllers\Admin\TeacherAdministrationController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Teachers\SubjectController as TeacherSubject;
 use App\Http\Controllers\Teachers\SchedulesController as TeacherShedule;
 use App\Http\Controllers\Student\LessonController as StudentSubject;
@@ -62,7 +63,7 @@ Route::group(['middleware' => 'auth'], function() {
             'teachers'                  => TeacherController::class,
             'classrooms'                => ClassroomController::class,
             'teacherAdministration'     => TeacherAdministrationController::class,
-            // 'lessonTimetable'   => LessonTimetable::class,
+            'users'                     => UserController::class,
         ]);
     });
 

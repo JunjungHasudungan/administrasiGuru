@@ -32,6 +32,8 @@ class DatabaseSeeder extends Seeder
             ClassroomTimetableSeeder::class,
             ClassroomSubjectSeeder::class,
             TeacherAdministrationSeeder::class,
+            PermissionSeeder::class,
+            PermissionRoleSeeder::class,
 
         ]);
     }
