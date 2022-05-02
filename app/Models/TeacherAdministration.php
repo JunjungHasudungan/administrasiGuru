@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Helpers\Constant;
+use App\Helpers\Method;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -47,5 +49,30 @@ class TeacherAdministration extends Model
     public function major()
     {
         return $this->belongsTo(Major::class);
+    }
+
+    public function getIsUncheckedAttribute():bool
+    {
+        return (string) $this->status === 'unchecked';
+    }
+
+    public function getIsCheckedAttribute():bool
+    {
+        return (string) $this->status === 'checked';
+    }
+
+    public function getIsTheoryAttribute():bool
+    {
+        return (int) $this->learning_method = Method::Method_Learning['theory'];
+    }
+
+    public function getIsPracticeAttribute():bool
+    {
+        return (int) $this->learning_method = Method::Method_Learning['practice'];
+    }
+
+    public function getIsAssigmentAttribute():bool
+    {
+        return (int) $this->learning_method = Method::Method_Learning['assigment'];
     }
 }

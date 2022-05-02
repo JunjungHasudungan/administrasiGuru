@@ -88,7 +88,15 @@
                             <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">10:00</span>
                         </td>
                         <td class="px-7 py-2 text-center">
-                            <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">TEORI</span>
+                            @if ($teacherAdministration->learning_method === null)
+                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-teal-200 uppercase last:mr-0 mr-1">
+                                    NULL
+                                </span>
+                            @else
+                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-red-600 bg-emerald-200 uppercase last:mr-0 mr-1">
+                                    {{$teacherAdministration->learning_method}}
+                                </span>
+                            @endif
                         </td>
                         <td class="px-7 py-2 text-center">
                             <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">BERSAMBUNG</span>
@@ -97,7 +105,13 @@
                             <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">-</span>
                         </td>
                         <td class="px-7 py-2 text-center">
-                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">{{ $teacherAdministration->status }}</span>
+                            @if ($teacherAdministration->is_checked)
+                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 uppercase last:mr-0 mr-1">
+                                    {{ $teacherAdministration->status}}
+                                </span>
+                            @else
+                                <span class="text-xs font-bold inline-block py-1 px-2 uppercase rounded-full text-blueGray-600 bg-red-200 last:mr-0 mr-1">{{$teacherAdministration->status}}</span>
+                            @endif
                         </td>
                   </tr>
               </tbody>

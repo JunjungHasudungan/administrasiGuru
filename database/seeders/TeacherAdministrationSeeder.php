@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\TeacherAdministration;
+use App\Helpers\Constant;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -31,7 +32,7 @@ class TeacherAdministrationSeeder extends Seeder
             [
                 'id'                => 1,
                 'teacher_id'        => 13, 
-                'learning_method'   => 1,
+                'learning_method'   => 'theory',
                 'subject_title'     => 'HAK CIPTA',
                 'subject_id'        => 5,
                 'weekday'           => 1,
@@ -39,7 +40,7 @@ class TeacherAdministrationSeeder extends Seeder
                 'end_time'          => '15:00',
                 'classroom_id'      => 1,
                 'major_id'          => 1,
-                'status'            => 1,
+                'status'            => 'checked',
             ],
         ];
 
