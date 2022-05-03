@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\Method;
 use App\Http\Controllers\Controller;
 use App\Models\TeacherAdministration;
 use Illuminate\Http\Request;
@@ -29,9 +30,11 @@ class TeacherAdministrationController extends Controller
 
     public function show(TeacherAdministration $teacherAdministration)
     {
+        $methods = Method::Method_Learning;
+
         $teacherAdministration->load(['teachers','major']);
 
-        return view('admin.teacherAdministration.show', compact('teacherAdministration'));
+        return view('admin.teacherAdministration.show', compact('teacherAdministration', 'methods'));
     }
 
     public function edit(TeacherAdministration $teacherAdministration)

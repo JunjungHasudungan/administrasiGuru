@@ -29,7 +29,8 @@ return new class extends Migration
             $table->time('end_time');
             $table->foreignIdFor(Classroom::class);
             $table->foreignIdFor(Major::class);
-            $table->string('status')->default('unchecked');
+            $table->string('status', 50)->default('unchecked');
+            $table->string('completeness', 50)->default('continued');
             $table->timestamps();
         });
     }

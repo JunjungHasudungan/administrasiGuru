@@ -88,9 +88,9 @@
                             <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">10:00</span>
                         </td>
                         <td class="px-7 py-2 text-center">
-                            @if ($teacherAdministration->learning_method === null)
-                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-teal-200 uppercase last:mr-0 mr-1">
-                                    NULL
+                            @if ($teacherAdministration->is_teory)
+                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-sky-600 bg-teal-200 uppercase last:mr-0 mr-1">
+                                    {{$teacherAdministration->learning_method}}
                                 </span>
                             @else
                                 <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-red-600 bg-emerald-200 uppercase last:mr-0 mr-1">
@@ -99,7 +99,16 @@
                             @endif
                         </td>
                         <td class="px-7 py-2 text-center">
-                            <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">BERSAMBUNG</span>
+                            @if ($teacherAdministration->is_finish)
+                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-blue-200 uppercase last:mr-0 mr-1">
+                                    {{$teacherAdministration->completeness}}
+                                </span>
+                            @else
+                            <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-lime-200 uppercase last:mr-0 mr-1">
+                                {{$teacherAdministration->completeness}}
+                            </span>
+                            @endif
+                            {{-- <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">BERSAMBUNG</span> --}}
                         </td>
                         <td class="px-7 py-2 text-center">
                             <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">-</span>

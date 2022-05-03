@@ -41,6 +41,7 @@ class TeacherAdministrationSeeder extends Seeder
                 'classroom_id'      => 1,
                 'major_id'          => 1,
                 'status'            => 'checked',
+                'completeness'      => 'continued',
             ],
         ];
 

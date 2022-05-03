@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helpers\Completeness;
 use App\Helpers\Constant;
 use App\Helpers\Method;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -24,7 +25,13 @@ class TeacherAdministration extends Model
         'end_time', 
         'classroom_id',
         'major_id',
-        'status'
+        'status',
+        'completeness'
+    ];
+
+    const COMPLETENESS = [
+        0   => 'Bersambung',
+        1   => 'Selesai'
     ];
 
     const WeekDay = [
@@ -63,16 +70,26 @@ class TeacherAdministration extends Model
 
     public function getIsTheoryAttribute():bool
     {
-        return (int) $this->learning_method = Method::Method_Learning['theory'];
+        return (String) $this->learning_method === 'teori';
     }
 
     public function getIsPracticeAttribute():bool
     {
-        return (int) $this->learning_method = Method::Method_Learning['practice'];
+        return (String) $this->learning_method === 'praktek';
     }
 
     public function getIsAssigmentAttribute():bool
     {
-        return (int) $this->learning_method = Method::Method_Learning['assigment'];
+        return (String) $this->learning_method === 'penugasan';
+    }
+
+    public function getIsContinueAttribute():bool
+    {
+        return (String) $this->completeness === 'bersambung';
+    }
+
+    public function getIsFinishAttribute():bool
+    {
+        return (String) $this->completeness === 'selesai';
     }
 }
