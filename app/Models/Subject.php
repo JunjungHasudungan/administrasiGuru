@@ -24,12 +24,6 @@ class Subject extends Model
         return $this->belongsTo(Major::class,'major_id');
     }
 
-    // public function teacher()
-    // {
-    //     return $this->belongsTo(User::class, 'teacher_id');
-    // }
-
-
     public function teacherSubject() // guru mata pelajaran
     {
         return $this->belongsTo(User::class);

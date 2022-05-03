@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Teachers;
+namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
 use App\Models\Subject;
@@ -15,10 +15,10 @@ class SchedulesController extends Controller
      */
     public function index()
     {
-        $weekDay = Subject::WEEK_DAY;
+        // $weekDay = Subject::WEEK_DAY;
 
         // dd($weekDay);
-        return view('teacher.schedules.index', compact('weekDay'));
+        return view('teacher.schedules.index');
     }
 
     /**

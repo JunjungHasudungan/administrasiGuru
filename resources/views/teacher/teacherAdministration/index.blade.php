@@ -1,0 +1,1 @@
+<h1>halaman administrasi guru {{\Auth::users()->name}}</h1>
