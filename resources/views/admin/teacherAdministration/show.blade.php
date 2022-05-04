@@ -108,7 +108,6 @@
                                 {{$teacherAdministration->completeness}}
                             </span>
                             @endif
-                            {{-- <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">BERSAMBUNG</span> --}}
                         </td>
                         <td class="px-7 py-2 text-center">
                             <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">-</span>
@@ -119,7 +118,9 @@
                                     {{ $teacherAdministration->status}}
                                 </span>
                             @else
-                                <span class="text-xs font-bold inline-block py-1 px-2 uppercase rounded-full text-blueGray-600 bg-red-200 last:mr-0 mr-1">{{$teacherAdministration->status}}</span>
+                                <span class="text-xs font-bold inline-block py-1 px-2 uppercase rounded-full text-blueGray-600 bg-red-200 last:mr-0 mr-1">
+                                    {{$teacherAdministration->status}}
+                                </span>
                             @endif
                         </td>
                   </tr>

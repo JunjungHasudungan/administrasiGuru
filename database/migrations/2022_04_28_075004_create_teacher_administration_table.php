@@ -10,11 +10,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('teacher_administration', function (Blueprint $table) {
@@ -24,11 +19,7 @@ return new class extends Migration
             $table->string('learning_method')->default('teori');
             $table->string('subject_title');
             $table->foreignIdFor(Subject::class);
-            $table->integer('weekday');
-            $table->time('start_time');
-            $table->time('end_time');
             $table->foreignIdFor(Classroom::class);
-            $table->foreignIdFor(Major::class);
             $table->string('status')->default('unchecked')->nullable();
             $table->string('completeness')->default('bersambung');
             $table->string('note')->nullable();

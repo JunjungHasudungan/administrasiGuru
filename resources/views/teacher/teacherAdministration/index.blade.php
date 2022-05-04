@@ -1,7 +1,7 @@
 <x-teacher-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-sky-500">
-            {{ __(' Administrasi Guru') }} {{Auth::user()->name}}
+             {{Auth::user()->name}}
         </h2>
     </x-slot>
 
@@ -34,15 +34,76 @@
                                   <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                       No
                                   </th>
-                                  <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                      Nama Mata Pelajaran
-                                  </th>
-                                  <th scope="col" width="200" class="px-6 py-3 bg-gray-50">
-  
-                                  </th>
+                                  <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Tanggal
+                                </th>
+                                <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Kelas
+                                </th>
+                                <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                     Mata Pelajaran
+                                </th>
+                                  <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Materi
+                                </th>
+                                <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Jam Pelajaran
+                                </th>
+                                <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Metode Pelajaran
+                                </th>
+                                <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Ketuntasan
+                                </th>
+                                <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Status
+                                </th>
                               </tr>
                               </thead>
                               <tbody class="bg-white divide-y divide-gray-200">
+                                  @forelse ($teacherAdministration as $item)
+                                  <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        {{ $loop->iteration }}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        {{ date('l, d F Y', strtotime( $item->created_at )) }}  
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        {{ $item->classrooms->name }}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        {{ $item->subjects->name }}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        {{ $item->subject_title }}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        {{date('h:i', strtotime($item->subjects->start_time))}} - {{ date('h:i', strtotime($item->subjects->end_time)) }}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        {{ $item->learning_method}}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        {{ $item->completeness}}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        @if ($item->status === 'checked')
+                                            <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 capitalize last:mr-0 mr-1">
+                                                {{ $item->status}}
+                                            </span>
+                                        @else
+                                            <span class="text-xs font-bold inline-block py-1 px-2 capitalize rounded-full text-blueGray-600 bg-yellow-200 last:mr-0 mr-1">
+                                                {{ $item->status}}
+                                            </span>
+                                        @endif
+                                    </td>
+                                </tr>
+                                @empty
+                                <div class="bg-yellow-200 text-grey p-3 rounded shadow-sm mb-3">
+                                  <span class="font-serif font-bold">{{Auth::user()->name}}, Administrasi belum ada isinya</span> 
+                                </div>
+                              @endforelse
                               </tbody>
                           </table>
                       </div>

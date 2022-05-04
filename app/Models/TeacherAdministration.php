@@ -5,49 +5,36 @@ namespace App\Models;
 use App\Helpers\Completeness;
 use App\Helpers\StatusCheck;
 use App\Helpers\Method;
+use App\Models\Classroom;
+use App\Models\Subject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class TeacherAdministration extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'teacher_administration';
+    public $id;
 
     protected $fillable = [
         'teacher_id', 
         'learning_method',
         'subject_title', 
         'subject_id',
-        'weekday', 
-        'start_time', 
-        'end_time', 
         'classroom_id',
-        'major_id',
         'status',
         'completeness'
     ];
 
-    const COMPLETENESS = [
-        0   => 'Bersambung',
-        1   => 'Selesai'
-    ];
-
-    const WeekDay = [
-        1   => 'SENIN',
-        2   => 'SELASA',
-        3   => 'RABU',
-        4   => 'KAMIS',
-        5   => 'JUMAT'
-    ];
-
-    const Method_Learning = [
-        1   => 'TEORI',
-        2   => 'PRAKTEK',
-        3   => 'PENUGASAN'
-    ];
+    public function __construct()
+    {
+        $this->id = Auth::user()->id;
+    }
 
     public function teachers()
     {
@@ -61,7 +48,17 @@ class TeacherAdministration extends Model
 
     public function classrooms()
     {
-        return $this->BelongsTo(Classrooms::class);
+        return $this->belongsTo(Classroom::class, 'classroom_id');
+    }
+
+    public function subjects()
+    {
+        return $this->belongsTo(Subject::class, 'subject_id');
+    }
+
+    public function teacherSubject()
+    {
+        return $this->subjects()->where('teacher_id', $this->id);
     }
 
     public function getIsUncheckedAttribute():bool
@@ -97,5 +94,10 @@ class TeacherAdministration extends Model
     public function getIsFinishAttribute():bool
     {
         return (int) $this->completeness === Completeness::Completeness['finished'];
+    }
+
+    public function getCreatedAttribute()
+    {
+        return Carbon::parse($this->attributes['created_at'])->translatedFormat('l, d F Y');
     }
 }
