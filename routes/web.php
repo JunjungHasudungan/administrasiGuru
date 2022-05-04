@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\TeacherAdministrationController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Teacher\SubjectController as TeacherSubject;
 use App\Http\Controllers\Teacher\SchedulesController as TeacherShedule;
+use App\Http\Controllers\Teacher\TeacherAdministrationController as TeacherAdministration;
 use App\Http\Controllers\Student\LessonController as StudentSubject;
 use App\Http\Livewire\Teacher\Subject;
 use App\Models\LessonTimetable;
@@ -32,9 +33,9 @@ use App\Models\LessonTimetable;
 
 Route::redirect('/', '/login');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -50,8 +51,9 @@ Route::group(['middleware' => 'auth'], function() {
 
    Route::group(['middleware' => 'role:teacher', 'prefix' => 'teacher', 'as' => 'teacher.'], function() {
        Route::resources([
-           'subjects'       => TeacherSubject::class,
-           'schedules'      => TeacherShedule::class,
+           'subjects'                   => TeacherSubject::class,
+           'schedules'                  => TeacherShedule::class,
+           'teacherAdministration'      => TeacherAdministration::class,
         ]);
    });
 

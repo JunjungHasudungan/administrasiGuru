@@ -3,8 +3,11 @@
         <x-jet-application-logo class="block h-12 w-auto" />
     </div>
 
-    <div class="mt-8 text-2xl">
-        Selamat Datang di aplikasi Administrasi Guru
+    <div class="mt-8 text-2xl text-blue-500">
+        Selamat Datang 
+        <span class=" text-center mt">
+            {{Auth::user()->name}}
+        </span> di aplikasi Administrasi Guru
     </div>
 
     <div class="mt-6 text-gray-500">

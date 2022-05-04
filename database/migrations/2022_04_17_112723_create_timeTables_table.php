@@ -19,7 +19,7 @@ return new class extends Migration
         Schema::create('timetables', function (Blueprint $table) {
             $table->id();
             $table->integer('weekday');
-            // $table->foreignIdFor(Subject::class);
+            $table->integer('event')->nullable();
             $table->timestamps();
         });
     }

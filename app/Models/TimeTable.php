@@ -12,7 +12,7 @@ class Timetable extends Model
 
     protected $table = 'timetables';
 
-    protected $fillable =['name' ];
+    protected $fillable =['weekday', 'start_time', 'end_time', 'event'];
 
     const WEEK_DAY = [
         '1' => 'SENIN',
