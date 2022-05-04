@@ -5,7 +5,7 @@ namespace App\Helpers;
 class Completeness
 {
     public const Completeness = [
-        'bersambung'     => 'BERSAMBUNG',
-        'selesai'      => 'SELESAI',
+        'continued'     => 'Bersambung',
+        'finished'      => 'Selesai',
     ];
 }

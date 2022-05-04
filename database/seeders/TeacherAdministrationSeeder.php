@@ -32,7 +32,7 @@ class TeacherAdministrationSeeder extends Seeder
             [
                 'id'                => 1,
                 'teacher_id'        => 13, 
-                'learning_method'   => 'theory',
+                'learning_method'   => 'teori',
                 'subject_title'     => 'HAK CIPTA',
                 'subject_id'        => 5,
                 'weekday'           => 1,
@@ -41,7 +41,7 @@ class TeacherAdministrationSeeder extends Seeder
                 'classroom_id'      => 1,
                 'major_id'          => 1,
                 'status'            => 'checked',
-                'completeness'      => 'continued',
+                'completeness'      => 'finish',
             ],
         ];
 

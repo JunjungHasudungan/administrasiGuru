@@ -19,7 +19,7 @@ class ClassroomSeeder extends Seeder
             [
                 'id'                    => 1,
                 'code_classroom'        => 'RPL010',
-                'name'                  => 'X',
+                'name'                  => 'X RPL',
                 // 'teacher_id'           => 13, // tabita sihaan
                 'major_id'              => 1,
                 'created_at'            => Carbon::now()
@@ -27,7 +27,7 @@ class ClassroomSeeder extends Seeder
             [
                 'id'                    => 2,
                 'code_classroom'        => 'RPL11',
-                'name'                  => 'XI',
+                'name'                  => 'XI RPL',
                 // 'teacher_id'            => 10, // Anjelina
                 'major_id'              => 1, // JURUSAN
                 'created_at'            => Carbon::now()
@@ -35,7 +35,7 @@ class ClassroomSeeder extends Seeder
             [
                 'id'                    => 3,
                 'code_classroom'        => 'RPL12',
-                'name'                  => 'XII',
+                'name'                  => 'XII RPL',
                 // 'teacher_id'            => 4, // sumitro simamora
                 'major_id'              => 1,
                 'created_at'            => Carbon::now()
@@ -43,7 +43,7 @@ class ClassroomSeeder extends Seeder
             [
                 'id'                    => 4,
                 'code_classroom'        => 'AK10',
-                'name'                  => 'X',
+                'name'                  => 'X AK',
                 // 'teacher_id'            => 11, // yesaya sihotang
                 'major_id'              => 2,
                 'created_at'            => Carbon::now()
@@ -51,7 +51,7 @@ class ClassroomSeeder extends Seeder
             [
                 'id'                    => 5,
                 'code_classroom'        => 'AK11-1',
-                'name'                  => 'XI 1',
+                'name'                  => 'XI AK 1',
                 // 'teacher_id'            => 7, // nasip situmorang
                 'major_id'              => 2,
                 'created_at'            => Carbon::now()
@@ -59,7 +59,7 @@ class ClassroomSeeder extends Seeder
             [
                 'id'                    => 6,
                 'code_classroom'        => 'AKK11-2',
-                'name'                  => 'XI 2',
+                'name'                  => 'XI AK 2',
                 // 'teacher_id'            => 12, // iskandar
                 'major_id'              => 2,
                 'created_at'            => Carbon::now()
@@ -75,7 +75,7 @@ class ClassroomSeeder extends Seeder
             [
                 'id'                    => 8,
                 'code_classroom'        => 'AKK12-2',
-                'name'                  => 'XII 2',
+                'name'                  => 'XII AK 2',
                 // 'teacher_id'            => 6, // Dani harianja
                 'major_id'              => 2,
                 'created_at'            => Carbon::now()

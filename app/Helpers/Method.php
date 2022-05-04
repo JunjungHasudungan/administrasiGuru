@@ -5,8 +5,8 @@ namespace App\Helpers;
 class Method 
 {
     public const Method_Learning = [
-        'teori'    => 'Teori',
-        'praktek'  => 'Praktek',
-        'penugasan' => 'Penugasan'
+        'theory'    => 'Teori',
+        'practice'  => 'Praktek',
+        'assignment' => 'Penugasan'
     ];
 }

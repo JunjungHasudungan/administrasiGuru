@@ -3,10 +3,11 @@
 namespace App\Models;
 
 use App\Helpers\Completeness;
-use App\Helpers\Constant;
+use App\Helpers\StatusCheck;
 use App\Helpers\Method;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class TeacherAdministration extends Model
@@ -58,38 +59,43 @@ class TeacherAdministration extends Model
         return $this->belongsTo(Major::class);
     }
 
+    public function classrooms()
+    {
+        return $this->BelongsTo(Classrooms::class);
+    }
+
     public function getIsUncheckedAttribute():bool
     {
-        return (string) $this->status === 'unchecked';
+        return (int) $this->status === StatusCheck::ADMINISTRATION_STATUS['unchecked'];
     }
 
     public function getIsCheckedAttribute():bool
     {
-        return (string) $this->status === 'checked';
+        return (int) $this->status === StatusCheck::ADMINISTRATION_STATUS['checked'];
     }
 
     public function getIsTheoryAttribute():bool
     {
-        return (String) $this->learning_method === 'teori';
+        return (int) $this->learning_method === Method::Method_Learning['theory'];
     }
 
     public function getIsPracticeAttribute():bool
     {
-        return (String) $this->learning_method === 'praktek';
+        return (int) $this->learning_method === Method::Method_Learning['practice'];
     }
 
     public function getIsAssigmentAttribute():bool
     {
-        return (String) $this->learning_method === 'penugasan';
+        return (int) $this->learning_method === Method::Method_Learning['assignment'];
     }
 
     public function getIsContinueAttribute():bool
     {
-        return (String) $this->completeness === 'bersambung';
+        return (int) $this->completeness === Completeness::Completeness['continued'];
     }
 
     public function getIsFinishAttribute():bool
     {
-        return (String) $this->completeness === 'selesai';
+        return (int) $this->completeness === Completeness::Completeness['finished'];
     }
 }

@@ -31,7 +31,8 @@ class Subject extends Model
 
     public function classroomSubject() // kelas mata pelajaran
     {
-        return $this->belongsToMany(Classroom::class,'classroom_subject', 'subject_id', 'classroom_id');
+        return $this->belongsToMany(Classroom::class,'classroom_subject', 'subject_id', 'classroom_id')
+        ->withPivot('id','teacher_id');
     }
 
     public function majorSubject()

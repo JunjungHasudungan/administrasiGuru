@@ -21,7 +21,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('users');
-            $table->string('learning_method')->default('theory');
+            $table->string('learning_method')->default('teori');
             $table->string('subject_title');
             $table->foreignIdFor(Subject::class);
             $table->integer('weekday');
@@ -29,8 +29,9 @@ return new class extends Migration
             $table->time('end_time');
             $table->foreignIdFor(Classroom::class);
             $table->foreignIdFor(Major::class);
-            $table->string('status', 50)->default('unchecked');
-            $table->string('completeness', 50)->default('continued');
+            $table->string('status')->default('unchecked')->nullable();
+            $table->string('completeness')->default('bersambung');
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }
