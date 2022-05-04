@@ -19,7 +19,7 @@ class TeacherAdministration extends Model
     use HasFactory;
 
     protected $table = 'teacher_administration';
-    public $id;
+    // public $id;
 
     protected $fillable = [
         'teacher_id', 

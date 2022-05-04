@@ -17,18 +17,6 @@ class TeacherAdministrationSeeder extends Seeder
     public function run()
     {
         $teacherAdministration = [
-            // [
-            //     'id'                => 1,
-            //     'teacher_id'        => 5, 
-            //     'learning_method'   => 1,
-            //     'subject_title'     => 'Penjumlahan Bilangan Biner',
-            //     'subject_id'        => 25,
-            //     'weekday'           => 1,
-            //     'start_time'        => '14:00',
-            //     'end_time'          => '15:00',
-            //     'classroom_id'      => 1,
-            //     'major_id'          => 1,
-            // ],
             [
                 'id'                => 1,
                 'teacher_id'        => 13, 
@@ -38,6 +26,46 @@ class TeacherAdministrationSeeder extends Seeder
                 'classroom_id'      => 1,
                 'status'            => 'checked',
                 'completeness'      => 'finish',
+            ],
+            [
+                'id'                => 2,
+                'teacher_id'        => 5, 
+                'learning_method'   => 'teori',
+                'subject_title'     => 'perkenalan mata pelajaran',
+                'subject_id'        => 28,
+                'classroom_id'      => 6,
+                'status'            => 'checked',
+                'completeness'      => 'bersambung',
+            ],
+            [
+                'id'                => 3,
+                'teacher_id'        => 5, 
+                'learning_method'   => 'teori',
+                'subject_title'     => 'perkenalan mata pelajaran',
+                'subject_id'        => 29,
+                'classroom_id'      => 7,
+                'status'            => 'unchecked',
+                'completeness'      => 'bersambung',
+            ],
+            [
+                'id'                => 4,
+                'teacher_id'        => 6, 
+                'learning_method'   => 'teori',
+                'subject_title'     => 'Matriks',
+                'subject_id'        => 15,
+                'classroom_id'      => 3,
+                'status'            => 'checked',
+                'completeness'      => 'bersambung',
+            ],
+            [
+                'id'                => 5,
+                'teacher_id'        => 6, 
+                'learning_method'   => 'teori',
+                'subject_title'     => 'matriks',
+                'subject_id'        => 15,
+                'classroom_id'      => 7,
+                'status'            => 'unchecked',
+                'completeness'      => 'bersambung',
             ],
         ];
 

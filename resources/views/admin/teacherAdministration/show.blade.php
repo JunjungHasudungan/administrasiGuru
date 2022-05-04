@@ -73,52 +73,62 @@
               <tbody class="bg-gray-200">
                   <tr class="bg-white border-2 border-gray-200">
                         <td class="px-7 py-2 text-center">
-                            <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">26/04/2022</span>
+                            <span class="border-0 font-serif  text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">
+                                {{ date('l, d F Y', strtotime( $teacherAdministration->created_at )) }}
+                            </span>
                         </td>
-                        <td class="px-7 py-2 text-center">
-                            <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">XI RPL</span>
+                        <td class="px-6 py-4 text-center">
+                            <span class="border-0 font-serif  text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">
+                                {{ $teacherAdministration->classrooms->name }}
+                            </span>
                         </td>
-                        <td class="px-7 py-2 text-center">
-                            <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">PKK</span>
+                        <td class="px-6 py-4 text-center">
+                            <span class="border-0 font-serif  text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">
+                                {{ $teacherAdministration->subjects->name }}
+                            </span>
                         </td>
-                        <td class="px-7 py-2 text-center">
-                            <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">HAK CIPTA</span>
+                        <td class="px-6 py-4 text-center">
+                            <span class="border-0 font-serif  text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">
+                                {{ $teacherAdministration->subject_title }}
+                            </span>
                         </td>
-                        <td class="px-7 py-2 text-center">
-                            <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">10:00</span>
+                        <td class="px-6 py-4 text-center">
+                            <span class="border-0 font-serif  text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">
+                                {{date('h:i', strtotime($teacherAdministration->subjects->start_time))}} - {{ date('h:i', strtotime($teacherAdministration->subjects->end_time)) }}
+                            </span>
                         </td>
-                        <td class="px-7 py-2 text-center">
+                        <td class="px-6 py-4 text-center">
                             @if ($teacherAdministration->is_teory)
-                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-sky-600 bg-teal-200 uppercase last:mr-0 mr-1">
+                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-sky-600 bg-teal-200 capitalize last:mr-0 mr-1">
                                     {{$teacherAdministration->learning_method}}
                                 </span>
                             @else
-                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-red-600 bg-emerald-200 uppercase last:mr-0 mr-1">
+                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-red-600 bg-emerald-200 capitalize last:mr-0 mr-1">
                                     {{$teacherAdministration->learning_method}}
                                 </span>
                             @endif
                         </td>
-                        <td class="px-7 py-2 text-center">
+                        <td class="px-6 py-4 text-center">
                             @if ($teacherAdministration->is_finish)
-                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-blue-200 uppercase last:mr-0 mr-1">
+                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-blue-200 capitalize last:mr-0 mr-1">
                                     {{$teacherAdministration->completeness}}
                                 </span>
                             @else
-                            <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-lime-200 uppercase last:mr-0 mr-1">
+                            <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-lime-200 capitalize last:mr-0 mr-1">
                                 {{$teacherAdministration->completeness}}
                             </span>
                             @endif
                         </td>
-                        <td class="px-7 py-2 text-center">
-                            <span class="border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">-</span>
+                        <td class="px-6 py-4 text-center">
+                            <span class="border-0 font-serif  text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">-</span>
                         </td>
-                        <td class="px-7 py-2 text-center">
+                        <td class="px-6 py-4 text-center">
                             @if ($teacherAdministration->is_checked)
-                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 uppercase last:mr-0 mr-1">
+                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 capitalize last:mr-0 mr-1">
                                     {{ $teacherAdministration->status}}
                                 </span>
                             @else
-                                <span class="text-xs font-bold inline-block py-1 px-2 uppercase rounded-full text-blueGray-600 bg-red-200 last:mr-0 mr-1">
+                                <span class="text-xs font-bold inline-block py-1 px-2 capitalize rounded-full text-blueGray-600 bg-yellow-200 last:mr-0 mr-1">
                                     {{$teacherAdministration->status}}
                                 </span>
                             @endif
@@ -128,7 +138,7 @@
           </table>
           <div class="p-4 text-center">
             <a href="{{ route('admin.teacherAdministration.index') }}"
-              class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold tracking-wider text-white uppercase transition bg-green-500 border border-transparent rounded shadow select-none focus:border-green-600 hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-500 focus:ring-opacity-30 disabled:opacity-50">
+              class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold tracking-wider text-white capitalize transition bg-green-500 border border-transparent rounded shadow select-none focus:border-green-600 hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-500 focus:ring-opacity-30 disabled:opacity-50">
               <span>Kembali</span>
             </a>
           </div>
