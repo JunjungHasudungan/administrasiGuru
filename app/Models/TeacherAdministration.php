@@ -31,10 +31,6 @@ class TeacherAdministration extends Model
         'completeness'
     ];
 
-    public function __construct()
-    {
-        $this->id = Auth::user()->id;
-    }
 
     public function teachers()
     {
@@ -56,10 +52,10 @@ class TeacherAdministration extends Model
         return $this->belongsTo(Subject::class, 'subject_id');
     }
 
-    public function teacherSubject()
-    {
-        return $this->subjects()->where('teacher_id', $this->id);
-    }
+    // public function teacherSubject()
+    // {
+    //     return $this->subjects()->where('teacher_id',);
+    // }
 
     public function getIsUncheckedAttribute():bool
     {

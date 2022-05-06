@@ -22,18 +22,25 @@
                 <span class="ml-2">Jurusan</span>
                 </a>
               </div>
+
+              @if (session('success'))
+              <div class="px-4 py-2 mb-4 text-sm text-center text-green-800 bg-green-300 rounded-full shadow-sm">
+                {!! session('success') !!}
+              </div>
+              @endif
+
           </div>
           <table class="min-w-full table-auto">
               <thead class="justify-between">
-                  <tr class="bg-indigo-500 w-full rounded">
+                  <tr class="bg-slate-200 w-full rounded">
                       <th class="px-7 py-2">
-                          <span class="text-white">No</span>
+                          <span class="text-indigo-500">No</span>
                       </th>
                       <th class="px-7 py-2 text-left">
-                          <span class="text-white">Kode Jurusan</span>
+                          <span class="text-indigo-500">Kode Jurusan</span>
                       </th>
                       <th class="px-7 py-2 text-left">
-                          <span class="text-white">Nama Jurusan</span>
+                          <span class="text-indigo-500">Nama Jurusan</span>
                       </th>
                       <th class="px-7 py-2 ">
                           {{-- <span class="text-white">AKSI</span> --}}
@@ -59,6 +66,7 @@
                               clip-rule="evenodd" />
                           </svg>
                         </a>
+                        {{-- edit --}}
                         <a href="{{ route('admin.majors.edit', $major->id) }}"
                           class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide text-white transition bg-yellow-500 border border-transparent rounded-full shadow select-none focus:border-yellow-600 hover:bg-yellow-600 focus:outline-none focus:ring focus:ring-yellow-500 focus:ring-opacity-30 disabled:opacity-50">
                           <svg class="w-4 h-4 -mx-2"
@@ -68,17 +76,22 @@
                             <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                           </svg>
                         </a>
-                        <button
-                          class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide text-white transition bg-red-500 border border-transparent rounded-full shadow select-none focus:border-red-600 hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-500 focus:ring-opacity-30 disabled:opacity-50">
-                          <svg class="w-4 h-4 -mx-2"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                              clip-rule="evenodd" />
-                          </svg>
-                        </button>
+                          {{-- delete --}}
+                        <form action="{{ route('admin.majors.destroy', $major->id) }}" class="inline" method="post">
+                          @csrf
+                          @method('delete')
+                          <button type="submit"
+                            class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide text-white transition bg-red-500 border border-transparent rounded-full shadow select-none focus:border-red-600 hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-500 focus:ring-opacity-30 disabled:opacity-50">
+                            <svg class="w-4 h-4 -mx-2"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor">
+                              <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                                clip-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </form>
                       </td>
           
                   </tr>

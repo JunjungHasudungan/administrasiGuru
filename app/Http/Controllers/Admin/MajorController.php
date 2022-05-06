@@ -14,33 +14,41 @@ class MajorController extends Controller
 {
     public function index()
     {
-        $majors = Major::with(['headOfDepartement', 'teacherMajors', 'studentMajors'])->get();
+        // $major = Major::all();
+        // $major->load('teacherMajors')->dd();
+        $majors = Major::with(['departement', 'teacherMajors', 'studentMajors'])->get();
 
         return view('admin.majors.index', compact('majors'));
     }
 
     public function create()
     {
-        return view('admin.majors.create');
+        $departement_head_candidate = User::where('teacher_major', ">", 0)->pluck('name', 'id');
+
+        return view('admin.majors.create', compact('departement_head_candidate'));
     }
 
     public function store(StoreMajorRequest $request)
     {
         $major = Major::create($request->all());
-
-        return redirect()->route('majors.index');
+        
+        return redirect()->route('admin.majors.index');
     }
 
     public function show(Major $major)
     {
-        $major->load('headOfDepartement');
-        
+        $major->load(['departement', 'teacherMajors', 'studentMajors']);
+
         return view('admin.majors.show', compact('major'));
     }
 
-    public function edit(Major $major)
+    public function edit( Major $major)
     {
-        return view('admin.majors.edit', compact('major'));
+        $departement_head_candidate = User::where('teacher_major', ">", 0)->pluck('name', 'id');
+
+         $major->load('departement');
+       
+        return view('admin.majors.edit', compact('major', 'departement_head_candidate'));
     }
 
     public function update(UpdateMajorRequest $request, Major $major)
@@ -53,8 +61,8 @@ class MajorController extends Controller
     public function destroy(Major $major)
     {
 
-        // $major->delete();
+        $major->delete();
 
-        return back();
+        return back()->with('success', 'Article <span class="italic font-medium">deleted</span> successfully.');
     }
 }

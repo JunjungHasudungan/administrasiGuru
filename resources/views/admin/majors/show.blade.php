@@ -1,7 +1,7 @@
 <x-student-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            <span class=" text-sky-500 "> {{  $major->title }} </span>
+            <span class=" text-sky-500 "> {{  $major->title }}  </span>
           </h2>
     </x-slot>
 
@@ -51,10 +51,13 @@
               </thead>
               <tbody class="bg-gray-200">
                   <tr class="bg-white border-2 border-gray-200">
-                        <td class="px-7 py-2 text-center">{{$major->headOfDepartement->name ?? ''}}</td>
                         <td class="px-7 py-2 text-center">
+                          {{$major->departement->name ?? ''}}</td>
+                        <td class="px-7 py-2 text-center">  
                             @foreach ($major->teacherMajors as $teacher)
-                                <span class=" bg-slate-400 border-0 font-serif italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">{{$teacher['name']}}</span>
+                                <span class=" border-0 font-serif italic  text-xs min-w-0 space-x-0.5 mb-px w-2 text-gray-500 p-3 rounded mt">
+                                  {{$teacher['name']}}
+                                </span>
                             @endforeach
                         </td>
                   </tr>

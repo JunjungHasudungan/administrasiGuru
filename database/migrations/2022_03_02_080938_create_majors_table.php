@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('major_code');
             $table->string('title', 100);
-            // $table->string('slug');
+            $table->unsignedBigInteger('headOfDepartement');
+            $table->foreign('headOfDepartement')->references('id')->on('users');
             $table->timestamps();
         });
     }

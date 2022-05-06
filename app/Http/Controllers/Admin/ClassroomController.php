@@ -31,6 +31,8 @@ class ClassroomController extends Controller
 
     public function show(Classroom $classroom)
     {
+        $classroom->load(['classroomSubject']);
+        
         return view('admin.classrooms.show', compact('classroom'));
     }
 

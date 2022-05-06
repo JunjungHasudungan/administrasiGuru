@@ -6,30 +6,17 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateMajorRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
     public function authorize()
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
         return [
-            'code_major' => [
-                'required'
-            ],
-            'name'  => [
-                'required'
-            ]
+            'major_code'            => 'required',
+            'title'                  =>'required:string',
+            'headOfDepartement'     => 'required',
         ];
     }
 }

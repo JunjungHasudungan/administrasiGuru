@@ -7,38 +7,60 @@
 
     <div class="container mx-auto mt-10 mb-10">
         <div class="bg-white p-5 rounded shadow-sm">
-            <form action="{{ route('admin.majors.update', [$major->id]) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('admin.majors.update', $major->id)}}" method="POST" enctype="multipart/form-data">
+              @method('PUT')
                 @csrf
-                @method('PUT')
-    
-                <div class="mt-5">
-                    <label class="capitalize font-normal text-indigo-400 hover:font-bold ">kode jurusan</label>
-                    <input type="text" name="major_code" value="{{ old('major_code', $major->major_code) }}"
-                    class="w-full bg-gray-200 p-2 rounded shadow-sm border border-gray-200 focus:outline-none focus:bg-white mt-2">
-                    @error('major_code')
-                        <div class="bg-red-400 p-2 shadow-sm rounded mt-2">
-                            {{ $message }}
+                <div class="flex flex-wrap -mx-3 mb-2">
+
+                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+                            <span>Kode Jurusan</span>
+                        </label>
+                        <input id="major_code" type="text" name="major_code" value="{{old('title', $major->major_code)}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  placeholder="Kode Jurusan">
+                        @error('major_code')
+                            <div class="bg-red-400 p-2 shadow-sm rounded mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+                            <span>Nama Jurusan</span>
+                        </label>
+                        <input id="title" type="text" name="title" value="{{old('title', $major->title)}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  placeholder="Nama Jurusan">
+                        @error('title')
+                            <div class="bg-red-400 p-2 shadow-sm rounded mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                        <span>Kepala Jurusan </span>
+                      </label>
+                      <div class="relative">
+                        <select id="" name="headOfDepartement" class="form-multiselect  block capitalize appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control {{ $errors->has('headOfDepartement') ? 'is-invalid' : '' }}"  >
+                            @foreach ($departement_head_candidate as $id => $candidate)
+                                <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{ ($major->candidate ? $major->candidate->id : old('headOfDepartement')) == $id ? 'selected' : ''}}>{{$candidate}}</option>
+                            @endforeach
+                        </select>
+                            @error('headOfDepartement')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                         </div>
-                    @enderror
+                      </div>
+                    </div>
                 </div>
-    
-                <div class="mt-5">
-                    <label class="capitalize font-normal  hover:decoration-blue-400 text-indigo-400 hover:font-bold">nama jurusan</label>
-                    <input type="text" name="name" value="{{ old('name', $major->title) }}"
-                    class="w-full bg-gray-200 p-2 rounded shadow-sm border border-gray-200 focus:outline-none focus:bg-white mt-2">
-                    @error('name')
-                        <div class="bg-red-400 p-2 shadow-sm rounded mt-2">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
-                
-    
+            </div>
+
                 <div class="mt-5">
                     <button type="submit"
-                        class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold tracking-wider text-white uppercase transition bg-green-500 border border-transparent rounded shadow select-none focus:border-green-600 hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-500 focus:ring-opacity-30 disabled:opacity-50">UPDATE</button>
+                        class="bg-indigo-500 text-white p-2 rounded shadow-sm focus:outline-none hover:bg-indigo-700">SIMPAN</button>
                 </div>
-    
             </form>
         </div>
     </div>

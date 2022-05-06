@@ -22,16 +22,16 @@
                   </tr>
               </thead>
               <tbody class="bg-gray-200">
-                @forelse ($teacherAdministrations as $teacherAdministration)
+                @forelse ($teacherAdministrations as $teacherAdministration )
                   <tr class="bg-white border-2 border-gray-200">
                       <td class="px-7 py-2 text-center">
                         {{$loop->iteration}}
                       </td>
                       <td class="px-7 py-2 text-center">
-                        {{$teacherAdministration->teachers->name}}
+                        {{$teacherAdministration->teachers->name}} 
                       </td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center">
-                        <a href="{{ route('admin.teacherAdministration.show', [$teacherAdministration->id]) }}"
+                        <a href="{{route('admin.teacherAdministration.show', $teacherAdministration->teacher_id)}}"
                           class="text-blue-600 hover:text-blue-900 mb-2 mr-2"> 
                           <span>View </span> 
                         </a>

@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
             MajorSubjectSeeder::class,
             // TimeTableSeeder::class,
             // ClassroomTimetableSeeder::class,
-            // ClassroomSubjectSeeder::class,
+            ClassroomSubjectSeeder::class,
             TeacherAdministrationSeeder::class,
             PermissionSeeder::class,
             PermissionRoleSeeder::class,

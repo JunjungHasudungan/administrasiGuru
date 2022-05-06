@@ -13,11 +13,9 @@ class TeacherAdministrationController extends Controller
 
     public function index()
     {
-        // $teacherAdministrations = TeacherAdministration::with('teachers')
-        // ->select('teacher_id', DB::raw('count(*) as total'))
-        // ->groupBy('teacher_id')->get();
-        
-        $teacherAdministrations = TeacherAdministration::with('teachers')->get();
+        $teacherAdministrations = TeacherAdministration::with(['teachers', 'subjects'])
+        ->select('teacher_id')->groupBy('teacher_id')->get();
+
         // dd($teacherAdministrations);
 
         return view('admin.teacherAdministration.index', compact('teacherAdministrations'));

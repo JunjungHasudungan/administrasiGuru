@@ -12,11 +12,16 @@ class Major extends Model
 
     protected $table = 'majors';
 
-    protected $fillable = ['major_code', 'title', 'slug'];
+    protected $fillable = ['major_code', 'title', 'headOfDepartement'];
 
     public function subjects()
     {
         return $this->hasMany(Subject::class);
+    }
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
     }
 
     public function classrooms()
@@ -34,9 +39,9 @@ class Major extends Model
         return $this->hasMany(User::class, 'student_major');
     }
 
-    public function headOfDepartement() // kepala jurusan
+    public function departement() // kepala jurusan
     {
-        return $this->hasOne(User::class, 'major_id');
+        return $this->hasOne(User::class);
     }
 
     public function majorSubject() // 

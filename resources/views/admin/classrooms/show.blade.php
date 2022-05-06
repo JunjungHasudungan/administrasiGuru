@@ -58,14 +58,14 @@
                     <td class=" bg-auto  text-left  bg-slate-400 rounded w-2/5 "> 
                       @foreach ($classroom->students as $student)
                         <span class=" border-0 py-2 font-serif text-gray-800  tracking-widest mx-px my-1 italic text-xs min-w-0  mb-px w-2 p-3 rounded mt">
-                        <a href="#"  class="no-underline hover:underline "> {{$student->name}} </a>
+                          {{$student->name}} 
                         </span> 
                       @endforeach
                     </td>
                     <td class="px-7 py-2 text-left bg-slate-400  ">
                       @foreach($classroom->classroomSubject as $subject)
                       <span class=" capitalize border-0 text-gray-800 font-serif mx-px my-1 italic text-xs min-w-0 space-x-0.5 mb-px w-2  hover:font-bold p-3 rounded mt">
-                        <a href="#"  class="no-underline"> {{$subject->name}}, </a>
+                        <a href="#"  class="no-underline"> {{$subject->name ?? ''}}, </a>
                       </span>
                       @endforeach
                     </td>
