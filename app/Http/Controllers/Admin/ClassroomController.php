@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreClassesRequest;
 use App\Models\Classroom;
+use App\Models\Major;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -21,12 +23,19 @@ class ClassroomController extends Controller
 
     public function create()
     {
-        return view('admin.classrooms.create');
+        $majors = Major::all()->pluck('title', 'id');
+
+        $teachers = User::where('role_id', '=', 3)->pluck('name','id');
+
+        return view('admin.classrooms.create', compact('majors', 'teachers'));
     }
 
-    public function store(Request $request)
+    public function store(StoreClassesRequest $request)
     {
-        //
+        $classroom = Classroom::insert($request->validated());
+
+        dd($classroom);
+        // return back();
     }
 
     public function show(Classroom $classroom)

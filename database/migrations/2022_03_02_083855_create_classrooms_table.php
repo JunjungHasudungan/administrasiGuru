@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Classroom;
+use App\Models\Major;
 use App\Models\Subject;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -18,9 +19,12 @@ return new class extends Migration
         Schema::create('classrooms', function (Blueprint $table) {
             $table->id();
             $table->string('code_classroom');
-            $table->string('name');
-            $table->unsignedBigInteger('major_id')->index();
-            $table->foreign('major_id')->references('id')->on('majors')->onDelete('cascade');
+            $table->string('name_class');
+            $table->foreignIdFor(Major::class);
+            $table->string('room_number');
+            $table->unsignedBigInteger('teacher_id');
+            $table->foreign('teacher_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

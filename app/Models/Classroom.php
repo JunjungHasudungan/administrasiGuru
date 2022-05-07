@@ -12,7 +12,14 @@ class Classroom extends Model
 
     protected $table = 'classrooms';
 
-    protected $fillable = ['code_classroom', 'name', 'major_id', 'teacher_id', 'event_id', 'classroom_id'];
+    protected $fillable = [
+    'code_classroom',
+    'name_class',
+    'major_id',
+    'teacher_id',
+    'room_number',
+    'description'
+    ];
 
     public function majors()
     {
