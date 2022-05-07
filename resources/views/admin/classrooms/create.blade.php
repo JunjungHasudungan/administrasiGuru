@@ -26,7 +26,7 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                             <span>Nama Kelas</span>
                         </label>
-                        <input id="name_class" type="text" name="name_class"  value=" {{old('name_class')}} " class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500  {{ $errors->has('name_class') ? 'is-invalid' : '' }}" required>
+                        <input id="name_class" type="text" name="name_class" value="{{old('name_class')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('name_class')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
                         @if($errors->has('name_class'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('name_class') }}
@@ -39,7 +39,7 @@
                         <span>Wali Kelas </span>
                       </label>
                       <div class="relative">
-                        <select id="" name="teacher_id" class="form-multiselect  block capitalize appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control {{ $errors->has('teacher_id') ? 'is-invalid' : '' }}"  >
+                        <select id="teacher_id" name="teacher_id" class="form-multiselect  block capitalize appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control {{ $errors->has('teacher_id') ? 'is-invalid' : '' }}"  >
                             @foreach ($teachers as $id => $teacher)
                                 <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{  old('teacher_id') == $id ? 'selected' : ''}}>{{$teacher}}</option>
                             @endforeach

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreClassesRequest;
+use App\Http\Requests\StoreClassroomRequest;
+use App\Http\Requests\UpdateClassroomRequest;
 use App\Models\Classroom;
 use App\Models\Major;
 use App\Models\User;
@@ -25,40 +26,47 @@ class ClassroomController extends Controller
     {
         $majors = Major::all()->pluck('title', 'id');
 
-        $teachers = User::where('role_id', '=', 3)->pluck('name','id');
+        $teachers = User::where('role_id', 3)->pluck('name','id');
 
         return view('admin.classrooms.create', compact('majors', 'teachers'));
     }
 
-    public function store(StoreClassesRequest $request)
+    public function store(StoreClassroomRequest $request)
     {
-        $classroom = Classroom::insert($request->validated());
+        $classrooms = Classroom::insert($request->validated());
 
-        dd($classroom);
-        // return back();
+        return redirect()->route('admin.classrooms.index');
     }
 
     public function show(Classroom $classroom)
     {
-        $classroom->load(['classroomSubject']);
+       $classroom->load(['homeworkTeacher']);
         
         return view('admin.classrooms.show', compact('classroom'));
     }
 
     public function edit(Classroom $classroom)
     {
-        $classroom->load('students', 'classroomSubject');
+        $teachers = User::where('role_id', 3)->pluck('name','id');
+
+        $majors = Major::all()->pluck('title', 'id');
+
+        $classroom->load( 'homeworkTeacher');
         
-        return view('admin.classrooms.edit', compact('classroom'));
+        return view('admin.classrooms.edit', compact('classroom', 'majors', 'teachers'));
     }
 
-    public function update(Request $request, Classroom $classroom)
+    public function update(UpdateClassroomRequest $request, Classroom $classroom)
     {
-        //
+        $c = $classroom->update($request->all());
+
+        return redirect()->route('admin.classrooms.index');
     }
 
     public function destroy(Classroom $classroom)
     {
-        //
+        $classroom->delete();
+
+        return back();
     }
 }

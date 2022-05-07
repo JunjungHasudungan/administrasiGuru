@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreClassroomRequest extends FormRequest
+class UpdateClassroomRequest extends FormRequest
 {
     public function authorize()
     {
@@ -19,7 +19,7 @@ class StoreClassroomRequest extends FormRequest
             'major_id'              => 'required',
             'teacher_id'            => 'required',
             'room_number'           => 'required',
-            'description'           => 'nullable'
+            'description'           => 'nullable|min:15'
         ];
     }
 }

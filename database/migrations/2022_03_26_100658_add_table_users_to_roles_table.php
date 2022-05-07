@@ -27,7 +27,6 @@ return new class extends Migration
             $table->foreignIdFor(Major::class)->nullable();
             $table->unsignedBigInteger('student_major')->nullable();
             $table->unsignedBigInteger('teacher_major')->nullable();
-            $table->unsignedBigInteger('homework_teacher')->nullable();
             $table->unsignedBigInteger('headOfDepartement')->nullable();
             $table->foreign('headOfDepartement')->references('id')->on('majors')->onDelete('cascade');
             // $table->foreign('homework_teacher')->references('id')->on('classrooms')->nullOnDelete();

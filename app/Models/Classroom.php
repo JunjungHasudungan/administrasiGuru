@@ -37,7 +37,7 @@ class Classroom extends Model
 
     public function homeworkTeacher()
     {
-        return $this->hasOne(User::class, 'homework_teacher');
+        return $this->belongsTo(User::class, 'teacher_id');
     }
 
     public function classroomSubject()

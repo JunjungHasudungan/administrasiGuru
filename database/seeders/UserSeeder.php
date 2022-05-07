@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => null,
+                // 'homework_teacher'      => null,
             ],
             [
                 'id'                    => 2,
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => null,
+                // 'homework_teacher'      => null,
             ],
             [
                 'id'                    => 3,
@@ -50,7 +50,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => null,
+                // 'homework_teacher'      => null,
             ],
             [
                 'id'                    => 4,
@@ -62,7 +62,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => 3, // Wali kelas XII RPL
+                // 'homework_teacher'      => 3, // Wali kelas XII RPL
             ],
             [
                 'id'                    => 5,
@@ -74,7 +74,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => 2,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => 8, // Wali kelas XII Ak
+                // 'homework_teacher'      => 8, // Wali kelas XII Ak
             ],
             [
                 'id'                    => 6,
@@ -86,7 +86,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => 7, // wali kelas XII 1 AK
+                // 'homework_teacher'      => 7, // wali kelas XII 1 AK
             ],
             [
                 'id'                    => 7,
@@ -98,7 +98,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => 2,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => 5, // wali kelas XI 1
+                // 'homework_teacher'      => 5, // wali kelas XI 1
             ],
             [
                 'id'                    => 8,
@@ -110,7 +110,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => null,
+                // 'homework_teacher'      => null,
             ],
             [
                 'id'                    => 9,
@@ -122,7 +122,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => 1,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => null,
+                // 'homework_teacher'      => null,
             ],
             [
                 'id'                    => 10,
@@ -134,7 +134,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => 2, // wali kelas XI RPL
+                // 'homework_teacher'      => 2, // wali kelas XI RPL
             ],
             [
                 'id'                    => 11,
@@ -146,7 +146,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => 4, // wali kelas XI 1 AK
+                // 'homework_teacher'      => 4, // wali kelas XI 1 AK
             ],
             [
                 'id'                    => 12,
@@ -158,7 +158,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => 2,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => 6, // wali kelas XI 2 AK
+                // 'homework_teacher'      => 6, // wali kelas XI 2 AK
             ],
             [
                 'id'                    => 13,
@@ -170,7 +170,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => 1,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => 1,
+                // 'homework_teacher'      => 1,
             ],
             [
                 'id'                    => 14,
@@ -182,7 +182,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => null,
+                // 'homework_teacher'      => null,
             ],
             [
                 'id'                    => 15,
@@ -194,7 +194,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => 1,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => null,
+                // 'homework_teacher'      => null,
             ],
             [
                 'id'                    => 16,
@@ -206,7 +206,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => 1,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => null,
+                // 'homework_teacher'      => null,
             ],
             [
                 'id'                    => 17,
@@ -218,7 +218,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => 2,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => null,
+                // 'homework_teacher'      => null,
             ],
             [
                 'id'                    => 18,
@@ -230,7 +230,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 3,
-                'homework_teacher'        => null,          
+                // 'homework_teacher'        => null,          
             ],
             [
                 'id'                    => 19,
@@ -242,7 +242,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 3,
-                'homework_teacher'        => null,          
+                // 'homework_teacher'        => null,          
             ],
             [
                 'id'                    => 20,
@@ -254,7 +254,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 3,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 21,
@@ -266,7 +266,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 3,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 22,
@@ -278,7 +278,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 3,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 23,
@@ -290,7 +290,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 3,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 24,
@@ -302,7 +302,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 3,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 25,
@@ -314,7 +314,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 3,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 26,
@@ -326,7 +326,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 3,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 27,
@@ -338,7 +338,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 3,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 28,
@@ -350,7 +350,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 3,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 29,
@@ -362,7 +362,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 1,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 30,
@@ -374,7 +374,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 1,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 31,
@@ -386,7 +386,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 2,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 32,
@@ -398,7 +398,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 2,
                 'classroom_id'          => 4,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 33,
@@ -410,7 +410,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 4,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 34,
@@ -422,7 +422,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 2,
                 'classroom_id'          => 5,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 35,
@@ -434,7 +434,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 2,
                 'classroom_id'          => 6,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 36,
@@ -446,7 +446,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 2,
                 'classroom_id'          => 7,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 37,
@@ -458,7 +458,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 2,
                 'classroom_id'          => 8,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 38,
@@ -470,7 +470,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 2,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 39,
@@ -482,7 +482,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => null,
                 'classroom_id'          => 0,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 40,
@@ -494,7 +494,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => null,
                 'classroom_id'          => 0,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 41,
@@ -506,7 +506,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => null,
                 'classroom_id'          => 0,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 42,
@@ -518,7 +518,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 1,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 43,
@@ -530,7 +530,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 1,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 44,
@@ -542,7 +542,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 1,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 45,
@@ -554,7 +554,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 2,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 46,
@@ -566,7 +566,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 2,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 47,
@@ -578,7 +578,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 2,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 48,
@@ -590,7 +590,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => null,
                 'classroom_id'          => 2,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 49,
@@ -602,7 +602,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 2,
                 'classroom_id'          => 4,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 50,
@@ -614,7 +614,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 2,
                 'classroom_id'          => 4,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 51,
@@ -626,7 +626,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 2,
                 'classroom_id'          => 4,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 52,
@@ -638,7 +638,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 2,
                 'classroom_id'          => 6,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 53,
@@ -650,7 +650,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 2,
                 'classroom_id'          => 6,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 54,
@@ -662,7 +662,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 2,
                 'classroom_id'          => 5,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 55,
@@ -674,7 +674,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 2,
                 'classroom_id'          => 7,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 56,
@@ -686,7 +686,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 2,
                 'classroom_id'          => 7,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 57,
@@ -698,7 +698,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => 1,
                 'classroom_id'          => 3,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 58,
@@ -710,7 +710,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => 2,
                 'student_major'         => 0,
                 'classroom_id'          => 0,
-                'homework_teacher'      => null,          
+                // 'homework_teacher'      => null,          
             ],
             [
                 'id'                    => 59,
@@ -722,7 +722,7 @@ class UserSeeder extends Seeder
                 'teacher_major'         => null,
                 'student_major'         => null,
                 'classroom_id'          => null,
-                'homework_teacher'      => null,        
+                // 'homework_teacher'      => null,        
             ],
 
         ];
