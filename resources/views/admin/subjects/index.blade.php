@@ -56,7 +56,7 @@
 
                       <td class="px-7 py-2 text-center">{{$loop->iteration}}</td>
                       <td class="px-7 py-2 text-center">{{$subject->subject_code}}</td>
-                      <td class="px-7 py-2 text-center">{{$subject->name}}</td>
+                      <td class="px-7 py-2 text-center">{{$subject->subject_name ?? ''}}</td>
                       <td class="px-7 py-2 text-left">
                       </td>
                       <td class="px-6 text-right select-none whitespace-nowrap">

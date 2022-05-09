@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Classroom;
 use App\Models\Subject;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
@@ -16,10 +15,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('classroom_subject', function (Blueprint $table) {
+        Schema::create('subject_user', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Classroom::class);
             $table->foreignIdFor(Subject::class);
+            $table->foreignIdFor(User::class);
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('classroom_subject');
+        Schema::dropIfExists('subject_user');
     }
 };

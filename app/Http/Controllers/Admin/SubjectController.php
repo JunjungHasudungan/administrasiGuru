@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Major;
 use App\Models\Subject;
 use App\Models\Classroom;
 use App\Models\User;
@@ -17,13 +16,17 @@ class SubjectController extends Controller
     public function index()
     {
         $subjects = Subject::paginate(5);
-
-        return view('admin.subjects.index', compact('subjects'));
+        dd($subjects);
+        // return view('admin.subjects.index', compact('subjects'));
     }
 
     public function create()
     {
-        return view('admin.subjects.create');
+        $teachers = User::where('role_id', 3)->pluck('name', 'id');
+
+        $classrooms= Classroom::all()->pluck('name', 'id');
+
+        return view('admin.subjects.create', compact('teachers', 'classrooms'));
     }
 
     public function store(Request $request)

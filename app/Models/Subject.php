@@ -11,7 +11,7 @@ class Subject extends Model
 
     protected $table = 'subjects';
 
-    protected $fillable = ['subject_code', 'name','weekday' ,'teacher_id', 'classroom_id', 'major_id'];
+    protected $fillable = ['subject_code', 'subject_name','teacher_id', 'classroom_id', 'major_id'];
 
 
     public function categories()
@@ -24,9 +24,14 @@ class Subject extends Model
         return $this->belongsTo(Major::class,'major_id');
     }
 
-    public function teacherSubject() // guru mata pelajaran
+    // public function teacherSubject() // guru mata pelajaran
+    // {
+    //     return $this->belongsTo(User::class);
+    // }
+
+    public function teacherSubject()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class, 'subject_user', 'subject_id', 'user_id');
     }
 
     public function classroomSubject() // kelas mata pelajaran

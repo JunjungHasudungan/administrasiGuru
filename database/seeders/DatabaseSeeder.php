@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             SubjectSeeder::class,
             EventSeeder::class,
             MajorSubjectSeeder::class,
-            // TimeTableSeeder::class,
+            TeacherSubjectSeeder::class,
             // ClassroomTimetableSeeder::class,
             ClassroomSubjectSeeder::class,
             TeacherAdministrationSeeder::class,
