@@ -25,11 +25,16 @@ class MajorController extends Controller
     {
         $departement_head_candidate = User::where('teacher_major', ">", 0)->pluck('name', 'id');
 
-        return view('admin.majors.create', compact('departement_head_candidate'));
+        $teachers = User::where('role_id', 3)->pluck('name', 'id');
+
+        // dd($teachers);
+
+        return view('admin.majors.create', compact('departement_head_candidate', 'teachers'));
     }
 
     public function store(StoreMajorRequest $request)
     {
+
         $major = Major::create($request->all());
         
         return redirect()->route('admin.majors.index');
