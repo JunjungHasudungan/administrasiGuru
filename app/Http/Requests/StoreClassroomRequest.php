@@ -19,7 +19,8 @@ class StoreClassroomRequest extends FormRequest
             'major_id'              => 'required',
             'teacher_id'            => 'required',
             'room_number'           => 'required',
-            'description'           => 'nullable'
-        ];
+            'description'           => 'nullable',
+            // 'student'               => 'required', 'array'
+        ];  
     }
 }

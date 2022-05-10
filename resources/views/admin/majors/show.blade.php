@@ -40,12 +40,12 @@
       <div class="bg-white p-5 rounded shadow-sm">
           <table class="min-w-full table-auto">
               <thead class="justify-between">
-                  <tr class="bg-indigo-500 w-full">
+                  <tr class="bg-slate-200 w-full">
                       <th class="px-7 py-2 text-center">
-                        <span class="text-white">Kepala Jurusan</span>
+                        <span class="text-indigo-500">Kepala Jurusan</span>
                     </th>
                     <th class="px-7 py-2 text-center">
-                        <span class="text-white">Guru Jurusan</span>
+                        <span class="text-indigo-500">Guru Jurusan</span>
                     </th>
                   </tr>
               </thead>
@@ -63,12 +63,10 @@
                   </tr>
               </tbody>
           </table>
-          <div class="p-4 text-center">
-            <a href="{{ route('admin.majors.index') }}"
-              class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold tracking-wider text-white uppercase transition bg-green-500 border border-transparent rounded shadow select-none focus:border-green-600 hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-500 focus:ring-opacity-30 disabled:opacity-50">
-              <span>Kembali</span>
-            </a>
-          </div>
+          <button class="bg-transparent mt-2  text-blue-700 font-semibold hover: py-2 px-4  hover:border-transparent rounded">
+            <a href="{{route('admin.majors.index')}}">
+              Kembali</a> 
+            </button>
       </div>
   </div>
 </x-student-layout>

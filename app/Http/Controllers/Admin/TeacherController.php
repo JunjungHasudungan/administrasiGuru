@@ -19,7 +19,6 @@ class TeacherController extends Controller
         //     $query->groupBy('role_id')->orderBy('name');
         // })->get(); // 14
 
-
         return view('admin.teacherSubject.index', compact('teacherSubjects'));
     }
 

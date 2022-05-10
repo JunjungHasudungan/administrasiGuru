@@ -42,7 +42,7 @@ class Classroom extends Model
 
     public function classroomSubject()
     {
-        return $this->belongsToMany(Subject::class, 'classroom_subject', 'classroom_id', 'subject_id');
+        return $this->belongsToMany(Subject::class, 'classroom_subject',  'classroom_id', 'subject_id',);
     }
 
     public function classroomsTimeTable()
