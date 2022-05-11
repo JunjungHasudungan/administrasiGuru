@@ -17,15 +17,15 @@ class RoleSeeder extends Seeder
             ],
             [
                 'id'    => 2,
-                'name'  => 'kepala sekolah'
+                'name'  => 'Siswa'
             ],
             [
                 'id'    => 3,
-                'name'  => 'guru'
+                'name'  => 'Guru'
             ],
             [
                 'id'    => 4,
-                'name'  => 'murid'
+                'name'  => 'Kepala Sekolah'
             ],
             [
                 'id'    => 5,

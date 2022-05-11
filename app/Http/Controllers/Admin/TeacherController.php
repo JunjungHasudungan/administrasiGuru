@@ -12,12 +12,12 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        $teachers = Subject::with('teacherSubject')->get();
+        // $teachers = Subject::with('teacherSubject')->get();
       
-      dd($teachers);
-        // $teacherSubjects = User::whereHas('teacherSubject', function($query){
-        //     $query->groupBy('role_id')->orderBy('name');
-        // })->get(); // 14
+    //   dd($teachers);
+        $teacherSubjects = User::whereHas('teacherSubject', function($query){
+            $query->groupBy('role_id')->orderBy('name');
+        })->get(); // 14
 
         return view('admin.teacherSubject.index', compact('teacherSubjects'));
     }

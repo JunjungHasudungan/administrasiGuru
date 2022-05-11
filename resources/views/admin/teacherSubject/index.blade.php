@@ -25,15 +25,15 @@
           </div>
           <table class="min-w-full table-auto rounded">
               <thead class="justify-between rounded">
-                  <tr class="bg-indigo-500 w-full rounded">
+                  <tr class="bg-slate-200 w-full rounded">
                       <th class="px-7 py-2 text-center">
-                          <span class="text-white">No</span>
+                          <span class="text-indigo-500">No</span>
                       </th>
                       <th class="px-7 py-2 text-center">
-                          <span class="text-white">Nama Guru </span>
+                          <span class="text-indigo-500">Nama Guru </span>
                       </th>
                       <th class="px-7 py-2 text-center">
-                          <span class="text-white">Nama Mata Pelajaran</span>
+                          <span class="text-indigo-500">Nama Mata Pelajaran</span>
                       </th>
                       <th class="px-7 py-2">
                       </th>
@@ -48,9 +48,9 @@
                       <td class="px-7 py-2 text-left"> 
                           <ul>
                             @foreach ($teacher->teacherSubject as $subject)
-                            <span class=" bg-slate-400 border-0 font-serif text-center mx-px my-1 italic text-xs min-w-0 space-x-0.5 mb-px w-2 text-white p-3 rounded mt">
+                            <span class="  border-0 font-serif text-center mx-px my-1   text-gray-900 text-xs min-w-0 space-x-0.5 mb-px w-2 text-grey p-3 rounded mt">
                                 <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline ">
-                                  {{$subject->name}}
+                                  {{$subject->subject_name}},
                                 </a>
                               </span>
                             @endforeach
@@ -58,7 +58,7 @@
                         </td>
                         <td class="px-5 text-center select-none whitespace-nowrap">
                             <a href="{{ route('admin.teachers.show', $teacher->id) }}"
-                              class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium bg-stone-700 tracking-wide text-white transition border border-transparent rounded-full shadow select-none bg-lightBlue-500 focus:border-lightBlue-600 hover:bg-lightBlue-600 focus:outline-none focus:ring focus:ring-lightBlue-500 focus:ring-opacity-30 disabled:opacity-50">
+                              class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium bg-gray-400 tracking-wide text-white transition border border-transparent rounded-full shadow select-none bg-lightBlue-500 focus:border-lightBlue-600 hover:bg-lightBlue-600 focus:outline-none focus:ring focus:ring-lightBlue-500 focus:ring-opacity-30 disabled:opacity-50">
                               <svg class="w-4 h-4 -mx-2"
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20"

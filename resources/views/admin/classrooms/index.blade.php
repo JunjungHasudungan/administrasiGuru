@@ -27,22 +27,22 @@
               <thead class="justify-between">
                   <tr class="bg-slate-200 w-full">
                       <th class="px-7 py-2 text-center">
-                          <span class="text-indigo-500"">No</span>
+                          <span class="text-indigo-500">No</span>
                       </th>
                       <th class="px-7 py-2 text-center">
-                          <span class="text-indigo-500"">Kode Kelas</span>
+                          <span class="text-indigo-500">Kode Kelas</span>
                       </th>
                       <th class="px-7 py-2 text-center">
-                          <span class="text-indigo-500"">Nama Kelas</span>
+                          <span class="text-indigo-500">Nama Kelas</span>
                       </th>
                       <th class="px-7 py-2 text-center">
-                        <span class="text-indigo-500"">Jurusan</span>
+                        <span class="text-indigo-500">Jurusan</span>
                     </th>
                     <th class="px-16 py-2 text-center">
-                        <span class="text-indigo-500"">Guru Wali Kelas</span>
+                        <span class="text-indigo-500">Guru Wali Kelas</span>
                     </th>
                       <th class="px-7 py-2">
-                          <span class="text-indigo-500""></span>
+                          <span class="text-indigo-500"></span>
                       </th>
                   </tr>
               </thead>
@@ -56,7 +56,7 @@
                       <td class="px-7 py-2 text-center">{{$classroom->homeworkTeacher->name ?? ''}}</td>
                       <td class="px-6 text-right select-none whitespace-nowrap">
                         <a href="{{ route('admin.classrooms.show', $classroom->id) }}"
-                          class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium bg-stone-700 tracking-wide text-white transition border border-transparent rounded-full shadow select-none bg-lightBlue-500 focus:border-lightBlue-600 hover:bg-lightBlue-600 focus:outline-none focus:ring focus:ring-lightBlue-500 focus:ring-opacity-30 disabled:opacity-50">
+                          class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium bg-gray-400 tracking-wide text-white transition border border-transparent rounded-full shadow select-none bg-lightBlue-500 focus:border-lightBlue-600 hover:bg-lightBlue-600 focus:outline-none focus:ring focus:ring-lightBlue-500 focus:ring-opacity-30 disabled:opacity-50">
                           <svg class="w-4 h-4 -mx-2"
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 20 20"

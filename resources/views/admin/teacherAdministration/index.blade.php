@@ -7,17 +7,17 @@
 
     <div class="container mx-auto mt-10 mb-10">
       <div class="bg-white p-5  shadow-sm">
-          <table class="min-w-full table-auto rounded">
+          <table class="min-w-full table-auto divide-gray-200 rounded">
               <thead class="justify-between">
-                  <tr class="bg-indigo-500 w-full">
+                  <tr class="bg-slate-200 w-full">
                       <th class="px-7 py-2 text-center">
-                          <span class="text-white">NO</span>
+                          <span class="text-indigo-500">NO</span>
                       </th>
                       <th class="px-7 py-2 text-center">
-                          <span class="text-white">NAMA GURU</span>
+                          <span class="text-indigo-500">NAMA GURU</span>
                       </th>
                       <th class="px-7 py-2">
-                          <span class="text-white"></span>
+                          <span class="text-indigo-500"></span>
                       </th>
                   </tr>
               </thead>

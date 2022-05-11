@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreUserRequest;
+use App\Models\Classroom;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -23,12 +25,18 @@ class UserController extends Controller
 
     public function create()
     {
-        //
+        $roles = Role::all()->pluck('name', 'id');
+
+        $classrooms = Classroom::all()->pluck('name_class', 'id');
+
+        return view('admin.users.create', compact('roles', 'classrooms' ));
     }
 
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
-        //
+        $user = User::create($request->all());
+
+        dd($user);
     }
 
     public function show(User $user)

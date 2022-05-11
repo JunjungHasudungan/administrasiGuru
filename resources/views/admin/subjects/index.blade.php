@@ -30,23 +30,23 @@
                   </form>
               </div>
           </div>
-          <table class="min-w-full table-auto">
+          <table class="min-w-full table-auto divide-gray-200">
               <thead class="justify-between">
-                  <tr class="bg-indigo-500 w-full">
+                  <tr class="bg-slate-200 w-full">
                       <th class="px-7 py-2 text-center">
-                          <span class="text-white">No</span>
+                          <span class="text-indigo-500">No</span>
                       </th>
                       <th class="px-7 py-2 text-center">
-                        <span class="text-white">Kode Mata Pelajaran</span>
+                        <span class="text-indigo-500">Kode Mata Pelajaran</span>
                     </th>
                     <th class="px-16 py-2 text-center ">
-                        <span class="text-white">Mata Pelajaran</span>
+                        <span class="text-indigo-500">Mata Pelajaran</span>
                     </th>
                     <th class="px-7 py-2 text-center ">
-                        <span class="text-white"></span>
+                        <span class="text-indigo-500"></span>
                     </th>
                     <th class="px-7 py-2 text-center">
-                        <span class="text-white"></span>
+                        <span class="text-indigo-500"></span>
                     </th>
                   </tr>
               </thead>
@@ -61,7 +61,7 @@
                       </td>
                       <td class="px-6 text-right select-none whitespace-nowrap">
                             <a href="{{ route('admin.subjects.show', $subject->id) }}"
-                              class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide text-white transition border border-transparent rounded-full shadow select-none bg-stone-700 focus:border-lightBlue-600 hover:bg-lightBlue-600 focus:outline-none focus:ring focus:ring-lightBlue-500 focus:ring-opacity-30 disabled:opacity-50">
+                              class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide text-white transition border border-transparent rounded-full shadow select-none bg-gray-400 focus:border-lightBlue-600 hover:bg-lightBlue-600 focus:outline-none focus:ring focus:ring-lightBlue-500 focus:ring-opacity-30 disabled:opacity-50">
                               <svg class="w-4 h-4 -mx-2"
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20"
