@@ -1,7 +1,7 @@
 <x-teacher-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-sky-500">
-            {{ __(' Kelas ') }} 
+            {{ __(' User ') }} 
         </h2>
     </x-slot>
 
@@ -14,10 +14,10 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                             <span>Nama </span>
                         </label>
-                        <input id="subject_code" type="text" name="subject_code" value="{{old('subject_code')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('subject_code')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
-                        @if($errors->has('subject_code'))
+                        <input id="name" type="text" name="name" value="{{old('name')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('name')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
+                        @if($errors->has('name'))
                             <div class="invalid-feedback">
-                                {{ $errors->first('subject_code') }}
+                                {{ $errors->first('name') }}
                             </div>
                         @endif
                     </div>
@@ -26,10 +26,10 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                             <span>Email</span>
                         </label>
-                        <input id="subject_name" type="text" name="subject_name" value="{{old('subject_name')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('subject_name')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
-                        @if($errors->has('subject_name'))
+                        <input id="email" type="text" name="email" value="{{old('email')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('email')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
+                        @if($errors->has('email'))
                             <div class="invalid-feedback">
-                                {{ $errors->first('subject_name') }}
+                                {{ $errors->first('email') }}
                             </div>
                         @endif
                     </div>
@@ -38,10 +38,10 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                             <span>Password</span>
                         </label>
-                        <input id="subject_name" type="text" name="subject_name" value="{{old('subject_name')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('subject_name')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
-                        @if($errors->has('subject_name'))
+                        <input id="password" type="text" name="password" value="{{old('password')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('password')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
+                        @if($errors->has('password'))
                             <div class="invalid-feedback">
-                                {{ $errors->first('subject_name') }}
+                                {{ $errors->first('password') }}
                             </div>
                         @endif
                     </div>
@@ -92,7 +92,7 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                             <span>Status </span>
                         </label>
-                        <select name="role_id" x-model="role_id" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <select name="status" x-model="role_id" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                             <option value="0">Pindahan</option>
                             <option value="1">Baru</option>
                         </select>

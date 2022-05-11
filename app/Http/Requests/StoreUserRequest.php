@@ -20,11 +20,12 @@ class StoreUserRequest extends FormRequest
     {
         return [
             'name'              => 'required',
-            'email'             => 'required|unique',
+            'email'             => 'required','unique:users',
             'password'          => 'required',
             'role_id'           => 'required',
             'classroom_id'      => 'required',
-            'status'            => 'required'
+            'status'            => 'required',
+            'major_id'          => 'required'
         ];
     }
 }
