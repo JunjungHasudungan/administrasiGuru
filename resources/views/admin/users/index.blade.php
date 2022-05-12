@@ -23,6 +23,20 @@
               </a>
             </div>
           </div>
+
+          <div class="flex justify-center mt-2">
+            <div class="block p-6 rounded-lg shadow-lg bg-white  min-w-full max-w-sm">
+              <h5 class="text-gray-900  text-xl leading-tight  mb-2">Nama Mata Pelajaran</h5>
+              <p class="text-gray-700 text-base mb-4">
+                {{-- @foreach ($classroom->classroomSubject as $student)
+                  <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
+                    {{$student->subject_name}} 
+                  </span> 
+                @endforeach --}}
+               </p>
+              </div>
+            </div>
+          
           <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">

@@ -14,13 +14,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('majors', function (Blueprint $table) {
+        Schema::create('administrations', function (Blueprint $table) {
             $table->id();
-            $table->string('major_code');
-            $table->string('title', 100);
-            // $table->foreignIdFor(User::class);
-            // $table->unsignedBigInteger('headOfDepartement');
-            // $table->foreign('headOfDepartement')->references('id')->on('users');
+            $table->string('title');
+            $table->foreignIdFor(User::class);
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('majors');
+        Schema::dropIfExists('administrations');
     }
 };

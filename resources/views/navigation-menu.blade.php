@@ -69,7 +69,7 @@
                             {{ __('Jadwal Mata Pelajaran') }}
                         </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{ route('teacher.teacherAdministration.index') }}" :active="request()->routeIs('teacher.teacherAdministration.index')">
+                        <x-jet-nav-link href="{{ route('teacher.adminstrations.index') }}" :active="request()->routeIs('teacher.teacherAdministration.index')">
                             {{ __('Administrasi Guru') }}
                         </x-jet-nav-link>
                     @endif

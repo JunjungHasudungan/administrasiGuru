@@ -1,7 +1,7 @@
 <x-teacher-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-sky-500">
-            {{ __(' Administrasi Guru') }} {{Auth::user()->name}}
+            {{ __(' Administrasi Guru') }} 
         </h2>
     </x-slot>
 
@@ -15,12 +15,12 @@
                           <span>Kelas</span>
                         </label>
                         <div class="relative">
-                            <select name="classrooms[]" id="classrooms" class="form-multiselect block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  >
-                                @foreach ($classrooms as $id => $classrooms)
-                                    <option class="font-normal hover:font-bold " value="{{$id}}" {{ in_array($id, old('classrooms', [])) ? 'selected' : ''}}>{{$classrooms}}</option>
+                            <select name="classroom_id" id="classroom_id" class="form-multiselect block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  >
+                                @foreach ($classrooms as $id => $classroom)
+                                    <option class="font-normal hover:font-bold " value="{{$id}}" {{  old('classroom_id') == $id ? 'selected' : ''}}>{{$classroom}}</option>
                                 @endforeach
                             </select>
-                            @error('classrooms')
+                            @error('classroom')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                           <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -33,12 +33,12 @@
                         <span>Mata Pelajaran</span>
                       </label>
                       <div class="relative">
-                        <select id="subjects" name="subjects[]" class="form-multiselect  block lowercase appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control {{ $errors->has('subjects') ? 'is-invalid' : '' }}"  >
-                            @foreach ($subjects as $id => $subjects)
-                                <option class="font-normal hover:font-bold lowercase" value="{{$id}}" {{ in_array($id, old('subjects', [])) ? 'selected' : ''}}>{{$subjects}}</option>
+                        <select id="subject_id" name="subject_id" class="form-multiselect  block lowercase appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control {{ $errors->has('subjects') ? 'is-invalid' : '' }}"  >
+                            @foreach ($subjects as $id => $subject)
+                                <option class="font-normal hover:font-bold lowercase" value="{{$id}}" {{old('subject_id') == $id ? 'selected' : ''}}>{{$subject}}</option>
                             @endforeach
                         </select>
-                        @error('subjects')
+                        @error('subject')
                         <p class="text-sm text-red-600">{{ $message }}</p>
                     @enderror
                         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">

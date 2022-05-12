@@ -56,11 +56,11 @@
 
                       <td class="px-7 py-2 text-center">{{$loop->iteration}}</td>
                       <td class="px-7 py-2 text-center">{{$subject->subject_code}}</td>
-                      <td class="px-7 py-2 text-center">{{$subject->subject_name ?? ''}}</td>
+                      <td class="px-7 py-2 text-center">{{$subject->name ?? ''}}</td>
                       <td class="px-7 py-2 text-left">
                       </td>
                       <td class="px-6 text-right select-none whitespace-nowrap">
-                            <a href="{{ route('admin.subjects.show', $subject->id) }}"
+                            <a href="{{ route('admin.subjects.show', $subject->teacher_id) }}"
                               class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide text-white transition border border-transparent rounded-full shadow select-none bg-gray-400 focus:border-lightBlue-600 hover:bg-lightBlue-600 focus:outline-none focus:ring focus:ring-lightBlue-500 focus:ring-opacity-30 disabled:opacity-50">
                               <svg class="w-4 h-4 -mx-2"
                                 xmlns="http://www.w3.org/2000/svg"

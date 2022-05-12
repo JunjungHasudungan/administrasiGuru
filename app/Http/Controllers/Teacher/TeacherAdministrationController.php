@@ -17,8 +17,8 @@ class TeacherAdministrationController extends Controller
     public function index()
     {
         $idTeacher = Auth::user()->id;
-
-        $teacherAdministration = TeacherAdministration::where('teacher_id', $idTeacher)->get();
+        $teacherAdministration = TeacherAdministration::all();
+        // $teacherAdministration = TeacherAdministration::where('teacher_id', $idTeacher)->get();
        
         return view('teacher.teacherAdministration.index', compact('teacherAdministration'));
     }
@@ -27,7 +27,7 @@ class TeacherAdministrationController extends Controller
     {
         $idTeacher = Auth::user()->id;
      
-        $classrooms  = Classroom::all()->pluck('name', 'id');
+        $classrooms  = Classroom::all()->pluck('name_class', 'id');
         
         $subjects = Subject::where('teacher_id', $idTeacher)->pluck('name', 'id');
         
@@ -37,12 +37,12 @@ class TeacherAdministrationController extends Controller
 
     public function store(StoreTeacherAdministrationRequest $request)
     {
-        $teacherAdministration = TeacherAdministration::create($request->validated());
+        $teacherAdministration = TeacherAdministration::create($request->all());
 
-        $teacherAdministration->teachers()->sync($request->input('classrooms', []));
+        // $teacherAdministration->teachers()->sync($request->input('classrooms', []));
 
-        dd($teacherAdministration);
-        // return redirect()->route('teacher.teacherAdministration.index');
+        // dd($teacherAdministration);
+        return redirect()->route('teacher.teacherAdministration.index');
     }
 
     public function show(TeacherAdministration $teacherAdministration)

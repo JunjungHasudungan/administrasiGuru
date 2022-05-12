@@ -6,25 +6,23 @@ use App\Http\Controllers\Controller;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
 
 class TeacherController extends Controller
 {
     public function index()
     {
-        // $teachers = Subject::with('teacherSubject')->get();
-      
-    //   dd($teachers);
-        $teacherSubjects = User::whereHas('teacherSubject', function($query){
-            $query->groupBy('role_id')->orderBy('name');
-        })->get(); // 14
+        // User::selectRaw('name')->groupBy('')
+        $teachers = User::where('role_id', 3)->with('subjects')->orderBy('name', 'asc')->get();
 
-        return view('admin.teacherSubject.index', compact('teacherSubjects'));
+
+        return view('admin.teachers.index', compact('teachers'));
     }
 
     public function create()
     {
-        return view('admin.teacherSubject.create');
+        return view('admin.teachers.create');
     }
 
     public function store(Request $request)
@@ -32,14 +30,18 @@ class TeacherController extends Controller
         //
     }
 
-    public function show($id)
+    public function show( User $user)
     {
-        return view('admin.teacherSubject.show');
+        $teacherName = $user->select('name')->get();
+       $user->load('subjects');
+
+    //    dd($subjects);
+        return view('admin.teachers.show', compact('user'));
     }
 
     public function edit($id)
     {
-        return view('admin.teacherSubject.edit');
+        return view('admin.teachers.edit');
     }
 
     public function update(Request $request, $id)

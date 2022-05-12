@@ -16,7 +16,7 @@ class MajorController extends Controller
     {
         // $major = Major::all();
         // $major->load('teacherMajors')->dd();
-        $majors = Major::with(['departement', 'teacherMajors', 'studentMajors'])->get();
+        $majors = Major::with(['headOfDepartement', 'teacherMajors', 'studentMajors'])->get();
 
         return view('admin.majors.index', compact('majors'));
     }
@@ -42,7 +42,7 @@ class MajorController extends Controller
 
     public function show(Major $major)
     {
-        $major->load(['departement', 'teacherMajors', 'studentMajors']);
+        $major->load(['headOfDepartement', 'teacherMajors', 'studentMajors']);
 
         return view('admin.majors.show', compact('major'));
     }

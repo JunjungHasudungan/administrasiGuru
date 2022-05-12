@@ -22,13 +22,14 @@ class TeacherAdministration extends Model
     // public $id;
 
     protected $fillable = [
-        'teacher_id', 
-        'learning_method',
+        // 'teacher_id', 
+        // 'learning_method',
         'subject_title', 
-        'subject_id',
-        'classroom_id',
-        'status',
-        'completeness'
+        // 'subject_id',
+        // 'classroom_id',
+        // 'status',
+        // 'completeness',
+        // 'note'
     ];
 
 

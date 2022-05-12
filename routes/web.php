@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Teacher\SubjectController as TeacherSubject;
 use App\Http\Controllers\Teacher\SchedulesController as TeacherShedule;
 use App\Http\Controllers\Teacher\TeacherAdministrationController as TeacherAdministration;
+// use App\Http\Controllers\Teacher\AdminstrationController;
 use App\Http\Controllers\Student\LessonController as StudentSubject;
 use App\Http\Livewire\Teacher\Subject;
 use App\Models\LessonTimetable;
@@ -61,6 +62,7 @@ Route::group(['middleware' => 'auth'], function() {
             'teachers'                  => TeacherController::class,
             'classrooms'                => ClassroomController::class,
             'teacherAdministration'     => TeacherAdministrationController::class,
+            'admninistration'           => \App\Http\Controllers\Teacher\AdminstrationController::class,
             'users'                     => UserController::class,
         ]);
     });

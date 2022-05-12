@@ -23,6 +23,7 @@
               </a>
             </div>
           </div>
+          
           <table class="min-w-full table-auto rounded divide-gray-200">
               <thead class="justify-between">
                   <tr class="bg-slate-200 w-full">

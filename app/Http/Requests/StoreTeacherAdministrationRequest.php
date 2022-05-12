@@ -18,13 +18,14 @@ class StoreTeacherAdministrationRequest extends FormRequest
     public function rules()
     {
         return [
-            'teacher_id'            => ['required', 'array'],
-            'learning_method'       => ['required', Rule::in(Method::Method_Learning)],     
-            'subject_title'         => ['required', 'string'], 
-            'subject_id'            => ['required', 'array'],
-            'classroom_id'          => ['required', 'array'],
-            'status'                => ['required', Rule::in(StatusCheck::ADMINISTRATION_STATUS)],
-            'completeness'          => ['required', Rule::in(Completeness::Completeness)], 
+            // 'teacher_id'            => ['required', 'integer'],
+            // 'learning_method'       => ['required'],     
+            'subject_title'         => ['required','string'], 
+            // 'subject_id'            => ['required', 'integer'],
+            // 'classroom_id'          => ['required', 'integer'],
+            // 'status'                => ['required'],
+            // 'completeness'          => ['required'], 
+            // 'note'                  => 'nullable'
         ];
     }
 }

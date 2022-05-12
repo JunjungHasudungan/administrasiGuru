@@ -1,0 +1,83 @@
+<?php
+
+namespace App\Http\Controllers\Teacher;
+
+use App\Http\Controllers\Controller;
+use App\Models\Administration;
+use Illuminate\Http\Request;
+
+class AdminstrationController extends Controller
+{
+    public function index()
+    {
+        $administrations = Administration::all();
+
+        return view('teachers.adminstrations.index', compact('administrations'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Administration  $administration
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Administration $administration)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Administration  $administration
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Administration $administration)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Administration  $administration
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Administration $administration)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Administration  $administration
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Administration $administration)
+    {
+        //
+    }
+}

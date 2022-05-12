@@ -14,15 +14,15 @@ return new class extends Migration
     {
         Schema::create('teacher_administration', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('teacher_id');
-            $table->foreign('teacher_id')->references('id')->on('users');
-            $table->string('learning_method')->default('teori');
+            // $table->unsignedBigInteger('teacher_id');
+            // $table->foreign('teacher_id')->references('id')->on('users');
+            // $table->string('learning_method')->default('teori');
             $table->string('subject_title');
-            $table->foreignIdFor(Subject::class);
-            $table->foreignIdFor(Classroom::class);
-            $table->string('status')->default('unchecked')->nullable();
-            $table->string('completeness')->default('bersambung');
-            $table->string('note')->nullable();
+            // $table->foreignIdFor(Subject::class);
+            // $table->foreignIdFor(Classroom::class);
+            // $table->string('status')->default('unchecked')->nullable();
+            // $table->string('completeness')->default('bersambung');
+            // $table->string('note')->nullable();
             $table->timestamps();
         });
     }

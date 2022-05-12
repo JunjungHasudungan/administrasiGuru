@@ -75,15 +75,21 @@ class User extends Authenticatable
         return $this->hasOne(Classsroom::class);
     }
 
+
     public function subjects()
     {
-        return $this->hasMany(Subject::class, 'teacher_id');
+        return $this->hasMany(Subject::class, 'teacher_id', 'id');
     }
 
     public function students() 
     {
         return $this->belongsTo(User::class, 'role_id');
     }
+    
+    // public function subjects()
+    // {
+    //     return $this->hasMany(Subject::class);
+    // }
     
     public function teacherSubject() // guru mata pelajaran
     {

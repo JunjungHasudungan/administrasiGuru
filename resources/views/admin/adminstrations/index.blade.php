@@ -28,10 +28,10 @@
                         {{$loop->iteration}}
                       </td>
                       <td class="px-7 py-2 text-center">
-                        {{$teacherAdministration->teachers->name}} 
+                        {{$teacherAdministration->subject_title}} 
                       </td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center">
-                        <a href="{{route('admin.teacherAdministration.show', $teacherAdministration->teacher_id)}}"
+                        <a href="{{route('admin.teacherAdministration.show', $teacherAdministration->id)}}"
                           class="text-blue-600 hover:text-blue-900 mb-2 mr-2"> 
                           <span>View </span> 
                         </a>
