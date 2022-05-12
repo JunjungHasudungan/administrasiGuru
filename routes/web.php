@@ -51,6 +51,7 @@ Route::group(['middleware' => 'auth'], function() {
            'subjects'                   => TeacherSubject::class,
            'schedules'                  => TeacherShedule::class,
            'teacherAdministration'      => TeacherAdministration::class,
+           'administrations'            => \App\Http\Controllers\Teacher\AdminstrationController::class,
         ]);
    });
 
@@ -62,7 +63,6 @@ Route::group(['middleware' => 'auth'], function() {
             'teachers'                  => TeacherController::class,
             'classrooms'                => ClassroomController::class,
             'teacherAdministration'     => TeacherAdministrationController::class,
-            'admninistration'           => \App\Http\Controllers\Teacher\AdminstrationController::class,
             'users'                     => UserController::class,
         ]);
     });

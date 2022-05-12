@@ -11,7 +11,7 @@ class Administration extends Model
 
     protected $tabke = 'administrations';
 
-    protected $fillable  = ['user_id', 'title'];
+    protected $fillable  = ['classroom_id', 'title'];
 
 
 }

@@ -7,7 +7,7 @@
 
     <div class="container mx-auto mt-10 mb-10">
         <div class="bg-white p-5 rounded shadow-sm">
-            <form action="{{route('teacher.teacherAdministration.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('teacher.administrations.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="flex flex-wrap -mx-3 mb-2">
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -28,6 +28,7 @@
                           </div>
                         </div>
                       </div>
+{{-- 
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                         <span>Mata Pelajaran</span>
@@ -45,13 +46,13 @@
                           <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                         </div>
                       </div>
-                    </div>
+                    </div> --}}
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                         <span>Materi Pelajaran</span>
                       </label>
-                      <input id="subject_title" type="text"  name="subject_title" class="form-input appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Judul Materi Pelajaran" >
-                      @error('subject_title')
+                      <input id="title" type="text"  name="title" value="{{old('title')}}" class="form-input appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Judul Materi Pelajaran" >
+                      @error('title')
                         <div class="bg-red-400 p-2 shadow-sm rounded mt-2">
                             {{ $message }}
                         </div>
@@ -59,7 +60,7 @@
                     </div>
                   </div>
 
-                  <div class="flex flex-wrap -mx-3 mb-2 mt-7">
+                  {{-- <div class="flex flex-wrap -mx-3 mb-2 mt-7">
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                           <span>Metode Pelajaran</span>
@@ -67,7 +68,6 @@
                         <div class="relative">
                           <select name="learning_method" id="learning_method" class="form-multiselect block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" >
                             <option disabled hidden {{ old('learning_method') != null ?: 'selected' }}>
-                                {{-- {{ __('ticket.select') }} --}}
                             </option>
                             @foreach (\App\Helpers\Method::Method_Learning as $key => $value)
                               <option value="{{$value}}" {{old('learning_method') != null ?: 'selected'}}>
@@ -84,8 +84,8 @@
                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                           </div>
                         </div>
-                      </div>
-                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                      </div> --}}
+                    {{-- <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                         <span>Ketuntasan</span>
                       </label>
@@ -106,14 +106,14 @@
                           <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                         </div>
                       </div>
-                    </div>
-                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                    </div> --}}
+                    {{-- <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                         <span>Note</span>
                       </label>
                       <input id="note" type="text" name="note" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  placeholder="Note">
                     </div>
-                  </div>
+                  </div> --}}
 
                 <div class="mt-5">
                     <button type="submit"

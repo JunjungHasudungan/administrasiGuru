@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminstrationRequest;
 use App\Models\Administration;
+use App\Models\Classroom;
 use Illuminate\Http\Request;
 
 class AdminstrationController extends Controller
@@ -12,28 +14,22 @@ class AdminstrationController extends Controller
     {
         $administrations = Administration::all();
 
-        return view('teachers.adminstrations.index', compact('administrations'));
+        return view('teacher.administrations.index', compact('administrations'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $classrooms = Classroom::all()->pluck('name_class', 'id');
+
+        return view('teacher.administrations.create', compact('classrooms'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(AdminstrationRequest $request)
     {
-        //
+        $administration = Administration::create($request->all());
+
+        // dd($administration);
+        return redirect()->route('teacher.administrations.index');
     }
 
     /**
