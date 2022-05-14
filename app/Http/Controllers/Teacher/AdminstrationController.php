@@ -2,26 +2,37 @@
 
 namespace App\Http\Controllers\Teacher;
 
+use App\Helpers\Method;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminstrationRequest;
 use App\Models\Administration;
 use App\Models\Classroom;
+use App\Models\Subject;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminstrationController extends Controller
 {
+
     public function index()
     {
-        $administrations = Administration::all();
+        $idUser = Auth::user()->id;
 
+        $administrations = Administration::where('user_id', $idUser)->get();
+
+        // dd($administrations);
         return view('teacher.administrations.index', compact('administrations'));
     }
 
     public function create()
     {
-        $classrooms = Classroom::all()->pluck('name_class', 'id');
+        $idUser = Auth::user()->id;
 
-        return view('teacher.administrations.create', compact('classrooms'));
+        $subjects = Subject::where('teacher_id', $idUser)->pluck('name', 'id');
+
+        $classrooms = Classroom::all( )->pluck('name_class', 'id');  
+
+        return view('teacher.administrations.create', compact('classrooms', 'subjects'));
     }
 
     public function store(AdminstrationRequest $request)

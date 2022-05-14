@@ -11,7 +11,24 @@ class Administration extends Model
 
     protected $tabke = 'administrations';
 
-    protected $fillable  = ['classroom_id', 'title'];
+    protected $fillable  = [
+        'title', 
+        'user_id',
+        'classroom_id',
+        'subject_id',
+        'method',   
+        'statusCheck',
+        'completeness',
+        ];
+    
+        public function users()
+        {
+            return $this->belongsTo(User::class, 'user_id');
+        }
 
+        public function classrooms()
+        {
+            return $this->belongsTo(Classroom::class, 'classroom_id');
+        }
 
 }

@@ -102,7 +102,7 @@
 
                 </div>
 
-                <div class="flex flex-wrap -mx-3 mb-2 mt-5">
+                {{-- <div class="flex flex-wrap -mx-3 mb-2 mt-5">
                     <div class="w-full px-3 mb-6 md:mb-0">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                         <span>Nama Siswa</span>
@@ -117,7 +117,7 @@
                             @endforeach
                         </div>
                       </div>
-                </div>
+                </div> --}}
 
             </div>
 

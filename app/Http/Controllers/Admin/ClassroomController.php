@@ -23,14 +23,14 @@ class ClassroomController extends Controller
 
     public function create()
     {
-       $students = User::where('role_id', 2)->orderBy('name', 'asc')->pluck('name', 'id');
+    //    $students = User::where('role_id', 2)->orderBy('name', 'asc')->pluck('name', 'id');
 
     //    dd($students);
         $majors = Major::all()->pluck('title', 'id');
 
         $teachers = User::where('role_id', 3)->pluck('name','id');
 
-        return view('admin.classrooms.create', compact('majors', 'teachers', 'students'));
+        return view('admin.classrooms.create', compact('majors', 'teachers'));
     }
 
     public function store(StoreClassroomRequest $request)

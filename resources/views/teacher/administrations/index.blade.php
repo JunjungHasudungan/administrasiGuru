@@ -72,21 +72,21 @@
                                     {{-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                         {{ $item->classrooms->name }}
                                     </td> --}}
-                                    {{-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                        {{ $item->subjects->name }}
-                                    </td> --}}
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                        {{ $item->subject_title }}
+                                        {{ $item->classrooms->name_class }}
                                     </td>
-                                    {{-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        {{ $item->title }}
+                                    </td>
+                                     {{-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                         {{date('h:i', strtotime($item->subjects->start_time))}} - {{ date('h:i', strtotime($item->subjects->end_time)) }}
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                        {{ $item->learning_method}}
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                        {{ $item->completeness}}
                                     </td> --}}
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        {{ $item->method}}
+                                    </td>
+                                    {{-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        {{ $item->completeness}}
+                                    </td>  --}}
                                     {{-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                         @if ($item->status === 'checked')
                                             <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 capitalize last:mr-0 mr-1">

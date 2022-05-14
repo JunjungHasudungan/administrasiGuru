@@ -208,19 +208,19 @@ class SubjectTableSeeder extends Seeder
                 'id'                => 31,
                 'subject_code'      => 'Pal012',
                 'name'              => 'PAL 3',
-                'teacher_id'        => 1,
+                'teacher_id'        => 5,
             ],
             [
                 'id'                => 32,
                 'subject_code'      => 'Akk011',
                 'name'              => 'AK KEUANGAN 2',
-                'teacher_id'        => 1,
+                'teacher_id'        => 5,
             ],
             [
                 'id'                => 33,
                 'subject_code'      => 'Akk012',
                 'name'              => 'AK KEUANGAN 3',
-                'teacher_id'        => 1,
+                'teacher_id'        => 5,
             ],
             [
                 'id'                => 34,

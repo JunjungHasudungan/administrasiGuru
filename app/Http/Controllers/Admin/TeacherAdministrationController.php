@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Helpers\Method;
 use App\Http\Controllers\Controller;
+use App\Models\Administration;
 use App\Models\TeacherAdministration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -13,18 +14,16 @@ class TeacherAdministrationController extends Controller
 
     public function index()
     {
-        $teacherAdministrations = TeacherAdministration::all();
-        // $teacherAdministrations = TeacherAdministration::with(['teachers', 'subjects'])
-        // ->select('teacher_id')->groupBy('teacher_id')->get();
+        $teacherAdministrations = Administration::all();
 
         // dd($teacherAdministrations);
 
-        return view('admin.teacherAdministration.index', compact('teacherAdministrations'));
+        return view('admin.teacherAdministrations.index', compact('teacherAdministrations'));
     }
 
     public function create()
     {
-        //
+        
     }
 
     public function store(Request $request)

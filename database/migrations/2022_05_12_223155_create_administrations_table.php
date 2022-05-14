@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Classroom;
+use App\Models\Subject;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -19,6 +20,11 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->foreignIdFor(Classroom::class);
+            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Subject::class);
+            $table->string('method')->default('teori');
+            $table->string('statusCheck')->default('unchecked');
+            $table->string('completeness')->default('continued');
             $table->timestamps();
         });
     }

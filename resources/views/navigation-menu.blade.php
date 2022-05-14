@@ -31,7 +31,7 @@
                             {{ __('Guru') }}
                         </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{ route('admin.administrations.index') }}" :active="request()->routeIs('admin.administrations.index')">
+                        <x-jet-nav-link href="{{ route('admin.teacherAdministrations.index') }}" :active="request()->routeIs('admin.teacherAdministrations.index')">
                             {{ __('Administrasi Guru') }}
                         </x-jet-nav-link>
                         
