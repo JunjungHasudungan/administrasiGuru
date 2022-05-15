@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreSubjectRequest;
 use App\Models\Subject;
 use App\Models\Classroom;
 use App\Models\User;
@@ -24,24 +25,39 @@ class SubjectController extends Controller
     {
         $teachers = User::where('role_id', 3)->pluck('name', 'id');
 
-        $classrooms= Classroom::all()->pluck('name', 'id');
+        $classrooms= Classroom::all()->pluck('name_class', 'id');
 
         return view('admin.subjects.create', compact('teachers', 'classrooms'));
     }
 
-    public function store(Request $request)
+    public function store(StoreSubjectRequest $request)
     {
-        //
+        $subject = Subject::create($request->all());
+
+        $subject->classrooms()->sync($request->input('classrooms', []));
+        
+        // dd($subject);
+
+        return redirect()->route('admin.subjects.index');
     }
 
     public function show(Subject $subject)
     {
+         $subject->load(['teachers', 'classrooms']);
+
+        // dd($subject_all);
         return view('admin.subjects.show', compact('subject'));
     }
 
     public function edit(Subject $subject)
     {
-        return view('admin.subjects.edit', compact('subject'));
+        $teachers = User::where('role_id', 3)->pluck('name', 'id');
+
+        $classrooms= Classroom::all()->pluck('name_class', 'id');
+
+        $subject->load('teachers', 'classrooms');
+
+        return view('admin.subjects.edit', compact('subject', 'teachers', 'classrooms'));
     }
 
     public function update(Request $request, Subject $subject)

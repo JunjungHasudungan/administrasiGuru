@@ -11,7 +11,11 @@ class Subject extends Model
 
     protected $table = 'subjects';
 
-    protected $fillable = ['subject_code', 'name', 'teacher_id'];
+    protected $fillable = [
+        'subject_code', 
+        'name', 
+        'teacher_id'
+    ];
 
 
     public function categories()
@@ -34,10 +38,9 @@ class Subject extends Model
         return $this->belongsToMany(User::class, 'subject_user', 'subject_id', 'user_id');
     }
 
-    public function classroomSubject() // kelas mata pelajaran
+    public function classrooms() // kelas mata pelajaran
     {
-        return $this->belongsToMany(Classroom::class,'classroom_subject', 'subject_id', 'classroom_id')
-        ->withPivot('id','teacher_id');
+        return $this->belongsToMany(Classroom::class,'classroom_subject', 'subject_id', 'classroom_id');
     }
 
     public function majorSubject()

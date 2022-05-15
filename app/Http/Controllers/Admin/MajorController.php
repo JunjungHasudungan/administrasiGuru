@@ -23,20 +23,19 @@ class MajorController extends Controller
 
     public function create()
     {
-        $departement_head_candidate = User::where('teacher_major', ">", 0)->pluck('name', 'id');
 
-        $teachers = User::where('role_id', 3)->pluck('name', 'id');
+        $departement_head_candidate = User::where('role_id', 3)->pluck('name', 'id');
 
-        // dd($teachers);
+        // dd($departement_head_candidate);
 
-        return view('admin.majors.create', compact('departement_head_candidate', 'teachers'));
+        return view('admin.majors.create', compact('departement_head_candidate'));
     }
 
     public function store(StoreMajorRequest $request)
     {
-
         $major = Major::create($request->all());
         
+        // dd($major);
         return redirect()->route('admin.majors.index');
     }
 
@@ -49,11 +48,12 @@ class MajorController extends Controller
 
     public function edit( Major $major)
     {
-        $departement_head_candidate = User::where('teacher_major', ">", 0)->pluck('name', 'id');
+        $teacher_major = User::where('teacher_major', '>', 0)->pluck('name', 'id');
+      
+    //   dd($teacher_major);
+        $major->load('headOfDepartement');
 
-         $major->load('departement');
-       
-        return view('admin.majors.edit', compact('major', 'departement_head_candidate'));
+        return view('admin.majors.edit', compact('major', 'teacher_major'));
     }
 
     public function update(UpdateMajorRequest $request, Major $major)
@@ -68,6 +68,6 @@ class MajorController extends Controller
 
         $major->delete();
 
-        return back()->with('success', 'Article <span class="italic font-medium">deleted</span> successfully.');
+        return back()->with('success', 'Jurusan <span class="italic font-medium">deleted</span> successfully.');
     }
 }

@@ -12,7 +12,11 @@ class Major extends Model
 
     protected $table = 'majors';
 
-    protected $fillable = ['major_code', 'title', 'user_id'];
+    protected $fillable = [
+        'major_code', 
+        'title', 
+        'head_of_departement'
+    ];
 
     public function subjects()
     {
@@ -41,7 +45,7 @@ class Major extends Model
 
     public function headOfDepartement() // kepala jurusan
     {
-        return $this->hasOne(User::class, 'headOfDepartement');
+        return $this->belongsTo(User::class, 'head_of_departement');
     }
 
     public function majorSubject() // 

@@ -41,12 +41,12 @@
                         <span>Kepala Jurusan </span>
                       </label>
                       <div class="relative">
-                        <select id="" name="headOfDepartement" class="form-multiselect  block capitalize appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control {{ $errors->has('headOfDepartement') ? 'is-invalid' : '' }}"  >
-                            @foreach ($departement_head_candidate as $id => $candidate)
-                                <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{ ($major->candidate ? $major->candidate->id : old('headOfDepartement')) == $id ? 'selected' : ''}}>{{$candidate}}</option>
+                        <select id="head_of_departement" name="head_of_departement" class="form-multiselect  block capitalize appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control {{ $errors->has('head_of_departement') ? 'is-invalid' : '' }}"  >
+                            @foreach ($teacher_major as $id => $candidate)
+                                <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{ ($major->headOfDepartement ? $major->headOfDepartement->id : old('head_of_departement')) == $id ? 'selected' : ''}}>{{$candidate}}</option>
                             @endforeach
                         </select>
-                            @error('headOfDepartement')
+                            @error('head_of_departement')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                         @enderror
                         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">

@@ -16,7 +16,7 @@ class UpdateMajorRequest extends FormRequest
         return [
             'major_code'            => 'required',
             'title'                  =>'required:string',
-            'headOfDepartement'     => 'required',
+            'head_of_departement'     => 'required',
         ];
     }
 }

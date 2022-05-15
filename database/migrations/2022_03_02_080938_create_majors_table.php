@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('major_code');
             $table->string('title', 100);
             // $table->foreignIdFor(User::class);
-            // $table->unsignedBigInteger('headOfDepartement');
-            // $table->foreign('headOfDepartement')->references('id')->on('users');
+            $table->unsignedBigInteger('head_of_departement');
+            $table->foreign('head_of_departement')->references('id')->on('users');
             $table->timestamps();
         });
     }

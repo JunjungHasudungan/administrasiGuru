@@ -16,8 +16,6 @@ class TeacherAdministrationController extends Controller
     {
         $teacherAdministrations = Administration::all();
 
-        // dd($teacherAdministrations);
-
         return view('admin.teacherAdministrations.index', compact('teacherAdministrations'));
     }
 
@@ -31,24 +29,22 @@ class TeacherAdministrationController extends Controller
         //
     }
 
-    public function show(TeacherAdministration $teacherAdministration)
+    public function show(Administration $administration)
     {
-        // $teacherAdministrations = TeacherAdministration::with('teachers')->select('teacher_id', DB::raw('count(*) as total'))
-        // ->groupBy('teacher_id')->get();
-
-        // $methods = Method::Method_Learning;
-
-        $teacherAdministration->load(['teachers','major']);
-
-        return view('admin.teacherAdministration.show', compact('teacherAdministration'));
+        
+        $teacher = Administration::find($administration)->get('id');
+        // $teacher =  $administration->method;
+        // $teacher = Administration::where('user_id', $administration)->get();
+        dd($administration);
+        return view('admin.teacherAdministrations.show', compact('user_id'));
     }
 
-    public function edit(TeacherAdministration $teacherAdministration)
+    public function edit(TeacherAdministration $userP)
     {
         //
     }
 
-    public function update(Request $request, TeacherAdministration $teacherAdministration)
+    public function update(Request $request, TeacherAdministration $userP)
     {
         //
     }

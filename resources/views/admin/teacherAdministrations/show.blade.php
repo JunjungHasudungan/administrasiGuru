@@ -1,11 +1,11 @@
 <x-student-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            <span class=" text-sky-500 "> {{  $teacherAdministration->teachers->name }} </span>
+            <span class=" text-sky-500 ">{{  }}</span>
           </h2>
     </x-slot>
 
-    <div class="px-6 py-4 mb-4 overflow-hidden border rounded-lg shadow-sm border-secondary-300 ">
+    {{-- <div class="px-6 py-4 mb-4 overflow-hidden border rounded-lg shadow-sm border-secondary-300 ">
     <div class="flex flex-col justify-between sm:flex-row">
         <div class="flex items-end justify-center ">
           <div
@@ -143,5 +143,5 @@
             </a>
           </div>
       </div>
-  </div>
+  </div> --}}
 </x-student-layout>

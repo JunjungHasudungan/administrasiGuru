@@ -15,7 +15,7 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                             <span>Kode Jurusan</span>
                         </label>
-                        <input id="major_code" type="text" name="major_code" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  placeholder="Kode Jurusan">
+                        <input id="major_code" type="text" name="major_code" value="{{old('major_code')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  placeholder="Kode Jurusan">
                         @error('major_code')
                             <div class="bg-red-400 p-2 shadow-sm rounded mt-2">
                                 {{ $message }}
@@ -40,12 +40,12 @@
                         <span>Kepala Jurusan </span>
                       </label>
                       <div class="relative">
-                        <select id="" name="headOfDepartement" class="form-multiselect  block capitalize appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control {{ $errors->has('headOfDepartement') ? 'is-invalid' : '' }}"  >
-                            @foreach ($departement_head_candidate as $id => $teacherMajor)
-                                <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{  old('teacherMajor') == $id ? 'selected' : ''}}>{{$teacherMajor}}</option>
+                        <select id="head_of_departement" name="head_of_departement" class="form-multiselect  block capitalize appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control {{ $errors->has('headOfDepartement') ? 'is-invalid' : '' }}"  >
+                            @foreach ($departement_head_candidate as $id => $headOfDepartement)
+                                <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{  old('headOfDepartement') == $id ? 'selected' : ''}}>{{$headOfDepartement}}</option>
                             @endforeach
                         </select>
-                            @error('headOfDepartement')
+                            @error('head_of_departement')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                         @enderror
                         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -55,7 +55,7 @@
                     </div>
                 </div>
 
-                <div class="flex flex-wrap -mx-3 mb-2 mt-5">
+                {{-- <div class="flex flex-wrap -mx-3 mb-2 mt-5">
                     <div class="w-full px-3 mb-6 md:mb-0">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                         <span>Nama Guru</span>
@@ -70,7 +70,7 @@
                             @endforeach
                         </div>
                       </div>
-                </div>
+                </div> --}}
             </div>
 
                 <div class="mt-5">

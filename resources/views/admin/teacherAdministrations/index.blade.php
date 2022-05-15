@@ -30,11 +30,8 @@
                       <td class="px-7 py-2 text-center">
                         {{$teacherAdministration->users->name}} 
                       </td>
-                      <td class="px-7 py-2 text-center">
-                        {{$teacherAdministration->title}} 
-                      </td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center">
-                        <a href="{{route('admin.teacherAdministrations.show', $teacherAdministration->user_id)}}"
+                        <a href="{{route('admin.teacherAdministrations.show', [$teacherAdministration->user_id])}}"
                           class="text-blue-600 hover:text-blue-900 mb-2 mr-2"> 
                           <span>View </span> 
                         </a>

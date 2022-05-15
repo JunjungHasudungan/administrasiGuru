@@ -9,7 +9,7 @@ class Administration extends Model
 {
     use HasFactory;
 
-    protected $tabke = 'administrations';
+    protected $table  = 'administrations';
 
     protected $fillable  = [
         'title', 
@@ -31,4 +31,8 @@ class Administration extends Model
             return $this->belongsTo(Classroom::class, 'classroom_id');
         }
 
+        public function subjects()
+        {
+            return $this->belongsTo(Subject::class, 'subject_id');
+        }
 }
