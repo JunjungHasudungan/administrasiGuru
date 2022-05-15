@@ -15,7 +15,7 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                             <span>Kode Mata Pelajaran</span>
                         </label>
-                        <input id="subject_code" type="text" name="subject_code" value="{{old('subject_code')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('subject_code')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
+                        <input id="subject_code" type="text" name="subject_code" value="{{old('subject_code', $subject->subject_code)}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('subject_code')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
                         @if($errors->has('subject_code'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('subject_code') }}
@@ -27,7 +27,7 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                             <span>Nama Mata Pelajaran</span>
                         </label>
-                        <input id="name" type="text" name="name" value="{{old('name')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('name')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
+                        <input id="name" type="text" name="name" value="{{old('name', $subject->name)}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('name')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
                         @if($errors->has('name'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('name') }}
@@ -40,9 +40,9 @@
                           <span>Nama Guru </span>
                         </label>
                         <div class="relative">
-                          <select id="" name="teacher_id" class="form-multiselect  block capitalize appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control {{ $errors->has('teacher_id') ? 'is-invalid' : '' }}"  >
+                          <select id="teacher_id" name="teacher_id" class="form-multiselect  block capitalize appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control {{ $errors->has('teacher_id') ? 'is-invalid' : '' }}"  required>
                               @foreach ($teachers as $id => $teacher)
-                                  <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{  old('teacher_id') == $id ? 'selected' : ''}}>{{$teacher}}</option>
+                                  <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{ ($subject->teacher ? $subject->teacher->id :  old('teacher_id')) == $id ? 'selected' : ''}}>{{$teacher}}</option>
                               @endforeach
                           </select>
                               @error('teacher_id')
@@ -64,7 +64,7 @@
                               @forelse ($classrooms as $id => $classrooms)
                               <label class="form-check-label mt-2 ml-2 inline-block text-gray-800" for="flexCheckDefault">
                                   <input name="classrooms[]" id="classrooms" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                   type="checkbox" value="{{$id}}" {{ in_array($id, old('classrooms', [])) ? 'selected' : '' }} >
+                                   type="checkbox" value="{{$id}}" {{ in_array($id, old('classrooms', []))  || $subject->classrooms->contains($id) ? 'selected' : '' }} >
                                   {{$classrooms}}
                               </label>
                               @error('classrooms')

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSubjectRequest;
+use App\Http\Requests\UpdateSubjectRequest;
 use App\Models\Subject;
 use App\Models\Classroom;
 use App\Models\User;
@@ -36,9 +37,9 @@ class SubjectController extends Controller
 
         $subject->classrooms()->sync($request->input('classrooms', []));
         
-        // dd($subject);
+        dd($subject);
 
-        return redirect()->route('admin.subjects.index');
+        // return redirect()->route('admin.subjects.index');
     }
 
     public function show(Subject $subject)
@@ -60,13 +61,22 @@ class SubjectController extends Controller
         return view('admin.subjects.edit', compact('subject', 'teachers', 'classrooms'));
     }
 
-    public function update(Request $request, Subject $subject)
+    public function update(UpdateSubjectRequest $request, Subject $subject)
     {
-        //
+        $subject->update($request->all());
+
+        $subject->classrooms()->sync($request->input('classrooms', []));
+
+        // dd($subject);
+        return redirect()->route('admin.subjects.index');
     }
 
     public function destroy(Subject $subject)
     {
-        //
+        $subject->delete();
+
+        // dd($subject, 'berhasil dihapus');
+
+        return back();
     }
 }
