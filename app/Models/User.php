@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Http\Livewire\Admin\Classsroom;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 // use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -57,18 +58,20 @@ class User extends Authenticatable
 
     public function roles()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->belongsToMany(Role::class, 'role_user', 'role_id', 'user_id');
     }
 
-    public function teachers()
+
+    public function getIsNameAttribute()
     {
-        // return 
+        return $this->name;
     }
 
-    public function getIsTeacherAttribute() // guru mata pelajaran
+    public function getIsTeacherAttribute()
     {
-        return $this->hasMany(Subject::class, 'teacher_id', 'id');
+        return $this->roles()->where('id', 3)->exists();
     }
+
 
     public function getIsKurikulumAttribute()
     {
@@ -83,7 +86,7 @@ class User extends Authenticatable
 
     public function subjects()
     {
-        return $this->hasMany(Subject::class, 'teacher_id', 'id');
+        return $this->hasMany(Subject::class, 'teacher_id');
     }
 
     public function students() 

@@ -13,7 +13,6 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        // User::selectRaw('name')->groupBy('')
         $teachers = User::where('role_id', 3)->with('subjects')->orderBy('name', 'asc')->get();
 
 
@@ -30,12 +29,12 @@ class TeacherController extends Controller
         //
     }
 
-    public function show( User $user)
+    public function show(User $user)
     {
-        $teacherName = $user->select('name')->get();
-       $user->load('subjects');
+        $user->load('subjects');
 
-    //    dd($subjects);
+        dd($user);
+
         return view('admin.teachers.show', compact('user'));
     }
 

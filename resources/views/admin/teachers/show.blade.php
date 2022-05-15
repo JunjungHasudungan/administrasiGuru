@@ -2,9 +2,7 @@
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
           <span class=" text-sky-500 "> 
-            {{-- @foreach ($user->subjects as $item)
-                {{$item->name ?? ''}} --}} Test
-            {{-- @endforeach --}}
+            {{$user->name ?? ''}}
             <a href="" class="no-underline hover:underline hover:font">
               {{-- {{$classroom->homeworkTeacher->name ?? ''}}  --}}
             </a>
@@ -51,7 +49,7 @@
               <div class="flex justify-center">
                 <div class="block p-6 rounded-lg shadow-lg bg-white  min-w-full max-w-sm">
                   <h5 class="text-gray-900  text-xl leading-tight  mb-2">
-                   {{$user->subject}}
+                   {{-- {{$user->subjects->name  ?? }} --}} TEST
                   <p class="text-gray-700 text-base mb-4">
                     {{-- @foreach ($classroom->students as $student) --}}
                       <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
@@ -67,10 +65,16 @@
                   <h5 class="text-gray-900  text-xl leading-tight  mb-2">Nama Mata Pelajaran</h5>
                   <p class="text-gray-700 text-base mb-4">
                     {{-- @foreach ($classroom->classroomSubject as $student) --}}
-                      <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
-                        {{-- {{$student->subject_name}}  --}}
-                      </span> 
-                    {{-- @endforeach --}}
+                    @forelse ($user->subjects as $subject)
+                    <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
+                      {{$subject->name ?? ''}} 
+                    </span> 
+                        
+                    @empty
+                    <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                      Data Mata Pelajaran Belum ada
+                    </div>
+                    @endforelse
                    </p>
                   </div>
                 </div>
