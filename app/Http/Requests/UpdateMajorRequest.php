@@ -17,6 +17,9 @@ class UpdateMajorRequest extends FormRequest
             'major_code'            => 'required',
             'title'                  =>'required:string',
             'head_of_departement'     => 'required',
+            'teachers.*'                => 'integer',
+            'teachers'                  => ['required', 'array']
+
         ];
     }
 }

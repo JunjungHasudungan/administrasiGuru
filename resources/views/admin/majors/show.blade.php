@@ -1,7 +1,7 @@
 <x-student-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            <span class=" text-sky-500 "> {{  $major->title }} - {{$$major->departement->name ?? ''}}
+            <span class=" text-sky-500 "> {{  $major->title }} - {{$major->headOfDepartement->name ?? ''}}
             </span>
           </h2>
     </x-slot>
@@ -37,37 +37,41 @@
       </div>
     </div>
 
-    <div class="container mx-auto mt-10 mb-10">
-      <div class="bg-white p-5 rounded shadow-sm">
-          <table class="min-w-full table-auto">
-              <thead class="justify-between">
-                  <tr class="bg-slate-200 w-full">
-                      <th class="px-7 py-2 text-center">
-                        <span class="text-indigo-500">Kepala Jurusan</span>
-                    </th>
-                    <th class="px-7 py-2 text-center">
-                        <span class="text-indigo-500">Guru Jurusan</span>
-                    </th>
-                  </tr>
-              </thead>
-              <tbody class="bg-gray-200">
-                  <tr class="bg-white border-2 border-gray-200">
-                        <td class="px-7 py-2 text-center">
-                          {{$major->headOfDepartement->name ?? ''}}</td>
-                        <td class="px-7 py-2 text-center">  
-                            @foreach ($major->teacherMajors as $teacher)
-                                <span class=" border-0 font-serif italic  text-xs min-w-0 space-x-0.5 mb-px w-2 text-gray-500 p-3 rounded mt">
-                                  {{$teacher->name ?? ''}}
-                                </span>
-                            @endforeach
-                        </td>
-                  </tr>
-              </tbody>
-          </table>
-          <button class="bg-transparent mt-2  text-blue-700 font-semibold hover: py-2 px-4  hover:border-transparent rounded">
-            <a href="{{route('admin.majors.index')}}">
-              Kembali</a> 
-            </button>
-      </div>
-  </div>
+    <div class="container mx-auto w-full max-h-px mt-10 mb-10">
+
+      <div class="flex justify-center mt-2">
+        <div class="block p-6 rounded-lg shadow-lg bg-white  min-w-full max-w-sm">
+          <h5 class="text-gray-900  text-xl leading-tight  mb-2">Nama Guru Jurusan</h5>
+          <p class="text-gray-700 text-base mb-4">
+            @foreach ($major->teachers as $teachers)
+              <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
+                {{$teachers->name}} 
+              </span> 
+            @endforeach
+           </p>
+          </div>
+        </div>
+
+        <div class="flex justify-center mt-2">
+          <div class="block p-6 rounded-lg shadow-lg bg-white  min-w-full max-w-sm">
+            <h5 class="text-gray-900  text-xl leading-tight  mb-2">Nama Kelas </h5>
+            <p class="text-gray-700 text-base mb-4">
+              @forelse ($major->classrooms as $classrooms)
+                <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
+                  {{$classrooms->name_class ?? '' }} 
+                </span> 
+                @empty
+                <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                  Data Kelas Belum ada
+                </div>
+              @endforelse
+             </p>
+            </div>
+          </div>
+        
+        <button class="bg-transparent mt-2  text-blue-700 font-semibold hover: py-2 px-4  hover:border-transparent rounded">
+        <a href="{{route('admin.classrooms.index')}}">
+          Kembali</a> 
+        </button>
+    </div>
 </x-student-layout>

@@ -16,7 +16,7 @@ class MajorController extends Controller
     {
         // $major = Major::all();
         // $major->load('teacherMajors')->dd();
-        $majors = Major::with(['headOfDepartement', 'teacherMajors', 'studentMajors'])->get();
+        $majors = Major::with(['headOfDepartement', 'teachers', 'studentMajors'])->get();
 
         return view('admin.majors.index', compact('majors'));
     }
@@ -26,14 +26,16 @@ class MajorController extends Controller
 
         $departement_head_candidate = User::where('role_id', 3)->pluck('name', 'id');
 
-        // dd($departement_head_candidate);
+        $teacher_major = User::where('role_id', 3)->pluck('name', 'id');
 
-        return view('admin.majors.create', compact('departement_head_candidate'));
+        return view('admin.majors.create', compact('departement_head_candidate', 'teacher_major'));
     }
 
     public function store(StoreMajorRequest $request)
     {
         $major = Major::create($request->all());
+
+        $major->teachers()->sync($request->input('teachers', []));
         
         // dd($major);
         return redirect()->route('admin.majors.index');
@@ -41,17 +43,19 @@ class MajorController extends Controller
 
     public function show(Major $major)
     {
-        $major->load(['headOfDepartement', 'teacherMajors', 'studentMajors']);
+        $major->load(['headOfDepartement', 'teachers', 'studentMajors', 'classrooms']);
 
+        // dd($major);
         return view('admin.majors.show', compact('major'));
     }
 
     public function edit( Major $major)
     {
         $teacher_major = User::where('teacher_major', '>', 0)->pluck('name', 'id');
-      
-    //   dd($teacher_major);
+
         $major->load('headOfDepartement');
+    //  
+    //  dd($teacher_major);
 
         return view('admin.majors.edit', compact('major', 'teacher_major'));
     }
@@ -60,6 +64,10 @@ class MajorController extends Controller
     {
         $major->update($request->all());
 
+        $major->teachers()->sync($request->input('teachers', []));
+
+
+        // dd($major);
         return redirect()->route('admin.majors.index');
     }
 

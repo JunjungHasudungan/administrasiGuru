@@ -86,10 +86,6 @@ class User extends Authenticatable
         return $this->belongsTo(User::class, 'role_id');
     }
     
-    // public function subjects()
-    // {
-    //     return $this->hasMany(Subject::class);
-    // }
     
     public function teacherSubject() // guru mata pelajaran
     {
@@ -98,7 +94,7 @@ class User extends Authenticatable
 
     public function teacherMajor() // guru jurusan
     {
-        return $this->belongsTo(Major::class);
+        return $this->belongsToMany(Major::class, 'major_teacher','major_id', 'teacher_id');
     }
 
     public function headOfDepartement() // kepala jurusan
