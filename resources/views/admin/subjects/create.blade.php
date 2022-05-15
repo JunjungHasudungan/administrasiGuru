@@ -70,7 +70,7 @@
                               <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                               @empty
-                                <div class="bg-red-500 text-white p-3 rounded shadow-sm mb-3">
+                                <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
                                     Data Belum Tersedia!
                                 </div>
                             @endforelse
@@ -78,6 +78,30 @@
                     </div>
                 </div>
 
+                <div class="flex flex-wrap -mx-3 mb-2 mt-5">
+                    <div class="w-full px-3 mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                          <span>Nama Jurusan</span>
+                        </label>
+                          <div class="form-check w-full form-check  bg-gray-200 form-check-inline">
+                              @forelse ($majors as $id => $majors)
+                              <label class="form-check-label mt-2 ml-2 inline-block text-gray-800" for="flexCheckDefault">
+                                  <input name="majors[]" id="majors" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                                   type="checkbox" value="{{$id}}" {{ in_array($id, old('majors', [])) ? 'selected' : '' }} >
+                                  {{$majors}}
+                              </label>
+                              @error('majors')
+                              <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                              @empty
+                                <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                    Data Belum Tersedia!
+                                </div>
+                            @endforelse
+                          </div>
+                    </div>
+                </div>
+                
                 </div>
                 <div class="mt-5">
                     <button type="submit"

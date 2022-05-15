@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreMajorRequest;
 use App\Http\Requests\UpdateMajorRequest;
 use App\Models\Classes;
+use App\Models\Classroom;
 use App\Models\Major;
+use App\Models\Subject;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -28,7 +30,9 @@ class MajorController extends Controller
 
         $teacher_major = User::where('role_id', 3)->pluck('name', 'id');
 
-        return view('admin.majors.create', compact('departement_head_candidate', 'teacher_major'));
+        $classrooms = Classroom::all()->pluck('name_class', 'id');
+
+        return view('admin.majors.create', compact('departement_head_candidate', 'teacher_major', 'classrooms'));
     }
 
     public function store(StoreMajorRequest $request)
@@ -36,6 +40,8 @@ class MajorController extends Controller
         $major = Major::create($request->all());
 
         $major->teachers()->sync($request->input('teachers', []));
+
+        $major->classroomMajor()->sync($request->input('classrooms', []));
         
         // dd($major);
         return redirect()->route('admin.majors.index');
@@ -43,9 +49,8 @@ class MajorController extends Controller
 
     public function show(Major $major)
     {
-        $major->load(['headOfDepartement', 'teachers', 'studentMajors', 'classrooms']);
+        $major->load(['headOfDepartement', 'teachers', 'classrooms', 'majorSubject']);
 
-        // dd($major);
         return view('admin.majors.show', compact('major'));
     }
 
@@ -53,11 +58,15 @@ class MajorController extends Controller
     {
         $teacher_major = User::where('teacher_major', '>', 0)->pluck('name', 'id');
 
-        $major->load('headOfDepartement');
+        $subjects = Subject::all()->pluck('name', 'id');
+
+        $classrooms = Classroom::all()->pluck('name_class', 'id');
+
+        $major->load('headOfDepartement', 'majorSubject', 'classrooms');
     //  
     //  dd($teacher_major);
 
-        return view('admin.majors.edit', compact('major', 'teacher_major'));
+        return view('admin.majors.edit', compact('major', 'teacher_major', 'subjects', 'classrooms'));
     }
 
     public function update(UpdateMajorRequest $request, Major $major)
@@ -65,7 +74,6 @@ class MajorController extends Controller
         $major->update($request->all());
 
         $major->teachers()->sync($request->input('teachers', []));
-
 
         // dd($major);
         return redirect()->route('admin.majors.index');

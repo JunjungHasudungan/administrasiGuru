@@ -53,7 +53,7 @@
                       <td class="px-7 py-2 text-center">{{$loop->iteration}}</td>
                       <td class="px-7 py-2 text-center">{{$classroom->code_classroom}}</td>
                       <td class="px-7 py-2 text-center">{{$classroom->name_class ?? ''}}</td>
-                      <td class="px-7 py-2 text-center">{{$classroom->majors->title}}</td>
+                      <td class="px-7 py-2 text-center">{{$classroom->majors->title ?? 'Jurusan Belum Ada' }}</td>
                       <td class="px-7 py-2 text-center">{{$classroom->homeworkTeacher->name ?? ''}}</td>
                       <td class="px-6 text-right select-none whitespace-nowrap">
                         <a href="{{ route('admin.classrooms.show', $classroom->id) }}"
@@ -94,7 +94,7 @@
                       </td>
                   </tr>
                 @empty
-                  <div class="bg-red-500 text-white p-3 rounded shadow-sm mb-3">
+                  <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
                     Data Belum Tersedia!
                   </div>
                 @endforelse

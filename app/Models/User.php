@@ -60,6 +60,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+    public function teachers()
+    {
+        // return 
+    }
+
     public function getIsTeacherAttribute() // guru mata pelajaran
     {
         return $this->hasMany(Subject::class, 'teacher_id', 'id');

@@ -39,9 +39,9 @@
                             {{ __('Mata Pelajaran') }}
                         </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{ route('admin.schedules.index') }}" :active="request()->routeIs('admin.schedules.index')">
+                        {{-- <x-jet-nav-link href="{{ route('admin.schedules.index') }}" :active="request()->routeIs('admin.schedules.index')">
                             {{ __('Jadwal Mata Pelajaran') }}
-                        </x-jet-nav-link>
+                        </x-jet-nav-link> --}}
 
                         <x-jet-nav-link href="{{ route('admin.majors.index') }}" :active="request()->routeIs('admin.majors.index')">
                             {{ __('Jurusan') }}

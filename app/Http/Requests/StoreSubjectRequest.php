@@ -18,7 +18,10 @@ class StoreSubjectRequest extends FormRequest
             'name'          => 'required',
             'teacher_id'    => 'required',
             'classrooms.*'  => 'integer',
-            'classrooms'    => ['required', 'array']
+            'classrooms'    => ['required', 'array'],
+            'majors.*'  => 'integer',
+            'majors'    => ['required', 'array'], 
+
         ];
     }
 }

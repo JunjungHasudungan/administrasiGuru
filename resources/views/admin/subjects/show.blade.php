@@ -45,6 +45,7 @@
           </div>
 
             <div class="container mx-auto w-full max-h-px mt-10 mb-10">
+              
               <div class="flex justify-center">
                 <div class="block p-6 rounded-lg shadow-lg bg-white  min-w-full max-w-sm">
                   <h5 class="text-gray-900  text-xl leading-tight  mb-2">Nama Kelas</h5>
@@ -52,6 +53,19 @@
                     @foreach ($subject->classrooms as $classroom)
                       <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
                         {{$classroom->name_class}} 
+                      </span> 
+                    @endforeach
+                   </p>
+               </div>
+              </div>
+
+              <div class="flex justify-center">
+                <div class="block p-6 rounded-lg shadow-lg bg-white mt-2 min-w-full max-w-sm">
+                  <h5 class="text-gray-900  text-xl leading-tight  mb-2">Nama Jurusan</h5>
+                  <p class="text-gray-700 text-base mb-4">
+                    @foreach ($subject->majorSubject as $major)
+                      <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
+                        {{$major->title}} 
                       </span> 
                     @endforeach
                    </p>

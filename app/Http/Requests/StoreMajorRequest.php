@@ -28,7 +28,10 @@ class StoreMajorRequest extends FormRequest
             'title'                     =>'required:string',
             'head_of_departement'       => 'required',
             'teachers.*'                => 'integer',
-            'teachers'                  => ['required', 'array']
+            'teachers'                  => ['required', 'array'],
+            'classrooms.*'              => 'integer',
+            'classrooms'                => ['required', 'array'],
+
         ];
     }
 }

@@ -2,9 +2,9 @@
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
           <span class=" text-sky-500 "> 
-            @foreach ($user->subjects as $item)
-                {{$item->name ?? ''}}
-            @endforeach
+            {{-- @foreach ($user->subjects as $item)
+                {{$item->name ?? ''}} --}} Test
+            {{-- @endforeach --}}
             <a href="" class="no-underline hover:underline hover:font">
               {{-- {{$classroom->homeworkTeacher->name ?? ''}}  --}}
             </a>

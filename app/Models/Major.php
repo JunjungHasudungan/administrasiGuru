@@ -30,7 +30,7 @@ class Major extends Model
 
     public function classrooms()
     {
-        return $this->hasMany(Classroom::class, 'major_id', 'id');
+        return $this->hasMany(Classroom::class);
     }
 
     public function teachers() // guru mata pelajaran jurusan
@@ -50,7 +50,12 @@ class Major extends Model
 
     public function majorSubject() // 
     {
-        return $this->belongsToMany(Major::class, 'major_subject', 'major_id', 'subject_id');
+        return $this->belongsToMany(Subject::class, 'major_subject', 'major_id', 'subject_id');
+    }
+
+    public function classroomMajor()
+    {
+        return $this->belongsToMany(Classroom::class, 'classroom_major', 'classroom_id', 'major_id');
     }
 
     public function sluggable(): array

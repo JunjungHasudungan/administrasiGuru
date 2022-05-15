@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateSubjectRequest;
 use App\Models\Subject;
 use App\Models\Classroom;
 use App\Models\User;
+use App\Models\Major;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
@@ -28,7 +29,9 @@ class SubjectController extends Controller
 
         $classrooms= Classroom::all()->pluck('name_class', 'id');
 
-        return view('admin.subjects.create', compact('teachers', 'classrooms'));
+        $majors = Major::all()->pluck('title', 'id');
+
+        return view('admin.subjects.create', compact('teachers', 'classrooms', 'majors'));
     }
 
     public function store(StoreSubjectRequest $request)
@@ -36,15 +39,17 @@ class SubjectController extends Controller
         $subject = Subject::create($request->all());
 
         $subject->classrooms()->sync($request->input('classrooms', []));
-        
-        dd($subject);
 
-        // return redirect()->route('admin.subjects.index');
+        $subject->majorSubject()->sync($request->input('majors', []));
+        
+        // dd($subject);
+
+        return redirect()->route('admin.subjects.index');
     }
 
     public function show(Subject $subject)
     {
-         $subject->load(['teachers', 'classrooms']);
+         $subject->load(['teachers', 'classrooms', 'majorSubject']);
 
         // dd($subject_all);
         return view('admin.subjects.show', compact('subject'));
@@ -56,9 +61,11 @@ class SubjectController extends Controller
 
         $classrooms= Classroom::all()->pluck('name_class', 'id');
 
-        $subject->load('teachers', 'classrooms');
+        $majors = Major::all()->pluck('title', 'id');
 
-        return view('admin.subjects.edit', compact('subject', 'teachers', 'classrooms'));
+        $subject->load('teachers', 'classrooms', 'majorSubject');
+
+        return view('admin.subjects.edit', compact('subject', 'teachers', 'classrooms', 'majors'));
     }
 
     public function update(UpdateSubjectRequest $request, Subject $subject)
@@ -66,6 +73,8 @@ class SubjectController extends Controller
         $subject->update($request->all());
 
         $subject->classrooms()->sync($request->input('classrooms', []));
+
+        $subject->majorSubject()->sync($request->input('majors', []));
 
         // dd($subject);
         return redirect()->route('admin.subjects.index');
