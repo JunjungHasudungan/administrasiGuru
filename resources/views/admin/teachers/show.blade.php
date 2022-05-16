@@ -2,7 +2,8 @@
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
           <span class=" text-sky-500 "> 
-            {{$user->name ?? ''}}
+            {{$user->is_name ?? ''}}
+            {{-- {{$user->subjects->name}} --}}
             <a href="" class="no-underline hover:underline hover:font">
               {{-- {{$classroom->homeworkTeacher->name ?? ''}}  --}}
             </a>
@@ -27,7 +28,7 @@
                       clip-rule="evenodd" />
                   </svg>
                   <a href="{{ route('admin.teachers.index') }}"
-                    class="hover:text-gray-700">Kelas</a>
+                    class="hover:text-gray-700">Guru</a>
                   <svg class="w-3 h-3"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -67,7 +68,7 @@
                     {{-- @foreach ($classroom->classroomSubject as $student) --}}
                     @forelse ($user->teacherSubject as $subject)
                     <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
-                      {{$subject->name ?? ''}} 
+                      {{ $subject->subject_code ?? ''}} 
                     </span> 
                         
                     @empty

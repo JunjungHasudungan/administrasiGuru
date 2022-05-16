@@ -15,10 +15,10 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        $teachers = User::where('role_id', 3)->with('subjects')->orderBy('name', 'asc')->get();
+        $teacherSubjects =  User::where('role_id', 3)->with('subjects')->get();
+        // dd($teachers);
 
-
-        return view('admin.teachers.index', compact('teachers'));
+        return view('admin.teachers.index', compact('teacherSubjects'));
     }
 
     public function create()
@@ -43,9 +43,10 @@ class TeacherController extends Controller
 
     public function show(User $user)
     {
+        // $teacher = User::where('id', $user)->get();
         $user->load('subjects','teacherSubject');
 
-        // dd($teacher);
+        // dd($user);
 
         return view('admin.teachers.show', compact('user'));
     }

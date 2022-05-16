@@ -42,7 +42,7 @@
                         <div class="relative">
                           <select id="teacher_id" name="teacher_id" class="form-multiselect  block capitalize appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control {{ $errors->has('teacher_id') ? 'is-invalid' : '' }}"  required>
                               @foreach ($teachers as $id => $teacher)
-                                  <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{ ($subject->teacher ? $subject->teacher->id :  old('teacher_id')) == $id ? 'selected' : ''}}>{{$teacher}}</option>
+                                  <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{ ($subject->teachers ? $subject->teachers->id :  old('teacher_id')) == $id ? 'selected' : ''}}>{{$teacher}}</option>
                               @endforeach
                           </select>
                               @error('teacher_id')

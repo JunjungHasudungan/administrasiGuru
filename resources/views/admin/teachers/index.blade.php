@@ -37,7 +37,7 @@
                   </tr>
               </thead>
               <tbody class="bg-gray-200">
-                @forelse ($teachers as $teacher)
+                @forelse ($teacherSubjects as $teacher)
                   <tr class="bg-white border-2 border-gray-200">
                       <td class="px-7 py-2 text-center">{{$loop->iteration}}</td>
                       <td class="px-7 py-2 text-left">{{$teacher->name ?? ''}}</td>
@@ -53,7 +53,7 @@
                               clip-rule="evenodd" />
                           </svg>
                         </a>
-                        <a href="{{ route('admin.subjects.edit', $teacher->id) }}"
+                        <a href="{{ route('admin.teachers.edit', $teacher->id) }}"
                           class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide text-white transition bg-yellow-500 border border-transparent rounded-full shadow select-none focus:border-yellow-600 hover:bg-yellow-600 focus:outline-none focus:ring focus:ring-yellow-500 focus:ring-opacity-30 disabled:opacity-50">
                           <svg class="w-4 h-4 -mx-2"
                             xmlns="http://www.w3.org/2000/svg"
