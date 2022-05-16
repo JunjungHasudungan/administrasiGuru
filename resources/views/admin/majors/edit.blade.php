@@ -1,7 +1,7 @@
 <x-student-layout>
     <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Edit Jurusan') }}
+        <h2 class="text-xl font-semibold leading-tight text-sky-500">
+            {{ __('Edit ') }} - {{$major->title}}
         </h2>
     </x-slot>
 

@@ -45,7 +45,7 @@ class TeacherController extends Controller
     {
         $user->load('subjects','teacherSubject');
 
-        // dd($user);
+        // dd($teacher);
 
         return view('admin.teachers.show', compact('user'));
     }
