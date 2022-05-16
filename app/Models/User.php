@@ -86,7 +86,7 @@ class User extends Authenticatable
 
     public function subjects()
     {
-        return $this->hasMany(Subject::class, 'teacher_id');
+        return $this->hasMany(Subject::class, 'teacher_id', 'id');
     }
 
     public function students() 

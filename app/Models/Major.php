@@ -48,7 +48,7 @@ class Major extends Model
         return $this->belongsTo(User::class, 'head_of_departement');
     }
 
-    public function majorSubject() // 
+    public function majorSubject() // mata pelajaran
     {
         return $this->belongsToMany(Subject::class, 'major_subject', 'major_id', 'subject_id');
     }

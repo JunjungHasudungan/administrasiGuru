@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreTeacherRequest;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Major;
 use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
 
@@ -21,19 +23,29 @@ class TeacherController extends Controller
 
     public function create()
     {
-        return view('admin.teachers.create');
+        $teachers = User::where('role_id', 3)->pluck('name', 'id');
+
+        $majors = Major::all()->pluck('title', 'id');
+        
+        $subjects = Subject::all()->pluck('name', 'id');
+
+        return view('admin.teachers.create', compact('teachers', 'majors', 'subjects'));
     }
 
-    public function store(Request $request)
+    public function store(StoreTeacherRequest $request)
     {
-        //
+        $teachers = User::create($request->all());
+
+        // dd($teachers);
+
+        return redirect()->route('admin.teachers.index');
     }
 
     public function show(User $user)
     {
-        $user->load('subjects');
+        $user->load('subjects','teacherSubject');
 
-        dd($user);
+        // dd($user);
 
         return view('admin.teachers.show', compact('user'));
     }
