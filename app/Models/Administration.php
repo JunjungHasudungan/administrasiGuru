@@ -12,8 +12,8 @@ class Administration extends Model
     protected $table  = 'administrations';
 
     protected $fillable  = [
+        'teacher_id',
         'title', 
-        'user_id',
         'classroom_id',
         'subject_id',
         'method',   
@@ -31,8 +31,18 @@ class Administration extends Model
             return $this->belongsTo(Classroom::class, 'classroom_id');
         }
 
+        public function teachers()
+        {
+            return $this->belongsTo(User::class, 'teacher_id');
+        }
+
         public function subjects()
         {
             return $this->belongsTo(Subject::class, 'subject_id');
+        }
+
+        public function administrationTeacher()
+        {
+            return $this->belongsToMany(User::class, 'administration_teacher', 'administration_id', 'teacher_id');
         }
 }

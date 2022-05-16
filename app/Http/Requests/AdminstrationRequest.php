@@ -16,9 +16,9 @@ class AdminstrationRequest extends FormRequest
     {
         return [
             'title'             => 'required',
+            'teacher_id'        => 'required',
             'classroom_id'      => 'required',
             'subject_id'        => 'required',
-            'user_id'           => 'required',
             'method'            => 'required',
             'completeness'      => 'required',
         ];

@@ -80,7 +80,7 @@
                                     </td>
                                      {{-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                         {{date('h:i', strtotime($item->subjects->start_time))}} - {{ date('h:i', strtotime($item->subjects->end_time)) }}
-                                    </td> --}}
+                                    </td>  --}}
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                         {{ $item->method }}
                                     </td>

@@ -14,9 +14,10 @@ class TeacherAdministrationController extends Controller
 
     public function index()
     {
-        $teacherAdministrations = Administration::all();
+        $administrations = Administration::with('teachers')->get();
 
-        return view('admin.teacherAdministrations.index', compact('teacherAdministrations'));
+        // dd($teacherAdministrations);
+        return view('admin.teacherAdministrations.index', compact('administrations'));
     }
 
     public function create()
@@ -31,12 +32,10 @@ class TeacherAdministrationController extends Controller
 
     public function show(Administration $administration)
     {
-        
-        $teacher = Administration::find($administration)->get('id');
-        // $teacher =  $administration->method;
-        // $teacher = Administration::where('user_id', $administration)->get();
-        dd($administration);
-        return view('admin.teacherAdministrations.show', compact('user_id'));
+        $administration->load('classrooms', 'teachers', 'subjects');
+        // dd($administration);
+
+        return view('admin.teacherAdministrations.show', compact('administration'));
     }
 
     public function edit(TeacherAdministration $userP)

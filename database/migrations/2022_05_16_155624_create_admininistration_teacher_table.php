@@ -1,8 +1,6 @@
 <?php
 
-use App\Models\Classroom;
-use App\Models\Subject;
-use App\Models\User;
+use App\Models\Administration;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,15 +14,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('administrations', function (Blueprint $table) {
+        Schema::create('administration_teacher', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            // $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Classroom::class);
-            $table->foreignIdFor(Subject::class);
-            $table->string('method')->default('teori');
-            $table->string('statusCheck')->default('unchecked');
-            $table->string('completeness')->default('continued');
+            $table->foreignIdFor(Administration::class);
             $table->unsignedBigInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
@@ -38,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('administrations');
+        Schema::dropIfExists('administration_teacher');
     }
 };
