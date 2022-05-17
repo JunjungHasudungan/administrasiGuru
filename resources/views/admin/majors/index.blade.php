@@ -1,6 +1,6 @@
 <x-student-layout>
     <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
+        <h2 class="text-xl font-semibold leading-tight text-blue-500">
             {{ __('Jurusan') }}
         </h2>
     </x-slot>

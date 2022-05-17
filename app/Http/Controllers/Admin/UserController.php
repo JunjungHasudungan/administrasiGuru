@@ -15,7 +15,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::with('classrooms')->get();
+        $users = User::with('classrooms')->orderBy('name', 'asc')->get();
         $teachers = Role::find(4)->users()->get();
         // dd([$teachers, $users]);
 

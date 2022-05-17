@@ -15,8 +15,9 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        $teacherSubjects =  User::where('role_id', 3)->with('subjects')->get();
-        // dd($teachers);
+        $teacherSubjects =  User::where('role_id', 3)->with('subjects')->orderBy('name', 'asc')->get();
+      
+        // dd($teacherSubjects);
 
         return view('admin.teachers.index', compact('teacherSubjects'));
     }
@@ -44,7 +45,7 @@ class TeacherController extends Controller
     public function show(User $user)
     {
         // $teacher = User::where('id', $user)->get();
-        $user->load('subjects','teacherSubject');
+        $user->load('subjects');
 
         // dd($user);
 

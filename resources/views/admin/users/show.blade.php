@@ -1,7 +1,7 @@
 <x-student-layout>
     <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __(' User') }}
+        <h2 class="text-xl font-semibold leading-tight text-blue-500">
+            {{ $user->name }}
         </h2>
     </x-slot>
 
@@ -18,14 +18,6 @@
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                         {{ $user->id }}
-                                    </td>
-                                </tr>
-                                <tr class="border-b">
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Name
-                                    </th>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{ $user->name }}
                                     </td>
                                 </tr>
                                 <tr class="border-b">
@@ -50,10 +42,48 @@
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                         @foreach ($user->roles as $role)
-                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                    {{ $role->name }}
-                                                </span>
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                            {{ $role->name }}
+                                        </span>
                                         @endforeach
+                                    </td>
+                                </tr>
+                                
+                                <tr class="border-b">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Mata Pelajaran
+                                    </th>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                       @forelse ($user->teacherSubject as $subject)
+                                       <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                        <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
+                                            {{ $subject->name ?? ''}}
+                                        </a>
+                                        </span>
+                                       @empty
+                                       <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                        Data Mata Pelajaran Tidak ada
+                                      </div>
+                                       @endforelse
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Kelas
+                                    </th>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+
+                                        @if ($user->classrooms->name_class ?? '')
+                                        <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                            Tidak Ada Kelas 
+                                        </div>
+                                          @else
+                                          <span class="px-2 inline-flex text-xs lowercase leading-5 font-semibold rounded-full bg-yellow-100 text-green-800">
+                                              {{ $user->classrooms->name_class ?? 'Tidak ada  Kelas'}}
+                                          </span>
+                                        @endif
+                                        
                                     </td>
                                 </tr>
                             </table>

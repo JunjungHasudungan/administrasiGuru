@@ -1,6 +1,6 @@
 <x-student-layout>
     <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
+        <h2 class="text-xl font-semibold leading-tight text-blue-500">
             {{ __('Guru Mata Pelajaran') }}
         </h2>
     </x-slot>
@@ -50,7 +50,9 @@
                         {{-- {{$teacher->subjects->name ?? ''}} --}}
                         @forelse ($teacher->subjects as $subject)
                         <span class="px-2 inline-flex lowercase text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                          {{$subject->name ?? ''}}
+                          <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
+                            {{$subject->name ?? ''}}
+                          </a>
                         </span>
                         @empty
                         <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
