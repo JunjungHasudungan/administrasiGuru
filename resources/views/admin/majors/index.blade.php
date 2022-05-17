@@ -96,7 +96,7 @@
           
                   </tr>
                 @empty
-                  <div class="bg-red-500 text-white p-3 rounded shadow-sm mb-3">
+                  <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
                     Data Belum Tersedia!
                   </div>
                 @endforelse

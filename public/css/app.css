@@ -1150,6 +1150,18 @@ select {
 .-mt-32 {
   margin-top: -8rem;
 }
+.-ml-5 {
+  margin-left: -1.25rem;
+}
+.-ml-8 {
+  margin-left: -2rem;
+}
+.ml-8 {
+  margin-left: 2rem;
+}
+.-ml-4 {
+  margin-left: -1rem;
+}
 .block {
   display: block;
 }
@@ -1913,6 +1925,9 @@ select {
 }
 .tracking-wider {
   letter-spacing: 0.05em;
+}
+.tracking-tight {
+  letter-spacing: -0.025em;
 }
 .text-gray-500 {
   --tw-text-opacity: 1;

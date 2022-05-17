@@ -7,6 +7,7 @@
 
     <div class="container mx-auto mt-10 mb-10">
       <div class="bg-white p-5  shadow-sm">
+
           <div class="grid grid-cols-8 gap-4 mb-4">
             <div class="col-span-1 mt-2">
               <a href="{{ route('admin.classrooms.create') }}"
@@ -100,8 +101,10 @@
                 @endforelse
               </tbody>
           </table>
+          
           <div class="mt-2">
           </div>
+
       </div>
   </div>
 </x-student-layout>
