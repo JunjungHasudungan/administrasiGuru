@@ -17,7 +17,7 @@ class TeacherAdministrationController extends Controller
     public function index()
     {
         $idTeacher = Auth::user()->id;
-        $teacherAdministration = TeacherAdministration::all();
+        $teacherAdministration = TeacherAdministration::where('teacher_id', $idTeacher)->get();
         // $teacherAdministration = TeacherAdministration::where('teacher_id', $idTeacher)->get();
        
         return view('teacher.teacherAdministration.index', compact('teacherAdministration'));

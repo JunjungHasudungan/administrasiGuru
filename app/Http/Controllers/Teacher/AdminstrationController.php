@@ -16,9 +16,10 @@ class AdminstrationController extends Controller
 
     public function index()
     {
-        // $idUser = Auth::user()->id;
-        $administrations = Administration::all();
-        // $administrations = Administration::where('user_id', $idUser)->get();
+        $idTeacher = Auth::user()->id;
+
+        $administrations = Administration::with(['subjects', 'classrooms'])
+        ->where('teacher_id', $idTeacher)->get();
 
         // dd($administrations);
         return view('teacher.administrations.index', compact('administrations'));

@@ -85,7 +85,15 @@
                                         {{ $item->method }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                        {{ $item->completeness}}
+                                        @if ($item->completeness === 'Selesai')
+                                        <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 capitalize last:mr-0 mr-1">
+                                            {{ $item->completeness}}
+                                        </span>
+                                        @else
+                                        <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-blueGray-600 bg-yellow-200 capitalize last:mr-0 mr-1">
+                                            {{ $item->completeness}}
+                                        </span>
+                                        @endif
                                     </td> 
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                         @if ($item->statusCheck === 'checked')

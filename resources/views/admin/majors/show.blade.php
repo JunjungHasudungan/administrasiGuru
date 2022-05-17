@@ -43,11 +43,15 @@
         <div class="block p-6 rounded-lg shadow-lg bg-white  min-w-full max-w-sm">
           <h5 class="text-gray-900  text-xl leading-tight  mb-2">Nama Guru Jurusan</h5>
           <p class="text-gray-700 text-base mb-4">
-            @foreach ($major->teachers as $teachers)
+            @forelse ($major->teachers as $teachers)
               <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
                 {{$teachers->name}} 
               </span> 
-            @endforeach
+            @empty
+            <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+              Guru Jurusan Belum ada
+            </div>
+            @endforelse
            </p>
           </div>
         </div>
@@ -86,10 +90,11 @@
               </div>
             </div>
         
-        <button class="bg-transparent mt-2  text-blue-700 font-semibold hover: py-2 px-4  hover:border-transparent rounded">
-        <a href="{{route('admin.classrooms.index')}}">
-          Kembali</a> 
-        </button>
+            <button class="bg-transparent mt-2  text-blue-700 font-semibold hover: py-2 px-4  hover:border-transparent rounded">
+              <a href="{{route('admin.majors.index')}}">
+                Kembali</a> 
+              </button>
+              
+      </div>
 
-    </div>
 </x-student-layout>

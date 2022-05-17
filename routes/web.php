@@ -50,7 +50,6 @@ Route::group(['middleware' => 'auth'], function() {
        Route::resources([
            'subjects'                   => TeacherSubject::class,
            'schedules'                  => TeacherShedule::class,
-           'teacherAdministration'      => TeacherAdministration::class,
            'administrations'            => \App\Http\Controllers\Teacher\AdminstrationController::class,
         ]);
    });

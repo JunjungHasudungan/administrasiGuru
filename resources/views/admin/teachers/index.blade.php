@@ -29,9 +29,15 @@
                       <th class="px-7 py-2 text-center">
                           <span class="text-indigo-500">No</span>
                       </th>
-                      <th class="px-7 py-2 text-center">
+                      <th class="px-7 py-2 text-left">
                           <span class="text-indigo-500">Nama Guru </span>
                       </th>
+                      <th class="px-7 py-2 text-left">
+                        <span class="text-indigo-500"> Mapel </span>
+                      </th>
+                      <th class="px-7 py-2 text-left">
+                        <span class="text-indigo-500">Kelas </span>
+                    </th>
                       <th class="px-7 py-2">
                       </th>
                   </tr>
@@ -40,6 +46,15 @@
                 @forelse ($teacherSubjects as $teacher)
                   <tr class="bg-white border-2 border-gray-200">
                       <td class="px-7 py-2 text-center">{{$loop->iteration}}</td>
+                      <td class="px-7 py-2 text-left">{{$teacher->name ?? ''}}</td>
+                      <td class="px-7 py-2 text-left">
+                        {{$teacher->subjects->name ?? ''}}
+                        @forelse ($collection as $item)
+                            
+                        @empty
+                            
+                        @endforelse
+                      </td>
                       <td class="px-7 py-2 text-left">{{$teacher->name ?? ''}}</td>
                       <td class="px-6 text-right select-none whitespace-nowrap">
                         <a href="{{ route('admin.teachers.show', $teacher->id) }}"

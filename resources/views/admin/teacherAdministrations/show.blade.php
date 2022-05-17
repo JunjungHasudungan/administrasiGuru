@@ -2,9 +2,7 @@
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
             <span class=" text-sky-500 "> 
-                @foreach($administration->administrationTeacher as $teacher)
-                    {{$teacher->name ?? ''}}
-                @endforeach
+                {{$administration->teachers->name ?? ''}}
             </span>
           </h2>
     </x-slot>
@@ -42,103 +40,96 @@
 
     <div class="container mx-auto mt-10 mb-10">
       <div class="bg-white p-5 rounded shadow-sm">
-          <table class="min-w-full table-auto">
-              <thead class="justify-between">
-                  <tr class="bg-indigo-500 w-full">
-                      <th class="px-7 py-2 text-center">
-                        <span class="text-white"> TANGGAL</span>
-                    </th>
-                    <th class="px-7 py-2 text-center">
-                        <span class="text-white">KELAS</span>
-                    </th>
-                    <th class="px-7 py-2 text-center">
-                        <span class="text-white">MAPEL</span>
-                    </th>
-                    <th class="px-7 py-2 text-center">
-                        <span class="text-white">MATERI</span>
-                    </th>
-                    <th class="px-7 py-2 text-center">
-                        <span class="text-white">JAM PELAJARAN</span>
-                    </th>
-                    <th class="px-7 py-2 text-center">
-                        <span class="text-white">METODE</span>
-                    </th>
-                    <th class="px-7 py-2 text-center">
-                        <span class="text-white">KETUNTASAN</span>
-                    </th>
-                    <th class="px-7 py-2 text-center">
-                        <span class="text-white">ABSENSI</span>
-                    </th>
-                    <th class="px-7 py-2 text-center">
-                        <span class="text-white">STATUS</span>
-                    </th>
-                  </tr>
-              </thead>
-              <tbody class="bg-gray-200">
-                  <tr class="bg-white border-2 border-gray-200">
-                        <td class="px-7 py-2 text-center">
-                            <span class="border-0 font-serif  text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">
-                 {{-- #d_at )) }} --}}
-                            </span>
-                        </td>
-                        {{-- <td class="px-6 py-4 text-center">
-                            <span class="border-0 font-serif  text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 ro#ooms->name }}
-                            </span>
-                        </td> --}}
-                         {{-- <td class="px-6 py-4 text-center">
-                            <span class="border-0 font-serif  text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 ro#ts->name }}
-                            </span>
-                        </td> --}}
-                        <td class="px-6 py-4 text-center">
-                            <span class="border-0 font-serif  text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">
-                            Kelas
-                            </span>
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            <span class="border-0 font-serif  text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">
-                                Mapel
-                            </span>
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                          {{$administration->subjects->name}}
-
-                        </td>
-                        {{-- <td class="px-6 py-4 t#ry)
-                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-sky-600 bg-teal-200 capitalize last:mr-0#ng_method}}
-                                </span>
-                            @else
-                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-red-600 bg-emerald-200 capitalize last:mr-0#ng_method}}
-                                </span>
-                            @endif
-                        </td> --}}
-                        {{-- <td class="px-6 py-4 t#ish)
-                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-blue-200 capitalize last:mr-0#teness}}
-                                </span>
-                            @else
-                            <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-lime-200 capitalize last:#teness}}
-                            </span>
-                            @endif
-                        </td> --}}
-                        <td class="px-6 py-4 text-center">
-                            <span class="border-0 font-serif  text-xs min-w-0 space-x-0.5 mb-px w-2 text-teal-900 p-3 rounded mt">-</span>
-                        </td>
-                        {{-- <td class="px-6 py-4 t#cked)
-                                <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 capitalize last:mr-0 #}}
-                                </span>
-                            @else
-                                <span class="text-xs font-bold inline-block py-1 px-2 capitalize rounded-full text-blueGray-600 bg-yellow-200 last:mr-0#}}
-                                </span>
-                            @endif
-                        </td> --}}
-                  </tr>
-              </tbody>
-          </table>
-          <div class="p-4 text-center">
-            <a href="{{ route('admin.teacherAdministrations.index') }}"
-              class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold tracking-wider text-white capitalize transition bg-green-500 border border-transparent rounded shadow select-none focus:border-green-600 hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-500 focus:ring-opacity-30 disabled:opacity-50">
-              <span>Kembali</span>
-            </a>
-          </div>
-      </div>
+        <table class="min-w-full divide-y divide-gray-200 w-full">
+            <thead>
+            <tr>
+                <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    No
+                </th>
+                <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Tanggal
+              </th>
+              <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Kelas
+              </th>
+              <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                   Mata Pelajaran
+              </th>
+                <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Materi
+              </th>
+              <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Jam Pelajaran
+              </th>
+              <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Metode Pelajaran
+              </th>
+              <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Ketuntasan
+              </th>
+              <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Status
+              </th>
+            </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                {{-- @forelse ($administrations as $item)
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {{ $loop->iteration }}
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {{ date('l, d F Y', strtotime( $item->created_at )) }}  
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {{ $item->classrooms->name_class }}
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {{ $item->subjects->name }}
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {{ $item->title }}
+                  </td>
+                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {{date('h:i', strtotime($item->subjects->start_time))}} - {{ date('h:i', strtotime($item->subjects->end_time)) }}
+                  </td> 
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {{ $item->method }}
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      @if ($item->completeness === 'Selesai')
+                      <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 capitalize last:mr-0 mr-1">
+                          {{ $item->completeness}}
+                      </span>
+                      @else
+                      <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-blueGray-600 bg-yellow-200 capitalize last:mr-0 mr-1">
+                          {{ $item->completeness}}
+                      </span>
+                      @endif
+                  </td> 
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      @if ($item->statusCheck === 'checked')
+                          <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 capitalize last:mr-0 mr-1">
+                              {{ $item->statusCheck}}
+                          </span>
+                      @else
+                          <span class="text-xs font-bold inline-block py-1 px-2 capitalize rounded-full text-blueGray-600 bg-yellow-200 last:mr-0 mr-1">
+                              {{ $item->statusCheck}}
+                          </span>
+                      @endif
+                  </td>
+              </tr>
+              @empty
+              <div class="bg-yellow-200 text-grey p-3 rounded shadow-sm mb-3">
+                <span class="font-serif font-bold">{{Auth::user()->name}}, Administrasi belum ada isinya</span> 
+              </div>
+            @endforelse --}}
+            </tbody>
+        </table>
+    </div>
+    <button class="bg-transparent mt-2  text-blue-700 font-semibold hover: py-2 px-4  hover:border-transparent rounded">
+        <a href="{{route('admin.teacherAdministrations.index')}}">
+          Kembali</a> 
+    </button>
   </div>
 </x-student-layout>
