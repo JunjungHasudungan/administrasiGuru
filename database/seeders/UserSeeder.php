@@ -225,7 +225,7 @@ class UserSeeder extends Seeder
                 'name'                  => 'Adventist Simamora', // SISWA XII RPL
                 'email'                 => 'advent@gmail.com',
                 'password'              => bcrypt('siswa_smk_02'),
-                'role_id'               => 3,
+                'role_id'               => 2,
                 'major_id'              => 0,
                 'teacher_major'         => null,
                 'student_major'         => 1,

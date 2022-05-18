@@ -2,7 +2,7 @@
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
             <span class=" text-sky-500 "> 
-                {{$administration->teachers->name ?? ''}}
+                {{$administration->teacher_id ?? ''}}
             </span>
           </h2>
     </x-slot>
@@ -73,13 +73,13 @@
             </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-                {{-- @forelse ($administrations as $item)
+                @forelse ($administration as $item)
                 <tr>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       {{ $loop->iteration }}
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {{ date('l, d F Y', strtotime( $item->created_at )) }}  
+                      {{-- {{ date('l, d F Y', strtotime( $item->created_at )) }}   --}}
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       {{ $item->classrooms->name_class }}
@@ -123,7 +123,7 @@
               <div class="bg-yellow-200 text-grey p-3 rounded shadow-sm mb-3">
                 <span class="font-serif font-bold">{{Auth::user()->name}}, Administrasi belum ada isinya</span> 
               </div>
-            @endforelse --}}
+            @endforelse
             </tbody>
         </table>
     </div>

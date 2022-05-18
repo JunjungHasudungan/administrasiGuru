@@ -72,7 +72,7 @@
                     {{-- @foreach ($classroom->classroomSubject as $student) --}}
                     @forelse ($user->teacherSubject as $subject)
                     <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
-                      {{ $subject->subject_code ?? ''}} 
+                      {{ $subject->name ?? ''}} 
                     </span> 
                         
                     @empty

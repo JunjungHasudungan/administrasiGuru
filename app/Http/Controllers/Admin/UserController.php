@@ -15,11 +15,9 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::with('classrooms')->orderBy('name', 'asc')->get();
-        $teachers = Role::find(4)->users()->get();
-        // dd([$teachers, $users]);
+        $users = User::with(['classrooms', 'role', 'subjects'])->orderBy('name', 'asc')->get();
 
-        return view('admin.users.index', compact(['users', 'teachers']));
+        return view('admin.users.index', compact('users'));
     }
 
 
@@ -41,7 +39,7 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        // $user->load([]);
+        $user->load('subjects', 'teacherMajor');
 
         return view('admin.users.show', compact('user'));
     }

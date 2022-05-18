@@ -40,9 +40,9 @@
                                 <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Email
                                 </th>
-                                {{-- <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Roles
-                                </th> --}}
+                                </th>
                                 <th scope="col" width="200" class="px-6 py-3 bg-gray-50">
 
                                 </th>
@@ -62,6 +62,15 @@
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                         {{ $user->email }}
                                     </td>
+
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                      <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                      {{-- @foreach ($user->role->name ?? '') --}}
+                                          {{-- {{ $role->name }} --}}
+                                          {{-- @endforeach --}}
+                                      </span>
+                                  </td>
+
 
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                         <a href="{{ route('admin.users.show', $user->id) }}"

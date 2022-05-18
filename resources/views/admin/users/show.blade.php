@@ -33,7 +33,7 @@
                                         Email Verified At
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{ $user->email_verified_at }}
+                                        {{ $user->email_verified_at ?? '-' }}
                                     </td>
                                 </tr>
                                 <tr class="border-b">
@@ -41,11 +41,11 @@
                                         Roles
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        @foreach ($user->roles as $role)
+                                        {{-- @foreach ($user->roles as $role) --}}
                                         <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                            {{ $role->name }}
+                                            {{ $user->role->name }}
                                         </span>
-                                        @endforeach
+                                        {{-- @endforeach --}}
                                     </td>
                                 </tr>
                                 
@@ -54,7 +54,7 @@
                                         Mata Pelajaran
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                       @forelse ($user->teacherSubject as $subject)
+                                       @forelse ($user->subjects as $subject)
                                        <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
                                         <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
                                             {{ $subject->name ?? ''}}
@@ -71,6 +71,27 @@
                                 <tr class="border-b">
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Kelas
+                                    </th>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+
+                                        @forelse ($user->teacherMajor as $major)
+                                        <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                         <a href="{{route('admin.najors.index')}}" class="no-underline hover:underline">
+                                             {{ $major->title ?? ''}}
+                                         </a>
+                                         </span>
+                                        @empty
+                                        <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                         Data Mata Pelajaran Tidak ada
+                                       </div>
+                                        @endforelse
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Jurusan
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
 

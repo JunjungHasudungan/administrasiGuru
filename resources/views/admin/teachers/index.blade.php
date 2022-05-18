@@ -42,7 +42,7 @@
                   </tr>
               </thead>
               <tbody class="bg-gray-200">
-                @forelse ($teacherSubjects as $teacher)
+                @forelse ($teachers as $teacher)
                   <tr class="bg-white border-2 border-gray-200">
                       <td class="px-7 py-2 text-center">{{$loop->iteration}}</td>
                       <td class="px-7 py-2 text-left">{{$teacher->name ?? ''}}</td>

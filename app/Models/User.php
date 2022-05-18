@@ -61,17 +61,20 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class, 'role_user', 'role_id', 'user_id');
     }
 
+    public function role()
+    {
+        return $this->belongsTo(Role::class, 'role_id', 'id');
+    }
+
+    public function getIsTeacherAttribute()
+    {
+        return $this->role()->where('name', 'Guru')->exists();
+    }
 
     public function getIsNameAttribute()
     {
         return $this->name;
     }
-
-    public function getIsTeacherAttribute()
-    {
-        return $this->roles()->where('id', 3)->exists();
-    }
-
 
     public function getIsKurikulumAttribute()
     {

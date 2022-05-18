@@ -33,8 +33,6 @@ class TeacherAdministrationController extends Controller
     public function show(Administration $administration)
     {
         $administration->load('classrooms', 'teachers', 'subjects');
-       
-        // dd($administration);
 
         return view('admin.teacherAdministrations.show', compact('administration'));
     }
