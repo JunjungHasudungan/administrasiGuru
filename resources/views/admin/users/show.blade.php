@@ -74,17 +74,19 @@
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
 
-                                        @forelse ($user->teacherMajor as $major)
-                                        <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                                         <a href="{{route('admin.najors.index')}}" class="no-underline hover:underline">
-                                             {{ $major->title ?? ''}}
-                                         </a>
-                                         </span>
-                                        @empty
-                                        <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                                         Data Mata Pelajaran Tidak ada
-                                       </div>
-                                        @endforelse
+                                        @if ($user->classrooms->name_class ?? '')
+                                        <span class="px-2 inline-flex text-xs lowercase leading-5 font-semibold rounded-full bg-yellow-100 text-green-800">
+                                            {{ $user->classrooms->name_class ?? ''}}
+                                        </span>
+                                        
+                                        {{-- <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                            Tidak Ada Kelas 
+                                        </div> --}}
+                                          @else
+                                          <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                            Tidak Ada Kelas 
+                                        </div>
+                                        @endif
                                         
                                     </td>
                                 </tr>
@@ -95,15 +97,19 @@
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
 
-                                        @if ($user->classrooms->name_class ?? '')
-                                        <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                                            Tidak Ada Kelas 
-                                        </div>
-                                          @else
-                                          <span class="px-2 inline-flex text-xs lowercase leading-5 font-semibold rounded-full bg-yellow-100 text-green-800">
-                                              {{ $user->classrooms->name_class ?? 'Tidak ada  Kelas'}}
-                                          </span>
-                                        @endif
+                                        @forelse ($user->teacherMajor as $major)
+                                       <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                        <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
+                                            {{ $major->title ?? ''}}
+                                        </a>
+                                        </span>
+                                       @empty
+                                       <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                        <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
+                                            {{ $user->studentMajor->title ?? '-'}}
+                                        </a>
+                                        </span>
+                                       @endforelse
                                         
                                     </td>
                                 </tr>

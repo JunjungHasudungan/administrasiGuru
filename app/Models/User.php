@@ -32,7 +32,7 @@ class User extends Authenticatable
         'student_licence_number',
         'teacher_qualifications',
         'teacher_major',
-        'student_major',
+        'major_id',
         'head_Of_Departement',
     ];
 
@@ -86,7 +86,6 @@ class User extends Authenticatable
         return $this->hasOne(Classsroom::class);
     }
 
-
     public function subjects()
     {
         return $this->hasMany(Subject::class, 'teacher_id', 'id');
@@ -95,6 +94,11 @@ class User extends Authenticatable
     public function students() 
     {
         return $this->belongsTo(User::class, 'role_id');
+    }
+
+    public function studentMajor()
+    {
+        return $this->belongsTo(Major::class, 'major_id', 'id');
     }
     
     
@@ -107,6 +111,7 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Major::class, 'major_teacher','major_id', 'teacher_id');
     }
+
 
     public function headOfDepartement() // kepala jurusan
     {

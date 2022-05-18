@@ -28,17 +28,17 @@ class Administration extends Model
 
         public function classrooms()
         {
-            return $this->belongsTo(Classroom::class, 'classroom_id');
+            return $this->belongsTo(Classroom::class, 'classroom_id', 'id');
         }
 
         public function teachers()
         {
-            return $this->belongsTo(User::class, 'teacher_id');
+            return $this->belongsTo(User::class, 'teacher_id', 'id');
         }
 
         public function subjects()
         {
-            return $this->belongsTo(Subject::class, 'subject_id');
+            return $this->belongsTo(Subject::class, 'subject_id', 'id');
         }
 
         // public function administrationTeacher()
