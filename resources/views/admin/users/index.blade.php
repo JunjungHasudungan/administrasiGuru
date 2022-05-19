@@ -19,9 +19,17 @@
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
                   clip-rule="evenodd" />
               </svg>
-              <span class="ml-2">User</span>
+                <span class="ml-2">User</span>
               </a>
             </div>
+            <div class="col-span-7">
+              <form action="#" method="GET">
+                  <input type="text" name="search"
+                  class="w-full bg-gray-200 p-2 rounded shadow-sm border border-gray-200 focus:outline-none focus:bg-white"
+                  placeholder="Cari User">
+              </form>
+          </div>
+
           </div>
 
           <div class="flex flex-col">
@@ -40,9 +48,9 @@
                                 <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Email
                                 </th>
-                                <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                {{-- <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Roles
-                                </th>
+                                </th> --}}
                                 <th scope="col" width="200" class="px-6 py-3 bg-gray-50">
 
                                 </th>
@@ -62,15 +70,6 @@
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                         {{ $user->email }}
                                     </td>
-
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                      <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                      {{-- @foreach ($user->role->name ?? '') --}}
-                                          {{-- {{ $role->name }} --}}
-                                          {{-- @endforeach --}}
-                                      </span>
-                                  </td>
-
 
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                         <a href="{{ route('admin.users.show', $user->id) }}"

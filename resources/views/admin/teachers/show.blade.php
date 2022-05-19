@@ -69,16 +69,15 @@
                 <div class="block p-6 rounded-lg shadow-lg bg-white  min-w-full max-w-sm">
                   <h5 class="text-gray-900  text-xl leading-tight  mb-2">Nama Mata Pelajaran</h5>
                   <p class="text-gray-700 text-base mb-4">
-                    {{-- @foreach ($classroom->classroomSubject as $student) --}}
                     @forelse ($user->teacherSubject as $subject)
                     <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
                       {{ $subject->name ?? ''}} 
                     </span> 
                         
                     @empty
-                    <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                      Data Mata Pelajaran Belum ada
-                    </div>
+                    <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800">
+                      Tidak Ada Keterangan
+                    </span>
                     @endforelse
                    </p>
                   </div>

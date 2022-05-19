@@ -22,13 +22,13 @@
               <span class="ml-2 text-right">Mapel</span>
               </a>
             </div>
-              {{-- <div class="col-span-7">
+              <div class="col-span-7">
                   <form action="#" method="GET">
                       <input type="text" name="search"
                       class="w-full bg-gray-200 p-2 rounded shadow-sm border border-gray-200 focus:outline-none focus:bg-white"
                       placeholder="Cari Mata Pelajaran">
                   </form>
-              </div> --}}
+              </div>
           </div>
           <table class="min-w-full table-auto divide-gray-200">
               <thead class="justify-between">

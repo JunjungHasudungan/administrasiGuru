@@ -55,9 +55,11 @@
                           </a>
                         </span>
                         @empty
-                        <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                          Data Mata pelajaran Belum ada
-                        </div>
+                        <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-500 text-green-800">
+                          <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline font-normal hover:font-bold">
+                            Mata pelajaran Belum ada
+                          </a>
+                        </span>
                         @endforelse
                       </td>
                   </tr>
