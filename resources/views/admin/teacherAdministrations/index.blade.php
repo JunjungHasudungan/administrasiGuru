@@ -70,7 +70,7 @@
           {{-- paginate --}}
 
           <div class="text-gray-600 bg-secondary-50 mt-2">
-            {{-- {{ $administrations->links() }} --}}
+            {{ $administrations->links() }}
           </div>
         </div>
   </div>
