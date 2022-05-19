@@ -15,24 +15,24 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                             <span>Kode Jurusan</span>
                         </label>
-                        <input id="major_code" type="text" name="major_code" value="{{old('major_code')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  placeholder="Kode Jurusan">
-                        @error('major_code')
-                            <div class="bg-red-400 p-2 shadow-sm rounded mt-2">
-                                {{ $message }}
+                        <input id="major_code" type="text" name="major_code" value="{{old('major_code')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('major_code')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
+                        @if($errors->has('major_code'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('major_code') }}
                             </div>
-                        @enderror
+                        @endif
                     </div>
 
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                             <span>Nama Jurusan</span>
                         </label>
-                        <input id="title" type="text" name="title" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  placeholder="Nama Jurusan">
-                        @error('title')
-                            <div class="bg-red-400 p-2 shadow-sm rounded mt-2">
-                                {{ $message }}
+                        <input id="title" type="text" name="title" value="{{old('title')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('title')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
+                        @if($errors->has('title'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('title') }}
                             </div>
-                        @enderror
+                        @endif
                     </div>
 
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">

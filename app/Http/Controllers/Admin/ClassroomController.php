@@ -17,7 +17,7 @@ class ClassroomController extends Controller
     public function index()
     {   
         $classrooms = Classroom::with(['students', 'homeworkTeacher','classroomSubject', 'majors'])
-        ->orderBy('name_class', 'asc')->get();
+        ->orderBy('name_class', 'asc')->paginate(5);
 
         return view('admin.classrooms.index', compact('classrooms'));
     }

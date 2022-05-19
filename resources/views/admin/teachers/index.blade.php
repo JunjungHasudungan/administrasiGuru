@@ -8,7 +8,7 @@
     <div class="container mx-auto mt-10 mb-10">
       <div class="bg-white p-5 rounded shadow-sm">
          
-        {{-- <div class="grid grid-cols-8 gap-4 mb-4">
+        <div class="grid grid-cols-8 gap-4 mb-4">
             <div class="col-span-1 mt-2 bg-blue-500 rounded">
               <a href="{{ route('admin.teachers.create') }}"
               class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold tracking-wide text-white transition  border border-transparent rounded shadow select-none focus:border-blue-600 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-30 disabled:opacity-50">
@@ -23,7 +23,15 @@
               <span class="ml-2">Guru Mapel</span>
               </a>
             </div>
-          </div> --}}
+            <div class="col-span-7">
+              <form action="#" method="GET">
+                  <input type="text" name="search"
+                  class="w-full bg-gray-200 p-2 rounded shadow-sm border border-gray-200 focus:outline-none focus:bg-white"
+                  placeholder="Cari Nama Guru">
+              </form>
+          </div>
+
+          </div>
 
           <table class="min-w-full table-auto rounded">
               <thead class="justify-between rounded">
@@ -70,8 +78,11 @@
                 @endforelse
               </tbody>
           </table>
-          <div class="mt-2">
+          
+          <div class="text-gray-600 bg-secondary-50 mt-2">
+            {{ $teachers->links() }}
           </div>
+
       </div>
   </div>
 </x-student-layout>

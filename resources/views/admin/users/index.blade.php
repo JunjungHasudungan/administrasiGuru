@@ -117,8 +117,11 @@
                 </div>
             </div>
         </div>
-          <div class="mt-2">
-          </div>
+          
+        <div class="text-gray-600 bg-secondary-50 mt-2">
+          {{ $users->links() }}
+        </div>
+
       </div>
   </div>
 </x-student-layout>

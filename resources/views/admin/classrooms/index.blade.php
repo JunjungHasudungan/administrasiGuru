@@ -110,7 +110,8 @@
               </tbody>
           </table>
           
-          <div class="mt-2">
+          <div class="text-gray-600 bg-secondary-50 mt-2">
+            {{ $classrooms->links() }}
           </div>
 
       </div>

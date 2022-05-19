@@ -47,13 +47,13 @@
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                       <span>Materi Pelajaran</span>
                     </label>
-                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-                    id="title" type="text" name="title" placeholder="Judul Materi Pelajaran">
-                    @error('title')
-                    <div class="bg-red-400 p-2 shadow-sm rounded mt-2">
-                        {{ $message }}
-                    </div>
-                  @enderror
+                    <input id="title" type="text" name="title" value="{{old('title')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('title')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 " placeholder="Judul Materi Pelajaran" required>
+                    @if($errors->has('title'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('title') }}
+                        </div>
+                    @endif
+
                   </div>
                 </div>
 

@@ -15,7 +15,7 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        $teachers =  User::with('subjects')->where('role_id', 3)->orderBy('name', 'asc')->get();
+        $teachers =  User::with('subjects')->where('role_id', 3)->orderBy('name', 'asc')->paginate(5);
       
         // dd($teachers);
 
