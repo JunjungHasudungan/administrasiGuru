@@ -58,7 +58,7 @@
                         {{-- {{$teacher->subjects->name ?? ''}} --}}
                         @forelse ($teacher->subjects as $subject)
                         <span class="px-2 inline-flex lowercase text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                          <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
+                          <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline font-normal hover:font-bold">
                             {{$subject->name ?? ''}}
                           </a>
                         </span>

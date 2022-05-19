@@ -94,7 +94,6 @@
               <a href="{{route('admin.majors.index')}}">
                 Kembali</a> 
               </button>
-              
-      </div>
+          </div>
 
 </x-student-layout>

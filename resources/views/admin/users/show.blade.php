@@ -76,7 +76,9 @@
 
                                         @if ($user->classrooms->name_class ?? '')
                                         <span class="px-2 inline-flex text-xs lowercase leading-5 font-semibold rounded-full bg-yellow-100 text-green-800">
-                                            {{ $user->classrooms->name_class ?? ''}}
+                                            <a href="{{route('admin.classrooms.index')}}" class="no-underline hover:underline">
+                                                {{ $user->classrooms->name_class ?? ''}}
+                                            </a> 
                                         </span>
                                         
                                         {{-- <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">

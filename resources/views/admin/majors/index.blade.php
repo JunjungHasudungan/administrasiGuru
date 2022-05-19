@@ -7,7 +7,7 @@
 
     <div class="container mx-auto mt-10 mb-10">
       <div class="bg-white p-5 rounded shadow-sm">
-          <div class="grid grid-cols-8 gap-4 mb-4">
+          <div class="grid grid-cols-8 gap-4 mb-4 w-full">
               <div class="col-span-1 mt-2">
                 <a href="{{ route('admin.majors.create') }}"
                 class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold tracking-wide text-white transition bg-blue-500 border border-transparent rounded shadow select-none focus:border-blue-600 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-30 disabled:opacity-50">
@@ -24,11 +24,11 @@
               </div>
 
               @if (session('success'))
-              <div class="px-4 py-2 mb-4 text-sm text-center text-green-800 bg-green-300 rounded-full shadow-sm">
+              <div class="w-full p-2 rounded shadow-sm border border-gray-200 focus:outline-nonel text-center text-green-800 bg-green-300 ">
                 {!! session('success') !!}
               </div>
               @endif
-
+              
           </div>
           <table class="min-w-full table-auto">
               <thead class="justify-between">

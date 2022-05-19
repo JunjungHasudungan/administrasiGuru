@@ -2,7 +2,17 @@
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
             <span class=" text-sky-500 "> 
-                {{$administration->teacher_id ?? ''}}
+                @forelse ($administration->administrationTeacher as $teacher)
+                    <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                        <a href="{{route('admin.teachers.index')}}" class="no-underline hover:underline">
+                            {{ $teacher->name ?? ''}}
+                        </a>
+                    </span>
+                @empty
+                    <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                        nama tidak ada
+                    </span>
+                @endforelse
             </span>
           </h2>
     </x-slot>

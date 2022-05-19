@@ -61,7 +61,7 @@
                       <td class="px-7 py-2 text-left">{{$subject->subject_code}}</td>
                       <td class="px-7 py-2 text-left">{{$subject->name ?? ''}}</td>
                       <td class="px-7 py-2 text-left">
-                        <a href="{{route('admin.teachers.index')}}" class="no-underline hover:underline">
+                        <a href="{{route('admin.teachers.index')}}" class="no-underline hover:underline font-normal hover:font-bold">
                           {{$subject->teachers->name ?? ''}}
                       </td>
                       <td class="px-7 py-2 text-left">

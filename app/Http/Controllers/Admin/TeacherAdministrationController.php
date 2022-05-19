@@ -6,6 +6,7 @@ use App\Helpers\Method;
 use App\Http\Controllers\Controller;
 use App\Models\Administration;
 use App\Models\TeacherAdministration;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,9 +15,9 @@ class TeacherAdministrationController extends Controller
 
     public function index()
     {
-        $administrations = Administration::with(['teachers', 'subjects', 'classrooms'])->paginate(5);
+        $administrations = Administration::with(['administrationTeacher', 'classrooms', 'subjects'])->get();
 
-        // dd($teacherAdministrations);
+        // dd($administrations);
         return view('admin.teacherAdministrations.index', compact('administrations'));
     }
 
@@ -32,9 +33,9 @@ class TeacherAdministrationController extends Controller
 
     public function show(Administration $administration)
     {
-        // $administration->load('classrooms', 'teachers', 'subjects');
+        dd($administration->load('teachers', 'subjects'));
 
-        return view('admin.teacherAdministrations.show', compact('administration'));
+        // return view('admin.teacherAdministrations.show', compact('administration'));
     }
 
     public function edit(TeacherAdministration $userP)

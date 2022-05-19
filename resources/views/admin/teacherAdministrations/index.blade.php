@@ -1,7 +1,7 @@
 <x-student-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-blue-500">
-            {{ __('List Administari Guru') }}
+            {{ __('List Administari Guru') }} {{$dministration->teachers->name ?? ''}}
         </h2>
     </x-slot>
 
@@ -32,7 +32,7 @@
                       </td>
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center">
-                        <a href="{{route('admin.teacherAdministrations.show', $administration->teacher_id)}}"
+                        <a href="{{route('admin.teacherAdministrations.show', $administration->teachers->id)}}"
                           class="text-blue-600 hover:text-blue-900 mb-2 mr-2"> 
                           <span>View </span>              
                         </a>
@@ -49,7 +49,7 @@
           {{-- paginate --}}
 
           <div class="text-gray-600 bg-secondary-50 mt-2">
-            {{ $administrations->links() }}
+            {{-- {{ $administrations->links() }} --}}
           </div>
         </div>
   </div>

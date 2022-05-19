@@ -91,6 +91,11 @@ class User extends Authenticatable
         return $this->hasMany(Subject::class, 'teacher_id', 'id');
     }
 
+    public function administrations()
+    {
+        return $this->hasMany(Administration::class, 'teacher_id', 'id');
+    }
+
     public function students() 
     {
         return $this->belongsTo(User::class, 'role_id');

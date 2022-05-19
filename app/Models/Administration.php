@@ -41,8 +41,8 @@ class Administration extends Model
             return $this->belongsTo(Subject::class, 'subject_id', 'id');
         }
 
-        // public function administrationTeacher()
-        // {
-        //     return $this->belongsToMany(User::class, 'administration_teacher', 'administration_id', 'teacher_id');
-        // }
+        public function administrationTeacher()
+        {
+            return $this->belongsToMany(User::class, 'administration_teacher', 'administration_id', 'teacher_id');
+        }
 }
