@@ -45,8 +45,12 @@
                 @endforelse
               </tbody>
           </table>
-          <div class="mt-2">
+
+          {{-- paginate --}}
+
+          <div class="text-gray-600 bg-secondary-50 mt-2">
+            {{ $administrations->links() }}
           </div>
-      </div>
+        </div>
   </div>
 </x-student-layout>

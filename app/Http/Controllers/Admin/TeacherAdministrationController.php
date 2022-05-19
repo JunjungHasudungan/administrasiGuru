@@ -14,7 +14,7 @@ class TeacherAdministrationController extends Controller
 
     public function index()
     {
-        $administrations = Administration::with(['teachers', 'subjects', 'classrooms'])->get();
+        $administrations = Administration::with(['teachers', 'subjects', 'classrooms'])->paginate(5);
 
         // dd($teacherAdministrations);
         return view('admin.teacherAdministrations.index', compact('administrations'));

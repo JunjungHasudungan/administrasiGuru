@@ -77,7 +77,7 @@
                           </svg>
                         </a>
                           {{-- delete --}}
-                        <form action="{{ route('admin.majors.destroy', $major->id) }}" class="inline" method="post">
+                        <form action="{{ route('admin.majors.destroy', $major->id) }}" class="inline" onsubmit="return confirm('Yakin untuk menghapus?'); " method="post">
                           @csrf
                           @method('delete')
                           <button type="submit"

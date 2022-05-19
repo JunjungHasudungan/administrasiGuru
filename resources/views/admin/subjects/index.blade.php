@@ -39,9 +39,12 @@
                       <th class="px-7 py-2 text-center">
                         <span class="text-indigo-500">Kode Mata Pelajaran</span>
                     </th>
-                    <th class="px-16 py-2 text-center ">
+                    <th class="px-16 py-2 text-left ">
                         <span class="text-indigo-500">Mata Pelajaran</span>
                     </th>
+                    <th class="px-16 py-2 text-left ">
+                      <span class="text-indigo-500">Guru Mata Pelajaran</span>
+                  </th>
                     <th class="px-7 py-2 text-center ">
                         <span class="text-indigo-500"></span>
                     </th>
@@ -55,8 +58,12 @@
                   <tr class="bg-white border-2 border-gray-200">
 
                       <td class="px-7 py-2 text-center">{{$loop->iteration}}</td>
-                      <td class="px-7 py-2 text-center">{{$subject->subject_code}}</td>
-                      <td class="px-7 py-2 text-center">{{$subject->name ?? ''}}</td>
+                      <td class="px-7 py-2 text-left">{{$subject->subject_code}}</td>
+                      <td class="px-7 py-2 text-left">{{$subject->name ?? ''}}</td>
+                      <td class="px-7 py-2 text-left">
+                        <a href="{{route('admin.teachers.index')}}" class="no-underline hover:underline">
+                          {{$subject->teachers->name ?? ''}}
+                      </td>
                       <td class="px-7 py-2 text-left">
                       </td>
                       <td class="px-6 text-right select-none whitespace-nowrap">
@@ -80,7 +87,7 @@
                                 <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                               </svg>
                             </a>
-                            <form action="{{ route('admin.subjects.destroy', $subject->id) }}" class="inline" method="post">
+                            <form action="{{ route('admin.subjects.destroy', $subject->id) }}" class="inline" onsubmit="return confirm('Yakin untuk menghapus?'); " method="post">
                               @csrf
                               @method('delete')
                               <button type="submit"

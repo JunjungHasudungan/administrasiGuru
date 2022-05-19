@@ -1011,11 +1011,20 @@ select {
 .col-span-7 {
   grid-column: span 7 / span 7;
 }
+.col-span-9 {
+  grid-column: span 9 / span 9;
+}
+.col-span-8 {
+  grid-column: span 8 / span 8;
+}
 .float-left {
   float: left;
 }
 .m-0 {
   margin: 0px;
+}
+.-m-1 {
+  margin: -0.25rem;
 }
 .mx-auto {
   margin-left: auto;
@@ -1152,6 +1161,18 @@ select {
 }
 .-mt-32 {
   margin-top: -8rem;
+}
+.-ml-3 {
+  margin-left: -0.75rem;
+}
+.-mr-4 {
+  margin-right: -1rem;
+}
+.-ml-4 {
+  margin-left: -1rem;
+}
+.-ml-2 {
+  margin-left: -0.5rem;
 }
 .block {
   display: block;
