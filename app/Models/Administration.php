@@ -21,6 +21,11 @@ class Administration extends Model
         'completeness',
         ];
     
+        public function administrations()
+        {
+            return $this->hasMany(Administration::class, 'teacher_id', 'id');
+        }
+
         public function users()
         {
             return $this->belongsTo(User::class, 'user_id');

@@ -2,7 +2,8 @@
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
             <span class=" text-sky-500 "> 
-                @forelse ($administration->administrationTeacher as $teacher)
+                {{$teacher->name ?? ''}} 
+                {{-- @forelse ($teacher->administrationTeacher as $teacher)
                     <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
                         <a href="{{route('admin.teachers.index')}}" class="no-underline hover:underline">
                             {{ $teacher->name ?? ''}}
@@ -12,7 +13,7 @@
                     <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
                         nama tidak ada
                     </span>
-                @endforelse
+                @endforelse --}}
             </span>
           </h2>
     </x-slot>
@@ -83,48 +84,48 @@
             </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-                {{-- @forelse ($administration as $administration) --}}
+                {{-- @forelse ($teacher as $teacher) --}}
                 <tr>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       {{-- {{ $loop->iteration }} --}}
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {{-- {{ date('l, d F Y', strtotime( $administration->created_at )) }}   --}}
+                      {{-- {{ date('l, d F Y', strtotime( $teacher->created_at )) }}   --}}
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {{ $administration->classrooms->name_class ?? ''}}
+                      {{ $teacher->classrooms->name_class ?? ''}}
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {{ $administration->subjects->name ?? ''}}
+                      {{ $teacher->subjects->name ?? ''}}
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {{ $administration->title ?? ''}}
+                      {{ $teacher->title ?? ''}}
                   </td>
                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {{date('h:i', strtotime($administration->subjects->start_time ?? ''))}} - {{ date('h:i', strtotime($administration->subjects->end_time ?? '')) }}
+                      {{date('h:i', strtotime($teacher->subjects->start_time ?? ''))}} - {{ date('h:i', strtotime($teacher->subjects->end_time ?? '')) }}
                   </td> 
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {{ $administration->method }}
+                      {{ $teacher->method }}
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      @if ($administration->completeness === 'Selesai')
+                      @if ($teacher->completeness === 'Selesai')
                       <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 capitalize last:mr-0 mr-1">
-                          {{ $administration->completeness}}
+                          {{ $teacher->completeness}}
                       </span>
                       @else
                       <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-blueGray-600 bg-yellow-200 capitalize last:mr-0 mr-1">
-                          {{ $administration->completeness}}
+                          {{ $teacher->completeness}}
                       </span>
                       @endif
                   </td> 
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      @if ($administration->statusCheck === 'checked')
+                      @if ($teacher->statusCheck === 'checked')
                           <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 capitalize last:mr-0 mr-1">
-                              {{ $administration->statusCheck}}
+                              {{ $teacher->statusCheck}}
                           </span>
                       @else
                           <span class="text-xs font-bold inline-block py-1 px-2 capitalize rounded-full text-blueGray-600 bg-yellow-200 last:mr-0 mr-1">
-                              {{ $administration->statusCheck}}
+                              {{ $teacher->statusCheck}}
                           </span>
                       @endif
                   </td>

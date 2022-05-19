@@ -15,7 +15,8 @@ class TeacherAdministrationController extends Controller
 
     public function index()
     {
-        $administrations = Administration::with(['administrationTeacher', 'classrooms', 'subjects'])->get();
+        $administrations = User::with('administrations')->where('role_id', 3)->get();
+        // $administrations = Administration::with(['administrationTeacher', 'classrooms', 'subjects'])->get();
 
         // dd($administrations);
         return view('admin.teacherAdministrations.index', compact('administrations'));
@@ -31,11 +32,14 @@ class TeacherAdministrationController extends Controller
         //
     }
 
-    public function show(Administration $administration)
+    public function show(Administration $teacher)
     {
-        dd($administration->load('teachers', 'subjects'));
+        // $teacherAdministration = Administration::where('adminis$teacher', $teacher)->get();
+       
+        $teacher->load('administrations', 'subjects');
 
-        // return view('admin.teacherAdministrations.show', compact('administration'));
+        // dd($teacher);
+        return view('admin.teacherAdministrations.show', compact('teacher'));
     }
 
     public function edit(TeacherAdministration $userP)

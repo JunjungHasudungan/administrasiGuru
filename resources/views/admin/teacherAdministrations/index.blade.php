@@ -1,7 +1,7 @@
 <x-student-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-blue-500">
-            {{ __('List Administari Guru') }} {{$dministration->teachers->name ?? ''}}
+            {{ __('List Administari Guru') }} 
         </h2>
     </x-slot>
 
@@ -16,23 +16,44 @@
                       <th class="px-7 py-2 text-center">
                           <span class="text-indigo-500">NAMA GURU</span>
                       </th>
+                      <th class="px-7 py-2 text-center">
+                        <span class="text-indigo-500">Status</span>
+                    </th>
+                      
                       <th class="px-7 py-2">
                           <span class="text-indigo-500"></span>
                       </th>
                   </tr>
               </thead>
               <tbody class="bg-gray-200">
-                @forelse ($administrations as $administration )
+                @forelse ($administrations as $teacher )
                   <tr class="bg-white border-2 border-gray-200">
                       <td class="px-7 py-2 text-center">
                         {{$loop->iteration}}
                       </td>
                       <td class="px-7 py-2 text-center">
-                        {{$administration->teachers->name ?? ''}}
+                        {{$teacher->name ?? ''}} 
+                      </td>
+
+                      <td class="px-7 py-2 text-center">
+                        @forelse ($teacher->administrations as $teacher)
+                        <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                          {{-- <a href="{{route('admin.teacherAdministrations.show', $administration->id)}}" class="no-underline hover:underline"> --}}
+                              {{-- {{ $administration->title ?? ''}} --}}ada 
+                          {{-- </a> --}}
+                          </span>
+                        @empty
+                        <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800">
+                          {{-- <a href="{{route('admin.teacherAdministrations.show', $administration->id)}}" class="no-underline hover:underline"> --}}
+                              {{-- {{ $item->title ?? ''}} --}}tidak ada 
+                          {{-- </a> --}}
+                          </span>
+                        @endforelse
+                        {{-- {{$administration->name ?? ''}} --}}
                       </td>
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center">
-                        <a href="{{route('admin.teacherAdministrations.show', $administration->teachers->id)}}"
+                        <a href="{{route('admin.teacherAdministrations.show', $teacher->id)}}"
                           class="text-blue-600 hover:text-blue-900 mb-2 mr-2"> 
                           <span>View </span>              
                         </a>
