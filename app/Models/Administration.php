@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Helpers\Completeness;
+use App\Helpers\Method;
+use App\Helpers\StatusCheck;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -36,11 +39,6 @@ class Administration extends Model
             return $this->belongsTo(Classroom::class, 'classroom_id', 'id');
         }
 
-        // public function teachers()
-        // {
-        //     return $this->belongsTo(User::class, 'teacher_id', 'id');
-        // }
-
         public function subjects()
         {
             return $this->belongsTo(Subject::class, 'subject_id', 'id');
@@ -49,5 +47,40 @@ class Administration extends Model
         public function administrationTeacher()
         {
             return $this->belongsToMany(User::class, 'administration_teacher', 'administration_id', 'teacher_id');
+        }
+
+        public function getIsUncheckAttribute():bool
+        {
+            return (int) $this->statusCheck === StatusCheck::ADMINISTRATION_STATUS['unchecked'];
+        }
+
+        public function getIsCheckAttribute():bool
+        {
+            return (int) $this->statusCheck === StatusCheck::ADMINISTRATION_STATUS['checked'];
+        }
+
+        public function getIsUncompleteAttribute():bool
+        {
+            return (int) $this->completeness === Completeness::Completeness['continued'];
+        }
+
+        public function getIsCompleteAttribute():bool
+        {
+            return (int) $this->completeness === Completeness::Completeness['finished'];
+        }
+
+        public function getIsTeoriAttribute():bool
+        {
+            return (int) $this->method === Method::Method_Learning['teori'];
+        }
+
+        public function getIsPraktekAttribute():bool
+        {
+            return (int) $this->method === Method::Method_Learning['praktek'];
+        }
+
+        public function getIsPenugasanAttribute():bool
+        {
+            return (int) $this->method === Method::Method_Learning['penugasan'];
         }
 }

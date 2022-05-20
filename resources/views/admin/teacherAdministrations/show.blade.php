@@ -60,12 +60,12 @@
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
 
-                                        @if ($teacherAdministration->completeness === 'Selesai')
-                                            <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 capitalize last:mr-0 mr-1">
+                                        @if ($teacherAdministration->completeness === 'Bersambung')
+                                            <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-yellow-200 capitalize last:mr-0 mr-1">
                                                 {{ $teacherAdministration->completeness}}
                                             </span>
                                         @else
-                                            <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-blueGray-600 bg-yellow-200 capitalize last:mr-0 mr-1">
+                                            <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-blueGray-600 bg-emerald-200 capitalize last:mr-0 mr-1">
                                                 {{ $teacherAdministration->completeness}}
                                             </span>
                                         @endif
@@ -81,11 +81,11 @@
 
                                         @if ($teacherAdministration->statusCheck === 0)
                                             <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-yellow-200 capitalize last:mr-0 mr-1">
-                                                UnCheck
+                                                Belum di periksa
                                             </span>
                                         @else
                                             <span class="text-xs font-bold inline-block py-1 px-2 capitalize rounded-full text-blueGray-600 bg-emerald-200 last:mr-0 mr-1">
-                                                Check
+                                                Sudah diperiksa
                                             </span>
                                         @endif
 

@@ -21,9 +21,9 @@ return new class extends Migration
             $table->string('title');
             $table->foreignIdFor(Classroom::class);
             $table->foreignIdFor(Subject::class);
-            $table->integer('method')->default(0);
+            $table->string('method')->default('teori');
             $table->integer('statusCheck')->default(0);
-            $table->integer('completeness')->default(0);
+            $table->string('completeness')->default('continued');
             $table->unsignedBigInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

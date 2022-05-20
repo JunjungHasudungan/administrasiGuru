@@ -2,8 +2,11 @@
 
 namespace App\Http\Requests;
 
+use App\Helpers\Completeness;
+use App\Helpers\StatusCheck;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class AdminstrationRequest extends FormRequest
 {
@@ -21,6 +24,7 @@ class AdminstrationRequest extends FormRequest
             'subject_id'        => 'required',
             'method'            => 'required',
             'completeness'      => 'required',
+            'statusCheck'       => ['optional', Rule::in(StatusCheck::ADMINISTRATION_STATUS)]
         ];
     }
 }
