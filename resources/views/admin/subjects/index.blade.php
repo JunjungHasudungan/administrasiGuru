@@ -91,7 +91,7 @@
                               @csrf
                               @method('delete')
                               <button type="submit"
-                                class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide text-white transition bg-red-500 border border-transparent rounded-full shadow select-none focus:border-red-600 hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-500 focus:ring-opacity-30 disabled:opacity-50">
+                                class="inline-flex items-center  justify-center px-4 py-2 text-sm font-medium tracking-wide text-white transition bg-red-500 border border-transparent rounded-full shadow select-none focus:border-red-600 hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-500 focus:ring-opacity-30 disabled:opacity-50" data-modal-toggle="popup-modal">
                                 <svg class="w-4 h-4 -mx-2"
                                   xmlns="http://www.w3.org/2000/svg"
                                   viewBox="0 0 20 20"

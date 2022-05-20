@@ -21,9 +21,9 @@ class Administration extends Model
         'completeness',
         ];
     
-        public function administrations()
+        public function teachers()
         {
-            return $this->hasMany(Administration::class, 'teacher_id', 'id');
+            return $this->belongsTo(User::class, 'teacher_id', 'id');
         }
 
         public function users()
@@ -36,10 +36,10 @@ class Administration extends Model
             return $this->belongsTo(Classroom::class, 'classroom_id', 'id');
         }
 
-        public function teachers()
-        {
-            return $this->belongsTo(User::class, 'teacher_id', 'id');
-        }
+        // public function teachers()
+        // {
+        //     return $this->belongsTo(User::class, 'teacher_id', 'id');
+        // }
 
         public function subjects()
         {

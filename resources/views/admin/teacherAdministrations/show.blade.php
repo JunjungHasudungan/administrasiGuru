@@ -1,17 +1,7 @@
 <x-student-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-blue-500">
-            {{ $user->id?? ''}}
-            {{-- @forelse ($user->administrations as $administration)
-            <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                <a href="{{route('admin.teachers.index')}}" class="no-underline hover:underline">
-                    {{ $administration->name ?? ''}}
-                </a>
-            @empty
-            <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                nama tidak ada
-            </span>
-            @endforelse --}}
+            {{ $teacherAdministration->teachers->name ?? '' }}
         </h2>
     </x-slot>
 
@@ -24,80 +14,60 @@
                             <table class="min-w-full divide-y divide-gray-200 w-full">
                                 <tr class="border-b">
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        ID
+                                        Tanggal
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{ $user->id }}
+                                        {{ date('l, d F Y', strtotime( $teacherAdministration->created_at )) }} 
                                     </td>
                                 </tr>
-                                <tr class="border-b">
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Email
-                                    </th>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{-- {{ $user->email }} --}}
-                                    </td>
-                                </tr>
-                                <tr class="border-b">
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Email Verified At
-                                    </th>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{-- {{ $user->email_verified_at ?? '-' }} --}}
-                                    </td>
-                                </tr>
-                                <tr class="border-b">
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Roles
-                                    </th>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{-- @foreach ($user->roles as $role) --}}
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                            {{-- {{ $user->role->name }} --}}
-                                        </span>
-                                        {{-- @endforeach --}}
-                                    </td>
-                                </tr>
-                                
-                                <tr class="border-b">
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Mata Pelajaran
-                                    </th>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                       {{-- @forelse ($user->subjects as $subject)
-                                       <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                                        <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
-                                            {{ $subject->name ?? ''}}
-                                        </a>
-                                        </span>
-                                       @empty
-                                       <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                                        Data Mata Pelajaran Tidak ada
-                                      </div>
-                                       @endforelse --}}
-                                    </td>
-                                </tr>
-
                                 <tr class="border-b">
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Kelas
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                        {{ $teacherAdministration->classrooms->name_class  ?? ''}}
+                                    </td>
+                                </tr>
+                                <tr class="border-b">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Mata Pelajaran
+                                    </th>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                        {{ $teacherAdministration->subjects->name }}
+                                    </td>
+                                </tr>
+                                <tr class="border-b">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Materi
+                                    </th>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                        {{ $teacherAdministration->title ?? ''}}
+                                    </td>
+                                </tr>
+                                
+                                <tr class="border-b">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Metode Pelajaran
+                                    </th>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                        {{ $teacherAdministration->method }}         
+                                    </td>
+                                </tr>
 
-                                        @if ($user->classrooms->name_class ?? '')
-                                        <span class="px-2 inline-flex text-xs lowercase leading-5 font-semibold rounded-full bg-yellow-100 text-green-800">
-                                            <a href="{{route('admin.classrooms.index')}}" class="no-underline hover:underline">
-                                                {{ $user->classrooms->name_class ?? ''}}
-                                            </a> 
-                                        </span>
-                                        
-                                        {{-- <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                                            Tidak Ada Kelas 
-                                        </div> --}}
-                                          @else
-                                          <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                                            Tidak Ada Kelas 
-                                        </div>
+                                <tr class="border-b">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Ketuntasan
+                                    </th>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+
+                                        @if ($teacherAdministration->completeness === 'Selesai')
+                                            <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 capitalize last:mr-0 mr-1">
+                                                {{ $teacherAdministration->completeness}}
+                                            </span>
+                                        @else
+                                            <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-blueGray-600 bg-yellow-200 capitalize last:mr-0 mr-1">
+                                                {{ $teacherAdministration->completeness}}
+                                            </span>
                                         @endif
                                         
                                     </td>
@@ -105,26 +75,23 @@
 
                                 <tr class="border-b">
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Jurusan
+                                        Status
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
 
-                                        {{-- @forelse ($user->teacherMajor as $major)
-                                       <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                                        <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
-                                            {{ $major->title ?? ''}}
-                                        </a>
-                                        </span>
-                                       @empty
-                                       <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                                        <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
-                                            {{ $user->studentMajor->title ?? '-'}}
-                                        </a>
-                                        </span>
-                                       @endforelse --}}
-                                        
+                                        @if ($teacherAdministration->statusCheck === 0)
+                                            <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-yellow-200 capitalize last:mr-0 mr-1">
+                                                UnCheck
+                                            </span>
+                                        @else
+                                            <span class="text-xs font-bold inline-block py-1 px-2 capitalize rounded-full text-blueGray-600 bg-emerald-200 last:mr-0 mr-1">
+                                                Check
+                                            </span>
+                                        @endif
+
                                     </td>
                                 </tr>
+
                             </table>
                         </div>
                     </div>
@@ -138,3 +105,6 @@
     </div>
 
 </x-student-layout>
+
+    
+

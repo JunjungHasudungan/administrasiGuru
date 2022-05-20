@@ -19,12 +19,11 @@ return new class extends Migration
         Schema::create('administrations', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            // $table->foreignIdFor(User::class);
             $table->foreignIdFor(Classroom::class);
             $table->foreignIdFor(Subject::class);
-            $table->string('method')->default('teori');
-            $table->string('statusCheck')->default('unchecked');
-            $table->string('completeness')->default('continued');
+            $table->integer('method')->default(0);
+            $table->integer('statusCheck')->default(0);
+            $table->integer('completeness')->default(0);
             $table->unsignedBigInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

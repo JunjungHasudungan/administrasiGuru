@@ -61,7 +61,7 @@ Route::group(['middleware' => 'auth'], function() {
             'majors'                    => MajorController::class,
             'teachers'                  => TeacherController::class,
             'classrooms'                => ClassroomController::class,
-            'teacherAdministrations'     => \App\Http\Controllers\Admin\AdministrationController::class,
+            'teacherAdministrations'    => TeacherAdministrationController::class,
             'users'                     => UserController::class,
         ]);
     });
