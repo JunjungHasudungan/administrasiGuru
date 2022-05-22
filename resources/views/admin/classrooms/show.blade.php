@@ -85,9 +85,9 @@
                     <h5 class="text-gray-900  text-xl leading-tight  mb-2">Keterangan</h5>
                     <p class="text-gray-700 text-base mb-4">
                       @if ($classroom->description )
-                      <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                        {{$classroom->description ?? ''}} 
-                      </span>
+                        <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                          {{ $classroom->description }} 
+                        </span>
                       @else
                         <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800">
                           Tidak Ada Keterangan
@@ -97,13 +97,10 @@
                     </div>
                   </div>
                 
-                <button class="bg-transparent mt-2  text-blue-700 font-semibold hover: py-2 px-4  hover:border-transparent rounded">
+                <button class="bg-transparent mt-1  text-blue-700 font-semibold hover: py-2 px-4  hover:border-transparent rounded">
                 <a href="{{route('admin.classrooms.index')}}">
                   Kembali</a> 
                 </button>
             </div>
-
-
-            
 
 </x-student-layout>

@@ -112,7 +112,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Subject::class, 'subject_user', 'user_id', 'subject_id');
     }
 
-    public function teacherMajor() // guru jurusan
+    public function majorTeacher() // guru jurusan
     {
         return $this->belongsToMany(Major::class, 'major_teacher','major_id', 'teacher_id');
     }

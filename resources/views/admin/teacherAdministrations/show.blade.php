@@ -78,7 +78,9 @@
                                         Status
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                        <div>
 
+                                       
                                         @if ($teacherAdministration->statusCheck === 0)
                                             <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-yellow-200 capitalize last:mr-0 mr-1">
                                                 Belum di periksa
@@ -88,6 +90,11 @@
                                                 Sudah diperiksa
                                             </span>
                                         @endif
+
+                                        @livewire('toggle-switch',[
+                                            'model'     => $teacherAdministration,
+                                            'field'     => 'statusCheck',
+                                        ])
 
                                     </td>
                                 </tr>

@@ -39,7 +39,7 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        $user->load('subjects', 'teacherMajor');
+        $user->load('subjects', 'majorTeacher');
 
         return view('admin.users.show', compact('user'));
     }
