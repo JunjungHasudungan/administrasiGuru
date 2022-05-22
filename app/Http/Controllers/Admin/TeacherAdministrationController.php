@@ -41,7 +41,7 @@ class TeacherAdministrationController extends Controller
 
     public function edit(TeacherAdministration $teacherAdministration)
     {
-        //
+        return view('admin.teacherAdministrations.edit', compact('teacherAdministration'));
     }
 
     public function update(Request $request, TeacherAdministration $teacherAdministration)

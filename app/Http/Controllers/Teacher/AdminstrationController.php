@@ -45,46 +45,23 @@ class AdminstrationController extends Controller
         return redirect()->route('teacher.administrations.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Administration  $administration
-     * @return \Illuminate\Http\Response
-     */
     public function show(Administration $administration)
     {
-        //
+        $administration->load('teachers', 'classrooms');
+        
+        return view('teacher.administrations.show', compact('administration'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Administration  $administration
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Administration $administration)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Administration  $administration
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Administration $administration)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Administration  $administration
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Administration $administration)
     {
         //

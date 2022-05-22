@@ -1,5 +1,5 @@
-<div>
-    <div class="relative  inline-block w-10 mr-2 align-middle select-one transition duration-200 ease-in">
+<div class="form-check form-switch inline-block">
+    <div class="relative  inline-block w-10 mr-2 items-center align-middle select-one transition duration-200 ease-in">
         <input wire:model="isCheck" name="toggle" id="toggle" class="focus:outline-none toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 apperance-none cursor-pointer" type="checkbox" >
         <label for="toggle" class="toggle-label overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
     </div>

@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('completeness')->default('continued');
             $table->unsignedBigInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('comment')->nullable();
             $table->timestamps();
         });
     }

@@ -1,10 +1,40 @@
 <x-student-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-blue-500">
-            {{ $teacherAdministration->teachers->name ?? '' }}
+            {{ $administration->teachers->name ?? '' }}
         </h2>
     </x-slot>
 
+    <div class="px-6 py-4 mb-4 overflow-hidden border rounded-lg shadow-sm border-secondary-300 ">
+        <div class="flex flex-col justify-between sm:flex-row">
+            <div class="flex items-end justify-center ">
+              <div
+                class="flex items-center px-3  py-1 mt-1 text-xs text-gray-600 border rounded-full border-secondary-300 bg-secondary-300 sm:py-0 sm:mt-0 sm:border-none sm:bg-transparent sm:px-0">
+                <span>Home</span>
+                <svg class="w-3 h-3"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <a href="{{ route('teacher.administrations.index') }}"
+                  class="hover:text-primary-600 text-indigo-400 hover:font-bold ">Administrasi Guru</a>
+                <svg class="w-3 h-3"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <a href="{{ route('teacher.administrations.show', $administration->id) }}"
+                  class="text-primary-500 hover:text-primary-600  text-indigo-400 hover:font-bold">Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
     <div>
         <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
             <div class="flex flex-col">
@@ -17,7 +47,7 @@
                                         Tanggal
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{ date('l, d F Y', strtotime( $teacherAdministration->created_at )) }} 
+                                        {{ date('l, d F Y', strtotime( $administration->created_at )) }} 
                                     </td>
                                 </tr>
                                 <tr class="border-b">
@@ -25,7 +55,7 @@
                                         Kelas
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{ $teacherAdministration->classrooms->name_class  ?? ''}}
+                                        {{ $administration->classrooms->name_class  ?? ''}}
                                     </td>
                                 </tr>
                                 <tr class="border-b">
@@ -33,7 +63,7 @@
                                         Mata Pelajaran
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{ $teacherAdministration->subjects->name }}
+                                        {{ $administration->subjects->name }}
                                     </td>
                                 </tr>
                                 <tr class="border-b">
@@ -41,7 +71,7 @@
                                         Materi
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{ $teacherAdministration->title ?? ''}}
+                                        {{ $administration->title ?? ''}}
                                     </td>
                                 </tr>
                                 
@@ -50,7 +80,7 @@
                                         Metode Pelajaran
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{ $teacherAdministration->method }}         
+                                        {{ $administration->method }}         
                                     </td>
                                 </tr>
 
@@ -60,13 +90,13 @@
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
 
-                                        @if ($teacherAdministration->completeness === 'Bersambung')
+                                        @if ($administration->completeness === 'Bersambung')
                                             <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-yellow-200 capitalize last:mr-0 mr-1">
-                                                {{ $teacherAdministration->completeness}}
+                                                {{ $administration->completeness}}
                                             </span>
                                         @else
                                             <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-blueGray-600 bg-emerald-200 capitalize last:mr-0 mr-1">
-                                                {{ $teacherAdministration->completeness}}
+                                                {{ $administration->completeness}}
                                             </span>
                                         @endif
                                         
@@ -79,7 +109,7 @@
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap mt-2 text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                        
-                                        @if ($teacherAdministration->statusCheck === 0)
+                                        @if ($administration->statusCheck === 0)
                                             <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-yellow-200 capitalize last:mr-0 mr-1">
                                                 Belum di periksa
                                             </span>
@@ -89,10 +119,7 @@
                                             </span>
                                         @endif
 
-                                        @livewire('toggle-switch',[
-                                            'model'     => $teacherAdministration,
-                                            'field'     => 'statusCheck',
-                                        ])
+
                                     </td>
                                 </tr>
 
@@ -101,12 +128,7 @@
                                         Koment
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        <input id="comment" type="text" name="comment" value="{{old('comment')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('comment')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
-                                        @if($errors->has('comment'))
-                                            <div class="invalid-feedback">
-                                                {{ $errors->first('comment') }}
-                                            </div>
-                                        @endif        
+                                        {{ $administration->comment }}         
                                     </td>
                                 </tr> --}}
                             </table>
@@ -115,7 +137,7 @@
                 </div>
             </div>
             <button class="bg-transparent mt-2  text-blue-700 font-semibold hover: py-2 px-4  hover:border-transparent rounded">
-                <a href="{{route('admin.teacherAdministrations.index')}}">
+                <a href="{{route('teacher.administrations.index')}}">
                   Kembali</a> 
                 </button>
         </div>

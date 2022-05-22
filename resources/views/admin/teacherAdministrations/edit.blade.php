@@ -38,7 +38,7 @@
 
     <div class="container mx-auto mt-10 mb-10">
         <div class="bg-white p-5 rounded shadow-sm">
-            <form action="{{route('admin.classrooms.update', [$classroom->id] )}}" method="POST" enctype="multipart/form-data">
+            {{-- <form action="{{route('admin.classrooms.update', [$classroom->id] )}}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="flex flex-wrap -mx-3 mb-2">
@@ -141,7 +141,7 @@
                     </div>
                 </div>
 
-            </form>
+            </form> --}}
         </div>
     </div>
     

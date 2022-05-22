@@ -22,6 +22,7 @@ class Administration extends Model
         'method',   
         'statusCheck',
         'completeness',
+        'comment'
         ];
     
         public function teachers()
