@@ -1,7 +1,7 @@
 <x-teacher-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-sky-500">
-            {{ __(' List Mata Pelajaran') }} {{$name}}
+            {{ __(' Mata Pelajaran') }} {{$name}}
         </h2>
     </x-slot>
 

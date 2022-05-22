@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdministrationCommentControoler;
 use Illuminate\Support\Facades\Route;
 
 // use App\Http\Controllers\Admin\MajorController;
@@ -63,6 +64,7 @@ Route::group(['middleware' => 'auth'], function() {
             'classrooms'                => ClassroomController::class,
             'teacherAdministrations'    => TeacherAdministrationController::class,
             'users'                     => UserController::class,
+            'administrationComment'     => AdministrationCommentControoler::class,
         ]);
     });
 

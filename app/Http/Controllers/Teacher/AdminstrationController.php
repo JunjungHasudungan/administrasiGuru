@@ -19,7 +19,7 @@ class AdminstrationController extends Controller
         $idTeacher = Auth::user()->id;
 
         $administrations = Administration::with(['subjects', 'classrooms'])
-        ->where('teacher_id', $idTeacher)->paginate(5);
+        ->where('teacher_id', $idTeacher)->latest()->paginate(5);
 
         // dd($administrations);
         return view('teacher.administrations.index', compact('administrations'));

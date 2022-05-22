@@ -96,19 +96,40 @@
                                     </td>
                                 </tr>
 
-                                {{-- <tr class="border-b">
+                                <tr class="border-b">
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Koment
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        <input id="comment" type="text" name="comment" value="{{old('comment')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('comment')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
-                                        @if($errors->has('comment'))
-                                            <div class="invalid-feedback">
-                                                {{ $errors->first('comment') }}
+                                        <form action="{{route('admin.teacherAdminstrations.store')}} method="POST" enctype="multipart/form-data" class="w-full max-w-sm">
+                                            @csrf
+                                            <div class="flex items-center border-b border-teal-500 py-2">
+                                              <input class="form-input appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 " type="text" placeholder="Opsional" aria-label="Full name">
+                                              <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 ml-2 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+                                                Kirim
+                                              </button>
+                                              
                                             </div>
-                                        @endif        
+                                          </form>
+                                        
+                                        {{-- <form action="{{route('admin.administrationComment.store')}}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <input id="comment" type="text" name="comment" value="{{old('comment')}}" class=" form-input appearance-none block bg-gray-200 text-gray-700 @if($errors->has('comment')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
+                                            @if($errors->has('comment'))
+                                                <div class="invalid-feedback">
+                                                    {{ $errors->first('comment') }}
+                                                </div>
+                                            @endif
+
+                                            <div class="mt-5">
+                                                <button type="submit"
+                                            class="bg-indigo-500 inline-block text-white p-2 rounded shadow-sm focus:outline-none hover:bg-indigo-700">SIMPAN</button>
+                                            </div>
+                                        </form>         --}}
                                     </td>
-                                </tr> --}}
+                                </tr>
+
+                                    
                             </table>
                         </div>
                     </div>

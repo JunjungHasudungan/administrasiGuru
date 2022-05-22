@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Helpers\Method;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateAdministrationRequest;
 use App\Models\Administration;
 use App\Models\TeacherAdministration;
 use App\Models\User;
@@ -39,14 +40,20 @@ class TeacherAdministrationController extends Controller
         return view('admin.teacherAdministrations.show', compact('teacherAdministration'));
     }
 
-    public function edit(TeacherAdministration $teacherAdministration)
+    public function edit(Administration $teacherAdministration)
     {
+        $teacherAdministration->load('teachers', 'classrooms');
+
+        // dd($teacherAdministration);
+
         return view('admin.teacherAdministrations.edit', compact('teacherAdministration'));
     }
 
-    public function update(Request $request, TeacherAdministration $teacherAdministration)
+    public function update(UpdateAdministrationRequest $request, Administration $teacherAdministration)
     {
-        //
+        $teacherAdministration->update($request->all());
+
+        dd($teacherAdministration);
     }
 
     public function destroy(TeacherAdministration $teacherAdministration)

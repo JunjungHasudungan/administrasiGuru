@@ -22,7 +22,7 @@ class SubjectController extends Controller
 
         $id = Auth::user()->id;
         
-        $subjects = Subject::with('classrooms')->where('teacher_id', $id)->get();
+        $subjects = Subject::with('classrooms')->orderBy('name', 'asc')->where('teacher_id', $id)->get();
     
         // dd($subjects);
         return view('teacher.subjects.index', compact(['subjects', 'name']));
