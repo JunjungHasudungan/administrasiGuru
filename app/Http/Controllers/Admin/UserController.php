@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\Classroom;
 use App\Models\Role;
 use App\Models\User;
@@ -15,7 +16,8 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::with(['classrooms', 'role', 'subjects'])->orderBy('name', 'asc')->paginate(5);
+        $users = User::with(['classrooms', 'role', 'subjects', 'studentSubject'])
+        ->orderBy('name', 'asc')->paginate(5);
 
         return view('admin.users.index', compact('users'));
     }
@@ -39,17 +41,18 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        $user->load('subjects', 'majorTeacher');
-
+        $user->load('subjects', 'majorTeacher','studentSubject' );
+        
         return view('admin.users.show', compact('user'));
     }
 
     public function edit(User $user)
     {
+
         return view('admin.users.edit', compact('user'));
     }
 
-    public function update(Request $request, User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
         //
     }

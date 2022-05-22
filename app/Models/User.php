@@ -34,6 +34,7 @@ class User extends Authenticatable
         'teacher_major',
         'major_id',
         'head_Of_Departement',
+        'is_active'
     ];
 
     protected $hidden = [
@@ -121,5 +122,10 @@ class User extends Authenticatable
     public function headOfDepartement() // kepala jurusan
     {
         return $this->belongsTo(Major::class);
+    }
+
+    public function studentSubject()
+    {
+        return $this->belongsToMany(Subject::class, 'subject_student', 'student_id', 'subject_id',);
     }
 }

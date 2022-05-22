@@ -47,4 +47,9 @@ class Subject extends Model
     {
         return $this->belongsToMany(Major::class, 'major_subject', 'subject_id', 'major_id');
     }
+
+    public function studentSubject()
+    {
+        return $this->belongsToMany(User::class, 'subject_student', 'subject_id', 'student_id');
+    }
 }

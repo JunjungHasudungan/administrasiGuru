@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
             TeacherSubjectSeeder::class,
             // ClassroomTimetableSeeder::class,
             ClassroomSubjectSeeder::class,
-            // TeacherAdministrationSeeder::class,
+            SubjectStudentSeeder::class,
             PermissionSeeder::class,
             PermissionRoleSeeder::class,
 

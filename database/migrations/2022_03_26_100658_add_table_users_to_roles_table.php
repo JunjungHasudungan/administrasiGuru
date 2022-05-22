@@ -25,11 +25,10 @@ return new class extends Migration
             $table->string('teacher_qualifications')->nullable();
             $table->integer('status')->default(0);
             $table->foreignIdFor(Major::class)->nullable();
-            // $table->unsignedBigInteger('student_major')->nullable();
+            $table->integer('is_active')->default(1);
             $table->unsignedBigInteger('teacher_major')->nullable();
             $table->unsignedBigInteger('headOfDepartement')->nullable();
             $table->foreign('headOfDepartement')->references('id')->on('majors')->onDelete('cascade');
-            // $table->foreign('homework_teacher')->references('id')->on('classrooms')->nullOnDelete();
         });
     }
 
