@@ -54,22 +54,37 @@
                                         Mata Pelajaran
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                       @foreach ($user->studentSubject as $subject)
-                                        <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                                            <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
-                                                {{ $subject->name ?? ''}}
-                                            </a>
-                                        </span>
-                                        
-                                        @foreach ($user->subjects as $subject)
-                                            <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                                                <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
-                                                    {{ $subject->name ?? ''}}
-                                                </a>
-                                            </span>
-                                        @endforeach
-
-                                       @endforeach
+                                        {{-- role_2 === siswa --}}
+                                        @if ($user->role_id === 2) 
+                                            @forelse ($user->studentSubject as $subject)
+                                                <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                                    <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
+                                                        {{ $subject->name ?? ''}}
+                                                    </a>
+                                                </span> 
+                                            @empty
+                                                <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                                    Tidak Mata Pelajaran
+                                                </div>
+                                        @endforelse
+                                            {{-- role_id === guru --}}
+                                        @elseif ($user->role_id === 3)
+                                            @forelse ($user->subjects as $subject)
+                                                    <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                                        <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
+                                                            {{ $subject->name ?? ''}}
+                                                        </a>
+                                                    </span> 
+                                                @empty
+                                                    <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                                        Tidak Mata Pelajaran
+                                                    </div>
+                                            @endforelse
+                                        @else
+                                        <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                            Tidak Mata Pelajaran
+                                        </div>
+                                        @endif
                                     </td>
                                 </tr>
 
@@ -80,21 +95,16 @@
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
 
                                         @if ($user->classrooms->name_class ?? '')
-                                        <span class="px-2 inline-flex text-xs lowercase leading-5 font-semibold rounded-full bg-yellow-100 text-green-800">
-                                            <a href="{{route('admin.classrooms.index')}}" class="no-underline hover:underline">
-                                                {{ $user->classrooms->name_class ?? ''}}
-                                            </a> 
-                                        </span>
-                                        
-                                        {{-- <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                                            Tidak Ada Kelas 
-                                        </div> --}}
+                                            <span class="px-2 inline-flex text-xs lowercase leading-5 font-semibold rounded-full bg-yellow-100 text-green-800">
+                                                <a href="{{route('admin.classrooms.index')}}" class="no-underline hover:underline">
+                                                    {{ $user->classrooms->name_class ?? ''}}
+                                                </a> 
+                                            </span>
                                           @else
-                                          <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                                            Tidak Ada Kelas 
-                                        </div>
+                                            <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                                Kelas tidak tersedia
+                                            </div>
                                         @endif
-                                        
                                     </td>
                                 </tr>
 
@@ -103,20 +113,35 @@
                                         Jurusan
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                        @if ($user->role_id === 2)
+                                        <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                            <a href="{{route('admin.majors.index')}}" class="no-underline hover:underline">
+                                                {{ $user->studentMajor->title ?? ''}}
+                                            </a>
+                                            </span>  
 
-                                        @forelse ($user->majorTeacher as $major)
-                                       <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                                        <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
-                                            {{ $major->title ?? ''}}
-                                        </a>
-                                        </span>
-                                       @empty
-                                       <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                                        <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
-                                            {{ $user->studentMajor->title ?? '-'}}
-                                        </a>
-                                        </span>
-                                       @endforelse
+                                        @elseif ($user->role_id === 3)
+
+                                            @forelse ($user->majorTeacher as $major)
+                                                <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                                    <a href="{{route('admin.majors.index')}}" class="no-underline hover:underline">
+                                                        {{ $major->title ?? ''}}
+                                                    </a>
+                                                </span>
+                                            @empty
+                                                <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                                    Jurusan tidak tersedia
+                                                </div>
+                                            @endforelse
+
+                                            {{-- jika role diluar 2 dan 3 --}}
+                                        @else
+                                            <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                                Jurusan Tidak tersedia
+                                            </div>
+                                        @endif
+
+                                       
                                         
                                     </td>
                                 </tr>

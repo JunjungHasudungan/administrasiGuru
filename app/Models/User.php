@@ -52,7 +52,7 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function classrooms()
+    public function classrooms() // kelas siswa
     {
         return $this->belongsTo(Classroom::class, 'classroom_id', 'id');
     }
@@ -115,7 +115,7 @@ class User extends Authenticatable
 
     public function majorTeacher() // guru jurusan
     {
-        return $this->belongsToMany(Major::class, 'major_teacher','major_id', 'teacher_id');
+        return $this->belongsToMany(Major::class, 'major_teacher', 'major_id', 'teacher_id');
     }
 
 
