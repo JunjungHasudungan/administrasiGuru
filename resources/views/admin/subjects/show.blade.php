@@ -55,7 +55,9 @@
                                     Nama Mata Pelajaran
                                 </th>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                  {{  $subject->name }} 
+                                  <span class="px-2 inline-flex text-xs leading-5 font-semibold  rounded-full bg-green-100 text-green-800">
+                                    {{  $subject->name }} 
+                                  </span>
                                 </td>
                             </tr>
 
@@ -65,7 +67,7 @@
                                   </th>
                                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                       <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                        <a href="" class="no-underline hover:underline hover:font">
+                                        <a href="{{route('admin.teachers.index')}}" class="no-underline hover:underline hover:font">
                                           {{$subject->teachers->name ?? ''}} 
                                         </a>
                                       </span>
@@ -73,13 +75,34 @@
                               </tr>
 
                               <tr class="border-b">
+                                <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Jurusan
+                                </th>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                  @forelse ($subject->majorSubject as $major)
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                      <a href="{{route('admin.teachers.index')}}" class="no-underline hover:underline hover:font">
+                                        {{$major->title ?? ''}} 
+                                      </a>
+                                    </span> 
+                                  @empty
+                                    <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                      Jurusan tidak tersedia
+                                    </div>
+                                  @endforelse
+                                </td>
+                            </tr>
+
+                              <tr class="border-b">
                                   <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                       Kelas
                                   </th>
                                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                     @forelse ($subject->classrooms as $classroom)
-                                      <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
-                                        {{$classroom->name_class ?? ''}} 
+                                      <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                        <a href="{{route('admin.teachers.index')}}" class="no-underline hover:underline hover:font">
+                                          {{$classroom->name_class ?? ''}} 
+                                        </a>
                                       </span> 
                                     @empty
                                       <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
@@ -95,12 +118,12 @@
                                 </th>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                   @forelse ($subject->weekDaySubject as $day)
-                                    <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                                       {{$day->name ?? ''}} 
                                     </span> 
                                 @empty
                                   <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                                    Data Belum Tersedia!
+                                    Data Belum Tersedia
                                   </div>
                                 @endforelse
                                 </td>

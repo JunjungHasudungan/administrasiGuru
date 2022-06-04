@@ -30,9 +30,9 @@
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                       Hari Pembelajaran
                                     </th>
-                                  <th scope="col" width="200" class="px-6 py-3 bg-gray-50">
-  
-                                  </th>
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Jam Pembelajaran
+                                      </th>
                               </tr>
                               </thead>
                               <tbody class="bg-white divide-y divide-gray-200">
@@ -46,10 +46,26 @@
                                       </td>
                                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                         @foreach ($subject->classrooms as $classrooms)
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                            {{ $classrooms->name_class ?? '' }}
-                                        </span>
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                {{ $classrooms->name_class ?? '' }}
+                                            </span>
                                         @endforeach
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        @forelse ($subject->weekDaySubject as $days)
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                {{ $days->name ?? '' }}
+                                            </span>
+                                        @empty
+                                        <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                            Data Belum Tersedia
+                                          </div>
+                                        @endforelse
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ">
+                                            {{ $subject->start_time }} - {{$subject->end_time}}
+                                        </span>
                                     </td>
                                   </tr>
                                   @empty

@@ -66,9 +66,11 @@ class SubjectController extends Controller
 
         $majors = Major::all()->pluck('title', 'id');
 
-        $subject->load('teachers', 'classrooms', 'majorSubject');
+        $weekDaySubject = WeekDaySubject::all()->pluck('name', 'id');
 
-        return view('admin.subjects.edit', compact('subject', 'teachers', 'classrooms', 'majors'));
+        $subject->load('teachers', 'classrooms', 'majorSubject', 'weekDaySubject');
+
+        return view('admin.subjects.edit', compact('subject', 'teachers', 'classrooms', 'majors', 'weekDaySubject'));
     }
 
     public function update(UpdateSubjectRequest $request, Subject $subject)
@@ -78,6 +80,8 @@ class SubjectController extends Controller
         $subject->classrooms()->sync($request->input('classrooms', []));
 
         $subject->majorSubject()->sync($request->input('majors', []));
+
+        $subject->weekDaySubject()->sync($request->input('days', []));
 
         // dd($subject);
         return redirect()->route('admin.subjects.index');

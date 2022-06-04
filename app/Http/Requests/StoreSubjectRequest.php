@@ -19,10 +19,12 @@ class StoreSubjectRequest extends FormRequest
             'teacher_id'    => 'required',
             'classrooms.*'  => 'integer',
             'classrooms'    => ['required', 'array'],
-            'majors.*'  => 'integer',
-            'majors'    => ['required', 'array'], 
-            'days.*'  => 'integer',
-            'days'    => ['required', 'array'], 
+            'majors.*'      => 'integer',
+            'majors'        => ['required', 'array'], 
+            'days.*'        => 'integer',
+            'days'          => ['required', 'array'], 
+            'start_time'    => '',
+            'end_time'      => ''
             
 
         ];

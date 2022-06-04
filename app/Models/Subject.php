@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Subject extends Model
 {
@@ -55,6 +56,28 @@ class Subject extends Model
         return $this->belongsToMany(User::class, 'subject_student', 'subject_id', 'student_id');
     }
 
+    public function getStartTimeAttribute($value)
+    {
+        return $value ? Carbon::createFromFormat('H:i:s', $value)->format(config('panel.lesson_time_format')) : null;
+    }
+
+    public function setStartTimeAttribute($value)
+    {
+        $this->attributes['start_time'] = $value ? Carbon::createFromFormat(config('panel.lesson_time_format'),
+            $value)->format('H:i:s') : null;
+    }
+
+    public function getEndTimeAttribute($value)
+    {
+        return $value ? Carbon::createFromFormat('H:i:s', $value)->format(config('panel.lesson_time_format')) : null;
+    }
+
+    public function setEndTimeAttribute($value)
+    {
+        $this->attributes['end_time'] = $value ? Carbon::createFromFormat(config('panel.lesson_time_format'),
+            $value)->format('H:i:s') : null;
+    }
+    
     public function weekDaySubject()
     {
         return $this->belongsToMany(WeekDaySubject::class, 'study_day', 'subject_id', 'week_day_subject_id');
