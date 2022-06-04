@@ -9,6 +9,7 @@ use App\Models\Subject;
 use App\Models\Classroom;
 use App\Models\User;
 use App\Models\Major;
+use App\Models\WeekDaySubject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
@@ -31,7 +32,9 @@ class SubjectController extends Controller
 
         $majors = Major::all()->pluck('title', 'id');
 
-        return view('admin.subjects.create', compact('teachers', 'classrooms', 'majors'));
+        $weekDaySubject = WeekDaySubject::all()->pluck('name', 'id');
+
+        return view('admin.subjects.create', compact('teachers', 'classrooms', 'majors', 'weekDaySubject'));
     }
 
     public function store(StoreSubjectRequest $request)
@@ -49,7 +52,7 @@ class SubjectController extends Controller
 
     public function show(Subject $subject)
     {
-         $subject->load(['teachers', 'classrooms', 'majorSubject']);
+         $subject->load(['teachers', 'classrooms', 'majorSubject', 'weekDaySubject']);
 
         // dd($subject_all);
         return view('admin.subjects.show', compact('subject'));

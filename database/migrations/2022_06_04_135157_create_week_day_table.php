@@ -6,22 +6,27 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
-        Schema::create('subjects', function (Blueprint $table) {
+        Schema::create('week_day', function (Blueprint $table) {
             $table->id();
-            $table->string('subject_code');
             $table->string('name');
-            $table->unsignedBigInteger('teacher_id');
-            $table->foreign('teacher_id')->references('id')->on('users');
-            $table->time('start_time');
-            $table->time('end_time');
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::dropIfExists('subjects');
+        Schema::dropIfExists('week_day');
     }
 };

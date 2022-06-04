@@ -15,6 +15,6 @@ class SubjectStudentSeeder extends Seeder
      */
     public function run()
     {
-        User::find(18)->studentSubject()->sync([ 3, 6, 9, 12,  44, 46, 48]);
+        User::find(18)->studentSubject()->sync([ 3, 6, 9, 12,  44, 46, 48]); // adventi simamora
     }
 }

@@ -14,6 +14,8 @@ class Subject extends Model
     protected $fillable = [
         'subject_code', 
         'name', 
+        'star_time',
+        'end_time',
         'teacher_id'
     ];
 
@@ -51,5 +53,10 @@ class Subject extends Model
     public function studentSubject()
     {
         return $this->belongsToMany(User::class, 'subject_student', 'subject_id', 'student_id');
+    }
+
+    public function weekDaySubject()
+    {
+        return $this->belongsToMany(WeekDaySubject::class, 'study_day', 'subject_id', 'week_day_subject_id');
     }
 }

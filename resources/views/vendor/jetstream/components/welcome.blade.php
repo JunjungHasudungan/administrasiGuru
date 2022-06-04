@@ -24,7 +24,8 @@
 
         <div class="ml-12">
             <div class="mt-2 text-sm text-gray-500 indent-8">
-                Laravel has wonderful documentation covering every aspect of the framework. Whether you're new to the framework or have previous experience, we recommend reading all of the documentation from beginning to end.
+                {{-- Laravel has wonderful documentation covering every aspect of the framework. Whether you're new to the framework or have previous experience, we recommend reading all of the documentation from beginning to end. --}}
+            Isi tentang kelas
             </div>
 
             <a href="https://laravel.com/docs">
