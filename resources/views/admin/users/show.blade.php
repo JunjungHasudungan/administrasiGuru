@@ -1,7 +1,7 @@
 <x-student-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-blue-500">
-            {{ $user->name }}
+            {{-- {{ $user->name }} --}}
         </h2>
     </x-slot>
 
@@ -11,13 +11,21 @@
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                            <table class="min-w-full divide-y divide-gray-200 w-full">
+                            <table class="min-w-full divide-y divide-gray-200 w-full" x-data="{role_id: 2}">
                                 <tr class="border-b">
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         ID
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                         {{ $user->id }}
+                                    </td>
+                                </tr>
+                                <tr class="border-b">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Nama
+                                    </th>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                        {{ $user->name }}
                                     </td>
                                 </tr>
                                 <tr class="border-b">
@@ -88,23 +96,23 @@
                                     </td>
                                 </tr>
 
-                                <tr class="border-b">
+                                <tr class="border-b" x-show="role_id == 2">
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Kelas
                                     </th>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-
-                                        @if ($user->classrooms->name_class ?? '')
-                                            <span class="px-2 inline-flex text-xs lowercase leading-5 font-semibold rounded-full bg-yellow-100 text-green-800">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200" >
+                                        
+                                        {{-- @if ($user->classrooms->name_class ?? '') --}}
+                                            <span class="px-2 inline-flex text-xs lowercase leading-5 font-semibold rounded-full bg-green-100 text-green-800" >
                                                 <a href="{{route('admin.classrooms.index')}}" class="no-underline hover:underline">
                                                     {{ $user->classrooms->name_class ?? ''}}
                                                 </a> 
                                             </span>
-                                          @else
+                                          {{-- @else
                                             <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
                                                 Kelas tidak tersedia
                                             </div>
-                                        @endif
+                                        @endif --}}
                                     </td>
                                 </tr>
 
@@ -140,11 +148,53 @@
                                                 Jurusan Tidak tersedia
                                             </div>
                                         @endif
-
-                                       
-                                        
                                     </td>
                                 </tr>
+
+                                <tr class="border-b">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Alamat
+                                    </th>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                        @isset($user->student_address)
+                                            <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                                {{$user->student_address}}
+                                            </span>
+                                        @endisset
+                                     
+                                        @empty($user->student_address)
+                                        <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800">
+                                            Alamat tidak disertakan.
+                                        </span>
+                                        @endempty
+                                    </td>
+                                </tr>
+                               @if ($user->role_id === 2)
+                                    <tr class="border-b" >
+                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Nomor Induk Siswa
+                                        </th>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                            @isset($user->student_licence_number)
+                                                <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                                    {{$user->student_licence_number}}
+                                                </span>
+                                            @endisset
+                                            
+                                            @empty($user->student_licence_number)
+                                            <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800">
+                                                Nomor induk siswa tidak disertakan.
+                                            </span>
+                                            @endempty
+                                        </td>
+                                    </tr>
+                               @else
+                                <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800">
+                                    Nomor induk siswa tidak disertakan.
+                                </span>
+                               @endif
+
+
                             </table>
                         </div>
                     </div>

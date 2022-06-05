@@ -8,7 +8,7 @@
     <div class="container mx-auto mt-10 mb-10">
       <div class="bg-white p-5 rounded shadow-sm">
          
-        <div class="grid grid-cols-8 gap-4 mb-4">
+        {{-- <div class="grid grid-cols-8 gap-4 mb-4">
             <div class="col-span-1 mt-2 bg-blue-500 rounded">
               <a href="{{ route('admin.teachers.create') }}"
               class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold tracking-wide text-white transition  border border-transparent rounded shadow select-none focus:border-blue-600 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-30 disabled:opacity-50">
@@ -31,7 +31,7 @@
               </form>
           </div>
 
-          </div>
+          </div> --}}
 
           <table class="min-w-full table-auto rounded">
               <thead class="justify-between rounded">

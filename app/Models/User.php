@@ -106,6 +106,11 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Major::class, 'major_id', 'id');
     }
+
+    public function major()
+    {
+        return $this->belongsTo(Major::class, 'major_id');
+    }
     
     
     public function teacherSubject() // guru mata pelajaran
@@ -115,7 +120,7 @@ class User extends Authenticatable
 
     public function majorTeacher() // guru jurusan
     {
-        return $this->belongsToMany(Major::class, 'major_teacher', 'major_id', 'teacher_id');
+        return $this->belongsToMany(Major::class, 'major_teacher','teacher_id' ,'major_id');
     }
 
 
