@@ -15,7 +15,7 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                             <span>Nama </span>
                         </label>
-                        <input id="name" type="text" name="name" value="{{old('name'), $user->name}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('name')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
+                        <input id="name" type="text" name="name" value="{{old('name', $user->name)}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('name')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
                         @if($errors->has('name'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('name') }}
@@ -27,7 +27,7 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                             <span>Email</span>
                         </label>
-                        <input id="email" type="text" name="email" value="{{old('email')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('email')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
+                        <input id="email" type="text" name="email" value="{{old('email', $user->email) }}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('email')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
                         @if($errors->has('email'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('email') }}
@@ -55,8 +55,11 @@
                       </label>
                       <div class="relative">
                         <select name="role_id" x-model="role_id" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                          <option value="2">Siswa</option>
-                          <option value="3">Guru</option>
+                          @foreach (\App\Helpers\RoleCheck::RoleCheck as $key => $value)
+                            <option value="{{$value}}" {{old('learning_method') != null ?: 'selected'}}>
+                              {{ \App\Helpers\RoleCheck::RoleCheck[$key]}}
+                            </option>
+                          @endforeach
                         </select>
                             @error('role_id')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
