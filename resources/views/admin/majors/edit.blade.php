@@ -96,7 +96,7 @@
                             @foreach ($teacher_major as $id => $teachers)
                             <label class="form-check-label mt-2 ml-2 inline-block text-gray-800" for="flexCheckDefault">
                                 <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                 type="checkbox" value="{{$id}}" {{ old('teachers') == $id ? 'selected' : '' }} name="teachers[]" id="teachers">
+                                 type="checkbox" value="{{$id}}"  {{ (in_array($id, old('teachers', [])) || $major->teachers->contains($id)) ? 'selected' : '' }}  name="teachers[]" id="teachers">
                                 {{$teachers}}
                             </label>
                             @error('teachers')

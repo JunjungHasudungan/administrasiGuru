@@ -62,7 +62,7 @@ class MajorController extends Controller
 
         $classrooms = Classroom::all()->pluck('name_class', 'id');
 
-        $major->load('headOfDepartement', 'majorSubject', 'classrooms');
+        $major->load('headOfDepartement', 'majorSubject', 'classrooms', 'teachers');
     //  
     //  dd($teacher_major);
 

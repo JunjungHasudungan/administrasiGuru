@@ -42,7 +42,7 @@
       <div class="flex justify-center mt-2">
         <div class="block p-6 rounded-lg shadow-lg bg-white  min-w-full max-w-sm">
           <h5 class="text-gray-900  text-xl leading-tight  mb-2">Nama Guru Jurusan</h5>
-          <p class="text-gray-700 text-base mb-4">
+          <p class="text-gray-700  text-base mb-4">
             @forelse ($major->teachers as $teachers)
               <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
                 {{$teachers->name}} 
