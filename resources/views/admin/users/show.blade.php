@@ -96,25 +96,25 @@
                                     </td>
                                 </tr>
 
-                                <tr class="border-b" x-show="role_id == 2">
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Kelas
-                                    </th>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200" >
-                                        
-                                        {{-- @if ($user->classrooms->name_class ?? '') --}}
-                                            <span class="px-2 inline-flex text-xs lowercase leading-5 font-semibold rounded-full bg-green-100 text-green-800" >
-                                                <a href="{{route('admin.classrooms.index')}}" class="no-underline hover:underline">
-                                                    {{ $user->classrooms->name_class ?? ''}}
-                                                </a> 
-                                            </span>
-                                          {{-- @else
-                                            <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                                                Kelas tidak tersedia
-                                            </div>
-                                        @endif --}}
-                                    </td>
-                                </tr>
+                                @if ($user->role_id === 2)
+                                    <tr class="border-b" x-data="{role_id: 2}">
+                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Kelas
+                                        </th>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200" >
+                                                <span class="px-2 inline-flex text-xs lowercase leading-5 font-semibold rounded-full bg-green-100 text-green-800" >
+                                                    <a href="{{route('admin.classrooms.index')}}" class="no-underline hover:underline">
+                                                        {{ $user->classrooms->name_class ?? ''}}
+                                                    </a> 
+                                                </span>
+                                        </td>
+                                    </tr>
+                                    
+                                @else
+                                <div class=" text-white p-3 ">
+                                    
+                                </div>
+                                @endif
 
                                 <tr class="border-b">
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -137,16 +137,19 @@
                                                     </a>
                                                 </span>
                                             @empty
-                                                <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                                                    Jurusan tidak tersedia
-                                                </div>
+                                                <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800">
+                                                    <a href="{{route('admin.majors.index')}}" class="no-underline hover:underline">
+                                                        Jurusan tidak ada
+                                                    </a>
+                                                </span>
                                             @endforelse
 
-                                            {{-- jika role diluar 2 dan 3 --}}
                                         @else
-                                            <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                                                Jurusan Tidak tersedia
-                                            </div>
+                                            <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800">
+                                                <a href="{{route('admin.majors.index')}}" class="no-underline hover:underline">
+                                                    Jurusan tidak ada
+                                                </a>
+                                            </span>
                                         @endif
                                     </td>
                                 </tr>
@@ -175,22 +178,14 @@
                                             Nomor Induk Siswa
                                         </th>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                            @isset($user->student_licence_number)
-                                                <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                                                    {{$user->student_licence_number}}
+                                                <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full  bg-green-100 text-green-800">
+                                                    {{$user->student_licence_number ?? '-'}}
                                                 </span>
-                                            @endisset
-                                            
-                                            @empty($user->student_licence_number)
-                                            <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800">
-                                                Nomor induk siswa tidak disertakan.
-                                            </span>
-                                            @endempty
                                         </td>
                                     </tr>
                                @else
-                                <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800">
-                                    Nomor induk siswa tidak disertakan.
+                                <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full ">
+                                    
                                 </span>
                                @endif
 
