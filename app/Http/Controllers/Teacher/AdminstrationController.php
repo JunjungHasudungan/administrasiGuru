@@ -33,7 +33,7 @@ class AdminstrationController extends Controller
 
         $classrooms = Classroom::all( )->pluck('name_class', 'id');  
 
-        return view('teacher.administrations.create', compact('classrooms', 'subjects'));
+        return view('teacher.administrations.create', compact('classrooms', 'subjects', 'idUser'));
     }
 
     public function store(AdminstrationRequest $request)

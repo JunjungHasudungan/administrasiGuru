@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Helpers\RoleCheck;
+use App\Helpers\RoleStatus;
 use App\Http\Livewire\Admin\Classsroom;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -35,6 +36,7 @@ class User extends Authenticatable
         'teacher_major',
         'major_id',
         'head_Of_Departement',
+        'status',
         'is_active'
     ];
 
@@ -67,21 +69,6 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class, 'role_id', 'id');
     }
-
-    // public function getIsTeacherAttribute()
-    // {
-    //     return $this->role()->where('name', 'Guru')->exists();
-    // }
-
-    // public function getIsNameAttribute()
-    // {
-    //     return $this->name;
-    // }
-
-    // public function getIsKurikulumAttribute()
-    // {
-    //     return $this->roles()->where('id', 3)->exists();
-    // }
 
     public function homeworkTeacher() // wali kelas
     {
@@ -130,7 +117,7 @@ class User extends Authenticatable
         return $this->belongsTo(Major::class);
     }
 
-    public function studentSubject()
+    public function subjectStudent()
     {
         return $this->belongsToMany(Subject::class, 'subject_student', 'student_id', 'subject_id',);
     }
@@ -153,5 +140,15 @@ class User extends Authenticatable
     public function getIsHeadMasterAttribute():bool
     {
         return (int) $this->role_id === RoleCheck::RoleCheck['Kepala Sekolah'];
+    }
+
+    public function getIsNewRoleAttribute():bool
+    {
+        return (int) $this->is_active === RoleStatus::RoleStatus[1];
+    }
+
+    public function getIsTransferAttribute():bool
+    {
+        return (int) $this->is_active === RoleStatus::RoleStatus[1];        
     }
 }

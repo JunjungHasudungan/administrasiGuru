@@ -18,7 +18,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::with(['classrooms','major', 'role', 'subjects', 'studentSubject', 'majorTeacher'])
+        $users = User::with(['classrooms','major', 'role', 'subjects', 'subjectStudent', 'majorTeacher'])
         ->orderBy('name', 'asc')->paginate(5);
 
         return view('admin.users.index', compact('users'));
@@ -50,7 +50,7 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        $user->load(['subjects','studentMajor', 'major', 'majorTeacher','studentSubject', 'teacherSubject']);
+        $user->load(['subjects','studentMajor', 'major', 'majorTeacher','subjectStudent', 'teacherSubject']);
         
         // dd($user->load('major'));
         return view('admin.users.show', compact('user'));
@@ -58,18 +58,30 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        $classrooms = Classroom::all()->pluck('name_class', 'id');
+        // $classrooms = Classroom::all()->pluck('name_class', 'id');
 
-        $majors = Major::all()->pluck('title', 'id');
+        // $majors = Major::all()->pluck('title', 'id');
 
-        $user->load('classrooms', 'major');
+        // $subjects = Subject::all()->pluck('name', 'id');
 
-        return view('admin.users.edit', compact('user', 'classrooms', 'majors'));
+        // $user->load('classrooms', 'major', 'subjectUser');
+
+        $user->load('subjectStudent');
+
+        dd($user);
+
+        return view('admin.users.edit', compact('user', 'classrooms', 'majors', 'subjects'));
     }
 
     public function update(UpdateUserRequest $request, User $user)
     {
-        //
+        $user->update($request->all());
+
+        $user->subjectUser()->sync($request->input('subjects', []));
+
+        // dd($user);
+
+        return redirect()->route('admin.users.index');
     }
 
     public function destroy(User $user)

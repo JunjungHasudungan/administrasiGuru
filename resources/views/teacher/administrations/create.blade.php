@@ -98,7 +98,7 @@
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                         <span>ID Teacher</span>
                       </label>
-                      <input id="teacher_id" type="text"  name="teacher_id" value="{{Auth::user()->id}}" class="form-input appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Judul Materi Pelajaran" readonly >
+                      <input id="teacher_id" type="text"  name="teacher_id" value="{{auth()->id()}}" class="form-input appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Judul Materi Pelajaran" readonly >
                       @error('teacher_id')
                       <div class="bg-red-400 p-2 shadow-sm rounded mt-2">
                         {{ $message }}

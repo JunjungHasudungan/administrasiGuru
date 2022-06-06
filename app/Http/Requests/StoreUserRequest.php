@@ -24,7 +24,7 @@ class StoreUserRequest extends FormRequest
             'password'                  => 'required',
             'role_id'                   => 'required',
             'classroom_id'              => 'nullable',
-            'is_active'                 => 'required',
+            'status'                    => 'required',
             'major_id'                  => 'nullable',
             'subjects.*'                => ['nullable', 'integer'],
             'subjects'                  => ['nullable', 'array'],
