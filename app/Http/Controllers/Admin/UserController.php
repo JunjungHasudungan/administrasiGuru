@@ -58,17 +58,13 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        // $classrooms = Classroom::all()->pluck('name_class', 'id');
+        $classrooms = Classroom::all()->pluck('name_class', 'id');
 
-        // $majors = Major::all()->pluck('title', 'id');
+        $majors = Major::all()->pluck('title', 'id');
 
-        // $subjects = Subject::all()->pluck('name', 'id');
+        $subjects = Subject::all()->pluck('name', 'id');
 
-        // $user->load('classrooms', 'major', 'subjectUser');
-
-        $user->load('subjectStudent');
-
-        dd($user);
+        $user->load('classrooms', 'major', 'subjectStudent');
 
         return view('admin.users.edit', compact('user', 'classrooms', 'majors', 'subjects'));
     }
@@ -77,7 +73,7 @@ class UserController extends Controller
     {
         $user->update($request->all());
 
-        $user->subjectUser()->sync($request->input('subjects', []));
+        $user->subjectStudent()->sync($request->input('subjects', []));
 
         // dd($user);
 

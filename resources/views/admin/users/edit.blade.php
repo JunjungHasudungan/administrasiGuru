@@ -90,7 +90,7 @@
                         </label>
                         <select name="status" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                           @foreach (\App\Helpers\RoleStatus::RoleStatus as $key => $value)
-                            <option value="{{$value}}" {{old('status') != $value ?:  'selected' }}>
+                            <option value="{{$value}}" {{old('status', $user->status) != $value ?:  'selected' }}>
                               {{ \App\Helpers\RoleStatus::RoleStatus[$key]}}
                             </option>
                           @endforeach 
@@ -157,7 +157,7 @@
                 </div>
 
 
-                <div class="flex flex-wrap -mx-3 mb-2 mt-5">
+                {{-- <div class="flex flex-wrap -mx-3 mb-2 mt-5">
                   <div class="w-full px-3 mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                       <span>Nama Mata Pelajaran</span>
@@ -175,7 +175,7 @@
                           @endforeach
                       </div>
                     </div>
-              </div>
+              </div> --}}
 
                 {{-- <div class="flex flex-wrap -mx-3 mb-2 mt-5" x-show="role_id == 2">
                   <div class="w-full px-3 mb-6 md:mb-0">

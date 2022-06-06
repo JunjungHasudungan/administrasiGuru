@@ -142,13 +142,14 @@ class User extends Authenticatable
         return (int) $this->role_id === RoleCheck::RoleCheck['Kepala Sekolah'];
     }
 
-    public function getIsNewRoleAttribute():bool
+    
+    public function getIsPindahanAttribute():bool
     {
-        return (int) $this->is_active === RoleStatus::RoleStatus[1];
+        return (int) $this->is_active === RoleStatus::RoleStatus['Pindahan'];        
     }
 
-    public function getIsTransferAttribute():bool
+    public function getIsBaruAttribute():bool
     {
-        return (int) $this->is_active === RoleStatus::RoleStatus[1];        
+        return (int) $this->is_active === RoleStatus::RoleStatus['Baru'];
     }
 }
