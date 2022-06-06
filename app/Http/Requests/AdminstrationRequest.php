@@ -25,7 +25,8 @@ class AdminstrationRequest extends FormRequest
             'method'            => 'required',
             'completeness'      => 'required',
             'statusCheck'       => ['optional', Rule::in(StatusCheck::ADMINISTRATION_STATUS)], 
-            'comment'           => 'optional'
+            'comment'           => 'optional',
+            'description'       => 'nullable'
         ];
     }
 }

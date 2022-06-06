@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('method')->default('teori');
             $table->integer('statusCheck')->default(0);
             $table->string('completeness')->default('continued');
+            $table->string('description', 100)->nullable();
             $table->unsignedBigInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('comment')->nullable();

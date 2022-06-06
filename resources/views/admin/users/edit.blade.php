@@ -54,9 +54,9 @@
                         <span>Role </span>
                       </label>
                       <div class="relative">
-                        <select name="role_id" x-model="role_id" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <select name="role_id" x-model="role_id"  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                           @foreach (\App\Helpers\RoleCheck::RoleCheck as $key => $value)
-                            <option value="{{$value}}" @selected(old('role_id', $user->role_id) == $key)>
+                            <option value="{{$value}}" {{old('role', $user->role_id)  != $value ?:  'selected' }}>
                               {{$value}}
                             </option>
                           @endforeach
@@ -90,7 +90,7 @@
                         </label>
                         <select name="status" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                           @foreach (\App\Helpers\RoleStatus::RoleStatus as $key => $value)
-                            <option value="{{$value}}" {{old('status', $user->status) != $value ?:  'selected' }}>
+                            <option value="{{$value}}" {{old('status', $user->status) != $value ?:  'selected' }} >
                               {{ \App\Helpers\RoleStatus::RoleStatus[$key]}}
                             </option>
                           @endforeach 
@@ -157,7 +157,7 @@
                 </div>
 
 
-                {{-- <div class="flex flex-wrap -mx-3 mb-2 mt-5">
+                <div class="flex flex-wrap -mx-3 mb-2 mt-5" x-show="role_id == 2">
                   <div class="w-full px-3 mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                       <span>Nama Mata Pelajaran</span>
@@ -165,9 +165,11 @@
                       <div class="form-check w-full form-check  bg-gray-200 form-check-inline">
                           @foreach ($subjects as $id => $subjects)
                           <label class="form-check-label mt-2 ml-2 inline-block text-gray-800" for="flexCheckDefault">
-                              <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                               type="checkbox" value="{{$id}}"  {{ (in_array($id, old('subjects', [])) || $subjects->subjectUser->contains($id)) ? 'selected' : '' }}  name="subjects[]" id="subjects">
-                              {{$subjects}}
+                            <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                             type="checkbox" value="{{$id}}"  {{ (in_array($id, old('subjects', [])) || $user->subjectStudent->contains($id)) ? 'selected' : '' }}  name="subjects[]" id="subjects">
+                            {{$subjects}}
+                          </label>
+
                           </label>
                           @error('subjects')
                               <p class="text-sm text-red-600">{{ $message }}</p>
@@ -175,30 +177,9 @@
                           @endforeach
                       </div>
                     </div>
-              </div> --}}
+              </div>
 
-                {{-- <div class="flex flex-wrap -mx-3 mb-2 mt-5" x-show="role_id == 2">
-                  <div class="w-full px-3 mb-6 md:mb-0">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                      <span>Mata Pelajaran </span>
-                    </label>
-                        <div class="form-check w-full form-check  bg-gray-200 form-check-inline">
-                            @forelse ($subjects as $id => $subjects)
-                              <label class="form-check-label mt-2 ml-2 inline-block text-gray-800" for="flexCheckDefault">
-                                  <input name="subjects[]" id="subjects" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                  type="checkbox" value="{{$id}}"  {{ (in_array($id, old('subjects', [])) || $subjects->subjectUser->contains($id)) ? 'selected' : '' }} >
-                                  {{$subjects}}
-                              </label>
-                            @error('subjects')
-                              <p class="text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                            @empty
-                              <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                                  Data Belum Tersedia!
-                              </div>
-                          @endforelse
-                        </div>
-                  </div> --}}
+
 
             </div>
 
