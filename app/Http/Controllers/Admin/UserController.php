@@ -19,7 +19,10 @@ class UserController extends Controller
     public function index()
     {
         $users = User::with(['classrooms','major', 'role', 'subjects', 'subjectStudent', 'majorTeacher'])
-        ->orderBy('name', 'asc')->paginate(5);
+        ->latest()->when(request()->search, function($users)
+        {
+            $users = $users->where('name', 'like', '%'. request()->search . '%');
+        })->paginate(5);
 
         return view('admin.users.index', compact('users'));
     }
@@ -42,7 +45,7 @@ class UserController extends Controller
     {
         $user = User::create($request->all());
 
-        $user->studentSubject()->sync($request->input('subjects', []));
+        $user->subjectStudent()->sync($request->input('subjects', []));
 
         // dd($user);
         return redirect()->route('admin.users.index');

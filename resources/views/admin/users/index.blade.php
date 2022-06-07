@@ -57,7 +57,7 @@
                             </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
-                            @foreach ($users as $user)
+                            @forelse ($users as $user)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                         {{ $loop->iteration }}
@@ -110,7 +110,11 @@
                                           </form>
                                     </td>
                                 </tr>
-                            @endforeach
+                                @empty
+                                <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                  Data Tidak Tidak ada.
+                                </div>
+                            @endforelse
                             </tbody>
                         </table>
                     </div>
@@ -119,7 +123,7 @@
         </div>
           
         <div class="text-gray-600 bg-secondary-50 mt-2">
-          {{ $users->links() }}
+          {{ $users->links('vendor.pagination.tailwind') }}
         </div>
 
       </div>

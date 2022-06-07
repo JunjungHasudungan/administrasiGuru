@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('title');
             $table->foreignIdFor(Classroom::class);
             $table->foreignIdFor(Subject::class);
-            $table->string('method')->default('teori');
+            $table->integer('method')->default(1);
             $table->integer('statusCheck')->default(0);
             $table->string('completeness')->default('continued');
             $table->string('description', 100)->nullable();

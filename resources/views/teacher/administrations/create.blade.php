@@ -8,7 +8,7 @@
 
     <div class="container mx-auto mt-10 mb-10">
       <div class="bg-white p-5 rounded shadow-sm">
-          <form action="{{route('teacher.administrations.store')}}" method="POST" enctype="multipart/form-data">
+          <form action="{{route('teacher.administrations.store')}}" x-data ="{method:2}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="flex flex-wrap -mx-3 mb-2">
 
@@ -65,7 +65,7 @@
                         <span>Metode Pelajaran</span>
                       </label>
                       <div class="relative">
-                        <select id="method" name="method" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                        <select id="method" name="method" x-model ="method" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
                           @foreach (\App\Helpers\Method::Method_Learning as $key => $value)
                             <option value="{{$value}}" {{old('learning_method') != null ?: 'selected'}}>
                               {{ \App\Helpers\Method::Method_Learning[$key]}}
@@ -107,7 +107,22 @@
                     </div>
                   </div>
 
+                  <div class="flex flex-wrap -mx-3 mb-2 mt-7"  >
+                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0" x-show = "method == 3">
+                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                        <span>Keterangan Materi Penugasan</span>
+                      </label>
+                      <textarea class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('description')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "
+                       name="description" id="exampleFormControlTextarea1" rows="3" placeholder="Your message">
+                      </textarea>
+                    </div>
+                  </div>
+  
+
                 </div>
+
+
+                
               <div class="mt-5">
                   <button type="submit"
                       class="bg-indigo-500 text-white p-2 rounded shadow-sm focus:outline-none hover:bg-indigo-700">SIMPAN</button>

@@ -79,10 +79,52 @@
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Metode Pelajaran
                                     </th>
+                                    @if($administration->method === 2)
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                            <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-yellow-200 capitalize last:mr-0 mr-1">
+                                                Praktek   
+                                            </span>     
+                                        </td>
+                                    @elseif ($administration->method === 3)
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                            <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-sky-200 capitalize last:mr-0 mr-1">
+                                                Penugasan   
+                                            </span>     
+                                        </td>
+                                    @else
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                            Teori        
+                                        </td>
+                                    @endif
+                                </tr>
+
+                                @if ($administration->method === 3)
+                                <tr class="border-b">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Keterangan Materi Penugasan
+                                    </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{ $administration->method }}         
+                                        {{ $administration->description ?? ''}}
                                     </td>
                                 </tr>
+                                @else
+                                    
+                                @endif
+
+                                @isset($administration->comment)
+                                    <tr class="border-b">
+                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                             Komentar / Masukan 
+                                        </th>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                            {{$administration->comment}}
+                                        </td>
+                                    </tr>
+                                @endisset
+                                
+                                @empty($administration->comment)
+                                    
+                                @endempty
 
                                 <tr class="border-b">
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">

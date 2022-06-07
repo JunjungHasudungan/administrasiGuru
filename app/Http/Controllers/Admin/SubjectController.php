@@ -19,7 +19,9 @@ class SubjectController extends Controller
 {
     public function index()
     {
-        $subjects = Subject::orderBy('name', 'asc')->paginate(5);
+        $subjects = Subject::latest()->when(request()->search, function($subjects){
+            $subjects = $subjects->where('name', 'like', '%' . request()->search . '%');
+        })->paginate(5);
         // dd($subjects);
         return view('admin.subjects.index', compact('subjects'));
     }

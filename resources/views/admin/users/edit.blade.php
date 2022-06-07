@@ -57,7 +57,7 @@
                         <select name="role_id" x-model="role_id"  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                           @foreach (\App\Helpers\RoleCheck::RoleCheck as $key => $value)
                             <option value="{{$value}}" {{old('role', $user->role_id)  != $value ?:  'selected' }}>
-                              {{$value}}
+                              {{$key}}
                             </option>
                           @endforeach
                         </select>
