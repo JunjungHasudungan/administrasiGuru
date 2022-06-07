@@ -51,7 +51,10 @@
                   <p class="text-gray-700 text-base mb-4">
                     @forelse ($classroom->students as $student)
                       <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
-                        {{$student->name}} 
+                        <a href="{{route('admin.users.index')}}">
+                          {{$student->name}} 
+                        </a>
+
                       </span> 
                       @empty
                       <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
