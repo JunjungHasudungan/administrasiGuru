@@ -19,7 +19,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::with(['classrooms','major', 'role', 'subjects', 'subjectStudent', 'majorTeacher'])
-        ->latest()->when(request()->search, function($users)
+        ->orderBy('name', 'asc')->when(request()->search, function($users)
         {
             $users = $users->where('name', 'like', '%'. request()->search . '%');
         })->paginate(5);
@@ -48,7 +48,7 @@ class UserController extends Controller
         $user->subjectStudent()->sync($request->input('subjects', []));
 
         // dd($user);
-        return redirect()->route('admin.users.index');
+        return redirect()->route('admin.users.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     public function show(User $user)
