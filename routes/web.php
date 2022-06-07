@@ -19,6 +19,7 @@ use App\Http\Controllers\Teacher\TeacherAdministrationController as TeacherAdmin
 use App\Http\Controllers\Teacher\AttendaceStudentController as AttendaceStudent;
 // use App\Http\Controllers\Teacher\AdminstrationController;
 use App\Http\Controllers\Student\LessonController as StudentSubject;
+use App\Http\Controllers\Student\SubjectStudentController as SubjectController;
 use App\Http\Livewire\Teacher\Subject;
 use App\Models\LessonTimetable;
 
@@ -44,7 +45,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::group(['middleware' => 'role:student', 'prefix' => 'student', 'as' => 'student.'], function() {
         Route::resources([
-            'subjects' => StudentSubject::class,
+            'subjects' => SubjectController::class,
+
         ]);
     });
 
