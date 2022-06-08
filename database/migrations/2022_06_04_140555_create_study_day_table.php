@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignIdFor(Subject::class);
             $table->foreignIdFor(WeekDaySubject::class);
             $table->unsignedBigInteger('student_id');
+            $table->time('day');
             $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('atendance')->default(0);
             $table->timestamps();
