@@ -46,6 +46,8 @@ class SubjectController extends Controller
         $subject->classrooms()->sync($request->input('classrooms', []));
 
         $subject->majorSubject()->sync($request->input('majors', []));
+
+        $subject->weekDaySubject()->sync($request->input('days', []));
         
         // dd($subject);
 
