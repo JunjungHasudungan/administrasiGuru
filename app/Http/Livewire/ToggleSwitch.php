@@ -11,6 +11,7 @@ class ToggleSwitch extends Component
     
     public string $field;
     public bool $isCheck;
+    public bool $saved = false;
 
 
     public function mount()
@@ -26,5 +27,8 @@ class ToggleSwitch extends Component
     public function updating($field, $value)
     {
         $this->model->setAttribute($this->field, $value)->save();
+
+        $this->emit('saved');
+        // $this->saved = true;
     }
 }

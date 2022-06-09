@@ -54,6 +54,17 @@
                                     </td>
                                 </tr>
 
+                                @if ( $teacherAdministration->method === 3 )
+                                    <tr class="border-b">
+                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Keterangan Materi Penugasan
+                                        </th>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                            {{ $teacherAdministration->description ?? ''}}
+                                        </td>
+                                    </tr>
+                                @endif
+
                                 <tr class="border-b">
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Ketuntasan
@@ -78,8 +89,10 @@
                                         Status
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap mt-2 text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                       
-                                        @if ($teacherAdministration->statusCheck === 0)
+                                        {{-- <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="switchOne" checked="" wire:model="isActive">
+                                         </div> --}}
+                                        {{-- @if ($teacherAdministration->statusCheck === 0)
                                             <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-yellow-200 capitalize last:mr-0 mr-1">
                                                 Belum di periksa
                                             </span>
@@ -87,7 +100,7 @@
                                             <span class="text-xs font-bold inline-block py-1 px-2 capitalize rounded-full text-blueGray-600 bg-emerald-200 last:mr-0 mr-1">
                                                 Sudah diperiksa
                                             </span>
-                                        @endif
+                                        @endif --}}
 
                                         @livewire('toggle-switch',[
                                             'model'     => $teacherAdministration,

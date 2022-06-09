@@ -1210,6 +1210,9 @@ select {
 .h-screen {
   height: 100vh;
 }
+.h-0 {
+  height: 0px;
+}
 .max-h-px {
   max-height: 1px;
 }
