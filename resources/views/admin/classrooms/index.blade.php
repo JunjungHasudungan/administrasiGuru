@@ -36,21 +36,21 @@
 
 
     <div class="container mx-auto mt-5 mb-10">
-      <div class="bg-white p-5  shadow-sm">
+      <div class="bg-white p-5 w-full shadow-sm">
 
           <div class="grid grid-cols-8 gap-4 mb-4">
-            <div class="col-span-1 mt-2">
+            <div class="col-span-1 mt-2 h-full">
               <a href="{{ route('admin.classrooms.create') }}"
-              class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold tracking-wide text-white transition bg-blue-500 border border-transparent rounded shadow select-none focus:border-blue-600 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-30 disabled:opacity-50">
-              <svg class="w-5 h-5 -ml-1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-                  clip-rule="evenodd" />
-              </svg>
-              <span class="ml-2">Kelas</span>
+                class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold tracking-wide text-white transition bg-blue-500 border border-transparent rounded shadow select-none focus:border-blue-600 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-30 disabled:opacity-50">
+                <svg class="w-5 h-5 -ml-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                    clip-rule="evenodd" />
+                </svg>
+                  <span class="ml-2">Kelas</span>
               </a>
             </div>
             <div class="col-span-7">
@@ -89,10 +89,22 @@
                 @forelse ($classrooms as $classroom)
                   <tr class="bg-white border-2 border-gray-200">
                       <td class="px-7 py-2 text-center">{{$loop->iteration}}</td>
-                      <td class="px-7 py-2 text-left">{{$classroom->code_classroom}}</td>
-                      <td class="px-7 py-2 text-left">{{$classroom->name_class ?? ''}}</td>
-                      <td class="px-7 py-2 text-left">{{$classroom->majors->title ?? 'Jurusan Belum Ada' }}</td>
-                      <td class="px-7 py-2 text-left">{{$classroom->homeworkTeacher->name ?? ''}}</td>
+                      <td class="px-7 py-2 text-left  whitespace-nowrap text-sm text-gray-900">
+                        {{$classroom->code_classroom}}
+                      </td>
+                      <td class="px-7 py-2 text-left  whitespace-nowrap text-sm text-gray-900">
+                        {{$classroom->name_class ?? ''}}
+                      </td>
+                      <td class="px-7 py-2 text-left whitespace-nowrap text-sm text-gray-900">
+                        <a href="{{route('admin.majors.index')}}" class="hover:text-primary-600  hover:font-bold">
+                          {{$classroom->majors->title ?? '' }}
+                        </a>
+                      </td>
+                      <td class="px-7 py-2 text-left  whitespace-nowrap text-sm text-gray-900">
+                        <a href="{{route('admin.users.index')}}" class="hover:text-primary-600  hover:font-bold">
+                          {{$classroom->homeworkTeacher->name ?? ''}}
+                        </a>
+                      </td>
                       <td class="px-6 text-right select-none whitespace-nowrap">
                         <a href="{{ route('admin.classrooms.show', $classroom->id) }}"
                           class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium bg-gray-400 tracking-wide text-white transition border border-transparent rounded-full shadow select-none bg-lightBlue-500 focus:border-lightBlue-600 hover:bg-lightBlue-600 focus:outline-none focus:ring focus:ring-lightBlue-500 focus:ring-opacity-30 disabled:opacity-50">

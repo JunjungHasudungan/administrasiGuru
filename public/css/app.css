@@ -1216,6 +1216,9 @@ select {
 .h-screen {
   height: 100vh;
 }
+.h-full {
+  height: 100%;
+}
 .max-h-px {
   max-height: 1px;
 }
@@ -1275,6 +1278,11 @@ select {
 }
 .w-1\/2 {
   width: 50%;
+}
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .min-w-0 {
   min-width: 0px;

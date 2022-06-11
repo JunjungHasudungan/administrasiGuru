@@ -16,9 +16,10 @@ class MajorController extends Controller
 {
     public function index()
     {
-        // $major = Major::all();
-        // $major->load('teacherMajors')->dd();
-        $majors = Major::with(['headOfDepartement', 'teachers', 'studentMajors'])->orderBy('title', 'asc')->get();
+        $majors = Major::with(['headOfDepartement', 'teachers', 'studentMajors'])->latest()
+        ->when(request()->search, function($majors){
+            $majors = $majors->where('title', 'like', '%' . request()->search . '%');
+        })->orderBy('title', 'asc')->get();
 
         return view('admin.majors.index', compact('majors'));
     }

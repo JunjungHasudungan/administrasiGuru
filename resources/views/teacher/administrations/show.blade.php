@@ -1,13 +1,13 @@
 <x-student-layout>
     <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-blue-500">
+        {{-- <h2 class="text-xl font-semibold leading-tight text-blue-500">
             {{ $administration->teachers->name ?? '' }}
-        </h2>
+        </h2> --}}
     </x-slot>
 
-    <div class="px-6 py-4 mb-4 overflow-hidden border rounded-lg shadow-sm border-secondary-300 ">
+    <div class="px-6 py-4 mb-4 overflow-hidden  rounded-lg shadow-sm  ">
         <div class="flex flex-col justify-between sm:flex-row">
-            <div class="flex items-end justify-center ">
+            <div class="flex items-end justify-left ml-10 mt-5 ">
               <div
                 class="flex items-center px-3  py-1 mt-1 text-xs text-gray-600 border rounded-full border-secondary-300 bg-secondary-300 sm:py-0 sm:mt-0 sm:border-none sm:bg-transparent sm:px-0">
                 <span>Home</span>
@@ -36,7 +36,7 @@
           </div>
         </div>
     <div>
-        <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto mt-5 mb-10">
             <div class="flex flex-col">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
