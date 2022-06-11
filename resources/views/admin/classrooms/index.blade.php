@@ -1,8 +1,8 @@
 <x-student-layout>
     <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-blue-500">
+        {{-- <h2 class="text-xl font-semibold leading-tight text-blue-500">
             {{ __('List Kelas') }}
-        </h2>
+        </h2> --}}
     </x-slot>
 
     <div class="px-6 py-4 mb-4 overflow-hidden border rounded-lg shadow-sm border-secondary-300 ">

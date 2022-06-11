@@ -1,8 +1,8 @@
 <x-student-layout>
     <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-blue-500">
+        {{-- <h2 class="text-xl font-semibold leading-tight text-blue-500">
             {{ __('Guru Mata Pelajaran') }}
-        </h2>
+        </h2> --}}
     </x-slot>
 
     <div class="container mx-auto mt-10 mb-10">

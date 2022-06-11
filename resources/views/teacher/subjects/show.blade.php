@@ -1,9 +1,9 @@
 <x-student-layout>
     <x-slot name="header">
-  
+    </x-slot>
     <div class="px-6 py-4 mb-4 overflow-hidden  rounded-lg shadow-sm  ">
       <div class="flex flex-col justify-between sm:flex-row">
-          <div class="flex items-end justify-center ">
+          <div class="flex items-end justify-left ml-10 mt-5 ">
             <div
               class="flex items-center px-3  py-1 mt-1 text-xs text-gray-600 border rounded-full border-secondary-300 bg-secondary-300 sm:py-0 sm:mt-0 sm:border-none sm:bg-transparent sm:px-0">
               <span>Home</span>
@@ -31,17 +31,16 @@
           </div>
         </div>
       </div>
-    </x-slot>
 
     <div>
-        <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto mt-5 mb-10 ">
             <div class="flex flex-col">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                             <table class="min-w-full divide-y divide-gray-200 w-full" >
                                 <tr class="border-b">
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 capitalize tracking-wider">
                                         ID
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
@@ -49,15 +48,15 @@
                                     </td>
                                 </tr>
                                 <tr class="border-b">
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 capitalize tracking-wider">
                                         Nama Mata Pelajaran
                                     </th>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 lowercase bg-white divide-y divide-gray-200">
                                         {{ $subject->name }}
                                     </td>
                                 </tr>
                                 <tr class="border-b">
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 capitalize tracking-wider">
                                         Guru Nata Pelajaran
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
@@ -65,7 +64,7 @@
                                     </td>
 
                                 <tr class="border-b">
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 capitalize tracking-wider">
                                         Kelas
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
@@ -82,69 +81,39 @@
                                 </tr>
 
                                 <tr class="border-b">
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 capitalize tracking-wider">
                                         Peserta Didik
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                         @forelse ($subject->studentSubject as $student)
-                                        <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                                            {{ $student->name ?? ''}}
-                                        </span>   
+                                            <span class=" inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                                {{ $student->name ?? ''}}
+                                            </span>   
                                         @empty
-                                        <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800">
-                                            Siswa Belum ada
-                                        </span>
+                                            <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800">
+                                                Siswa Belum ada
+                                            </span>
                                         @endforelse
                                     </td>
                                 </tr>
-                               {{-- @if ($subject->role_id === 2)
-                                    <tr class="border-b" >
-                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Nomor Induk Siswa
-                                        </th>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                           @isset($subject->student_licence_number)
-                                            <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full  bg-green-100 text-green-800">
-                                                    {{$subject->student_licence_number ?? 'Tidak dicantumkan'}}
-                                                </span>
-                                           @endisset
-
-                                           @empty($subject->student_licence_number)
-                                                <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full  bg-yellow-100 text-green-800">
-                                                        Tidak ada.
-                                                </span>
-                                               
-                                           @endempty
-                                        </td>
-                                    </tr>
-                               @else --}}
-                                {{-- <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full ">
-                                    
-                                </span>
-                               @endif --}}
-
-                               {{-- @if ($subject->role_id === 2)
                                 <tr class="border-b">
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Status
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 capitalize tracking-wider">
+                                        Hari Pembelajaran
                                     </th>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        @if ($subject->status === 0)
+                                    @forelse ($subject->weekDaySubject as $weekDay)
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                            <span class=" inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                                {{ $weekDay->name ?? ''}}
+                                            </span> 
+                                        </td>
+                                    @empty
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                             <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800">
-                                                Pindahahan
+                                                Hari Pembelajaran belum ada
                                             </span>
-                                        @else
-                                            <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                                                Baru
-                                            </span>
-                                        @endif
-                                    </td>
+                                        </td>
+                                    @endforelse
                                 </tr>
-                               @else
-                                    <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full ">
-                                            
-                                    </span>
-                               @endif --}}
 
                             </table>
                         </div>
