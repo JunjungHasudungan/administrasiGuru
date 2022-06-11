@@ -31,8 +31,8 @@
               <a href="{{route('admin.users.index')}}"
                   class="text-primary-500 hover:text-primary-600  text-indigo-400 hover:font-bold">Index</a>
           </div>
-    </div>
-  </div>
+        </div>
+      </div>
 
     <div class="container mx-auto mt-5 mb-10">
       <div class="bg-white p-5  shadow-sm">

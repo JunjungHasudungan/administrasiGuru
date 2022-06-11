@@ -16,7 +16,13 @@ class ClassroomController extends Controller
 {
     public function index()
     {   
-        $classrooms = Classroom::with(['students', 'homeworkTeacher','classroomSubject', 'majors'])
+        $classrooms = Classroom::with(['students', 'homeworkTeacher','classroomSubject', 'majors'])->latest()
+        ->when(request()->search, function($classrooms){
+            $classrooms = $classrooms->where('name_class', 'like', '%' . request()->search . '%');
+        })
+        ->when(request()->code_classroom, function($classrooms){
+             $classrooms->where('code_classroom', 'like', '%' . request()->search . '%');
+        })
         ->orderBy('name_class', 'asc')->paginate(5);
 
         return view('admin.classrooms.index', compact('classrooms'));

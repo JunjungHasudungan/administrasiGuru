@@ -5,38 +5,37 @@
         </h2> --}}
     </x-slot>
 
-    <div class="px-6 py-4 mb-4 overflow-hidden border rounded-lg shadow-sm border-secondary-300 ">
-      <div class="flex flex-col justify-between sm:flex-row">
-          <div class="flex items-end justify-center ">
-            <div
+    <div class="flex flex-col justify-between sm:flex-row">
+      <div class="flex items-end justify-left ml-10 mt-5">
+          <div
               class="flex items-center px-3  py-1 mt-1 text-xs text-gray-600 border rounded-full border-secondary-300 bg-secondary-300 sm:py-0 sm:mt-0 sm:border-none sm:bg-transparent sm:px-0">
               <span>Home</span>
               <svg class="w-3 h-3"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor">
-                <path fill-rule="evenodd"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
                   d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <a href="{{ route('admin.classrooms.index') }}"
-                class="hover:text-primary-600 text-indigo-400 hover:font-bold ">Kelas</a>
+              <a href="#"
+                  class="hover:text-primary-600 text-indigo-400 hover:font-bold ">Kelas </a>
               <svg class="w-3 h-3"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor">
-                <path fill-rule="evenodd"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
                   d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <a href="{{ route('admin.classrooms.index') }}"
-                class="text-primary-500 hover:text-primary-600  text-indigo-400 hover:font-bold">Index</a>
-            </div>
+              <a href="{{route('admin.classrooms.index')}}"
+                  class="text-primary-500 hover:text-primary-600  text-indigo-400 hover:font-bold">Index</a>
           </div>
         </div>
       </div>
 
-    <div class="container mx-auto mt-10 mb-10">
+
+    <div class="container mx-auto mt-5 mb-10">
       <div class="bg-white p-5  shadow-sm">
 
           <div class="grid grid-cols-8 gap-4 mb-4">
@@ -54,6 +53,13 @@
               <span class="ml-2">Kelas</span>
               </a>
             </div>
+            <div class="col-span-7">
+              <form action="#" method="GET">
+                  <input type="text" name="search"
+                  class="w-full bg-gray-200 p-2 rounded shadow-sm border border-gray-200 focus:outline-none focus:bg-white"
+                  placeholder="Cari Kelas..">
+              </form>
+          </div>
           </div>
           
           <table class="min-w-full table-auto rounded divide-gray-200">
@@ -83,10 +89,10 @@
                 @forelse ($classrooms as $classroom)
                   <tr class="bg-white border-2 border-gray-200">
                       <td class="px-7 py-2 text-center">{{$loop->iteration}}</td>
-                      <td class="px-7 py-2 text-center">{{$classroom->code_classroom}}</td>
-                      <td class="px-7 py-2 text-center">{{$classroom->name_class ?? ''}}</td>
-                      <td class="px-7 py-2 text-center">{{$classroom->majors->title ?? 'Jurusan Belum Ada' }}</td>
-                      <td class="px-7 py-2 text-center">{{$classroom->homeworkTeacher->name ?? ''}}</td>
+                      <td class="px-7 py-2 text-left">{{$classroom->code_classroom}}</td>
+                      <td class="px-7 py-2 text-left">{{$classroom->name_class ?? ''}}</td>
+                      <td class="px-7 py-2 text-left">{{$classroom->majors->title ?? 'Jurusan Belum Ada' }}</td>
+                      <td class="px-7 py-2 text-left">{{$classroom->homeworkTeacher->name ?? ''}}</td>
                       <td class="px-6 text-right select-none whitespace-nowrap">
                         <a href="{{ route('admin.classrooms.show', $classroom->id) }}"
                           class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium bg-gray-400 tracking-wide text-white transition border border-transparent rounded-full shadow select-none bg-lightBlue-500 focus:border-lightBlue-600 hover:bg-lightBlue-600 focus:outline-none focus:ring focus:ring-lightBlue-500 focus:ring-opacity-30 disabled:opacity-50">
@@ -127,7 +133,7 @@
                   </tr>
                 @empty
                   <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                    Data Belum Tersedia!
+                    Kelas Tidak ada.
                   </div>
                 @endforelse
               </tbody>
