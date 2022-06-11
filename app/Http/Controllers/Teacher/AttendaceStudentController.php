@@ -27,7 +27,10 @@ class AttendaceStudentController extends Controller
      */
     public function create()
     {
-        //
+        $subjectTeacher = Subject::where('teacher_id', auth()->id())->get();
+
+        dd($subjectTeacher);
+        return view('teacher.attendanceStudent.create');
     }
 
     /**

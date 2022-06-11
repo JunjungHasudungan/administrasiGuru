@@ -19,6 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('student_id');
             $table->foreign('student_id')->references('id')->on('users');
             $table->foreignIdFor(Subject::class);
+            $table->integer('attendance');
+            $table->string('descrption')->nullable();
             $table->timestamps();
         });
     }
