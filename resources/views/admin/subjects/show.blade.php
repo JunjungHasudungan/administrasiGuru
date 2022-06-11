@@ -28,7 +28,7 @@
                   clip-rule="evenodd" />
               </svg>
               <a href="{{ route('admin.subjects.show', $subject->id) }}"
-                class="text-primary-500 hover:text-primary-600  text-indigo-400 hover:font-bold">Detail</a>
+                class="text-primary-500 hover:text-primary-600 font-bold text-indigo-400 hover:font-bold">Detail</a>
             </div>
           </div>
         </div>

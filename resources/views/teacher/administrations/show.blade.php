@@ -30,7 +30,7 @@
                     clip-rule="evenodd" />
                 </svg>
                 <a href="{{ route('teacher.administrations.show', $administration->id) }}"
-                  class="text-primary-500 hover:text-primary-600  text-indigo-400 hover:font-bold">Detail</a>
+                  class="text-primary-500 hover:text-primary-600 font-bold text-indigo-400 hover:font-bold">Detail</a>
               </div>
             </div>
           </div>
@@ -177,7 +177,7 @@
                 </div>
             </div>
             <button class="bg-transparent mt-2  text-blue-700 font-semibold hover: py-2 px-4  hover:border-transparent rounded">
-                <a href="{{route('teacher.administrations.index')}}">
+                <a href="{{route('teacher.administrations.index')}}" class="hover:font-bold">
                   Kembali</a> 
                 </button>
         </div>

@@ -29,7 +29,7 @@
                   clip-rule="evenodd" />
               </svg>
               <a href="{{route('admin.subjects.index')}}"
-                  class="text-primary-500 hover:text-primary-600  text-indigo-400 hover:font-bold">Index</a>
+                  class="text-primary-500 hover:text-primary-600 font-bold text-indigo-400 hover:font-bold">Index</a>
           </div>
         </div>
       </div>
@@ -88,10 +88,16 @@
                 @forelse ($subjects as $subject)
                   <tr class="bg-white border-2 border-gray-200">
 
-                      <td class="px-7 py-2 text-center">{{$loop->iteration}}</td>
-                      <td class="px-7 py-2 text-left">{{$subject->subject_code}}</td>
-                      <td class="px-7 py-2 text-left">{{$subject->name ?? ''}}</td>
-                      <td class="px-7 py-2 text-left">
+                      <td class="px-7 py-2 text-center">
+                        {{$loop->iteration}}
+                      </td>
+                      <td class="px-7 py-2 text-left whitespace-nowrap text-sm text-gray-900">
+                        {{$subject->subject_code}}
+                      </td>
+                      <td class="px-7 py-2 text-left whitespace-nowrap text-sm text-gray-900">
+                        {{$subject->name ?? ''}}
+                      </td>
+                      <td class="px-7 py-2 text-left whitespace-nowrap text-sm text-gray-900">
                         <a href="{{route('admin.teachers.index')}}" class="no-underline hover:underline font-normal hover:font-bold">
                           {{$subject->teachers->name ?? ''}}
                       </td>

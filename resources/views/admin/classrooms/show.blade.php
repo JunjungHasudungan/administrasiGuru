@@ -33,7 +33,7 @@
                         clip-rule="evenodd" />
                     </svg>
                     <a href="{{route('admin.classrooms.show', $classroom->id)}}"
-                        class="text-primary-500 hover:text-primary-600  text-indigo-400 hover:font-bold">Detail</a>
+                        class="text-primary-500 hover:text-primary-600 font-bold text-indigo-400 hover:font-bold">Detail</a>
                 </div>
               </div>
             </div>
@@ -45,10 +45,9 @@
                   <p class="text-gray-700 text-base mb-4">
                     @forelse ($classroom->students as $student)
                       <span class=" border-0 py-2  text-gray-800  tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
-                        <a href="{{route('admin.users.index')}}">
+                        <a href="{{route('admin.users.index')}}" class="hover:text-primary-600 hover:font-bold">
                           {{$student->name}} 
                         </a>
-
                       </span> 
                       @empty
                       <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
@@ -65,7 +64,9 @@
                   <p class="text-gray-700 text-base mb-4">
                     @forelse ($classroom->classroomSubject as $subject)
                       <span class=" border-0 py-2  text-gray-800 lowercase tracking-widest mx-px my-1  text-xs min-w-0  mb-px w-2 p-3 rounded mt">
-                        {{$subject->name ?? ''}} 
+                        <a href="{{route('admin.subjects.index')}}" class="hover:text-primary-600 hover:font-bold">
+                          {{$subject->name ?? ''}} 
+                        </a>
                       </span> 
                       @empty
                       <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">

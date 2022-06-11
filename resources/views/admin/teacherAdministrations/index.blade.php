@@ -19,7 +19,7 @@
                   clip-rule="evenodd" />
               </svg>
               <a href="#"
-                  class="hover:text-primary-600 text-indigo-400 hover:font-bold ">Administrasi Guru </a>
+                  class="hover:text-primary-600 font-bold text-indigo-400 hover:font-bold ">Administrasi Guru </a>
               <svg class="w-3 h-3"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"

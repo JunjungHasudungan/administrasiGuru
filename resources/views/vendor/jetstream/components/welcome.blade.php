@@ -49,7 +49,7 @@
             </div>
     
             <div class="ml-12">
-                <div class="mt-2 text-sm text-gray-500">
+                <div class="mt-2 text-sm text-gray-500 indent-8">
                     Menu Jurusan yang berisan tentang kelas yang dimilki, nama guru jurusan yang dimiiki, nama kelas serta nama mata pelajaran
                     yang telah didaftarkan.
                 </div>
@@ -73,7 +73,7 @@
                 </div>
         
                 <div class="ml-12">
-                    <div class="mt-2 text-sm text-gray-500">
+                    <div class="mt-2 text-sm text-gray-500 indent-8">
                         Halaman Mata Pelajaran yang berisikan tentang nama mata pelajaran, guru yang mengajarkan pelajaran tersebut
                         jurusan yang terdaftar, mata pelajaran setiap kelas,hari pembelajaran serta jam pembelajaran.
                     </div>
@@ -97,7 +97,7 @@
                 </div>
         
                 <div class="ml-12">
-                    <div class="mt-2 text-sm text-gray-500">
+                    <div class="mt-2 text-sm text-gray-500 indent-8">
                        Administrasi guru yang berisikan tentang administrasi pengajaran guru mata pelajaran yang wajib diisi oleh setiap guru yang telah 
                        menyelesaikan jam pengajaran.
                     </div>
@@ -121,7 +121,7 @@
         </div>
 
         <div class="ml-12">
-            <div class="mt-2 text-sm text-gray-500">
+            <div class="mt-2 text-sm text-gray-500 indent-8">
                 Halaman Mata Pelajaran yang berisikan tentang nama mata pelajaran, guru yang mengajarkan pelajaran tersebut
                 jurusan yang terdaftar, mata pelajaran setiap kelas,hari pembelajaran serta jam pembelajaran.
             </div>
@@ -145,7 +145,7 @@
         </div>
 
         <div class="ml-12">
-            <div class="mt-2 text-sm text-gray-500">
+            <div class="mt-2 text-sm text-gray-500 indent-8">
                Administrasi guru yang berisikan tentang administrasi pengajaran guru mata pelajaran yang wajib diisi oleh setiap guru yang telah 
                menyelesaikan jam pengajaran.
             </div>

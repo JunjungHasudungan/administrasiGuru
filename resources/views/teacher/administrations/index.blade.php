@@ -29,7 +29,7 @@
                   clip-rule="evenodd" />
               </svg>
               <a href="{{route('teacher.administrations.index')}}"
-                  class="text-primary-500 hover:text-primary-600  text-indigo-400 hover:font-bold">Index</a>
+                  class="text-primary-500 hover:text-primary-600 font-bold text-indigo-400 hover:font-bold">Index</a>
           </div>
     </div>
   </div>
@@ -98,7 +98,7 @@
 
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center">
                         <a href="{{route('teacher.administrations.show', $administration->id)}}"
-                          class="text-blue-600 hover:text-blue-900 mb-2 mr-2"> 
+                          class="text-blue-600 hover:text-blue-900 hover:font-bold  mb-2 mr-2"> 
                           <span>View </span>              
                         </a>
                       </td>

@@ -29,7 +29,7 @@
                     clip-rule="evenodd" />
                 </svg>
                 <a href="{{route('admin.majors.create')}}"
-                    class="text-primary-500 hover:text-primary-600  text-indigo-400 hover:font-bold">Create</a>
+                    class="text-primary-500 hover:text-primary-600 font-bold text-indigo-400 hover:font-bold">Create</a>
             </div>
           </div>
         </div>
