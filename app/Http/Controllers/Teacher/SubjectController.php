@@ -18,14 +18,13 @@ class SubjectController extends Controller
         if (Gate::denies('manage-courses')) {
             abort(403);
         }
-        $name  = Auth::user()->name;
-
-        $id = Auth::user()->id;
-        
-        $subjects = Subject::with('classrooms', 'weekDaySubject')->orderBy('name', 'asc')->where('teacher_id', $id)->get();
+        $subjects = Subject::with('classrooms', 'weekDaySubject')->latest()
+        ->when(request()->search, function($subjects){
+            $subjects = $subjects->where('name', 'like' ,'%' . request()->search .'%');
+        })
+        ->where('teacher_id', auth()->id())->orderBy('name', 'asc')->paginate(5);
     
-        // dd($subjects);
-        return view('teacher.subjects.index', compact(['subjects', 'name']));
+        return view('teacher.subjects.index', compact('subjects'));
     }
 
     public function create()
@@ -40,7 +39,11 @@ class SubjectController extends Controller
 
     public function show(Subject $subject)
     {
-        return view();
+        $subjectTeacher = Subject::where('teacher_id', auth()->id())->get();
+
+        $subjectStudent = Subject::with(['studentSubject', 'classrooms'])->get();
+
+        return view('teacher.subjects.show', compact('subject',  'subjectStudent'));
     }
 
     public function edit(Subject $subject)

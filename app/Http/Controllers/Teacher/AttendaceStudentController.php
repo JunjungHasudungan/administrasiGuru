@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
 use App\Models\Subject;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AttendaceStudentController extends Controller
 {
@@ -29,7 +31,13 @@ class AttendaceStudentController extends Controller
     {
         $subjectTeacher = Subject::where('teacher_id', auth()->id())->get();
 
-        dd($subjectTeacher);
+        $studentsSubject = DB::table('subject_student')->where('subject_id', $subjectTeacher)->get();
+       
+        // $students = Subject::with('students')->get();
+
+        // $studentSubject = Subject::with('subjectStudent')->get();
+
+        dd($studentsSubject);
         return view('teacher.attendanceStudent.create');
     }
 

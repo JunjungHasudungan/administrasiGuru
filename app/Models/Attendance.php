@@ -29,6 +29,11 @@ class Attendance extends Model
         return $this->belongsTo(Subject::class, 'subject_id', 'id');
     }
 
+    public function subjectStudent()
+    {
+        return $this->belongsToMany(Subject::class, 'subject_student', 'subject_id', 'student_id');
+    }
+
     public function getIsHadirAttribute():bool
     {
         return (int) $this->attendance === AttendanceSubject::Attendance['hadir'];

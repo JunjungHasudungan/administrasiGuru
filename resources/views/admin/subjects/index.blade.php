@@ -7,6 +7,7 @@
 
     <div class="container mx-auto mt-10 mb-10">
       <div class="bg-white p-5 rounded shadow-sm">
+
           <div class="grid grid-cols-8 gap-4 mb-4 w-full">
             <div class="col-span-1  mt-2 w-full">
               <a href="{{ route('admin.subjects.create') }}"
@@ -30,6 +31,7 @@
                   </form>
               </div>
           </div>
+
           <table class="min-w-full table-auto divide-gray-200">
               <thead class="justify-between">
                   <tr class="bg-slate-200 w-full">
