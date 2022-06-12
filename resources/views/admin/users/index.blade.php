@@ -37,10 +37,10 @@
     <div class="container mx-auto mt-5 mb-10">
       <div class="bg-white p-5  shadow-sm">
           <div class="grid grid-cols-8 gap-4 mb-4">
-            <div class="col-span-1 mt-2 w-full">
+            <div class="col-span-1 mt-2 h-full p-1">
               <a href="{{ route('admin.users.create') }}"
-              class="inline-flex items-center justify-center w-full text-center px-4 py-2 text-sm font-bold tracking-wide text-white transition bg-blue-500 border border-transparent rounded shadow select-none focus:border-blue-600 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-30 disabled:opacity-50">
-              <svg class="w-5 h-5 "
+              class="inline-flex items-center justify-center px-10 py-2 text-sm font-bold tracking-wide text-white transition bg-blue-500 border border-transparent rounded shadow select-none focus:border-blue-600 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-30 disabled:opacity-50">
+              <svg class="w-5 h-6 -ml-1"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor">
@@ -51,7 +51,7 @@
                 <span class="ml-2 w-full">User</span>
               </a>
             </div>
-            <div class="col-span-7">
+            <div class="col-span-7 p-3 w-full">
               <form action="#" method="GET">
                   <input type="text" name="search"
                   class="w-full bg-gray-200 p-2 rounded shadow-sm border border-gray-200 focus:outline-none focus:bg-white"

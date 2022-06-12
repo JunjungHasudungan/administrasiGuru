@@ -1011,6 +1011,9 @@ select {
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
+.col-span-10 {
+  grid-column: span 10 / span 10;
+}
 .float-left {
   float: left;
 }
@@ -1114,14 +1117,17 @@ select {
 .mb-4 {
   margin-bottom: 1rem;
 }
+.ml-10 {
+  margin-left: 2.5rem;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
 .mb-3 {
   margin-bottom: 0.75rem;
 }
 .mb-px {
   margin-bottom: 1px;
-}
-.mb-10 {
-  margin-bottom: 2.5rem;
 }
 .mr-1 {
   margin-right: 0.25rem;
@@ -1152,12 +1158,6 @@ select {
 }
 .-mt-32 {
   margin-top: -8rem;
-}
-.ml-5 {
-  margin-left: 1.25rem;
-}
-.ml-10 {
-  margin-left: 2.5rem;
 }
 .block {
   display: block;
@@ -1213,11 +1213,11 @@ select {
 .h-3 {
   height: 0.75rem;
 }
-.h-screen {
-  height: 100vh;
-}
 .h-full {
   height: 100%;
+}
+.h-screen {
+  height: 100vh;
 }
 .max-h-px {
   max-height: 1px;
@@ -1270,6 +1270,11 @@ select {
 .w-3 {
   width: 0.75rem;
 }
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
 .w-2 {
   width: 0.5rem;
 }
@@ -1278,11 +1283,6 @@ select {
 }
 .w-1\/2 {
   width: 50%;
-}
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1701,10 +1701,6 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
-.bg-green-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(134 239 172 / var(--tw-bg-opacity));
-}
 .bg-sky-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(186 230 253 / var(--tw-bg-opacity));
@@ -1712,6 +1708,10 @@ select {
 .bg-purple-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(147 51 234 / var(--tw-bg-opacity));
+}
+.bg-green-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(134 239 172 / var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
@@ -1752,6 +1752,9 @@ select {
 }
 .p-0 {
   padding: 0px;
+}
+.p-1 {
+  padding: 0.25rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -1820,6 +1823,10 @@ select {
 .py-px {
   padding-top: 1px;
   padding-bottom: 1px;
+}
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 .pt-6 {
   padding-top: 1.5rem;
@@ -1917,11 +1924,11 @@ select {
 .font-semibold {
   font-weight: 600;
 }
-.font-normal {
-  font-weight: 400;
-}
 .font-bold {
   font-weight: 700;
+}
+.font-normal {
+  font-weight: 400;
 }
 .uppercase {
   text-transform: uppercase;
@@ -2025,10 +2032,6 @@ select {
   --tw-text-opacity: 1;
   color: rgb(29 78 216 / var(--tw-text-opacity));
 }
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
-}
 .text-sky-500 {
   --tw-text-opacity: 1;
   color: rgb(14 165 233 / var(--tw-text-opacity));
@@ -2044,6 +2047,10 @@ select {
 .text-emerald-600 {
   --tw-text-opacity: 1;
   color: rgb(5 150 105 / var(--tw-text-opacity));
+}
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 .text-blue-600 {
   --tw-text-opacity: 1;

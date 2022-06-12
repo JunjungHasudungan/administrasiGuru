@@ -19,10 +19,9 @@ class UserController extends Controller
     public function index()
     {
         $users = User::with(['classrooms','major', 'role', 'subjects', 'subjectStudent', 'majorTeacher'])
-        ->orderBy('name', 'asc')->when(request()->search, function($users)
-        {
+        ->when(request()->search, function($users){
             $users = $users->where('name', 'like', '%'. request()->search . '%');
-        })->paginate(5);
+        })->orderBy('name', 'asc')->paginate(5);
 
         return view('admin.users.index', compact('users'));
     }
