@@ -19,12 +19,12 @@ class Attendance extends Model
         'attendance',
     ];
 
-    public function students()
+    public function student()
     {
         return $this->belongsTo(User::class, 'student_id', 'id');
     }
 
-    public function subjects()
+    public function subject()
     {
         return $this->belongsTo(Subject::class, 'subject_id', 'id');
     }

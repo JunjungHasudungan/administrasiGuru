@@ -1,7 +1,7 @@
 <x-student-layout>
     <x-slot name="header">
-        {{-- <h2 class="text-xl font-semibold leading-tight text-sky-500">
-            {{ __('Absensi Siswa - Mata Pelajaran ') }}
+        {{-- <h2 class="text-xl font-semibold leading-tight text-blue-500">
+            {{ __(' Mata Pelajaran') }}
         </h2> --}}
     </x-slot>
 
@@ -19,7 +19,7 @@
                     clip-rule="evenodd" />
                 </svg>
                 <a href="#"
-                    class="hover:text-primary-600 text-indigo-400 hover:font-bold ">Absensi Siswa</a>
+                    class="hover:text-primary-600 text-indigo-400 hover:font-bold ">Mata Pelajaran</a>
                 <svg class="w-3 h-3"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -28,15 +28,20 @@
                     d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                     clip-rule="evenodd" />
                 </svg>
-                <a href="{{route('teacher.attendanceStudent.index')}}"
+                <a href="{{route('student.attendances.index')}}"
                     class="text-primary-500 hover:text-primary-600 font-bold text-indigo-400 hover:font-bold">Index</a>
             </div>
       </div>
     </div>
 
-    <div>
-        <div class="py-10 mx-auto max-w-7xl text-xs sm:px-6 lg:px-8">
-            Masih dalam pengembangan.
-        </div>
+    <div class="py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <ul>
+            @forelse ($attendances as $item)
+                <p>{{$item->subject->name}}</p>
+            @empty
+                <p>tidak ada</p>
+            @endforelse
+            <li></li>
+        </ul>
     </div>
 </x-student-layout>

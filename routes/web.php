@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\ClassroomController;
 use App\Http\Controllers\Admin\TeacherAdministrationController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Student\AttendanceController;
 use App\Http\Controllers\Teacher\SubjectController as TeacherSubject;
 use App\Http\Controllers\Teacher\SchedulesController as TeacherShedule;
 use App\Http\Controllers\Teacher\TeacherAdministrationController as TeacherAdministration;
@@ -46,6 +47,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::group(['middleware' => 'role:student', 'prefix' => 'student', 'as' => 'student.'], function() {
         Route::resources([
             'subjects' => SubjectController::class,
+            'attendances' => AttendanceController::class,
 
         ]);
     });

@@ -36,6 +36,7 @@ class Subject extends Model
         return $this->belongsTo(User::class, 'teacher_id');
     }
 
+
     public function teacherSubject()
     {
         return $this->belongsTo(User::class, 'teacher_id');
@@ -51,9 +52,19 @@ class Subject extends Model
         return $this->belongsToMany(Major::class, 'major_subject', 'subject_id', 'major_id');
     }
 
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class);
+    }
+
     public function studentSubject()
     {
         return $this->belongsToMany(User::class, 'subject_student', 'subject_id', 'student_id');
+    }
+
+    public function studentAttendances()
+    {
+        return $this->belongsToMany(User::class, 'attendances', 'student_id', 'subject_id');
     }
 
     public function getStartTimeAttribute($value)

@@ -75,6 +75,10 @@
                         <x-jet-nav-link href="{{ route('student.subjects.index') }}" :active="request()->routeIs('student.subjects.index')">
                             {{ __('Mata Pelajaran') }}
                         </x-jet-nav-link>
+
+                        <x-jet-nav-link href="{{ route('student.attendances.index') }}" :active="request()->routeIs('student.attendances.index')">
+                            {{ __('Absensi') }}
+                        </x-jet-nav-link>
                     @endif
 
                     @if (auth()->user()->role_id == 3)

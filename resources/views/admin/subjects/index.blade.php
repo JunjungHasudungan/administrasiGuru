@@ -148,7 +148,7 @@
                 @endforelse
               </tbody>
           </table>
-          <div class="text-gray-600 bg-secondary-50">
+          <div class="text-gray-600 bg-secondary-50 mt-2">
             {{ $subjects->links() }}
           </div>
       </div>
