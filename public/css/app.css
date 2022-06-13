@@ -1011,9 +1011,6 @@ select {
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
-.col-span-10 {
-  grid-column: span 10 / span 10;
-}
 .float-left {
   float: left;
 }
@@ -1138,11 +1135,11 @@ select {
 .-ml-1 {
   margin-left: -0.25rem;
 }
+.ml-48 {
+  margin-left: 12rem;
+}
 .mb-8 {
   margin-bottom: 2rem;
-}
-.-ml-8 {
-  margin-left: -2rem;
 }
 .mt-7 {
   margin-top: 1.75rem;
@@ -1750,11 +1747,11 @@ select {
 .p-4 {
   padding: 1rem;
 }
-.p-0 {
-  padding: 0px;
-}
 .p-1 {
   padding: 0.25rem;
+}
+.p-0 {
+  padding: 0px;
 }
 .px-4 {
   padding-left: 1rem;
@@ -1816,6 +1813,10 @@ select {
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 }
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -1823,10 +1824,6 @@ select {
 .py-px {
   padding-top: 1px;
   padding-bottom: 1px;
-}
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
 }
 .pt-6 {
   padding-top: 1.5rem;

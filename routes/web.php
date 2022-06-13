@@ -17,7 +17,7 @@ use App\Http\Controllers\Student\AttendanceController;
 use App\Http\Controllers\Teacher\SubjectController as TeacherSubject;
 use App\Http\Controllers\Teacher\SchedulesController as TeacherShedule;
 use App\Http\Controllers\Teacher\TeacherAdministrationController as TeacherAdministration;
-use App\Http\Controllers\Teacher\AttendaceStudentController as AttendaceStudent;
+use App\Http\Controllers\Teacher\AttendanceController as AttendaceStudent;
 // use App\Http\Controllers\Teacher\AdminstrationController;
 use App\Http\Controllers\Student\LessonController as StudentSubject;
 use App\Http\Controllers\Student\SubjectStudentController as SubjectController;
@@ -70,7 +70,7 @@ Route::group(['middleware' => 'auth'], function() {
             'classrooms'                => ClassroomController::class,
             'teacherAdministrations'    => TeacherAdministrationController::class,
             'users'                     => UserController::class,
-            'administrationComment'     => AdministrationCommentControoler::class,
+            // 'administrationComment'     => AdministrationCommentControoler::class,
         ]);
     });
 
