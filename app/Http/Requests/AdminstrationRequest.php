@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests;
 
-use App\Helpers\Completeness;
-use App\Helpers\StatusCheck;
+use App\Helpers\{Completeness, StatusCheck};
+// use App\Helpers\StatusCheck;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;

@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreMajorRequest;
-use App\Http\Requests\UpdateMajorRequest;
-use App\Models\Classes;
-use App\Models\Classroom;
-use App\Models\Major;
-use App\Models\Subject;
-use App\Models\User;
+use App\Http\Requests\{StoreMajorRequest, UpdateMajorRequest };
+// use App\Http\Requests\UpdateMajorRequest;
+// use App\Models\Classes;
+use App\Models\{Classroom, Major, Subject, User};
+// use App\Models\Major;
+// use App\Models\Subject;
+// use App\Models\User;
 use Illuminate\Http\Request;
 
 class MajorController extends Controller

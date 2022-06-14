@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserRequest;
-use App\Models\Classroom;
-use App\Models\Role;
-use App\Models\User;
-use App\Models\Major;
-use App\Models\Subject;
+use App\Http\Requests\{StoreUserRequest, UpdateUserRequest};
+// use App\Http\Requests\UpdateUserRequest;
+use App\Models\{Classroom, Role, User, Major, Subject};
+// use App\Models\Role;
+// use App\Models\User;
+// use App\Models\Major;
+// use App\Models\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 

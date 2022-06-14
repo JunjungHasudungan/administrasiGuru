@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTeacherRequest;
-use App\Models\Subject;
+use App\Models\{Subject, User, Major};
 use Illuminate\Http\Request;
-use App\Models\User;
-use App\Models\Major;
+// use App\Models\User;
+// use App\Models\Major;
 use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
 

@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreSubjectRequest;
-use App\Http\Requests\UpdateSubjectRequest;
-use App\Models\Subject;
-use App\Models\Classroom;
-use App\Models\User;
-use App\Models\Major;
-use App\Models\WeekDaySubject;
+use App\Http\Requests\{StoreSubjectRequest, UpdateSubjectRequest};
+// use App\Http\Requests\UpdateSubjectRequest;
+use App\Models\{Subject, Classroom, User, Major, WeekDaySubject};
+// use App\Models\Classroom;
+// use App\Models\User;
+// use App\Models\Major;
+// use App\Models\WeekDaySubject;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\{DB, Gate};
+// use Illuminate\Support\Facades\Gate;
 
 
 class SubjectController extends Controller

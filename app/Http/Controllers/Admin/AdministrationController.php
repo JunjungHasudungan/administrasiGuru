@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
-use App\Models\Administration;
+use App\Models\{User, Administration};
+// use App\Models\Administration;
 use Illuminate\Http\Request;
 
 class AdministrationController extends Controller

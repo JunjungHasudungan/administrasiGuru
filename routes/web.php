@@ -3,17 +3,21 @@
 use App\Http\Controllers\Admin\AdministrationCommentControoler;
 use Illuminate\Support\Facades\Route;
 
-// use App\Http\Controllers\Admin\MajorController;
-// use App\Http\Controllers\Admin\ClassroomController;
-// use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\SubjectController as AdminSubject;
 use App\Http\Controllers\Admin\CalenderController as TimeTableSubject;
-use App\Http\Controllers\Admin\MajorController;
-use App\Http\Controllers\Admin\TeacherController;
-use App\Http\Controllers\Admin\ClassroomController;
-use App\Http\Controllers\Admin\TeacherAdministrationController;
-use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Student\AttendanceController;
+use App\Http\Controllers\Admin\{
+    MajorController, 
+    TeacherController, 
+    ClassroomController, 
+    TeacherAdministrationController, 
+    UserController, 
+    AttendanceController
+};
+// use App\Http\Controllers\Admin\TeacherController;
+// use App\Http\Controllers\Admin\ClassroomController;
+// use App\Http\Controllers\Admin\TeacherAdministrationController;
+// use App\Http\Controllers\Admin\UserController;
+// use App\Http\Controllers\Student\AttendanceController;
 use App\Http\Controllers\Teacher\SubjectController as TeacherSubject;
 use App\Http\Controllers\Teacher\SchedulesController as TeacherShedule;
 use App\Http\Controllers\Teacher\TeacherAdministrationController as TeacherAdministration;

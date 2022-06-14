@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Helpers\Method;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateAdministrationRequest;
-use App\Models\Administration;
-use App\Models\TeacherAdministration;
-use App\Models\User;
+use App\Models\{Administration, TeacherAdministration, User};
+// use App\Models\TeacherAdministration;
+// use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 

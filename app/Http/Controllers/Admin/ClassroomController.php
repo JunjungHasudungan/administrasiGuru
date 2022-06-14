@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreClassroomRequest;
-use App\Http\Requests\UpdateClassroomRequest;
-use App\Models\Classroom;
-use App\Models\Major;
-use App\Models\User;
+use App\Http\Requests\{StoreClassroomRequest, UpdateClassroomRequest};
+// use App\Http\Requests\UpdateClassroomRequest;
+use App\Models\{Classroom, Major, User};
+// use App\Models\Major;
+// use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Stmt\Foreach_;

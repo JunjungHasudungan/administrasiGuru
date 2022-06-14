@@ -47,7 +47,9 @@ class AttendanceController extends Controller
      */
     public function show(Attendance $attendance)
     {
-        //
+        $attendance->load(['student']);
+
+        return view('teacher.attendanceStudent.show', compact('attendance'));
     }
 
     /**
