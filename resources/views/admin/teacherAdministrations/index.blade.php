@@ -18,8 +18,8 @@
                   d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <a href="#"
-                  class="hover:text-primary-600 font-bold text-indigo-400 hover:font-bold ">Administrasi Guru </a>
+              <a href="{{route('admin.teacherAdministrations.index')}}"
+                  class="hover:text-primary-600 text-indigo-400 hover:font-bold ">Administrasi Guru </a>
               <svg class="w-3 h-3"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
@@ -29,7 +29,7 @@
                   clip-rule="evenodd" />
               </svg>
               <a href="{{route('admin.teacherAdministrations.index')}}"
-                  class="text-primary-500 hover:text-primary-600  text-indigo-400 hover:font-bold">Index</a>
+                  class="text-primary-500 hover:text-primary-600 font-bold text-indigo-400 hover:font-bold">Index</a>
           </div>
         </div>
       </div>

@@ -69,7 +69,7 @@
                             <thead>
                             <tr class="bg-slate-200 w-full">
                                 <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    ID
+                                    No
                                 </th>
                                 <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Name

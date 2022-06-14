@@ -34,7 +34,7 @@
           </div>
         </div>
 
-    <div class="container mx-auto mt-10 mb-10">
+    <div class="container mx-auto mt-5 mb-10">
         <div class="bg-white p-5 rounded shadow-sm">
             <form action="{{route('admin.majors.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf

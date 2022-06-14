@@ -9,7 +9,13 @@
         <div class="bg-white p-5 rounded shadow-sm">
             <form action="{{route('teacher.attendanceStudent.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-
+                <ul>
+                    @forelse ($studentSubject as $item )
+                        <li>{{ $item }}</li>
+                    @empty
+                        
+                    @endforelse
+                </ul>
             </div>
 
                     <div class="mt-5">

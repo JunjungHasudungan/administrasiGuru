@@ -20,12 +20,10 @@ class AttendanceController extends Controller
 
     public function create(Attendance $attendance)
     {
-      $studentSubject = User::where('role_id', 2)
-      ->whereHas('subjectStudent')->get();
+      $users = User::where('classroom_id', $attendance)->pluck('name', 'id');
 
-      dd($studentSubject);
-
-       return view('teacher.attendanceStudent.create');
+      dd($users);
+       return view('teacher.attendanceStudent.create', compact('studentSubject'));
     }
 
     /**

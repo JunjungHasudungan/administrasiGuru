@@ -28,17 +28,13 @@
                     d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                     clip-rule="evenodd" />
                 </svg>
-                <a href="{{route('teacher.attendanceStudent.show', $attendance->id)}}"
-                    class="text-primary-500 hover:text-primary-600 font-bold text-indigo-400 hover:font-bold">Detail</a>
+                <a href="{{route('teacher.attendanceStudent.index')}}"
+                    class="text-primary-500 hover:text-primary-600 font-bold text-indigo-400 hover:font-bold">Index</a>
             </div>
       </div>
     </div>
 
     <div class="py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
         Masih dalam pengembangan.
-
-        @foreach ($attendance as $item)
-            {{$item->student->name ?? ''}}
-        @endforeach
     </div>
 </x-student-layout>

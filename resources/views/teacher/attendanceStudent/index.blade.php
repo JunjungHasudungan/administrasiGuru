@@ -18,7 +18,7 @@
                   d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <a href="#"
+              <a href="{{route('teacher.attendanceStudent.index')}}"
                   class="hover:text-primary-600 text-indigo-400 hover:font-bold ">Absensi Siswa</a>
               <svg class="w-3 h-3"
                   xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@
                             </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
-                            @forelse ($subjectTeachers as $subject)
+                            @forelse ($subjectTeachers as $key => $subject)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                         <span class="px-2 inline-flex text-xs text-center  leading-5 lowercase font-semibold rounded-full  text-green-800">
