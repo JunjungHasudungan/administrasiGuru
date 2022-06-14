@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use App\Helpers\Completeness;
-use App\Helpers\Method;
-use App\Helpers\StatusCheck;
+use App\Helpers\{Completeness, Method, StatusCheck};
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

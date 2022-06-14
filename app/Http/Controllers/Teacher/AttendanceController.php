@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
-use App\Models\Attendance;
-use App\models\Subject;
-use App\Models\User;
+use App\Models\{Attendance, Subject, User};
 use Illuminate\Http\Request;
 
 class AttendanceController extends Controller

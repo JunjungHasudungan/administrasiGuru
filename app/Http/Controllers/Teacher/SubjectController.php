@@ -3,12 +3,9 @@
 namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
-use App\Models\Subject;
-use App\Models\User;
+use App\Models\{Subject, User};
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\{Auth, DB, Gate};
 
 class SubjectController extends Controller
 {

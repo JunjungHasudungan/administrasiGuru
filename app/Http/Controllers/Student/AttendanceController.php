@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use App\Models\{Attendance, Subject, User};
-// use App\Models\Subject;
-// use App\Models\User;
 use Illuminate\Http\Request;
 
 class AttendanceController extends Controller

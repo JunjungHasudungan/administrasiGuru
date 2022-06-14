@@ -5,9 +5,7 @@ namespace App\Http\Controllers\Teacher;
 use App\Helpers\Method;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminstrationRequest;
-use App\Models\Administration;
-use App\Models\Classroom;
-use App\Models\Subject;
+use App\Models\{Administration, Classroom, Subject};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

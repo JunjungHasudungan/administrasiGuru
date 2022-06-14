@@ -2,15 +2,11 @@
 
 namespace App\Models;
 
-use App\Helpers\Completeness;
-use App\Helpers\StatusCheck;
-use App\Helpers\Method;
-use App\Models\Classroom;
-use App\Models\Subject;
+use App\Helpers\{Completeness, StatusCheck, Method};
+use App\Models\{Classroom, Subject};
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\{BelongsTo, HasMany};
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 

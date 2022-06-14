@@ -4,12 +4,9 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTeacherAdministrationRequest;
-use App\Models\Classroom;
-use App\Models\Subject;
-use App\Models\TeacherAdministration;
+use App\Models\{Classroom, Subject, TeacherAdministration};
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\{Auth, DB};
 
 class TeacherAdministrationController extends Controller
 {
