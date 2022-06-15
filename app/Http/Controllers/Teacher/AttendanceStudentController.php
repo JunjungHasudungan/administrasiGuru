@@ -11,17 +11,15 @@ class AttendanceStudentController extends Controller
 {
     public function index()
     {
-        $subjectTeachers = Subject::where('teacher_id', auth()->id())
-        ->with([ 'classrooms'])->orderBy('name', 'asc')->get();
+        $attendances = Subject::where('teacher_id', auth()->id())->with('classrooms')->get();
 
-        return view('teacher.attendanceStudent.index', compact('subjectTeachers'));
+        // dd($attendances);
+        return view('teacher.attendanceStudent.index', compact('attendances'));
     }
 
-    public function create(Classroom $classroom)
+    public function create()
     {
-        $students = User::where('classroo_id', $classroom)->pluck('name', 'id');
-
-        dd($students);
+        return view('teacher.attendanceStudent.');
     }
 
     public function store(Request $request)
@@ -31,8 +29,9 @@ class AttendanceStudentController extends Controller
 
     public function show(Attendance $attendanceStudent)
     {
-        $studentClassroom = User::where('classroom_id', $attendanceStudent);
-        dd($studentClassroom);
+        // $studentClassroom = User::where('classroom_id', $attendanceStudent);
+       
+        dd($attendanceStudent);
 
         return view('teacher.attendanceStudent.show', compact('attendanceStudent'));
     }

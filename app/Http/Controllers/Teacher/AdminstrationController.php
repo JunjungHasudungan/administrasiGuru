@@ -25,13 +25,11 @@ class AdminstrationController extends Controller
 
     public function create()
     {
-        $idUser = Auth::user()->id;
-
-        $subjects = Subject::where('teacher_id', $idUser)->pluck('name', 'id');
+        $subjects = Subject::where('teacher_id', auth()->id())->pluck('name', 'id');
 
         $classrooms = Classroom::all( )->pluck('name_class', 'id');  
 
-        return view('teacher.administrations.create', compact('classrooms', 'subjects', 'idUser'));
+        return view('teacher.administrations.create', compact('classrooms', 'subjects'));
     }
 
     public function store(AdminstrationRequest $request)

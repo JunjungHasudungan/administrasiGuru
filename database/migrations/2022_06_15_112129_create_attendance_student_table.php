@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Attendance;
 use App\Models\Classroom;
 use App\Models\Subject;
 use Illuminate\Database\Migrations\Migration;
@@ -15,15 +16,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('attendances', function (Blueprint $table) {
+        Schema::create('attendance_student', function (Blueprint $table) {
             $table->id();
-            $table->integer('attendance')->default(1);
-            $table->string('description', 100)->nullable();
+            $table->foreignIdFor(Attendance::class);
             $table->foreignIdFor(Subject::class);
-            $table->foreignIdFor(Classroom::class);
-            $table->unsignedBigInteger('teacher_id');
-            $table->foreign('teacher_id')->references('id')->on('users')->onDelete('cascade');
-
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -35,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attendances');
+        Schema::dropIfExists('attendance_student');
     }
 };

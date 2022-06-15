@@ -13,6 +13,7 @@ class Attendance extends Model
     protected $table = 'attendances';
 
     protected $filable = [
+        'classroom_id',
         'student_id',
         'subject_id',
         'description',
@@ -24,9 +25,14 @@ class Attendance extends Model
         return $this->belongsTo(User::class, 'student_id');
     }
 
-    public function subject()
+    public function subjects()
     {
-        return $this->belongsTo(Subject::class, 'subject_id', 'id');
+        return $this->belongsTo(Subject::class, 'subject_id');
+    }
+
+    public function classrooms()
+    {
+        return $this->belongsTo(Classroom::class, 'classroom_id', 'id');
     }
 
     public function subjectStudent()

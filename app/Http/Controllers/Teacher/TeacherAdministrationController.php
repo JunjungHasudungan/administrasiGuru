@@ -13,8 +13,7 @@ class TeacherAdministrationController extends Controller
 
     public function index()
     {
-        $idTeacher = Auth::user()->id;
-        $teacherAdministration = TeacherAdministration::where('teacher_id', $idTeacher)->get();
+        $teacherAdministration = TeacherAdministration::where('teacher_id', auth()->id())->get();
         // $teacherAdministration = TeacherAdministration::where('teacher_id', $idTeacher)->get();
        
         return view('teacher.teacherAdministration.index', compact('teacherAdministration'));
@@ -22,11 +21,9 @@ class TeacherAdministrationController extends Controller
 
     public function create()
     {
-        $idTeacher = Auth::user()->id;
-     
         $classrooms  = Classroom::all()->pluck('name_class', 'id');
         
-        $subjects = Subject::where('teacher_id', $idTeacher)->pluck('name', 'id');
+        $subjects = Subject::where('teacher_id', auth()->id())->pluck('name', 'id');
         
         // dd($classrooms);
          return view('teacher.teacherAdministration.create', compact('subjects', 'classrooms'));   

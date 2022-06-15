@@ -12,6 +12,7 @@ use Illuminate\Notifications\Notifiable;
 // use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\{HasProfilePhoto, HasTeams};
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Builder;
 
 class User extends Authenticatable
 {
@@ -153,5 +154,12 @@ class User extends Authenticatable
     public function getIsBaruAttribute():bool
     {
         return (int) $this->is_active === RoleStatus::RoleStatus['Baru'];
+    }
+
+    protected static function booted()
+    {
+        static::addGlobalScope('user_filter', function (Builder $builder) {
+            $builder->where('role_id',3);
+        });
     }
 }

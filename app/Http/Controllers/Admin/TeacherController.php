@@ -27,12 +27,13 @@ class TeacherController extends Controller
 
     public function create()
     {
-        $teachers = User::where('role_id', 3)->pluck('name', 'id');
+        $teachers = User::all()->pluck('name', 'id');
 
         $majors = Major::all()->pluck('title', 'id');
         
         $subjects = Subject::all()->pluck('name', 'id');
 
+        dd($teachers);
         return view('admin.teachers.create', compact('teachers', 'majors', 'subjects'));
     }
 

@@ -59,7 +59,7 @@
                             </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
-                            @forelse ($subjectTeachers as $key => $subject)
+                            @forelse ($attendances as $key => $item)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                         <span class="px-2 inline-flex text-xs text-center  leading-5 lowercase font-semibold rounded-full  text-green-800">
@@ -69,14 +69,14 @@
 
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                         <span class="px-2 inline-flex text-xs text-left ml-48 leading-5 lowercase font-semibold rounded-full  text-green-800">
-                                            {{$subject->name ?? ''}}
+                                            {{$item->name ?? '' ?? ''}}
                                         </span>
                                     </td>
 
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                        @forelse ($subject->classrooms as $classroom)
+                                        @forelse ($item->classrooms as $classroom)
                                             <span class="px-2 inline-flex text-xs text-left leading-5 lowercase font-semibold rounded-full bg-green-100  text-green-800">
-                                                <a href="{{route('teacher.attendanceStudent.show', $classroom->id)}}" class="hover:text-primary-600  hover:font-bold">
+                                                <a href="{{route('teacher.attendanceStudent.create')}}" class="hover:text-primary-600  hover:font-bold">
                                                     {{$classroom->name_class ?? ''}}
                                                   </a>
                                             </span>
@@ -85,11 +85,11 @@
                                             Kelas Belum disertakan.
                                         </span>
                                         @endforelse
-                                        {{-- {{ $subject->email }} --}}
+                                        {{-- {{ $item->email }} --}}
                                     </td>
 
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                        <a href="{{ route('teacher.attendanceStudent.show', $subject->id) }}"
+                                        <a href="{{ route('teacher.attendanceStudent.show', $item->id) }}"
                                             class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium bg-gray-400 tracking-wide text-white transition border border-transparent rounded-full shadow select-none bg-lightBlue-500 focus:border-lightBlue-600 hover:bg-lightBlue-600 focus:outline-none focus:ring focus:ring-lightBlue-500 focus:ring-opacity-30 disabled:opacity-50">
                                             <svg class="w-4 h-4 -mx-2"
                                               xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@
                                             </svg>
                                           </a>
 
-                                          <a href="{{ route('teacher.attendanceStudent.edit', $subject->id) }}"
+                                          <a href="{{ route('teacher.attendanceStudent.edit', $item->id) }}"
                                             class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide text-white transition bg-yellow-500 border border-transparent rounded-full shadow select-none focus:border-yellow-600 hover:bg-yellow-600 focus:outline-none focus:ring focus:ring-yellow-500 focus:ring-opacity-30 disabled:opacity-50">
                                             <svg class="w-4 h-4 -mx-2"
                                               xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +110,7 @@
                                               <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                                             </svg>
                                           </a>
-                                          <form action="{{ route('teacher.attendanceStudent.destroy', $subject->id) }}" class="inline" method="post" onsubmit="return confirm('Yakin untuk menghapus?'); ">
+                                          <form action="{{ route('teacher.attendanceStudent.destroy', $item->id) }}" class="inline" method="post" onsubmit="return confirm('Yakin untuk menghapus?'); ">
                                             @csrf
                                             @method('delete')
                                             <button type="submit"
