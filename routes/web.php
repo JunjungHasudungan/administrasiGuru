@@ -11,20 +11,16 @@ use App\Http\Controllers\Admin\{
     ClassroomController, 
     TeacherAdministrationController, 
     UserController, 
-    AttendanceController
+    // AttendanceController
 };
-// use App\Http\Controllers\Admin\TeacherController;
-// use App\Http\Controllers\Admin\ClassroomController;
-// use App\Http\Controllers\Admin\TeacherAdministrationController;
-// use App\Http\Controllers\Admin\UserController;
-// use App\Http\Controllers\Student\AttendanceController;
 use App\Http\Controllers\Teacher\SubjectController as TeacherSubject;
 use App\Http\Controllers\Teacher\SchedulesController as TeacherShedule;
 use App\Http\Controllers\Teacher\TeacherAdministrationController as TeacherAdministration;
-use App\Http\Controllers\Teacher\AttendanceController as AttendaceStudent;
+use App\Http\Controllers\Teacher\AttendanceStudentController;
 // use App\Http\Controllers\Teacher\AdminstrationController;
 use App\Http\Controllers\Student\LessonController as StudentSubject;
 use App\Http\Controllers\Student\SubjectStudentController as SubjectController;
+use App\Http\Controllers\Student\AttendanceController;
 use App\Http\Livewire\Teacher\Subject;
 use App\Models\LessonTimetable;
 
@@ -61,7 +57,7 @@ Route::group(['middleware' => 'auth'], function() {
            'subjects'                   => TeacherSubject::class,
            'schedules'                  => TeacherShedule::class,
            'administrations'            => \App\Http\Controllers\Teacher\AdminstrationController::class,
-           'attendanceStudent'         => AttendaceStudent::class,
+           'attendanceStudent'         => AttendanceStudentController::class,
         ]);
    });
 
