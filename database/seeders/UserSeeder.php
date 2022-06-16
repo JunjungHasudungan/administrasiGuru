@@ -716,7 +716,7 @@ class UserSeeder extends Seeder
                 'id'                    => 59,
                 'name'                  => 'William Chrisman', // NEW TEACHER
                 'email'                 => 'williamChrisman@gmail.com',
-                'password'              => 'administrator',
+                'password'              => bcrypt('administrator'),
                 'role_id'               => 1,
                 // 'major_id'              => 0,
                 'teacher_major'         => null,

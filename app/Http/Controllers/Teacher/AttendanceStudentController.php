@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{Subject, Attendance, Classroom, User};
+use App\Models\{Subject, Attendance, Classroom, User, Major};
 
 
 class AttendanceStudentController extends Controller
@@ -19,7 +19,12 @@ class AttendanceStudentController extends Controller
 
     public function create()
     {
-        return view('teacher.attendanceStudent.');
+        // User::where('role_id', 2)->with
+        // $attendances = Attendance::with('classrooms')->get();
+
+
+        // dd($majors);
+        return view('teacher.attendanceStudent.create');
     }
 
     public function store(Request $request)

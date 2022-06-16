@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Attendance;
 use App\Models\Classroom;
 use App\Models\Major;
 use App\Models\Role;
@@ -29,6 +30,7 @@ return new class extends Migration
             $table->unsignedBigInteger('teacher_major')->nullable();
             $table->unsignedBigInteger('headOfDepartement')->nullable();
             $table->foreign('headOfDepartement')->references('id')->on('majors')->onDelete('cascade');
+            $table->foreignIdFor(Attendance::class)->nullable();
         });
     }
 
