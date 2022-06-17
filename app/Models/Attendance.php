@@ -13,11 +13,11 @@ class Attendance extends Model
     protected $table = 'attendances';
 
     protected $filable = [
-        'classroom_id',
-        'student_id',
+        // 'classroom_id',
+        'user_id',
         'subject_id',
-        'description',
-        'attendance',
+        // 'description',
+        // 'attendance',
     ];
 
     public function student()

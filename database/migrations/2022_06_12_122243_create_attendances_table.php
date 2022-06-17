@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\Classroom;
-use App\Models\Subject;
+// use App\Models\Subject;
+use App\Models\{Classroom, Subject, User};
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -21,8 +21,10 @@ return new class extends Migration
             $table->string('description', 100)->nullable();
             $table->foreignIdFor(Subject::class);
             $table->foreignIdFor(Classroom::class);
-            $table->unsignedBigInteger('student_id');
-            $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignIdFor(User::class); //teacher
+            $table->date('date');
+            // $table->unsignedBigInteger('student_id');
+            // $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();
         });

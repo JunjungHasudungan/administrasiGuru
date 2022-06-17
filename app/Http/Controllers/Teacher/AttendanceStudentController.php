@@ -9,21 +9,21 @@ use App\Models\{Subject, Attendance, Classroom, User, Major};
 
 class AttendanceStudentController extends Controller
 {
+ 
+
     public function index()
     {
         $attendances = Subject::where('teacher_id', auth()->id())->with('classrooms')->get();
-
+        // Classroom::with()
         // dd($attendances);
         return view('teacher.attendanceStudent.index', compact('attendances'));
     }
 
     public function create()
     {
-        // User::where('role_id', 2)->with
-        // $attendances = Attendance::with('classrooms')->get();
+        $students = User::where('classroom_id', auth()->user()->role_id == 2)->pluck('name', 'id');
 
-
-        // dd($majors);
+        // dd($students);
         return view('teacher.attendanceStudent.create');
     }
 

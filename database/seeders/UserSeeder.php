@@ -723,6 +723,17 @@ class UserSeeder extends Seeder
                 'major_id'              => null,
                 'classroom_id'          => null,
                 'is_active'             => 1,        
+            ],[
+                'id'                    => 60,
+                'name'                  => 'Arief purnomo', // NEW TEACHER
+                'email'                 => 'AriefPurnomo02@gmail.com',
+                'password'              => bcrypt('administrator'),
+                'role_id'               => 1,
+                // 'major_id'              => 0,
+                'teacher_major'         => null,
+                'major_id'              => null,
+                'classroom_id'          => null,
+                'is_active'             => 1,        
             ],
 
         ];

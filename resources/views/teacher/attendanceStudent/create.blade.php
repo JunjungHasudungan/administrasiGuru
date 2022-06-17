@@ -10,11 +10,11 @@
             <form action="{{route('teacher.attendanceStudent.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <ul>
-                    @forelse ($studentSubject as $item )
+                    {{-- @forelse ($studentSubject as $item )
                         <li>{{ $item }}</li>
                     @empty
                         
-                    @endforelse
+                    @endforelse --}}
                 </ul>
             </div>
 
