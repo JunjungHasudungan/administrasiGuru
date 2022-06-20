@@ -76,9 +76,9 @@
                             {{ __('Mata Pelajaran') }}
                         </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{ route('student.attendances.index') }}" :active="request()->routeIs('student.attendances.index')">
+                        {{-- <x-jet-nav-link href="{{ route('student.attendances.index') }}" :active="request()->routeIs('student.attendances.index')">
                             {{ __('Absensi') }}
-                        </x-jet-nav-link>
+                        </x-jet-nav-link> --}}
                     @endif
 
                     @if (auth()->user()->role_id == 3)
@@ -86,9 +86,9 @@
                             {{ __('Mata Pelajaran') }}
                         </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{ route('teacher.attendanceStudent.index') }}" :active="request()->routeIs('teacher.attendanceStudent.index')">
+                        {{-- <x-jet-nav-link href="{{ route('teacher.attendanceStudent.index') }}" :active="request()->routeIs('teacher.attendanceStudent.index')">
                             {{ __('Absensi Siswa') }}
-                        </x-jet-nav-link>
+                        </x-jet-nav-link> --}}
 
                         <x-jet-nav-link href="{{ route('teacher.administrations.index') }}" :active="request()->routeIs('teacher.administrations.index')">
                             {{ __('Administrasi Guru') }}
