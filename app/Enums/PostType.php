@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-// enum PostType
+// enum PostType: String
 // {
 
 // }
