@@ -155,11 +155,4 @@ class User extends Authenticatable
     {
         return (int) $this->is_active === RoleStatus::RoleStatus['Baru'];
     }
-
-    protected static function booted()
-    {
-        static::addGlobalScope('user_filter', function (Builder $builder) {
-            $builder->where('role_id',3);
-        });
-    }
 }
