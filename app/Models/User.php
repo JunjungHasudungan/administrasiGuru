@@ -64,6 +64,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class, 'role_user', 'role_id', 'user_id');
     }
 
+    public function getIsAdminAttribute()
+    {
+        return $this->roles()->where('id', 3)->exists();
+    }
+
     public function role()
     {
         return $this->belongsTo(Role::class, 'role_id', 'id');
@@ -140,6 +145,7 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Attendance::class, 'attendance_id', 'user_id', 'attendance_id');
     }
+
     public function getIsHeadMasterAttribute():bool
     {
         return (int) $this->role_id === RoleCheck::RoleCheck['Kepala Sekolah'];
@@ -156,10 +162,11 @@ class User extends Authenticatable
         return (int) $this->is_active === RoleStatus::RoleStatus['Baru'];
     }
 
-    protected static function booted()
-    {
-        static::addGlobalScope('user_filter', function (Builder $builder) {
-            $builder->where('role_id',3);
-        });
-    }
+    
+    // protected static function booted()
+    // {
+    //     static::addGlobalScope('user_filter', function (Builder $builder) {
+    //         $builder->where('role_id',3);
+    //     });
+    // }
 }
