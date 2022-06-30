@@ -36,11 +36,13 @@ class SubjectController extends Controller
 
     public function show(Subject $subject)
     {
-        $subjectTeacher = Subject::where('teacher_id', auth()->id())->get();
+        // $subjectTeacher = Subject::where('teacher_id', auth()->id())->get();
 
-        $subjectStudent = Subject::with(['studentSubject', 'classrooms'])->get();
+        // $subjectStudent = Subject::with(['studentSubject', 'classrooms'])->get();
 
-        return view('teacher.subjects.show', compact('subject',  'subjectStudent'));
+        $subject->load(['teacherSubject', 'studentSubject', 'classrooms', 'weekDaySubject']);
+
+        return view('teacher.subjects.show', compact('subject'));
     }
 
     public function edit(Subject $subject)

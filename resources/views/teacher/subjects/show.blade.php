@@ -60,7 +60,7 @@
                                         Guru Nata Pelajaran
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{ Auth::user()->name}}
+                                        {{ auth()->user()->name}}
                                     </td>
 
                                 <tr class="border-b">
@@ -86,7 +86,7 @@
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                         @forelse ($subject->studentSubject as $student)
-                                            <span class=" inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                        <span class=" inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
                                                 {{ $student->name ?? ''}}
                                             </span>   
                                         @empty
@@ -96,23 +96,39 @@
                                         @endforelse
                                     </td>
                                 </tr>
+                               
                                 <tr class="border-b">
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 capitalize tracking-wider">
                                         Hari Pembelajaran
                                     </th>
-                                    @forelse ($subject->weekDaySubject as $weekDay)
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                            <span class=" inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                                                {{ $weekDay->name ?? ''}}
-                                            </span> 
+                                            @forelse ($subject->weekDaySubject as $weekDay)
+                                                <span class=" inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                                    {{ $weekDay->name ?? ''}}
+                                                </span> 
+                                                @empty
+                                                    <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800">
+                                                        Hari Pembelajaran belum ada
+                                                    </span>
+                                            @endforelse
                                         </td>
-                                    @empty
+                                </tr>
+
+                                <tr class="border-b">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 capitalize tracking-wider">
+                                        Jam Pembelajaran
+                                    </th>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                            <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800">
-                                                Hari Pembelajaran belum ada
-                                            </span>
+                                            @if ($subject->start_time != null && $subject->end_time != null )
+                                                <span class=" inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                                    {{ $subject->start_time}} - {{$subject->end_time}}
+                                                </span> 
+                                            @else
+                                                <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-yellow-100 text-green-800"> 
+                                                    Jam Pembelajaran belum ada
+                                                </span>
+                                            @endif
                                         </td>
-                                    @endforelse
                                 </tr>
 
                             </table>
