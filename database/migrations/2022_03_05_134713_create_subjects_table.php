@@ -14,8 +14,8 @@ return new class extends Migration
             $table->string('name');
             $table->unsignedBigInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('users');
-            $table->time('start_time')->nullable();
-            $table->time('end_time')->nullable();
+            $table->time('start_time')->default('10.20');
+            $table->time('end_time')->default('12.20');
             $table->timestamps();
         });
     }
