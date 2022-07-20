@@ -2,7 +2,7 @@
 
 ##  Tentang Administrasi Guru
 
-Aplikasi ini dibangun untuk menyelesaikan skripsi teman saya
+Aplikasi ini dibangun untuk kebutuhan sekolah
 
 fitur yang akan dibangun
 - Pembuatan Jurusan
