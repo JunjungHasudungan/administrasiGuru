@@ -34,9 +34,11 @@ class UserController extends Controller
 
         $classrooms = Classroom::all()->pluck('name_class', 'id');
 
-        $subjects = Subject::all()->pluck('name', 'id');
+        $subjects = Subject::orderBy('name', 'asc')->pluck('name', 'id');
 
         $majors = Major::all()->pluck('title', 'id');
+
+        // dd($subjects);
 
         return view('admin.users.create', compact('roles', 'classrooms', 'subjects', 'majors'));
     }

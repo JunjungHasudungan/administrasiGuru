@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Administrasi-Guru'),
+    'name' => env('APP_NAME', 'AdministrasiGuru'),
 
     /*
     |--------------------------------------------------------------------------

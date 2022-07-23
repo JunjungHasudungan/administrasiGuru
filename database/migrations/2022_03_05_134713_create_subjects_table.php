@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('subject_code');
             $table->string('name');
             $table->unsignedBigInteger('teacher_id');
-            $table->foreign('teacher_id')->references('id')->on('users');
+            $table->foreign('teacher_id')->references('id')->on('users')->cascadeOnDelete();
             $table->time('start_time')->default('10.20');
             $table->time('end_time')->default('12.20');
             $table->timestamps();

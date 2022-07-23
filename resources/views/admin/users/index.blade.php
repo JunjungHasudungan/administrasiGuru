@@ -59,6 +59,16 @@
               </form>
           </div>
 
+            @if (session()->has('message'))
+            <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3"
+                role="alert">
+                <div class="flex">
+                    <div>
+                        <p class="text-sm">{{ session('message') }}</p>
+                    </div>
+                </div>
+            </div>
+            @endif
           </div>
 
           <div class="flex flex-col">
@@ -122,7 +132,7 @@
                                               <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                                             </svg>
                                           </a>
-                                          <form action="{{ route('admin.users.destroy', $user->id) }}" class="inline" method="post" onsubmit="return confirm('Yakin untuk menghapus?'); ">
+                                          <form action="{{ route('admin.users.destroy', $user->id) }}" class="inline" method="post" onsubmit="return confirm('Yakin untuk menghapus {{$user->name}}?'); ">
                                             @csrf
                                             @method('delete')
                                             <button type="submit"

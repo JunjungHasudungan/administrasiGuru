@@ -57,7 +57,7 @@ class MajorController extends Controller
 
     public function edit( Major $major)
     {
-        $teacher_major = User::where('teacher_major', '>', 0)->pluck('name', 'id');
+        $teacher_major = User::where('role_id', 3)->orderBy('name', 'asc')->pluck('name', 'id');
 
         $subjects = Subject::all()->pluck('name', 'id');
 

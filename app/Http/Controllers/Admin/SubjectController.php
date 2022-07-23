@@ -28,7 +28,7 @@ class SubjectController extends Controller
 
     public function create()
     {
-        $teachers = User::where('role_id', 3)->pluck('name', 'id');
+        $teachers = User::where('role_id', 3)->orderBy('name', 'asc')->pluck('name', 'id');
 
         $classrooms= Classroom::all()->pluck('name_class', 'id');
 

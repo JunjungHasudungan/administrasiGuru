@@ -35,7 +35,7 @@ class ClassroomController extends Controller
     //    dd($students);
         $majors = Major::all()->pluck('title', 'id');
 
-        $teachers = User::where('role_id', 3)->pluck('name','id');
+        $teachers = User::where('role_id', 3)->orderBy('name', 'asc')->pluck('name','id');
 
         return view('admin.classrooms.create', compact('majors', 'teachers'));
     }
