@@ -20,12 +20,8 @@ return new class extends Migration
             $table->integer('attendance')->default(1);
             $table->string('description', 100)->nullable();
             $table->foreignIdFor(Subject::class);
-            $table->foreignIdFor(Classroom::class);
-            $table->foreignIdFor(User::class); //teacher
-            $table->date('date');
-            // $table->unsignedBigInteger('student_id');
-            // $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade');
-
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('users')->cascadeOnDelete();
             $table->timestamps();
         });
     }

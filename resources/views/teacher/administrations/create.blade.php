@@ -93,7 +93,7 @@
                         <select id="method" name="method" x-model ="method" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
                           @foreach (\App\Helpers\Method::Method_Learning as $key => $value)
                             <option value="{{$value}}" {{old('learning_method') != null ?: 'selected'}}>
-                              {{ \App\Helpers\Method::Method_Learning[$key]}}
+                              {{ $key}}
                           </option>
                         @endforeach
                         </select>

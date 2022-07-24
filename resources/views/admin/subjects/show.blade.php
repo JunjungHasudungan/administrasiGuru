@@ -113,7 +113,7 @@
                                   </td>
                               </tr>
 
-                              <tr class="border-b">
+                              {{-- <tr class="border-b">
                                 <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Hari Pelajaran
                                 </th>
@@ -128,9 +128,9 @@
                                   </div>
                                 @endforelse
                                 </td>
-                              </tr>
+                              </tr> --}}
 
-                              <tr class="border-b">
+                              {{-- <tr class="border-b">
                                 <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Mulai Jam Pembelajaran
                                 </th>
@@ -139,9 +139,9 @@
                                       {{$subject->start_time ?? 'waktu  tidak tersedia'}} 
                                     </span> 
                                 </td>
-                              </tr>
+                              </tr> --}}
 
-                              <tr class="border-b">
+                              {{-- <tr class="border-b">
                                 <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Selesai Jam Pembelajaran
                                 </th>
@@ -150,7 +150,7 @@
                                       {{$subject->end_time ?? 'waktu  tidak tersedia'}} 
                                     </span> 
                                 </td>
-                              </tr>
+                              </tr> --}}
 
                           </table>
                       </div>

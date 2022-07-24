@@ -10,16 +10,9 @@ class Attendance extends Model
 {
     use HasFactory;
 
-    protected $table = 'attendances';
+    protected $guarded = [];
 
-    protected $filable = [
-        // 'classroom_id',
-        'user_id',
-        'subject_id',
-        // 'description',
-        // 'attendance',
-    ];
-
+    
     public function student()
     {
         return $this->belongsTo(User::class, 'student_id');
