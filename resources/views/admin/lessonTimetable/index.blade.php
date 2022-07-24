@@ -27,7 +27,7 @@
         <table class="min-w-full table-auto">
             <thead class="justify-between">
               <tr class="bg-indigo-500 w-full ">
-                <th class="px-7 py-2  border-8 bg-white" >WAKTU</th>
+                <th class="px-7 py-2  border-8 bg-white" >TES</th>
                 @foreach ($weekdays as $day)
                 <th class="text-white  px-7 py-2 border-8" >{{$day}}</th>
                 @endforeach

@@ -16,7 +16,7 @@ class ClassroomController extends Controller
 {
     public function index()
     {   
-        $classrooms = Classroom::with(['students', 'homeworkTeacher','classroomSubject', 'majors'])->latest()
+        $classrooms = Classroom::with(['students', 'homeworkTeacher','classroomSubject', 'major'])->latest()
         ->when(request()->search, function($classrooms){
             $classrooms = $classrooms->where('name_class', 'like', '%' . request()->search . '%');
         })
@@ -64,7 +64,7 @@ class ClassroomController extends Controller
 
         $majors = Major::all()->pluck('title', 'id');
 
-        $classroom->load( 'homeworkTeacher');
+        $classroom->load( 'homeworkTeacher', 'major');
         
         return view('admin.classrooms.edit', compact('classroom', 'majors', 'teachers'));
     }

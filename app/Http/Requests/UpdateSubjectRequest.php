@@ -31,8 +31,8 @@ class UpdateSubjectRequest extends FormRequest
             'classrooms'    => ['required', 'array'],
             'majors.*'      => 'integer',
             'majors'        => ['required', 'array'],
-            'days.*'        => 'integer',
-            'days'          => ['required', 'array'], 
+            // 'days.*'        => 'integer',
+            // 'days'          => ['required', 'array'], 
             // 'start_time'    => '',
             // 'end_time'      => ''
 

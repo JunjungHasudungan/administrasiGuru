@@ -15,8 +15,6 @@ class Subject extends Model
     protected $fillable = [
         'subject_code', 
         'name', 
-        'star_time',
-        'end_time',
         'teacher_id'
     ];
 

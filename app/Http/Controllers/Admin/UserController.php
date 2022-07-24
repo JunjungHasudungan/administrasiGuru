@@ -19,7 +19,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::with(['classrooms','major', 'role', 'subjects', 'subjectStudent', 'majorTeacher'])
+        $users = User::with(['classroom','major', 'role', 'subjects', 'subjectStudent', 'majorTeacher'])
         ->when(request()->search, function($users){
             $users = $users->where('name', 'like', '%'. request()->search . '%');
         })->orderBy('name', 'asc')->paginate(5);
@@ -55,9 +55,10 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        $user->load(['subjects','studentMajor', 'major', 'majorTeacher','subjectStudent', 'teacherSubject']);
+        // dd($user->load('classroomSubject'));
+         $user->load(['subjects','studentMajor', 'major', 'majorTeacher','classroomSubject', 'teacherSubject']);
         
-        // dd($user->load('major'));
+        // dd($s);
         return view('admin.users.show', compact('user'));
     }
 
@@ -69,7 +70,7 @@ class UserController extends Controller
 
         $subjects = Subject::all()->pluck('name', 'id');
 
-        $user->load('classrooms', 'major', 'subjectStudent');
+        $user->load('classroom', 'major', 'subjectStudent');
 
         return view('admin.users.edit', compact('user', 'classrooms', 'majors', 'subjects'));
     }

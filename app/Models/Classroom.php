@@ -21,7 +21,7 @@ class Classroom extends Model
     'description'
     ];
 
-    public function majors()
+    public function major()
     {
         return $this->belongsTo(Major::class, 'major_id');
     }

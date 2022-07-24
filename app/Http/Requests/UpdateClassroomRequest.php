@@ -19,7 +19,7 @@ class UpdateClassroomRequest extends FormRequest
             'major_id'              => 'required',
             'teacher_id'            => 'required',
             'room_number'           => 'required',
-            'description'           => 'nullable|min:15'
+            'description'           => 'nullable'
         ];
     }
 }

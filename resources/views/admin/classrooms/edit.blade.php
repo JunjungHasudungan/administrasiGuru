@@ -92,7 +92,7 @@
                       <div class="relative">
                         <select id="major_id" name="major_id" class="form-multiselect  block capitalize appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control {{ $errors->has('major_id') ? 'is-invalid' : '' }}"  >
                             @foreach ($majors as $id => $major)
-                                <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{  old('major_id') == $id ? 'selected' : ''}}>
+                                <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{ ( $classroom->major ? $classroom->major->id : old('major_id')) == $id ? 'selected' : ''}}>
                                     {{$major}}
                                 </option>
                             @endforeach

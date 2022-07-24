@@ -14,6 +14,6 @@ class PermissionRoleSeeder extends Seeder
     {
         $Permissions = Permission::all();
 
-        Role::findOrFail(3)->permissions()->sync($Permissions->pluck('id'));
+        // Role::findOrFail(3)->permissions()->sync($Permissions->pluck('id'));
     }
 }

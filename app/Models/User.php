@@ -54,7 +54,7 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function classrooms() // kelas siswa
+    public function classroom() // kelas siswa
     {
         return $this->belongsTo(Classroom::class, 'classroom_id', 'id');
     }
@@ -124,6 +124,11 @@ class User extends Authenticatable
     public function subjectStudent()
     {
         return $this->belongsToMany(Subject::class, 'subject_student', 'student_id', 'subject_id',);
+    }
+
+    public function classroomSubject()
+    {
+        return $this->belongsToMany(Classroom::class, 'classroom_subject',  'classroom_id', 'subject_id',);
     }
 
     public function getIsStudentAttribute():bool

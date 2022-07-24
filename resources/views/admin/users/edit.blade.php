@@ -83,7 +83,7 @@
                         <span>Role </span>
                       </label>
                       <div class="relative">
-                        <select name="role_id" x-model="role_id"  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <select name="role_id" x-model="role_id" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                           @foreach (\App\Helpers\RoleCheck::RoleCheck as $key => $value)
                             <option value="{{$value}}" {{old('role', $user->role_id)  != $value ?:  'selected' }}>
                               {{$key}}
@@ -120,7 +120,7 @@
                         <select name="status" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                           @foreach (\App\Helpers\RoleStatus::RoleStatus as $key => $value)
                             <option value="{{$value}}" {{old('status', $user->status) != $value ?:  'selected' }} >
-                              {{ \App\Helpers\RoleStatus::RoleStatus[$key]}}
+                              {{ $key }}
                             </option>
                           @endforeach 
                         </select>
@@ -134,16 +134,16 @@
                         <span>Jurusan </span>
                       </label>
                       <div class="relative">
-                        <select name="major_id" x-model="major_id" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <select id="major_id" name="major_id"  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                           @forelse($majors as $id => $major)
-                            <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{  old('major_id') == $id ? 'selected' : ''}}>{{$major}}</option>
+                            <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{ ($user->major ? $user->major->id : old('major_id')) == $id ? 'selected' : ''}}>{{$major}}</option>
                           @empty
                             <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
                               Data Belum Tersedia.
                             </div>
                           @endforelse
                         </select>
-                            @error('role_id')
+                            @error('major')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -159,7 +159,7 @@
                         <div class="relative">
                           <select id="classroom_id" name="classroom_id" class="form-multiselect  block capitalize appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control {{ $errors->has('classroom_id') ? 'is-invalid' : '' }}"  >
                               @foreach ($classrooms as $id => $classroom)
-                                  <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{  old('classroom_id') == $id ? 'selected' : ''}}>{{$classroom}}</option>
+                                  <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{ ($user->classroom ?  $user->classroom->id : old('classroom_id')) == $id ? 'selected' : ''}}>{{$classroom}}</option>
                               @endforeach
                           </select>
                               @error('classroom_id')

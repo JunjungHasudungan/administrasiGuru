@@ -78,14 +78,15 @@
                                     </td>
                                 </tr>
                                 
+                                {{-- role_2 === guru --}}
+                                @if ($user->role_id === 3)
+                                
                                 <tr class="border-b">
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Mata Pelajaran
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{-- role_2 === siswa --}}
-                                        @if ($user->role_id === 2) 
-                                            @forelse ($user->subjectStudent as $subject)
+                                            @forelse ($user->subjects as $subject)
                                                 <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
                                                     <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
                                                         {{ $subject->name ?? ''}}
@@ -96,28 +97,38 @@
                                                     Tidak Mata Pelajaran
                                                 </div>
                                         @endforelse
-                                            {{-- role_id === guru --}}
-                                        @elseif ($user->role_id === 3)
+                                    </td>
+                                </tr>
+                                @else
+                                    <div class="text-white p-3 ">
+
+                                    </div>
+                                @endif
+                               
+                                {{-- @if ($user->role_id === 3) 
+                                <tr class="border-b">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Mata Pelajaran
+                                    </th>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                             @forelse ($user->subjects as $subject)
-                                                    <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
-                                                        <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
-                                                            {{ $subject->name ?? ''}}
-                                                        </a>
-                                                    </span> 
-                                                @empty
-                                                    <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                                                        <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
-                                                            Tidak Mata Pelajaran
-                                                        </a>
-                                                    </div>
-                                            @endforelse
+                                                <span class="px-2 inline-flex text-xs leading-5 lowercase font-semibold rounded-full bg-green-100 text-green-800">
+                                                    <a href="{{route('admin.subjects.index')}}" class="no-underline hover:underline">
+                                                        {{ $subject->name ?? ''}}
+                                                    </a>
+                                                </span> 
+                                            @empty
+                                                <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                                    Tidak Mata Pelajaran
+                                                </div>
+                                        @endforelse
                                         @else
-                                        <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                                            Tidak Mata Pelajaran
+                                        <div class="text-white p-3 ">
+
                                         </div>
                                         @endif
                                     </td>
-                                </tr>
+                                </tr> --}}
 
                                 @if ($user->role_id === 2)
                                     <tr class="border-b" x-data="{role_id: 2}">
@@ -127,7 +138,7 @@
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200" >
                                                 <span class="px-2 inline-flex text-xs lowercase leading-5 font-semibold rounded-full bg-green-100 text-green-800" >
                                                     <a href="{{route('admin.classrooms.index')}}" class="no-underline hover:underline">
-                                                        {{ $user->classrooms->name_class ?? ''}}
+                                                        {{ $user->classroom->name_class ?? ''}}
                                                     </a> 
                                                 </span>
                                         </td>

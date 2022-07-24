@@ -17,27 +17,15 @@ class RoleSeeder extends Seeder
             ],
             [
                 'id'    => 2,
-                'name'  => 'student'
+                'name'  => 'siswa'
             ],
             [
                 'id'    => 3,
-                'name'  => 'teacher'
+                'name'  => 'guru'
             ],
             [
                 'id'    => 4,
                 'name'  => 'Kepala Sekolah'
-            ],
-            [
-                'id'    => 5,
-                'name'  => 'wali kelas'
-            ],
-            [
-                'id'    => 6,
-                'name'  => 'kepala jurusan'
-            ],
-            [
-                'id'    => 7,
-                'name'  => 'Admin Operator'
             ],
         ];
 
