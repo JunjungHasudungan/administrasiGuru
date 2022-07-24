@@ -56,17 +56,18 @@
                             {{ __('Mata Pelajaran') }}
                         </x-jet-nav-link>
 
-                        {{-- <x-jet-nav-link href="{{ route('admin.schedules.index') }}" :active="request()->routeIs('admin.schedules.index')">
-                            {{ __('Jadwal Mata Pelajaran') }}
-                        </x-jet-nav-link> --}}
-
+                        
                         <x-jet-nav-link href="{{ route('admin.majors.index') }}" :active="request()->routeIs('admin.majors.index')">
                             {{ __('Jurusan') }}
                         </x-jet-nav-link>
-
+                        
                         <x-jet-nav-link href="{{ route('admin.classrooms.index') }}" :active="request()->routeIs('admin.classrooms.index')">
                             {{ __('Kelas') }}
                         </x-jet-nav-link>
+
+                        {{-- <x-jet-nav-link href="{{ route('posts') }}" :active="request()->routeIs('posts')">
+                            {{ __('Post') }}
+                        </x-jet-nav-link> --}}
 
 
                     @endif

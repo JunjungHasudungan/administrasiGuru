@@ -33,8 +33,8 @@ class UpdateSubjectRequest extends FormRequest
             'majors'        => ['required', 'array'],
             'days.*'        => 'integer',
             'days'          => ['required', 'array'], 
-            'start_time'    => '',
-            'end_time'      => ''
+            // 'start_time'    => '',
+            // 'end_time'      => ''
 
         ];
     }

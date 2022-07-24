@@ -24,6 +24,9 @@ use App\Http\Controllers\Student\AttendanceController;
 use App\Http\Livewire\Teacher\Subject;
 use App\Models\LessonTimetable;
 
+// using livewire
+use App\Http\Livewire\Major;
+use App\Http\Livewire\Major\Major as MajorMajor;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +65,8 @@ Route::group(['middleware' => 'auth'], function() {
    });
 
     Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
+
+
         Route::resources([
             'subjects'                  => AdminSubject::class,
             'schedules'                 => TimeTableSubject::class,

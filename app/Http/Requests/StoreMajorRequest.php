@@ -29,8 +29,8 @@ class StoreMajorRequest extends FormRequest
             'head_of_departement'       => 'required',
             'teachers.*'                => 'integer',
             'teachers'                  => ['required', 'array'],
-            'classrooms.*'              => 'integer',
-            'classrooms'                => ['required', 'array'],
+            // 'classrooms.*'              => 'integer',
+            // 'classrooms'                => ['required', 'array'],
 
         ];
     }
