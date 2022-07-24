@@ -2,9 +2,10 @@
 
 ##  Tentang Administrasi Guru
 
-Aplikasi ini dibangun untuk kebutuhan sekolah
+Aplikasi ini dibangun untuk kebutuhan latihan
 
-fitur yang akan dibangun
+fitur yang dibangun
+- Pembuatan User
 - Pembuatan Jurusan
 - Pembuatan Kelas
 - Pembuatan Mata Pelajaran
@@ -13,5 +14,5 @@ fitur yang akan dibangun
 
 ### Profile Penulis
 
-- **[jung_doeng](https://twitter.com/jung_doeng)**
+- **[Hasudungan Sitorus](https://twitter.com/jung_doeng)**
 

@@ -122,8 +122,9 @@
                             <span>Status </span>
                         </label>
                         <select name="status" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                            <option value="0">Pindahan</option>
-                            <option value="1">Baru</option>
+                            @foreach (\App\Helpers\RoleStatus::RoleStatus as $key => $value) 
+                                <option value="{{$value}}" {{old('status' != $value ?: 'selected')}} >{{$key}}</option>
+                            @endforeach
                         </select>
                     </div>
 
