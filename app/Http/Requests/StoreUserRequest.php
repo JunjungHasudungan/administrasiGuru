@@ -26,8 +26,6 @@ class StoreUserRequest extends FormRequest
             'classroom_id'              => 'nullable',
             'status'                    => 'required',
             'major_id'                  => 'nullable',
-            'subjects.*'                => ['nullable', 'integer'],
-            'subjects'                  => ['nullable', 'array'],
             'student_address'           => 'nullable',
             'student_licence_number'    => 'nullable',
             'teacher_qualifications'    => 'nullable',

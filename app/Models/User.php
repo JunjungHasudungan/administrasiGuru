@@ -141,21 +141,10 @@ class User extends Authenticatable
         return (int) $this->role_id === RoleCheck::RoleCheck['Guru'];
     }
 
-    public function getIsKurikulumAttribute():bool
-    {
-        return (int) $this->role_id === RoleCheck::RoleCheck['Kurikulum'];
-    }
-
     public function studentAttendance()
     {
         return $this->belongsToMany(Attendance::class, 'attendance_id', 'user_id', 'attendance_id');
     }
-
-    public function getIsHeadMasterAttribute():bool
-    {
-        return (int) $this->role_id === RoleCheck::RoleCheck['Kepala Sekolah'];
-    }
-
     
     public function getIsPindahanAttribute():bool
     {

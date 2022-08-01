@@ -34,20 +34,16 @@ class UserController extends Controller
 
         $classrooms = Classroom::all()->pluck('name_class', 'id');
 
-        $subjects = Subject::orderBy('name', 'asc')->pluck('name', 'id');
-
         $majors = Major::all()->pluck('title', 'id');
 
-        // dd($subjects);
-
-        return view('admin.users.create', compact('roles', 'classrooms', 'subjects', 'majors'));
+        return view('admin.users.create', compact('roles', 'classrooms', 'majors'));
     }
 
     public function store(StoreUserRequest $request)
     {
         $user = User::create($request->all());
 
-        $user->subjectStudent()->sync($request->input('subjects', []));
+        // $user->subjectStudent()->sync($request->input('subjects', []));
 
         // dd($user);
         return redirect()->route('admin.users.index')->with(['success' => 'Data Berhasil Disimpan!']);
@@ -68,11 +64,12 @@ class UserController extends Controller
 
         $majors = Major::all()->pluck('title', 'id');
 
-        $subjects = Subject::all()->pluck('name', 'id');
+        // $subjects = Subject::all()->pluck('name', 'id');
+        
+        // dd($user->load('role'));
+        $user->load('role', 'classroom', 'major', 'subjectStudent');
 
-        $user->load('classroom', 'major', 'subjectStudent');
-
-        return view('admin.users.edit', compact('user', 'classrooms', 'majors', 'subjects'));
+        return view('admin.users.edit', compact( 'user', 'classrooms', 'majors', 'subjects'));
     }
 
     public function update(UpdateUserRequest $request, User $user)

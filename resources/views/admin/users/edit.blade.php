@@ -84,9 +84,9 @@
                       </label>
                       <div class="relative">
                         <select name="role_id" x-model="role_id" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                          @foreach (\App\Helpers\RoleCheck::RoleCheck as $key => $value)
-                            <option value="{{$value}}" {{old('role', $user->role_id)  != $value ?:  'selected' }}>
-                              {{$key}}
+                          @foreach (\App\Helpers\RoleCheck::RoleCheck as $id => $role)
+                            <option  class="font-normal hover:font-bold capitalize" value="{{old('role_id')}}" {{ ( $user->role ? $user->role->id : old('role_id')) == $id ?  'selected' : '' }}>
+                              {{ $id }}
                             </option>
                           @endforeach
                         </select>
@@ -127,7 +127,7 @@
                     </div>
 
                 </div>
-
+                
                 <div class="flex flex-wrap -mx-3 mb-2 mt-5" x-show = "role_id == 2">
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
@@ -171,7 +171,7 @@
                         </div>
                       </div>
 
-                      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0" x-show="role_id==2">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                             <span>Nomor Induk Siswa </span>
                         </label>
@@ -184,6 +184,7 @@
                     </div>
 
                 </div>
+
 
 
                 <div class="flex flex-wrap -mx-3 mb-2 mt-5" x-show="role_id == 2">

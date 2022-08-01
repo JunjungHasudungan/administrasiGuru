@@ -41,6 +41,7 @@ use App\Http\Livewire\Major\Major as MajorMajor;
 */
 
 Route::redirect('/', '/login');
+// Route::redirect('register', '/register');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

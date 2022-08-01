@@ -51,7 +51,7 @@
                 <x-jet-label for="teacher_qualifications" value="{{ __('Qualifications') }}" />
                 <x-jet-input id="teacher_qualifications" class="block w-full mt-1" type="text" :value="old('teacher_qualifications')" name="teacher_qualifications" />
             </div>
-
+{{-- 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
                     <x-jet-label for="terms">
@@ -67,7 +67,9 @@
                         </div>
                     </x-jet-label>
                 </div>
-            @endif
+            @endif --}}
+
+{{-- anastasyaadelia --}}
 
             <div class="flex items-center justify-end mt-4">
                 <a class="text-sm text-gray-600 underline hover:text-gray-900" href="{{ route('login') }}">
