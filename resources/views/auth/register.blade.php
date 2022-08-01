@@ -32,8 +32,8 @@
             <div class="mt-4">
                 <x-jet-label for="role_id" value="{{ __('Register as:') }}" />
                 <select name="role_id" x-model="role_id" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                    <option value="2">Student</option>
-                    <option value="3">Teacher</option>
+                    <option value="2">Siswa</option>
+                    <option value="3">Guru</option>
                 </select>
             </div>
 
