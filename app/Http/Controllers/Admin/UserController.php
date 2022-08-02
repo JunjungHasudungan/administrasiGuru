@@ -13,6 +13,7 @@ use App\Models\{
     };
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -39,12 +40,26 @@ class UserController extends Controller
         return view('admin.users.create', compact('roles', 'classrooms', 'majors'));
     }
 
-    public function store(StoreUserRequest $request)
+    public function store(Request $request)
     {
-        $user = User::create($request->all());
+        // $user = User::create($request->all());
+        $user = new User();
 
+        $user->create([
+            'name'                      => $request['name'],
+            'email'                     => $request['email'],
+            'password'                  => Hash::make($request['password']),
+            'role_id'                   => $request['role_id'],
+            'student_address'           => $request['student_address'] ?? null,
+            'student_licence_number'    => $request['student_licence_number'] ?? null,
+            'teacher_qualifications'    => $request['teacher_qualifications'] ?? null,
+            'classroom_id'              => $request['classroom_id'] ?? null,
+            'status'                    => $request['status'] ?? null,
+            'major_id'                  => $request['major_id'] ?? null,
+        ]);
         // $user->subjectStudent()->sync($request->input('subjects', []));
 
+        // rendiSiregar
         // dd($user);
         return redirect()->route('admin.users.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }

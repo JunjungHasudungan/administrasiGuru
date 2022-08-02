@@ -34,6 +34,8 @@
           </div>
         </div>
 
+{{-- anastasyaadelia --}}
+
     <div class="container mx-auto mt-5 mb-10">
         <div class="bg-white p-5 rounded shadow-sm">
             <form action="{{route('admin.users.store')}}" method="POST" x-data="{role_id: 2}" enctype="multipart/form-data">
@@ -63,9 +65,9 @@
 
 {{-- anastasyaadelia --}}
 
-                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0" x-data="{ showPassword: false }" >
                         <x-jet-label for="password" value="{{ __('Password') }}" />
-                        <x-jet-input id="password" class="block w-full mt-1" type="password" name="password" required autocomplete="new-password" />
+                        <x-jet-input id="password" class="block w-full mt-1" type="password" name="password"  x-bind:type="showPassword ? 'text' : 'password'"  required autocomplete="new-password" />
                         @if($errors->has('password'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('password') }}
@@ -78,7 +80,7 @@
 
                 <div class="flex flex-wrap -mx-3 mb-2 mt-5">
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                        <x-jet-label for="role_id" value="{{ __('Register as:') }}" />
+                        <x-jet-label for="role_id" value="{{ __('Role') }}" />
                       <div class="relative">
                         <select name="role_id" x-model="role_id" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                             @foreach ($roles as $id => $role)
