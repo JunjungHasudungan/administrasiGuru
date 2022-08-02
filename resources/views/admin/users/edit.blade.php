@@ -41,10 +41,8 @@
                 @csrf
                 <div class="flex flex-wrap -mx-3 mb-2">
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
-                            <span>Nama </span>
-                        </label>
-                        <input id="name" type="text" name="name" value="{{old('name', $user->name)}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('name')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
+                      <x-jet-label for="name" value="{{ __('Nama') }}" />
+                      <x-jet-input id="name" class="block w-full mt-1" type="text" name="name" :value="old('name', $user->name)" required autofocus autocomplete="name" />
                         @if($errors->has('name'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('name') }}
@@ -53,10 +51,8 @@
                     </div>
 
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
-                            <span>Email</span>
-                        </label>
-                        <input id="email" type="text" name="email" value="{{old('email', $user->email) }}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('email')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
+                      <x-jet-label for="email" value="{{ __('Email') }}" />
+                      <x-jet-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email', $user->email)" required />
                         @if($errors->has('email'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('email') }}
@@ -65,9 +61,7 @@
                     </div>
 
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
-                            <span>Password</span>
-                        </label>
+                      <x-jet-label for="password" value="{{ __('Password') }}" />
                         <input id="password" type="text" name="password" value="{{old('password')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('password')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
                         @if($errors->has('password'))
                             <div class="invalid-feedback">
@@ -79,13 +73,11 @@
 
                 <div class="flex flex-wrap -mx-3 mb-2 mt-5">
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                        <span>Role </span>
-                      </label>
+                      <x-jet-label for="role_id" value="{{ __('Role') }}" />
                       <div class="relative">
                         <select name="role_id" x-model="role_id" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                           @foreach (\App\Helpers\RoleCheck::RoleCheck as $id => $role)
-                            <option  class="font-normal hover:font-bold capitalize" value="{{old('role_id')}}" {{ ( $user->role ? $user->role->id : old('role_id')) == $id ?  'selected' : '' }}>
+                          <option value="{{$role}}" {{old('role_id', $user->role_id) != $role ?:  'selected' }} >
                               {{ $id }}
                             </option>
                           @endforeach
@@ -100,10 +92,8 @@
                     </div>
 
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
-                          <span>Alamat </span>
-                      </label>
-                      <input id="student_address" type="text" name="student_address" value="{{old('student_address', $user->student_address)}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('student_address')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
+                      <x-jet-label for="student_address" value="{{ __('Alamat') }}" />
+                      <x-jet-input id="student_address" class="block w-full mt-1" type="text" :value="old('student_address', $user->student_address)" name="student_address" />
                       @if($errors->has('student_address'))
                           <div class="invalid-feedback">
                               {{ $errors->first('student_address') }}
@@ -114,9 +104,7 @@
                     
 
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
-                            <span>Status </span>
-                        </label>
+                      <x-jet-label for="status" value="{{ __('Status') }}" />
                         <select name="status" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                           @foreach (\App\Helpers\RoleStatus::RoleStatus as $key => $value)
                             <option value="{{$value}}" {{old('status', $user->status) != $value ?:  'selected' }} >
@@ -130,9 +118,7 @@
                 
                 <div class="flex flex-wrap -mx-3 mb-2 mt-5" x-show = "role_id == 2">
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                        <span>Jurusan </span>
-                      </label>
+                      <x-jet-label for="major_id" value="{{ __('Jurusan') }}" />
                       <div class="relative">
                         <select id="major_id" name="major_id"  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                           @forelse($majors as $id => $major)
@@ -153,14 +139,16 @@
                     </div>
 
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0" x-show="role_id == 2">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                          <span>KELAS </span>
-                        </label>
+                      <x-jet-label for="classroom_id" value="{{ __('Kelas') }}" />
                         <div class="relative">
-                          <select id="classroom_id" name="classroom_id" class="form-multiselect  block capitalize appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control {{ $errors->has('classroom_id') ? 'is-invalid' : '' }}"  >
-                              @foreach ($classrooms as $id => $classroom)
-                                  <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{ ($user->classroom ?  $user->classroom->id : old('classroom_id')) == $id ? 'selected' : ''}}>{{$classroom}}</option>
-                              @endforeach
+                          <select id="major_id" name="major_id"  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                            @forelse($classrooms as $id => $classroom)
+                              <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{ ($user->classroom ? $user->classroom->id : old('classroom_id')) == $id ? 'selected' : ''}}>{{$classroom}}</option>
+                            @empty
+                              <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
+                                Data Belum Tersedia.
+                              </div>
+                            @endforelse
                           </select>
                               @error('classroom_id')
                                   <p class="text-sm text-red-600">{{ $message }}</p>
@@ -172,10 +160,9 @@
                       </div>
 
                       <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0" x-show="role_id==2">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
-                            <span>Nomor Induk Siswa </span>
-                        </label>
-                        <input id="student_licence_number" type="text" name="student_licence_number" value="{{old('student_licence_number', $user->student_licence_number)}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('student_licence_number')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required>
+                        <x-jet-label for="student_licence_number" value="{{ __('Nomor Induk Siswa') }}" />
+                        <x-jet-input id="student_licence_number" class="block w-full mt-1" type="text" :value="old('student_licence_number', $user->student_licence_number)" name="student_licence_number" />
+                        {{-- <input id="student_licence_number" type="text" name="student_licence_number" value="{{old('student_licence_number', $user->student_licence_number)}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('student_licence_number')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  required> --}}
                         @if($errors->has('student_licence_number'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('student_licence_number') }}
@@ -187,7 +174,7 @@
 
 
 
-                <div class="flex flex-wrap -mx-3 mb-2 mt-5" x-show="role_id == 2">
+                {{-- <div class="flex flex-wrap -mx-3 mb-2 mt-5" x-show="role_id == 2">
                   <div class="w-full px-3 mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                       <span>Nama Mata Pelajaran</span>
@@ -207,15 +194,16 @@
                           @endforeach
                       </div>
                     </div>
-              </div>
+              </div> --}}
 
 
 
             </div>
 
                     <div class="mt-5">
-                        <button type="submit"
-                    class="bg-indigo-500 text-white p-2 rounded shadow-sm focus:outline-none hover:bg-indigo-700">SIMPAN</button>
+                      <x-jet-button class="ml-4">
+                        {{ __('Update') }}
+                    </x-jet-button>
                     </div>
                 </div>
 

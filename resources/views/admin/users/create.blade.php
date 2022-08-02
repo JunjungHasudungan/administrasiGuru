@@ -145,7 +145,7 @@
 
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                         <x-jet-label for="student_address" value="{{ __('Alamat') }}" />
-                        <input id="student_address" type="text" name="student_address" value="{{old('student_address')}}" class=" form-input appearance-none block w-full bg-gray-200 text-gray-700 @if($errors->has('student_address')) border border-red-500 @else border-none shadow @endif rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white  focus:border-gray-500 "  >
+                      <x-jet-input id="student_address" class="block w-full mt-1" type="text" :value="old('student_address')" name="student_address" />
                         @if($errors->has('student_address'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('student_address') }}
@@ -155,7 +155,7 @@
 
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                         <x-jet-label for="student_licence_number" value="{{ __('Nomor Induk Siswa') }}" />
-                <x-jet-input id="student_licence_number" class="block w-full mt-1" type="text" :value="old('student_licence_number')" name="student_licence_number" />
+                        <x-jet-input id="student_licence_number" class="block w-full mt-1" type="text" :value="old('student_licence_number')" name="student_licence_number" />
                         @if($errors->has('student_licence_number'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('student_licence_number') }}

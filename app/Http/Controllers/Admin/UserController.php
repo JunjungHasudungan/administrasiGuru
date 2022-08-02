@@ -17,6 +17,12 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public $users;
+
+    public function __construct()
+    {
+        $this->users = new User();       
+    }
 
     public function index()
     {
@@ -42,10 +48,8 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        // $user = User::create($request->all());
-        $user = new User();
 
-        $user->create([
+        $this->users->create([
             'name'                      => $request['name'],
             'email'                     => $request['email'],
             'password'                  => Hash::make($request['password']),
@@ -60,6 +64,7 @@ class UserController extends Controller
         // $user->subjectStudent()->sync($request->input('subjects', []));
 
         // rendiSiregar
+        // anastasya
         // dd($user);
         return redirect()->route('admin.users.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
@@ -84,7 +89,7 @@ class UserController extends Controller
         // dd($user->load('role'));
         $user->load('role', 'classroom', 'major', 'subjectStudent');
 
-        return view('admin.users.edit', compact( 'user', 'classrooms', 'majors', 'subjects'));
+        return view('admin.users.edit', compact( 'user', 'classrooms', 'majors'));
     }
 
     public function update(UpdateUserRequest $request, User $user)
