@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\{
     TeacherAdministrationController, 
     UserController, 
     ScheduleController,
+    SettingUserConstroller,
     // AttendanceController
 };
 use App\Http\Controllers\Teacher\SubjectController as TeacherSubject;
@@ -72,7 +73,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resources([
             'subjects'                  => AdminSubject::class,
             'schedules'                 => ScheduleController::class,
-            // 'schedules'                 => TimeTableSubject::class,
+            'settingUser'                 => SettingUserConstroller::class,
             'majors'                    => MajorController::class,
             'teachers'                  => TeacherController::class,
             'classrooms'                => ClassroomController::class,

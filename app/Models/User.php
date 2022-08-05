@@ -121,6 +121,11 @@ class User extends Authenticatable
         return $this->belongsTo(Major::class);
     }
 
+    public function getIsSiswaAttribute()
+    {
+        return $this->role()->where('id', 2)->exists();
+    }
+
     public function subjectStudent()
     {
         return $this->belongsToMany(Subject::class, 'subject_student', 'student_id', 'subject_id',);

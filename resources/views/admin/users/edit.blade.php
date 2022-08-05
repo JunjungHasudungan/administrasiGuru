@@ -141,7 +141,7 @@
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0" x-show="role_id == 2">
                       <x-jet-label for="classroom_id" value="{{ __('Kelas') }}" />
                         <div class="relative">
-                          <select id="major_id" name="major_id"  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                          <select id="classroom_id" name="classroom_id"  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                             @forelse($classrooms as $id => $classroom)
                               <option class="font-normal hover:font-bold capitalize" value="{{$id}}" {{ ($user->classroom ? $user->classroom->id : old('classroom_id')) == $id ? 'selected' : ''}}>{{$classroom}}</option>
                             @empty

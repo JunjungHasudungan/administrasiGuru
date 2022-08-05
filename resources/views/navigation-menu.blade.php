@@ -44,10 +44,6 @@
                             {{ __('Users') }}
                         </x-jet-nav-link>
 
-                        {{-- <x-jet-nav-link href="{{ route('admin.teachers.index') }}" :active="request()->routeIs('admin.teachers.index')">
-                            {{ __('Guru') }}
-                        </x-jet-nav-link> --}}
-
                         <x-jet-nav-link href="{{ route('admin.teacherAdministrations.index') }}" :active="request()->routeIs('admin.teacherAdministrations.index')">
                             {{ __('Administrasi Guru') }}
                         </x-jet-nav-link>
@@ -67,6 +63,10 @@
 
                         <x-jet-nav-link href="{{ route('admin.schedules.index') }}" :active="request()->routeIs('admin.schedules.index')">
                             {{ __('Jadwal Mata Pelajaran') }}
+                        </x-jet-nav-link>
+
+                        <x-jet-nav-link href="{{ route('admin.settingUser.index') }}" :active="request()->routeIs('admin.settingUser.index')">
+                            {{ __('Setting User') }}
                         </x-jet-nav-link>
 
 

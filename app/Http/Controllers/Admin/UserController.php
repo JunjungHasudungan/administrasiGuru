@@ -61,11 +61,7 @@ class UserController extends Controller
             'status'                    => $request['status'] ?? null,
             'major_id'                  => $request['major_id'] ?? null,
         ]);
-        // $user->subjectStudent()->sync($request->input('subjects', []));
-
-        // rendiSiregar
-        // anastasya
-        // dd($user);
+        
         return redirect()->route('admin.users.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
@@ -92,7 +88,7 @@ class UserController extends Controller
         return view('admin.users.edit', compact( 'user', 'classrooms', 'majors'));
     }
 
-    public function update(UpdateUserRequest $request, User $user)
+    public function update(Request $request, User $user)
     {
         $user->update($request->all());
 
