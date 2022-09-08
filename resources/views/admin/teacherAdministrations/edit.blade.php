@@ -29,7 +29,7 @@
                     clip-rule="evenodd" />
                 </svg>
                 <a href="{{route('admin.teacherAdministrations.edit', $teacherAdministration->id )}}"
-                    class="text-primary-500 hover:text-primary-600 font-bold text-indigo-400 hover:font-bold">Edit</a>
+                    class="text-primary-500 hover:text-primary-600 font-bold text-indigo-400 hover:font-bold">Check</a>
             </div>
           </div>
         </div>
@@ -118,18 +118,6 @@
                                         Status
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap mt-2 text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{-- <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="switchOne" checked="" wire:model="isActive">
-                                         </div> --}}
-                                        {{-- @if ($teacherAdministration->statusCheck === 0)
-                                            <span class="text-xs font-bold inline-block py-1 px-2 rounded-full text-emerald-600 bg-yellow-200 capitalize last:mr-0 mr-1">
-                                                Belum di periksa
-                                            </span>
-                                        @else
-                                            <span class="text-xs font-bold inline-block py-1 px-2 capitalize rounded-full text-blueGray-600 bg-emerald-200 last:mr-0 mr-1">
-                                                Sudah diperiksa
-                                            </span>
-                                        @endif --}}
 
                                         @livewire('toggle-switch',[
                                             'model'     => $teacherAdministration,

@@ -26,6 +26,7 @@ class UserController extends Controller
 
     public function index()
     {
+
         $users = User::with(['classroom','major', 'role', 'subjects', 'subjectStudent', 'majorTeacher'])
         ->when(request()->search, function($users){
             $users = $users->where('name', 'like', '%'. request()->search . '%');
