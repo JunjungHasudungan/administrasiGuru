@@ -35,6 +35,7 @@ class DatabaseSeeder extends Seeder
             PermissionSeeder::class,
             PermissionRoleSeeder::class,
             WeekDaySubjectSeeder::class,
+            MemberSeeder::class,
 
         ]);
     }

@@ -23,7 +23,7 @@
                 <!-- Logo -->
                 <div class="flex items-center flex-shrink-0">
                     <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block w-auto h-9" />
+                        {{-- <x-jet-application-mark class="block w-auto h-9" /> --}}
                     </a>
                 </div>
 
@@ -61,12 +61,12 @@
                             {{ __('Kelas') }}
                         </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{ route('admin.schedules.index') }}" :active="request()->routeIs('admin.schedules.index')">
+                        {{-- <x-jet-nav-link href="{{ route('admin.schedules.index') }}" :active="request()->routeIs('admin.schedules.index')">
                             {{ __('Jadwal Mata Pelajaran') }}
-                        </x-jet-nav-link>
+                        </x-jet-nav-link> --}}
 
-                        <x-jet-nav-link href="{{ route('admin.settingUser.index') }}" :active="request()->routeIs('admin.settingUser.index')">
-                            {{ __('Setting User') }}
+                        <x-jet-nav-link href="{{ route('admin.roles.index') }}" :active="request()->routeIs('admin.roles.index')">
+                            {{ __('Data Role') }}
                         </x-jet-nav-link>
 
 
@@ -77,9 +77,10 @@
                             {{ __('Mata Pelajaran') }}
                         </x-jet-nav-link>
 
-                        {{-- <x-jet-nav-link href="{{ route('student.attendances.index') }}" :active="request()->routeIs('student.attendances.index')">
-                            {{ __('Absensi') }}
-                        </x-jet-nav-link> --}}
+                        <x-jet-nav-link href="{{ route('member') }}" :active="request()->routeIs('member')">
+                            {{ __('Data Anggota') }}
+                        </x-jet-nav-link>
+
                     @endif
 
                     @if (auth()->user()->role_id == 3)

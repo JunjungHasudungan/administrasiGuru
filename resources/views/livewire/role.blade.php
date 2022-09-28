@@ -1,3 +1,7 @@
 <div>
-    {{-- Nothing in the world is as soft and yielding as water. --}}
+    <x-slot name="header">
+        <h2>
+            Data Role
+        </h2>
+    </x-slot>
 </div>

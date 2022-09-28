@@ -1,7 +1,10 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            {{-- <x-jet-authentication-card-logo /> --}}
+            <h1 class="text-center ">
+                <span class="font-bold text-green-700 mt-1">Administrasi Guru</span>
+            </h1>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
@@ -39,7 +42,7 @@
                     </a>
                 @endif --}}
 
-                <x-jet-button class="ml-4 text-center ">
+                <x-jet-button class="m-auto text-center flex items-center justify-center">
                     {{ __('Log in') }}
                 </x-jet-button>
             </div>

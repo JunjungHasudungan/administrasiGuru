@@ -8,7 +8,8 @@ use App\Http\Controllers\Admin\CalenderController as TimeTableSubject;
 use App\Http\Controllers\Admin\{
     MajorController, 
     TeacherController, 
-    ClassroomController, 
+    ClassroomController,
+    RoleController,
     TeacherAdministrationController, 
     UserController, 
     ScheduleController,
@@ -29,6 +30,8 @@ use App\Models\LessonTimetable;
 // using livewire
 use App\Http\Livewire\Major;
 use App\Http\Livewire\Major\Major as MajorMajor;
+use App\Http\Livewire\Member;
+use App\Http\Livewire\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,9 +47,18 @@ use App\Http\Livewire\Major\Major as MajorMajor;
 Route::redirect('/', '/login');
 // Route::redirect('register', '/register');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function(){
+    Route::get('/dashboard', function() {
+        return view('dashboard');
+    })->name('dashboard');
+
+    
+    Route::get('member', Member::class)->name('member');
+});
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
 
 Route::group(['middleware' => 'auth'], function() {
 
@@ -58,27 +70,30 @@ Route::group(['middleware' => 'auth'], function() {
         ]);
     });
 
-   Route::group(['middleware' => 'role:teacher', 'prefix' => 'teacher', 'as' => 'teacher.'], function() {
-       Route::resources([
-           'subjects'                   => TeacherSubject::class,
-           'schedules'                  => TeacherShedule::class,
-           'administrations'            => \App\Http\Controllers\Teacher\AdminstrationController::class,
-           'attendanceStudent'         => AttendanceStudentController::class,
+    Route::group(['middleware' => 'role:teacher', 'prefix' => 'teacher', 'as' => 'teacher.'], function() {
+        Route::resources([
+            'subjects'                   => TeacherSubject::class,
+            'schedules'                  => TeacherShedule::class,
+            'administrations'            => \App\Http\Controllers\Teacher\AdminstrationController::class,
+            'attendanceStudent'         => AttendanceStudentController::class,
         ]);
-   });
+    });
 
     Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
 
-
+        Route::get('role', Role::class)->name('role');
+        Route::get('member', Member::class)->name('member');
         Route::resources([
             'subjects'                  => AdminSubject::class,
             'schedules'                 => ScheduleController::class,
-            'settingUser'                 => SettingUserConstroller::class,
+            'settingUser'               => SettingUserConstroller::class,
             'majors'                    => MajorController::class,
             'teachers'                  => TeacherController::class,
             'classrooms'                => ClassroomController::class,
             'teacherAdministrations'    => TeacherAdministrationController::class,
             'users'                     => UserController::class,
+            'roles'                     => RoleController::class,
+            // 'members'                   => Member::class,
             // 'administrationComment'     => AdministrationCommentControoler::class,
         ]);
     });

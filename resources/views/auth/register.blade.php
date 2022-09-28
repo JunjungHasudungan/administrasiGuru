@@ -1,7 +1,8 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            {{-- <x-jet-authentication-card-logo /> --}}
+            <h2 class="text-green-800 font-semibold mt-2">Registrasi Data</h2>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

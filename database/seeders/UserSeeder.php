@@ -742,4 +742,6 @@ class UserSeeder extends Seeder
 }
 
 
-// rendiSebagaiGuru
+// satrioCendana
+// satrioCendana@gmail.com
+// satrioCendana1803
