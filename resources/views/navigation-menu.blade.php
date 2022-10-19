@@ -65,9 +65,13 @@
                             {{ __('Jadwal Mata Pelajaran') }}
                         </x-jet-nav-link> --}}
 
-                        <x-jet-nav-link href="{{ route('admin.roles.index') }}" :active="request()->routeIs('admin.roles.index')">
+                        {{-- <x-jet-nav-link href="{{ route('counter') }}" :active="request()->routeIs('counter')">
                             {{ __('Data Role') }}
-                        </x-jet-nav-link>
+                        </x-jet-nav-link>  --}}
+
+                        {{-- <x-jet-nav-link href="{{ route('admin.roles.index') }}" :active="request()->routeIs('admin.roles.index')">
+                            {{ __('Data Role') }}
+                        </x-jet-nav-link> --}}
 
 
                     @endif

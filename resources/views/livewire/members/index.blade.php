@@ -16,11 +16,11 @@
                 </div>
             @endif
 
-            <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Tambah Anggota</button>
+            {{-- <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Tambah Anggota</button> --}}
             
-            @if($isModal)
+            {{-- @if(!$isModal)
                 @include('livewire.members.create')
-            @endif
+            @endif --}}
 
             <table class="table-fixed w-full">
                 <thead>

@@ -24,6 +24,7 @@ use App\Http\Controllers\Teacher\AttendanceStudentController;
 use App\Http\Controllers\Student\LessonController as StudentSubject;
 use App\Http\Controllers\Student\SubjectStudentController as SubjectController;
 use App\Http\Controllers\Student\AttendanceController;
+use App\Http\Livewire\Counter;
 use App\Http\Livewire\Teacher\Subject;
 use App\Models\LessonTimetable;
 
@@ -81,7 +82,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
 
-        Route::get('role', Role::class)->name('role');
+        Route::get('counter', Counter::class)->name('counter');
+        // Route::get('role', Role::class)->name('role');
         Route::get('member', Member::class)->name('member');
         Route::resources([
             'subjects'                  => AdminSubject::class,

@@ -7,10 +7,14 @@ use Livewire\Component;
 
 class Role extends Component
 {
-    public $name;
-    public $isModal;
-    public $roles;
+    public $name, $roles;
+    public $count = 0;
     
+
+    public function increment()
+    {
+        $this->count++;
+    }
 
     public function render()
     {
@@ -22,12 +26,12 @@ class Role extends Component
 
     public function openModal()
     {
-        $this->isModal = true;
+        $this->is_modal = true;
     }
 
     public function closeModal()
     {
-        $this->isModal = false;
+        $this->is_modal = false;
     }
 
     public function resetField()
@@ -37,7 +41,7 @@ class Role extends Component
 
     public function create()
     {
-        $this->openModal();
+        // $this->openModal();
 
         $this->resetField();
     }
