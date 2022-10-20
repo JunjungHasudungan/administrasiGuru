@@ -29,13 +29,11 @@ class DatabaseSeeder extends Seeder
             EventSeeder::class,
             MajorSubjectSeeder::class,
             TeacherSubjectSeeder::class,
-            // ClassroomTimetableSeeder::class,
             ClassroomSubjectSeeder::class,
             PostSeeder::class,
             PermissionSeeder::class,
             PermissionRoleSeeder::class,
             WeekDaySubjectSeeder::class,
-            MemberSeeder::class,
 
         ]);
     }

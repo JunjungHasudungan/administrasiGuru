@@ -14,7 +14,8 @@ use App\Http\Controllers\Admin\{
     UserController, 
     ScheduleController,
     SettingUserConstroller,
-    // AttendanceController
+    TestCounterController,
+// AttendanceController
 };
 use App\Http\Controllers\Teacher\SubjectController as TeacherSubject;
 use App\Http\Controllers\Teacher\SchedulesController as TeacherShedule;
@@ -82,9 +83,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
 
-        Route::get('counter', Counter::class)->name('counter');
         // Route::get('role', Role::class)->name('role');
-        Route::get('member', Member::class)->name('member');
         Route::resources([
             'subjects'                  => AdminSubject::class,
             'schedules'                 => ScheduleController::class,
@@ -95,6 +94,7 @@ Route::group(['middleware' => 'auth'], function() {
             'teacherAdministrations'    => TeacherAdministrationController::class,
             'users'                     => UserController::class,
             'roles'                     => RoleController::class,
+            'counters'                  => TestCounterController::class,
             // 'members'                   => Member::class,
             // 'administrationComment'     => AdministrationCommentControoler::class,
         ]);
