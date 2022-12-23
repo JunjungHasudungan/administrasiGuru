@@ -56,7 +56,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function(){
     })->name('dashboard');
 
     
-    Route::get('member', Member::class)->name('member');
+    // Route::get('member', Member::class)->name('member');
 });
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');

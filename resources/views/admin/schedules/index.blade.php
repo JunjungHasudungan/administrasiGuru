@@ -37,9 +37,8 @@
 
     <div class="container mx-auto mt-5 mb-10">
       <div class="bg-white p-5 w-full shadow-sm">
-
-          {{-- <div class="grid grid-cols-8 gap-4 mb-4"> --}}
-            {{-- <div class="col-span-1 mt-2 h-full p-1">
+        <div class="grid grid-cols-8 gap-4 mb-4"> 
+            <div class="col-span-1 mt-2 h-full p-1">
               <a href="{{ route('admin.schedules.create') }}"
                 class="inline-flex items-center justify-center px-10 py-2 text-sm font-bold tracking-wide text-white transition bg-blue-500 border border-transparent rounded shadow select-none focus:border-blue-600 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-30 disabled:opacity-50">
                 <svg class="w-5 h-6 -ml-1"
@@ -52,18 +51,18 @@
                 </svg>
                   <span class="ml-2">Jadwal</span>
               </a>
-            </div> --}}
-            {{-- <div class="col-span-7 p-3 w-full">
+            </div>
+             <div class="col-span-7 p-3 w-full">
               <form action="#" method="GET">
                   <input type="text" name="search"
                   class="w-full bg-gray-200 p-2 rounded shadow-sm border border-gray-200 focus:outline-none focus:bg-white"
                   placeholder="Cari Mata Pelajaran..">
               </form>
-          </div> --}}
-          <p class="text-center mt-6">Masih dalam pengembangan</p>
-          {{-- </div> --}}
+          </div> 
+          {{-- <p class="text-center mt-6">Masih dalam pengembangan</p> --}}
+          </div>
           
-          {{-- <table class="min-w-full table-auto rounded divide-gray-200">
+          <table class="min-w-full table-auto rounded divide-gray-200">
               <thead class="justify-between">
                   <tr class="bg-slate-200 w-full">
                       <th class="px-7 py-2 text-center">
@@ -85,7 +84,7 @@
                           <span class="text-indigo-500"></span>
                       </th>
                   </tr>
-              </thead> --}}
+              </thead>
               {{-- <tbody class="bg-gray-200">
                 @forelse ($schedules as $classroom)
                   <tr class="bg-white border-2 border-gray-200">

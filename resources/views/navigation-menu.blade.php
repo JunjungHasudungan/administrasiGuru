@@ -61,9 +61,13 @@
                             {{ __('Kelas') }}
                         </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{route('admin.posts.index')}}" :active="request()->routeIs('admin.posts.index')">
-                            {{ __('Counter') }}
+                        <x-jet-nav-link href="{{ route('admin.schedules.index') }}" :active="request()->routeIs('admin.schedules.index')">
+                            {{ __('Jadwal') }}
                         </x-jet-nav-link>
+
+                        {{-- <x-jet-nav-link href="{{route('admin.posts.index')}}" :active="request()->routeIs('admin.posts.index')">
+                            {{ __('Counter') }}
+                        </x-jet-nav-link> --}}
 
                         {{-- <x-jet-nav-link href="{{ route('counter') }}" :active="request()->routeIs('counter')">
                             {{ __('Data Role') }}
