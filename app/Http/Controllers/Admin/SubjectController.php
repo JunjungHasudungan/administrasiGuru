@@ -34,9 +34,9 @@ class SubjectController extends Controller
 
         $majors = Major::all()->pluck('title', 'id');
 
-        $weekDaySubject = WeekDaySubject::all()->pluck('name', 'id');
+        // $weekDaySubject = WeekDaySubject::all()->pluck('name', 'id');
 
-        return view('admin.subjects.create', compact('teachers', 'classrooms', 'majors', 'weekDaySubject'));
+        return view('admin.subjects.create', compact('teachers', 'classrooms', 'majors'));
     }
 
     public function store(StoreSubjectRequest $request)
@@ -47,7 +47,7 @@ class SubjectController extends Controller
 
         $subject->majorSubject()->sync($request->input('majors', []));
 
-        $subject->weekDaySubject()->sync($request->input('days', []));
+        // $subject->weekDaySubject()->sync($request->input('days', []));
         
         // dd($subject);
 
@@ -70,11 +70,11 @@ class SubjectController extends Controller
 
         $majors = Major::all()->pluck('title', 'id');
 
-        $weekDaySubject = WeekDaySubject::all()->pluck('name', 'id');
+        // $weekDaySubject = WeekDaySubject::all()->pluck('name', 'id');
 
         $subject->load('teachers', 'classrooms', 'majorSubject', 'weekDaySubject');
 
-        return view('admin.subjects.edit', compact('subject', 'teachers', 'classrooms', 'majors', 'weekDaySubject'));
+        return view('admin.subjects.edit', compact('subject', 'teachers', 'classrooms', 'majors'));
     }
 
     public function update(UpdateSubjectRequest $request, Subject $subject)
@@ -85,7 +85,7 @@ class SubjectController extends Controller
 
         $subject->majorSubject()->sync($request->input('majors', []));
 
-        $subject->weekDaySubject()->sync($request->input('days', []));
+        // $subject->weekDaySubject()->sync($request->input('days', []));
 
         // dd($subject);
         return redirect()->route('admin.subjects.index');

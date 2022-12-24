@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
             PostSeeder::class,
             PermissionSeeder::class,
             PermissionRoleSeeder::class,
-            WeekDaySubjectSeeder::class,
+            // WeekDaySubjectSeeder::class,
             SheduleSeeder::class,
 
         ]);

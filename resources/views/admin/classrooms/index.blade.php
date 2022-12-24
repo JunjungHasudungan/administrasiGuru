@@ -97,7 +97,7 @@
                       </td>
                       <td class="px-7 py-2 text-left whitespace-nowrap text-sm text-gray-900">
                         <a href="{{route('admin.majors.index')}}" class="hover:text-primary-600  hover:font-bold">
-                          {{$classroom->majors->title ?? '' }}
+                          {{$classroom->major->title ?? '' }}
                         </a>
                       </td>
                       <td class="px-7 py-2 text-left  whitespace-nowrap text-sm text-gray-900">

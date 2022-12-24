@@ -69,44 +69,76 @@
                           <span class="text-indigo-500">No</span>
                       </th>
                       <th class="px-7 py-2 text-center">
+                        <span class="text-indigo-500">Nama Guru</span>
+                    </th>
+                      <th class="px-7 py-2 text-center">
                           <span class="text-indigo-500">Mata Pelajaran</span>
                       </th>
                       <th class="px-7 py-2 text-center">
-                          <span class="text-indigo-500">Nama Kelas</span>
+                          <span class="text-indigo-500"> Kelas</span>
                       </th>
+
                       <th class="px-7 py-2 text-center">
-                        <span class="text-indigo-500">Hari Pelajaran</span>
+                        <span class="text-indigo-500">Hari</span>
+                    </th>
+                      <th class="px-7 py-2 text-center">
+                        <span class="text-indigo-500">jam mulai</span>
                     </th>
                     <th class="px-16 py-2 text-center">
-                        <span class="text-indigo-500">Jam Pembelajaran</span>
+                        <span class="text-indigo-500">Jam berakhir</span>
                     </th>
                       <th class="px-7 py-2">
                           <span class="text-indigo-500"></span>
                       </th>
                   </tr>
               </thead>
-              {{-- <tbody class="bg-gray-200">
-                @forelse ($schedules as $classroom)
+              <tbody class="bg-gray-200">
+                @forelse ($schedules as $schedule)
                   <tr class="bg-white border-2 border-gray-200">
                       <td class="px-7 py-2 text-center">{{$loop->iteration}}</td>
                       <td class="px-7 py-2 text-left  whitespace-nowrap text-sm text-gray-900">
-                        {{$classroom->code_classroom}}
+                        {{$schedule->user->name}}
                       </td>
                       <td class="px-7 py-2 text-left  whitespace-nowrap text-sm text-gray-900">
-                        {{$classroom->name_class ?? ''}}
+                        {{$schedule->subject->name ?? ''}}
                       </td>
                       <td class="px-7 py-2 text-left whitespace-nowrap text-sm text-gray-900">
                         <a href="{{route('admin.majors.index')}}" class="hover:text-primary-600  hover:font-bold">
-                          {{$classroom->majors->title ?? '' }}
+                          {{$schedule->classroom->name_class ?? '' }}
                         </a>
                       </td>
                       <td class="px-7 py-2 text-left  whitespace-nowrap text-sm text-gray-900">
                         <a href="{{route('admin.users.index')}}" class="hover:text-primary-600  hover:font-bold">
-                          {{$classroom->homeworkTeacher->name ?? ''}}
+                          {{-- {{$schedule->day ?? ''}} --}}
+                          @if ($schedule->is_senin)
+                            Senin
+                          @elseif ($schedule->is_selasa)
+                              Selasa
+                          @elseif ($schedule->is_rabu)
+                            Rabu
+                            @elseif ($schedule->is_kamis)
+                            Kamis
+                          @elseif ($schedule->is_jumat)
+                            Jumat
+                          @else
+                            <div class="bg-yellow-500 text-white p-1 rounded shadow-sm mb-2">
+                              Hari Kerja Tidak tersedia
+                            </div>
+                          @endif
+                        </a>
+                      </td>
+                      <td class="px-7 py-2 text-left  whitespace-nowrap text-sm text-gray-900">
+                        <a href="{{route('admin.users.index')}}" class="hover:text-primary-600  hover:font-bold">
+                          {{$schedule->start_time ?? ''}}
+                        </a>
+                      </td>
+                      <td class="px-7 py-2 text-left  whitespace-nowrap text-sm text-gray-900">
+                        <a href="{{route('admin.users.index')}}" class="hover:text-primary-600  hover:font-bold">
+                          {{$schedule->end_time ?? ''}}
                         </a>
                       </td>
                       <td class="px-6 text-right select-none whitespace-nowrap">
-                        <a href="{{ route('admin.schedules.show', $classroom->id) }}"
+                        <a href="{{ route('admin.schedules.show', $schedule->id) }}"
                           class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium bg-gray-400 tracking-wide text-white transition border border-transparent rounded-full shadow select-none bg-lightBlue-500 focus:border-lightBlue-600 hover:bg-lightBlue-600 focus:outline-none focus:ring focus:ring-lightBlue-500 focus:ring-opacity-30 disabled:opacity-50">
                           <svg class="w-4 h-4 -mx-2"
                             xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +149,7 @@
                               clip-rule="evenodd" />
                           </svg>
                         </a>
-                        <a href="{{ route('admin.schedules.edit', $classroom->id) }}"
+                        <a href="{{ route('admin.schedules.edit', $schedule->id) }}"
                           class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide text-white transition bg-yellow-500 border border-transparent rounded-full shadow select-none focus:border-yellow-600 hover:bg-yellow-600 focus:outline-none focus:ring focus:ring-yellow-500 focus:ring-opacity-30 disabled:opacity-50">
                           <svg class="w-4 h-4 -mx-2"
                             xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +158,7 @@
                             <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                           </svg>
                         </a>
-                        <form action="{{ route('admin.schedules.destroy', $classroom->id) }}" class="inline" onsubmit="return confirm('Yakin untuk menghapus?'); " method="post">
+                        <form action="{{ route('admin.schedules.destroy', $schedule->id) }}" class="inline" onsubmit="return confirm('Yakin untuk menghapus?'); " method="post">
                           @csrf
                           @method('delete')
                           <button type="submit"
@@ -148,8 +180,8 @@
                     Kelas Tidak ada.
                   </div>
                 @endforelse
-              </tbody> --}}
-          {{-- </table> --}}
+              </tbody>
+          </table>
           
           <div class="text-gray-600 bg-secondary-50 mt-2">
             {{-- {{ $schedules->links() }} --}}

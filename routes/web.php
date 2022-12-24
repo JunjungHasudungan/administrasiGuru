@@ -95,8 +95,6 @@ Route::group(['middleware' => 'auth'], function() {
             'users'                     => UserController::class,
             'roles'                     => RoleController::class,
             'counters'                  => TestCounterController::class,
-            // 'members'                   => Member::class,
-            // 'administrationComment'     => AdministrationCommentControoler::class,
         ]);
     });
 

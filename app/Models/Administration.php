@@ -83,4 +83,9 @@ class Administration extends Model
         {
             return (int) $this->method === Method::Method_Learning['penugasan'];
         }
+
+        public function schedules()
+        {
+            return $this->belongsTo(Shedule::class, 'schedule_id');
+        }
 }
