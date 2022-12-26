@@ -18,14 +18,7 @@ class StoreTeacherAdministrationRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'teacher_id'            => ['required', 'integer'],
-            // 'learning_method'       => ['required'],     
             'subject_title'         => ['required','string'], 
-            // 'subject_id'            => ['required', 'integer'],
-            // 'classroom_id'          => ['required', 'integer'],
-            // 'status'                => ['required'],
-            // 'completeness'          => ['required'], 
-            // 'note'                  => 'nullable'
         ];
     }
 }

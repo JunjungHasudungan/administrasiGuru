@@ -17,16 +17,10 @@ class StoreSubjectRequest extends FormRequest
             'subject_code'  => 'required',
             'name'          => 'required',
             'teacher_id'    => 'required',
-            'classrooms.*'  => 'integer',
-            'classrooms'    => ['required', 'array'],
-            'majors.*'      => 'integer',
-            'majors'        => ['required', 'array'], 
-            // 'days.*'        => 'integer',
-            // 'days'          => ['required', 'array'], 
-            // 'start_time'    => 'nullable' ?? '10.20',
-            // 'end_time'      => 'nullable' ?? '12.00'
-            
-
+            // 'classrooms.*'  => 'integer',
+            // 'classrooms'    => ['required', 'array'],
+            'majors_id'      => ['integer','max:1',  null] ,
+            // 'majors'        => ['required', 'array'], 
         ];
     }
 }

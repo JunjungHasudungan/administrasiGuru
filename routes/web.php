@@ -14,7 +14,7 @@ use App\Http\Controllers\Admin\{
     UserController, 
     ScheduleController,
     SettingUserConstroller,
-    TestCounterController,
+    // TestCounterController,
 // AttendanceController
 };
 use App\Http\Controllers\Teacher\SubjectController as TeacherSubject;
@@ -94,7 +94,7 @@ Route::group(['middleware' => 'auth'], function() {
             'teacherAdministrations'    => TeacherAdministrationController::class,
             'users'                     => UserController::class,
             'roles'                     => RoleController::class,
-            'counters'                  => TestCounterController::class,
+            // 'counters'                  => TestCounterController::class,
         ]);
     });
 

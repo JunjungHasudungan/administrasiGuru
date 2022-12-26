@@ -10,13 +10,15 @@ class Subject extends Model
 {
     use HasFactory;
 
-    protected $table = 'subjects';
+    protected $guarded = [];
+    // protected $table = 'subjects';
 
-    protected $fillable = [
-        'subject_code', 
-        'name', 
-        'teacher_id'
-    ];
+    // protected $fillable = [
+    //     'subject_code', 
+    //     'name', 
+    //     'teacher_id', 
+    //     'major_id'
+    // ];
 
 
     public function categories()
@@ -43,11 +45,6 @@ class Subject extends Model
     public function classrooms() // kelas mata pelajaran
     {
         return $this->belongsToMany(Classroom::class,'classroom_subject', 'subject_id', 'classroom_id');
-    }
-
-    public function majorSubject()
-    {
-        return $this->belongsToMany(Major::class, 'major_subject', 'subject_id', 'major_id');
     }
 
     public function attendances()

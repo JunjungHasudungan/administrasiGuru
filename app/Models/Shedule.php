@@ -12,6 +12,14 @@ class Shedule extends Model
 
     protected $guarded=[];
     
+    const dailyTeaching = [
+        1   => 'Senin',
+        2   => 'Selasa',
+        3   => 'Rabu',
+        4   => 'Kamis',
+        5   => 'Jumat'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');

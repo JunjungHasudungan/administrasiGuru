@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Teacher;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{Subject, Attendance, Classroom, User, Major};
-
+// use Illuminate\Support\Facades\Auth;
 
 class AttendanceStudentController extends Controller
 {
@@ -21,9 +21,8 @@ class AttendanceStudentController extends Controller
 
     public function create()
     {
-        $students = User::where('classroom_id', auth()->user()->role_id == 2)->pluck('name', 'id');
-
-        // dd($students);
+        // $subject = Subject::where('teacher_id', auth()->id())->get();
+        // dd($subject);
         return view('teacher.attendanceStudent.create');
     }
 

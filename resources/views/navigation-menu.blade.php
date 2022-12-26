@@ -23,7 +23,6 @@
                 <!-- Logo -->
                 <div class="flex items-center flex-shrink-0">
                     <a href="{{ route('dashboard') }}">
-                        {{-- <x-jet-application-mark class="block w-auto h-9" /> --}}
                     </a>
                 </div>
 
@@ -33,12 +32,9 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
 
-                    {{-- @can('manage-users')
-                    <x-jet-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.index')">
-                        {{ __('Users') }}
-                    </x-jet-nav-link>
-                    @endif --}}
 
+
+                    {{-- admin / kurikulum --}}
                     @if (auth()->user()->role_id == 1)
                         <x-jet-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.index')">
                             {{ __('Users') }}
@@ -65,17 +61,6 @@
                             {{ __('Jadwal') }}
                         </x-jet-nav-link>
 
-                        {{-- <x-jet-nav-link href="{{route('admin.posts.index')}}" :active="request()->routeIs('admin.posts.index')">
-                            {{ __('Counter') }}
-                        </x-jet-nav-link> --}}
-
-                        {{-- <x-jet-nav-link href="{{ route('counter') }}" :active="request()->routeIs('counter')">
-                            {{ __('Data Role') }}
-                        </x-jet-nav-link>  --}}
-
-                        {{-- <x-jet-nav-link href="{{ route('admin.roles.index') }}" :active="request()->routeIs('admin.roles.index')">
-                            {{ __('Data Role') }}
-                        </x-jet-nav-link> --}}
 
 
                     @endif
@@ -85,31 +70,27 @@
                             {{ __('Mata Pelajaran') }}
                         </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{ route('member') }}" :active="request()->routeIs('member')">
+                        {{-- <x-jet-nav-link href="{{ route('member') }}" :active="request()->routeIs('member')">
                             {{ __('Data Anggota') }}
-                        </x-jet-nav-link>
+                        </x-jet-nav-link> --}}
 
                     @endif
 
+                    {{-- teacher --}}
                     @if (auth()->user()->role_id == 3)
                         <x-jet-nav-link href="{{ route('teacher.subjects.index') }}" :active="request()->routeIs('teacher.subjects.index')">
                             {{ __('Mata Pelajaran') }}
                         </x-jet-nav-link>
 
-                        {{-- <x-jet-nav-link href="{{ route('teacher.attendanceStudent.index') }}" :active="request()->routeIs('teacher.attendanceStudent.index')">
+                        <x-jet-nav-link href="{{ route('teacher.attendanceStudent.index') }}" :active="request()->routeIs('teacher.attendanceStudent.index')">
                             {{ __('Absensi Siswa') }}
-                        </x-jet-nav-link> --}}
+                        </x-jet-nav-link>
 
                         <x-jet-nav-link href="{{ route('teacher.administrations.index') }}" :active="request()->routeIs('teacher.administrations.index')">
                             {{ __('Administrasi Guru') }}
                         </x-jet-nav-link>
                     @endif
 
-                    {{-- @can('manage-courses')
-                        <x-jet-nav-link href="{{ route('teacher.subjects.index') }}" :active="request()->routeIs('teacher.subjects.index')">
-                            {{ __('Mata Pelajaran') }}
-                        </x-jet-nav-link>
-                    @endif --}}
                 </div>
             </div>
 

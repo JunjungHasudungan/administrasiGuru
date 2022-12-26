@@ -17,6 +17,14 @@ use Illuminate\Support\Facades\{DB, Gate};
 
 class SubjectController extends Controller
 {
+
+    public $subjects;
+
+    public function __construct()
+    {
+        $this->subjects = new Subject();
+    }
+
     public function index()
     {
         $subjects = Subject::latest()->when(request()->search, function($subjects){
@@ -41,22 +49,39 @@ class SubjectController extends Controller
 
     public function store(StoreSubjectRequest $request)
     {
-        $subject = Subject::create($request->all());
+        $request->validate([
+            'subject_code'      =>  'required:unique',
+            'name'              =>  'required|string|max:25',
+            'teacher_id'        =>  'required',
+            'major_id'          =>  'required|max:1' 
+        ], [
+            'major_id.max'      => 'Jurusan tidak boleh dari 1'
+        ]);
 
-        $subject->classrooms()->sync($request->input('classrooms', []));
+        $this->subjects->create([
+            'subject_code'      => $request['subject_code'],
+            'name'              => $request['name'],
+            'teacher_id'        => $request['teacher_id'],
+            'major_id'          => $request['major_id'] 
+        ]);
 
-        $subject->majorSubject()->sync($request->input('majors', []));
+        // $major_id = DB::table('subjects')->whereIn('major_id', $request->input('major_id'))->get();
+        // $subject = Subject::create($request->all());
+
+        // $subject->classrooms()->sync($request->input('classrooms', []));
+
+        // $subject->majorSubject()->sync($request->input('majors', []));
 
         // $subject->weekDaySubject()->sync($request->input('days', []));
         
-        // dd($subject);
+        // dd($major_id);
 
         return redirect()->route('admin.subjects.index');
     }
 
     public function show(Subject $subject)
     {
-         $subject->load(['teachers', 'classrooms', 'majorSubject', 'weekDaySubject']);
+         $subject->load(['teachers', 'classrooms', 'major', 'weekDaySubject']);
 
         // dd($subject_all);
         return view('admin.subjects.show', compact('subject'));

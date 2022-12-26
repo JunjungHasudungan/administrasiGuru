@@ -80,17 +80,19 @@
                                     Jurusan
                                 </th>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                  @forelse ($subject->majorSubject as $major)
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                      <a href="{{route('admin.teachers.index')}}" class="no-underline hover:underline hover:font">
-                                        {{$major->title ?? ''}} 
-                                      </a>
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ">
+                                      @isset($subject->major->title)
+                                        <a href="{{route('admin.subjects.index')}}" class="no-underline  hover:font bg-green-100 text-green-800">
+                                          {{$subject->major->title}} 
+                                        </a>
+                                      @endisset
+
+                                      @empty($subject->major->title)
+                                        <a href="{{route('admin.subjects.index')}}" class="no-underline  hover:font bg-yellow-100 text-yellow-800">
+                                          Tidak ada jurusan
+                                        </a>
+                                      @endempty
                                     </span> 
-                                  @empty
-                                    <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">
-                                      Jurusan tidak tersedia
-                                    </div>
-                                  @endforelse
                                 </td>
                             </tr>
 
@@ -101,9 +103,9 @@
                                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                     @forelse ($subject->classrooms as $classroom)
                                       <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                        <a href="{{route('admin.teachers.index')}}" class="no-underline hover:underline hover:font">
+                                        {{-- <a href="{{route('admin.teachers.index')}}" class="no-underline hover:underline hover:font"> --}}
                                           {{$classroom->name_class ?? ''}} 
-                                        </a>
+                                        {{-- </a> --}}
                                       </span> 
                                     @empty
                                       <div class="bg-yellow-500 text-white p-3 rounded shadow-sm mb-3">

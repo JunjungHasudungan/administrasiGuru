@@ -16,10 +16,14 @@ return new class extends Migration
     {
         Schema::create('subject_student', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Subject::class);
+            // $table->foreignIdFor(Subject::class);
+            $table->unsignedBigInteger('subject_id');
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('subject')->nullable();
+            $table->unsignedBigInteger('subject_terpenuhi')->nullable();
             $table->unsignedBigInteger('student_id');
             $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 
